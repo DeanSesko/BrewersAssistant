@@ -101,9 +101,9 @@ Public Class BrewHistoryForm
     Private Sub LoadMash()
         Dim mysqlString As String = "Select RestTemp as 'Temperature', RestTime as 'Time' from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'  order by RestTemp asc"
         Dim MyDataAdapter = New SqlDataAdapter(mysqlString, AppSettings("ConnectionString"))
-        Dim cmd As SqlCommandBuilder = New SqlCommandBuilder(MyDataAdapter)
         MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
-        Dim ds As New DataSet()
+        Dim ds As New DataSet
+
         Try
             If (MyDataAdapter.Fill(ds) > 0) Then
                 StepMashGridView.DataSource = ds.Tables(0)
@@ -112,6 +112,9 @@ Public Class BrewHistoryForm
         Catch ex As Exception
             MessageBox.Show("Error connecting to the database")
         End Try
+        MyDataAdapter.Dispose()
+        ds.Dispose()
+
 
     End Sub
 
@@ -265,7 +268,7 @@ Public Class BrewHistoryForm
 
                 End While
                 MashChart.Series("Mash Required Temperature").Points.AddXY(myStopMashtime, temp)
-                ' MashChart.Series("Mash Required Temperature").Points.AddXY(myStartSpargetime, SpargeTempLabel.Text)
+                MashChart.Series("Mash Required Temperature").Points.AddXY(myStartSpargetime, SpargeTempLabel.Text)
                 MashChart.Series("Mash Required Temperature").Points.AddXY(myStopSpargetime, SpargeTempLabel.Text)
 
             Case "Session"

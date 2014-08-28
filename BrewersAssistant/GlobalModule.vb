@@ -26,145 +26,34 @@ Module GlobalModule
 
         End Try
     End Function
-    Public Sub SetupMashChart()
+    Public Sub SetupChart()
 
-        BrewingSessionForm.MashChart.ChartAreas(0).AxisY.Minimum = 55
-        BrewingSessionForm.MashChart.ChartAreas(0).AxisY.Maximum = 175
-        BrewingSessionForm.MashChart.ChartAreas(0).AxisY.Interval = 5
-        BrewingSessionForm.MashChart.ChartAreas(0).AxisX.Interval = 5
-        BrewingSessionForm.MashChart.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
-        BrewingSessionForm.MashChart.ChartAreas(0).AxisX.LabelStyle.Format = "hh:mm:ss"
-        BrewingSessionForm.MashChart.Series.Clear()
-        Dim mashSeries As New Series("Mash Tun Temperature")
-        BrewingSessionForm.MashChart.Legends("Legend1").Docking = Docking.Top
+        BrewingSessionForm.TempatureChart.ChartAreas(0).AxisY.Minimum = 50
+        BrewingSessionForm.TempatureChart.ChartAreas(0).AxisY.Maximum = 215
+        BrewingSessionForm.TempatureChart.ChartAreas(0).AxisY.Interval = 10
+        BrewingSessionForm.TempatureChart.ChartAreas(0).AxisX.Interval = 5
+        BrewingSessionForm.TempatureChart.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
+        BrewingSessionForm.TempatureChart.ChartAreas(0).AxisX.LabelStyle.Format = "hh:mm:ss"
+        BrewingSessionForm.TempatureChart.Series.Clear()
+        Dim mashSeries As New Series("Current Temperature")
+        BrewingSessionForm.TempatureChart.Legends("Legend1").Docking = Docking.Top
 
 
         mashSeries.ChartType = SeriesChartType.Line
         mashSeries.BorderWidth = 4
         mashSeries.Color = Color.Red
         mashSeries.XValueType = ChartValueType.DateTime
-        BrewingSessionForm.MashChart.Series.Add(mashSeries)
-        Dim mashConstant As New Series("Mash Required Temperature")
+        BrewingSessionForm.TempatureChart.Series.Add(mashSeries)
+        Dim mashConstant As New Series("Required Temperature")
         mashConstant.ChartType = SeriesChartType.Line
         mashConstant.BorderWidth = 4
         mashConstant.Color = Color.Black
         mashConstant.XValueType = ChartValueType.DateTime
-        BrewingSessionForm.MashChart.Series.Add(mashConstant)
+        BrewingSessionForm.TempatureChart.Series.Add(mashConstant)
 
     End Sub
-    Public Sub SetupBoilChart()
-        BrewingSessionForm.BoilChart.ChartAreas(0).AxisY.Minimum = 40
-        BrewingSessionForm.BoilChart.ChartAreas(0).AxisY.Maximum = 220
-        BrewingSessionForm.BoilChart.ChartAreas(0).AxisY.Interval = 5
-        BrewingSessionForm.BoilChart.ChartAreas(0).AxisX.Interval = 60
-        BrewingSessionForm.BoilChart.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Seconds
-        BrewingSessionForm.BoilChart.ChartAreas(0).AxisX.LabelStyle.Format = "hh:mm:ss"
-        BrewingSessionForm.BoilChart.Series.Clear()
-        Dim BoilSeries As New Series("Boil Temperature")
-        BoilSeries.ChartType = SeriesChartType.Line
-        BoilSeries.BorderWidth = 4
-        BoilSeries.Color = Color.Red
-        BoilSeries.XValueType = ChartValueType.DateTime
-        BrewingSessionForm.BoilChart.Series.Add(BoilSeries)
-        Dim timestamp As DateTime = Now
-        BrewingSessionForm.BoilChart.Legends("Legend1").Docking = Docking.Top
-
-    End Sub
-    Public Sub SetupHLtunGaugeforSparge()
-        If Not BrewingSessionForm.SpargeTempLabel.Text = "" Then
-            BrewingSessionForm.HlTunGauge.Range_Idx = 2
-            BrewingSessionForm.HlTunGauge.RangeColor = Color.LimeGreen
-            BrewingSessionForm.HlTunGauge.RangeEnabled = True
-
-            BrewingSessionForm.HlTunGauge.RangeEndValue = CDec(BrewingSessionForm.SpargeTempLabel.Text) + 1
-            BrewingSessionForm.HlTunGauge.RangeStartValue = CDec(BrewingSessionForm.SpargeTempLabel.Text) - 1
-
-            BrewingSessionForm.HlTunGauge.RangeInnerRadius = 100
-            BrewingSessionForm.HlTunGauge.RangeOuterRadius = 115
-            BrewingSessionForm.HlTunGauge.Refresh()
-
-            BrewingSessionForm.HlTunGauge.Range_Idx = 4
-            BrewingSessionForm.HlTunGauge.RangeColor = Color.Red
-            BrewingSessionForm.HlTunGauge.RangeEnabled = True
-            BrewingSessionForm.HlTunGauge.RangeEndValue = 220
-            BrewingSessionForm.HlTunGauge.RangeStartValue = CDec(BrewingSessionForm.SpargeTempLabel.Text) + 1
-
-            BrewingSessionForm.HlTunGauge.RangeInnerRadius = 100
-            BrewingSessionForm.HlTunGauge.RangeOuterRadius = 115
-
-            BrewingSessionForm.HlTunGauge.Range_Idx = 0
-            BrewingSessionForm.HlTunGauge.RangeColor = Color.Blue
-            BrewingSessionForm.HlTunGauge.RangeEnabled = True
-
-            BrewingSessionForm.HlTunGauge.RangeEndValue = CDec(BrewingSessionForm.SpargeTempLabel.Text) - 1
-            BrewingSessionForm.HlTunGauge.RangeStartValue = 0
-            BrewingSessionForm.HlTunGauge.RangeInnerRadius = 100
-            BrewingSessionForm.HlTunGauge.RangeOuterRadius = 115
-        End If
-
-    End Sub
-
-    Public Sub SetupMashTunGauge()
-        If Not BrewingSessionForm.StepMashTempLabel.Text = "" Then
-            BrewingSessionForm.MashGauge.Range_Idx = 2
-            BrewingSessionForm.MashGauge.RangeColor = Color.LimeGreen
-            BrewingSessionForm.MashGauge.RangeEnabled = True
-            BrewingSessionForm.MashGauge.RangeEndValue = CDec(BrewingSessionForm.StepMashTempLabel.Text) + 1
-            BrewingSessionForm.MashGauge.RangeStartValue = CDec(BrewingSessionForm.StepMashTempLabel.Text) - 1
-            BrewingSessionForm.MashGauge.RangeInnerRadius = 100
-            BrewingSessionForm.MashGauge.RangeOuterRadius = 115
-            BrewingSessionForm.MashGauge.Refresh()
-
-            BrewingSessionForm.MashGauge.Range_Idx = 4
-            BrewingSessionForm.MashGauge.RangeColor = Color.Red
-            BrewingSessionForm.MashGauge.RangeEnabled = True
-            BrewingSessionForm.MashGauge.RangeEndValue = 220
-            BrewingSessionForm.MashGauge.RangeStartValue = CDec(BrewingSessionForm.StepMashTempLabel.Text) + 1
-            BrewingSessionForm.MashGauge.RangeInnerRadius = 100
-            BrewingSessionForm.MashGauge.RangeOuterRadius = 115
-
-            BrewingSessionForm.MashGauge.Range_Idx = 0
-            BrewingSessionForm.MashGauge.RangeColor = Color.Blue
-            BrewingSessionForm.MashGauge.RangeEnabled = True
-            BrewingSessionForm.MashGauge.RangeEndValue = CDec(BrewingSessionForm.StepMashTempLabel.Text) - 1
-            BrewingSessionForm.MashGauge.RangeStartValue = 0
-            BrewingSessionForm.MashGauge.RangeInnerRadius = 100
-            BrewingSessionForm.MashGauge.RangeOuterRadius = 115
-        End If
-
-
-    End Sub
-   
-
-    Public Sub SetupBoilGaugeforBoil()
-        BrewingSessionForm.BoilGauge.Range_Idx = 2
-        BrewingSessionForm.BoilGauge.RangeColor = Color.LimeGreen
-        BrewingSessionForm.BoilGauge.RangeEnabled = True
-        BrewingSessionForm.BoilGauge.RangeEndValue = 213
-        BrewingSessionForm.BoilGauge.RangeStartValue = 211
-        BrewingSessionForm.BoilGauge.RangeInnerRadius = 100
-        BrewingSessionForm.BoilGauge.RangeOuterRadius = 115
-        BrewingSessionForm.BoilGauge.Refresh()
-
-        BrewingSessionForm.BoilGauge.Range_Idx = 4
-        BrewingSessionForm.BoilGauge.RangeColor = Color.Red
-        BrewingSessionForm.BoilGauge.RangeEnabled = True
-        BrewingSessionForm.BoilGauge.RangeEndValue = 220
-        BrewingSessionForm.BoilGauge.RangeStartValue = 213
-        BrewingSessionForm.BoilGauge.RangeInnerRadius = 100
-        BrewingSessionForm.BoilGauge.RangeOuterRadius = 115
-
-        BrewingSessionForm.BoilGauge.Range_Idx = 0
-        BrewingSessionForm.BoilGauge.RangeColor = Color.Blue
-        BrewingSessionForm.BoilGauge.RangeEnabled = True
-        BrewingSessionForm.BoilGauge.RangeEndValue = 211
-        BrewingSessionForm.BoilGauge.RangeStartValue = 0
-        BrewingSessionForm.BoilGauge.RangeInnerRadius = 100
-        BrewingSessionForm.BoilGauge.RangeOuterRadius = 115
-    End Sub
-
-    
-
+  
+  
     Public Sub ShowMainFormItems()
 
         HomeParentForm.Panel1.Show()

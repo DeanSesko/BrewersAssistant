@@ -28,6 +28,7 @@ Partial Class DatabaseSetupForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FolderBrowserDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.Time = New System.Windows.Forms.Label()
+        Me.UpdateServerDatabase = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'CreateDBButton
@@ -72,15 +73,25 @@ Partial Class DatabaseSetupForm
         Me.Time.Location = New System.Drawing.Point(13, 9)
         Me.Time.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Time.Name = "Time"
-        Me.Time.Size = New System.Drawing.Size(358, 54)
+        Me.Time.Size = New System.Drawing.Size(552, 54)
         Me.Time.TabIndex = 323
-        Me.Time.Text = "Database Setup"
+        Me.Time.Text = "Database Setup / Backup"
+        '
+        'UpdateServerDatabase
+        '
+        Me.UpdateServerDatabase.Location = New System.Drawing.Point(22, 166)
+        Me.UpdateServerDatabase.Name = "UpdateServerDatabase"
+        Me.UpdateServerDatabase.Size = New System.Drawing.Size(170, 23)
+        Me.UpdateServerDatabase.TabIndex = 324
+        Me.UpdateServerDatabase.Text = "Update Server Database"
+        Me.UpdateServerDatabase.UseVisualStyleBackColor = True
         '
         'DatabaseSetupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 980)
+        Me.Controls.Add(Me.UpdateServerDatabase)
         Me.Controls.Add(Me.Time)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CloseButton)
@@ -99,4 +110,5 @@ Partial Class DatabaseSetupForm
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents FolderBrowserDialog As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents Time As System.Windows.Forms.Label
+    Friend WithEvents UpdateServerDatabase As System.Windows.Forms.Button
 End Class

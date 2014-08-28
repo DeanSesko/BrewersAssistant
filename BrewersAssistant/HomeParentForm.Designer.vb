@@ -35,12 +35,9 @@ Partial Class HomeParentForm
         Me.ModifyGrainsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HopsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiscToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BrewMaintButton = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.BrewHistoryButton = New System.Windows.Forms.Button()
         Me.StartBrewButton = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
@@ -49,7 +46,7 @@ Partial Class HomeParentForm
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BrewingToolStripMenuItem, Me.BrewsToolStripMenuItem, Me.ProgramSetupToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BrewingToolStripMenuItem, Me.BrewsToolStripMenuItem, Me.ProgramSetupToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(1264, 24)
@@ -66,7 +63,7 @@ Partial Class HomeParentForm
         'StartBrewingToolStripMenuItem1
         '
         Me.StartBrewingToolStripMenuItem1.Name = "StartBrewingToolStripMenuItem1"
-        Me.StartBrewingToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
+        Me.StartBrewingToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.StartBrewingToolStripMenuItem1.Text = "Start Brewing"
         '
         'BrewsToolStripMenuItem
@@ -125,12 +122,6 @@ Partial Class HomeParentForm
         Me.MiscToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.MiscToolStripMenuItem.Text = "Miscellaneous Wort Items"
         '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
         'Panel1
         '
         Me.Panel1.AutoSize = True
@@ -138,8 +129,6 @@ Partial Class HomeParentForm
         Me.Panel1.BackColor = System.Drawing.SystemColors.Window
         Me.Panel1.Controls.Add(Me.BrewMaintButton)
         Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.BrewHistoryButton)
         Me.Panel1.Controls.Add(Me.StartBrewButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -150,72 +139,63 @@ Partial Class HomeParentForm
         '
         'BrewMaintButton
         '
-        Me.BrewMaintButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BrewMaintButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BrewMaintButton.AutoSize = True
+        Me.BrewMaintButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BrewMaintButton.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.BrewMaintButton.Location = New System.Drawing.Point(0, 99)
+        Me.BrewMaintButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BrewMaintButton.Location = New System.Drawing.Point(12, 70)
         Me.BrewMaintButton.Name = "BrewMaintButton"
-        Me.BrewMaintButton.Size = New System.Drawing.Size(1264, 90)
+        Me.BrewMaintButton.Size = New System.Drawing.Size(360, 61)
         Me.BrewMaintButton.TabIndex = 24
-        Me.BrewMaintButton.Text = "Create/Delete/Modify My Brews"
+        Me.BrewMaintButton.Text = "Modify My Brews"
         Me.BrewMaintButton.UseVisualStyleBackColor = False
         '
         'Button4
         '
         Me.Button4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.AutoSize = True
+        Me.Button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button4.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button4.Location = New System.Drawing.Point(-3, 483)
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(12, 204)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(1267, 90)
+        Me.Button4.Size = New System.Drawing.Size(145, 61)
         Me.Button4.TabIndex = 23
         Me.Button4.Text = "Setup"
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'Button3
-        '
-        Me.Button3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(0, 291)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(1264, 90)
-        Me.Button3.TabIndex = 22
-        Me.Button3.Text = "Not Done"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(0, 387)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(1264, 90)
-        Me.Button2.TabIndex = 21
-        Me.Button2.Text = "Not Done"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'BrewHistoryButton
         '
-        Me.BrewHistoryButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BrewHistoryButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BrewHistoryButton.AutoSize = True
+        Me.BrewHistoryButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BrewHistoryButton.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.BrewHistoryButton.Location = New System.Drawing.Point(0, 195)
+        Me.BrewHistoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BrewHistoryButton.Location = New System.Drawing.Point(12, 137)
         Me.BrewHistoryButton.Name = "BrewHistoryButton"
-        Me.BrewHistoryButton.Size = New System.Drawing.Size(1264, 90)
+        Me.BrewHistoryButton.Size = New System.Drawing.Size(334, 61)
         Me.BrewHistoryButton.TabIndex = 20
-        Me.BrewHistoryButton.Text = "View My Brewing Histroy"
+        Me.BrewHistoryButton.Text = "Brewing Histroy"
         Me.BrewHistoryButton.UseVisualStyleBackColor = False
         '
         'StartBrewButton
         '
-        Me.StartBrewButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.StartBrewButton.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.StartBrewButton.AutoSize = True
+        Me.StartBrewButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.StartBrewButton.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.StartBrewButton.Location = New System.Drawing.Point(-3, 3)
+        Me.StartBrewButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StartBrewButton.Location = New System.Drawing.Point(12, 3)
         Me.StartBrewButton.Name = "StartBrewButton"
-        Me.StartBrewButton.Size = New System.Drawing.Size(1267, 90)
+        Me.StartBrewButton.Size = New System.Drawing.Size(290, 61)
         Me.StartBrewButton.TabIndex = 19
         Me.StartBrewButton.Text = "Start Brewing"
         Me.StartBrewButton.UseVisualStyleBackColor = False
@@ -236,6 +216,7 @@ Partial Class HomeParentForm
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,12 +233,9 @@ Partial Class HomeParentForm
     Friend WithEvents ModifyGrainsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HopsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MiscToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents BrewMaintButton As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents BrewHistoryButton As System.Windows.Forms.Button
     Friend WithEvents StartBrewButton As System.Windows.Forms.Button
 

@@ -2,10 +2,7 @@
 Imports System.Data.SqlClient
 Public Class CustomHopForm
 
-    Private Sub CutomHopForm_close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
-        ShowMainFormItems()
-
-    End Sub
+   
 
 
     Private Sub CutomHopForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

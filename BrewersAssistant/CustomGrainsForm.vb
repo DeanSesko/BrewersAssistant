@@ -68,9 +68,5 @@ ExitSub:
         sqlConnection.Close()
     End Sub
 
-    Private Sub CustomGrainsForm_close(sender As System.Object, e As System.EventArgs) Handles MyBase.FormClosing
-        ShowMainFormItems()
-
-
-    End Sub
+  
 End Class

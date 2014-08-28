@@ -94,10 +94,7 @@ myexit:
         End If
 
     End Sub
-    Private Sub GrainMainForm_close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
-        ShowMainFormItems()
-
-    End Sub
+   
 
     Private Sub GrainMainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized

@@ -22,50 +22,28 @@ Partial Class BrewHistoryForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim Label1 As System.Windows.Forms.Label
-        Dim Label9 As System.Windows.Forms.Label
-        Dim Label8 As System.Windows.Forms.Label
-        Dim NotesLabel As System.Windows.Forms.Label
-        Dim Label16 As System.Windows.Forms.Label
-        Dim BeerNotesLabel As System.Windows.Forms.Label
-        Dim Label48 As System.Windows.Forms.Label
-        Dim Label50 As System.Windows.Forms.Label
-        Dim Label51 As System.Windows.Forms.Label
-        Dim Label5 As System.Windows.Forms.Label
-        Dim Label24 As System.Windows.Forms.Label
-        Dim Label26 As System.Windows.Forms.Label
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.BeerIDTextBox = New System.Windows.Forms.TextBox()
-        Me.Label42 = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.TotalMinutes = New System.Windows.Forms.Label()
         Me.ChillTempChangeLabel = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.ChillPercentageLabel = New System.Windows.Forms.Label()
         Me.ChillPerMinutelabel = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.StartChillChillLabel = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
         Me.StopChillChillLabel = New System.Windows.Forms.Label()
         Me.SessionIDTextBox = New System.Windows.Forms.TextBox()
         Me.BrewSessionsDateComboBox = New System.Windows.Forms.ComboBox()
         Me.NotesTextBox = New System.Windows.Forms.TextBox()
         Me.WaterLabel = New System.Windows.Forms.Label()
         Me.BeerNameComboBox = New System.Windows.Forms.ComboBox()
-        Me.BeerNameLabel = New System.Windows.Forms.Label()
-        Me.BatchLabel = New System.Windows.Forms.Label()
-        Me.GrainLabel = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.SpargeDuration = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -103,7 +81,6 @@ Partial Class BrewHistoryForm
         Me.RequiredFinalGravityLabel = New System.Windows.Forms.Label()
         Me.FinalGravityLabel = New System.Windows.Forms.Label()
         Me.BrewHouseEfficienciesLabel = New System.Windows.Forms.Label()
-        Me.MashChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.GrainTempLabel = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -122,175 +99,32 @@ Partial Class BrewHistoryForm
         Me.Label25 = New System.Windows.Forms.Label()
         Me.SpargeStopTimelabel = New System.Windows.Forms.Label()
         Me.SpargeStartTimeLabel = New System.Windows.Forms.Label()
-        Label1 = New System.Windows.Forms.Label()
-        Label9 = New System.Windows.Forms.Label()
-        Label8 = New System.Windows.Forms.Label()
-        NotesLabel = New System.Windows.Forms.Label()
-        Label16 = New System.Windows.Forms.Label()
-        BeerNotesLabel = New System.Windows.Forms.Label()
-        Label48 = New System.Windows.Forms.Label()
-        Label50 = New System.Windows.Forms.Label()
-        Label51 = New System.Windows.Forms.Label()
-        Label5 = New System.Windows.Forms.Label()
-        Label24 = New System.Windows.Forms.Label()
-        Label26 = New System.Windows.Forms.Label()
-        CType(Me.MashChart, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.MashChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         CType(Me.StepMashGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MashChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label1.Location = New System.Drawing.Point(13, 50)
-        Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(57, 16)
-        Label1.TabIndex = 257
-        Label1.Text = "Version:"
-        '
-        'Label9
-        '
-        Label9.AutoSize = True
-        Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label9.Location = New System.Drawing.Point(15, 781)
-        Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(147, 16)
-        Label9.TabIndex = 187
-        Label9.Text = "Starting Original Gravity"
-        '
-        'Label8
-        '
-        Label8.AutoSize = True
-        Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label8.Location = New System.Drawing.Point(15, 752)
-        Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(137, 16)
-        Label8.TabIndex = 185
-        Label8.Text = "First Runnings Gravity"
-        '
-        'NotesLabel
-        '
-        NotesLabel.AutoSize = True
-        NotesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NotesLabel.Location = New System.Drawing.Point(13, 889)
-        NotesLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        NotesLabel.Name = "NotesLabel"
-        NotesLabel.Size = New System.Drawing.Size(99, 16)
-        NotesLabel.TabIndex = 170
-        NotesLabel.Text = "Session Notes:"
-        '
-        'Label16
-        '
-        Label16.AutoSize = True
-        Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label16.Location = New System.Drawing.Point(447, 18)
-        Label16.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Label16.Name = "Label16"
-        Label16.Size = New System.Drawing.Size(150, 16)
-        Label16.TabIndex = 270
-        Label16.Text = "Session Date And Time"
-        '
-        'BeerNotesLabel
-        '
-        BeerNotesLabel.AutoSize = True
-        BeerNotesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        BeerNotesLabel.Location = New System.Drawing.Point(14, 71)
-        BeerNotesLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        BeerNotesLabel.Name = "BeerNotesLabel"
-        BeerNotesLabel.Size = New System.Drawing.Size(76, 16)
-        BeerNotesLabel.TabIndex = 275
-        BeerNotesLabel.Text = "Beer Notes"
-        '
-        'Label48
-        '
-        Label48.AutoSize = True
-        Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label48.Location = New System.Drawing.Point(15, 697)
-        Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label48.Name = "Label48"
-        Label48.Size = New System.Drawing.Size(158, 16)
-        Label48.TabIndex = 325
-        Label48.Text = "Required Original Gravity"
-        '
-        'Label50
-        '
-        Label50.AutoSize = True
-        Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label50.Location = New System.Drawing.Point(14, 807)
-        Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label50.Name = "Label50"
-        Label50.Size = New System.Drawing.Size(82, 16)
-        Label50.TabIndex = 326
-        Label50.Text = "Final Gravity"
-        '
-        'Label51
-        '
-        Label51.AutoSize = True
-        Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label51.Location = New System.Drawing.Point(15, 723)
-        Label51.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label51.Name = "Label51"
-        Label51.Size = New System.Drawing.Size(141, 16)
-        Label51.TabIndex = 329
-        Label51.Text = "Required Final Gravity"
-        '
-        'Label5
-        '
-        Label5.AutoSize = True
-        Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label5.Location = New System.Drawing.Point(13, 860)
-        Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(138, 16)
-        Label5.TabIndex = 359
-        Label5.Text = "BrewHouse Efficiency"
-        '
-        'Label24
-        '
-        Label24.AutoSize = True
-        Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label24.Location = New System.Drawing.Point(16, 639)
-        Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label24.Name = "Label24"
-        Label24.Size = New System.Drawing.Size(105, 16)
-        Label24.TabIndex = 369
-        Label24.Text = "Pre-Boil Volume"
-        '
-        'Label26
-        '
-        Label26.AutoSize = True
-        Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label26.Location = New System.Drawing.Point(16, 666)
-        Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label26.Name = "Label26"
-        Label26.Size = New System.Drawing.Size(110, 16)
-        Label26.TabIndex = 371
-        Label26.Text = "Post Boil Volume"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(19, 371)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(92, 16)
-        Me.Label6.TabIndex = 260
-        Me.Label6.Text = "Sparge Temp"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(237, 371)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(20, 16)
-        Me.Label7.TabIndex = 261
-        Me.Label7.Text = "°F"
         '
         'BeerIDTextBox
         '
@@ -301,17 +135,6 @@ Partial Class BrewHistoryForm
         Me.BeerIDTextBox.Size = New System.Drawing.Size(28, 22)
         Me.BeerIDTextBox.TabIndex = 259
         Me.BeerIDTextBox.Visible = False
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(296, 510)
-        Me.Label42.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(100, 16)
-        Me.Label42.TabIndex = 256
-        Me.Label42.Text = "Finishing Temp"
         '
         'Label41
         '
@@ -372,29 +195,18 @@ Partial Class BrewHistoryForm
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(19, 566)
+        Me.Label39.Location = New System.Drawing.Point(13, 566)
         Me.Label39.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(107, 16)
         Me.Label39.TabIndex = 186
         Me.Label39.Text = "Degrees /Minute"
         '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(237, 540)
-        Me.Label38.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(20, 16)
-        Me.Label38.TabIndex = 163
-        Me.Label38.Text = "°F"
-        '
         'Label35
         '
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(15, 537)
+        Me.Label35.Location = New System.Drawing.Point(16, 537)
         Me.Label35.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(136, 16)
@@ -438,34 +250,12 @@ Partial Class BrewHistoryForm
         '
         Me.StartChillChillLabel.AutoSize = True
         Me.StartChillChillLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StartChillChillLabel.Location = New System.Drawing.Point(180, 513)
+        Me.StartChillChillLabel.Location = New System.Drawing.Point(180, 509)
         Me.StartChillChillLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.StartChillChillLabel.Name = "StartChillChillLabel"
         Me.StartChillChillLabel.Size = New System.Drawing.Size(58, 17)
         Me.StartChillChillLabel.TabIndex = 242
         Me.StartChillChillLabel.Text = "000.00"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(237, 514)
-        Me.Label34.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(20, 16)
-        Me.Label34.TabIndex = 241
-        Me.Label34.Text = "°F"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(455, 510)
-        Me.Label36.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(20, 16)
-        Me.Label36.TabIndex = 243
-        Me.Label36.Text = "°F"
         '
         'StopChillChillLabel
         '
@@ -530,50 +320,6 @@ Partial Class BrewHistoryForm
         Me.BeerNameComboBox.Name = "BeerNameComboBox"
         Me.BeerNameComboBox.Size = New System.Drawing.Size(299, 24)
         Me.BeerNameComboBox.TabIndex = 245
-        '
-        'BeerNameLabel
-        '
-        Me.BeerNameLabel.AutoSize = True
-        Me.BeerNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BeerNameLabel.Location = New System.Drawing.Point(14, 18)
-        Me.BeerNameLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BeerNameLabel.Name = "BeerNameLabel"
-        Me.BeerNameLabel.Size = New System.Drawing.Size(77, 16)
-        Me.BeerNameLabel.TabIndex = 232
-        Me.BeerNameLabel.Text = "Beer Name"
-        '
-        'BatchLabel
-        '
-        Me.BatchLabel.AutoSize = True
-        Me.BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BatchLabel.Location = New System.Drawing.Point(120, 50)
-        Me.BatchLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BatchLabel.Name = "BatchLabel"
-        Me.BatchLabel.Size = New System.Drawing.Size(133, 16)
-        Me.BatchLabel.TabIndex = 221
-        Me.BatchLabel.Text = "Batch Size in Gallons"
-        '
-        'GrainLabel
-        '
-        Me.GrainLabel.AutoSize = True
-        Me.GrainLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GrainLabel.Location = New System.Drawing.Point(572, 50)
-        Me.GrainLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.GrainLabel.Name = "GrainLabel"
-        Me.GrainLabel.Size = New System.Drawing.Size(82, 16)
-        Me.GrainLabel.TabIndex = 220
-        Me.GrainLabel.Text = "lbs of Grains"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(15, 455)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 16)
-        Me.Label2.TabIndex = 263
-        Me.Label2.Text = "Boil Time"
         '
         'Label12
         '
@@ -979,37 +725,6 @@ Partial Class BrewHistoryForm
         Me.BrewHouseEfficienciesLabel.TabIndex = 356
         Me.BrewHouseEfficienciesLabel.Text = "000"
         '
-        'MashChart
-        '
-        Me.MashChart.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MashChart.BackColor = System.Drawing.SystemColors.Control
-        Me.MashChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.MashChart.BackImageTransparentColor = System.Drawing.Color.White
-        Me.MashChart.BorderlineColor = System.Drawing.Color.Black
-        Me.MashChart.BorderlineWidth = 0
-        Me.MashChart.BorderSkin.BackColor = System.Drawing.SystemColors.Control
-        Me.MashChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.White
-        Me.MashChart.BorderSkin.BorderWidth = 0
-        ChartArea1.Name = "ChartArea1"
-        Me.MashChart.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.MashChart.Legends.Add(Legend1)
-        Me.MashChart.Location = New System.Drawing.Point(575, 96)
-        Me.MashChart.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MashChart.Name = "MashChart"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.MashChart.Series.Add(Series1)
-        Me.MashChart.Size = New System.Drawing.Size(670, 740)
-        Me.MashChart.TabIndex = 357
-        Me.MashChart.Text = "Mash Chart"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold)
-        Title1.Name = "Title1"
-        Title1.Text = "Mash Temp Chart"
-        Me.MashChart.Titles.Add(Title1)
-        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -1220,12 +935,264 @@ Partial Class BrewHistoryForm
         Me.SpargeStartTimeLabel.TabIndex = 399
         Me.SpargeStartTimeLabel.Text = "00:00"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(17, 52)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(57, 16)
+        Me.Label1.TabIndex = 400
+        Me.Label1.Text = "Version:"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(17, 72)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(76, 16)
+        Me.Label27.TabIndex = 401
+        Me.Label27.Text = "Beer Notes"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(15, 781)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(147, 16)
+        Me.Label9.TabIndex = 402
+        Me.Label9.Text = "Starting Original Gravity"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(15, 889)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(99, 16)
+        Me.Label28.TabIndex = 403
+        Me.Label28.Text = "Session Notes:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(15, 860)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(138, 16)
+        Me.Label5.TabIndex = 404
+        Me.Label5.Text = "BrewHouse Efficiency"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(15, 807)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(82, 16)
+        Me.Label29.TabIndex = 405
+        Me.Label29.Text = "Final Gravity"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(15, 752)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(137, 16)
+        Me.Label8.TabIndex = 406
+        Me.Label8.Text = "First Runnings Gravity"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(15, 725)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(141, 16)
+        Me.Label30.TabIndex = 407
+        Me.Label30.Text = "Required Final Gravity"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(15, 697)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(158, 16)
+        Me.Label31.TabIndex = 408
+        Me.Label31.Text = "Required Original Gravity"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(19, 458)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(65, 16)
+        Me.Label2.TabIndex = 409
+        Me.Label2.Text = "Boil Time"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(560, 52)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(79, 16)
+        Me.Label32.TabIndex = 410
+        Me.Label32.Text = "Lbs of Grain"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(118, 50)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(133, 16)
+        Me.Label33.TabIndex = 411
+        Me.Label33.Text = "Batch Size in Gallons"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(16, 20)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(77, 16)
+        Me.Label46.TabIndex = 412
+        Me.Label46.Text = "Beer Name"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(15, 639)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(105, 16)
+        Me.Label24.TabIndex = 413
+        Me.Label24.Text = "Pre-Boil Volume"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(15, 666)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(111, 16)
+        Me.Label26.TabIndex = 414
+        Me.Label26.Text = "Post-Boil Volume"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(443, 20)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(150, 16)
+        Me.Label16.TabIndex = 415
+        Me.Label16.Text = "Session Date And Time"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 371)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 16)
+        Me.Label6.TabIndex = 416
+        Me.Label6.Text = "Sparge Temp"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(463, 510)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(20, 16)
+        Me.Label36.TabIndex = 417
+        Me.Label36.Text = "°F"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(296, 512)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(100, 16)
+        Me.Label42.TabIndex = 418
+        Me.Label42.Text = "Finishing Temp"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(237, 370)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(20, 16)
+        Me.Label7.TabIndex = 419
+        Me.Label7.Text = "°F"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(237, 509)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(20, 16)
+        Me.Label34.TabIndex = 420
+        Me.Label34.Text = "°F"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(237, 540)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(20, 16)
+        Me.Label38.TabIndex = 421
+        Me.Label38.Text = "°F"
+        '
+        'MashChart
+        '
+        Me.MashChart.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MashChart.BackColor = System.Drawing.SystemColors.Control
+        Me.MashChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.MashChart.BackImageTransparentColor = System.Drawing.Color.White
+        Me.MashChart.BorderlineColor = System.Drawing.Color.Black
+        Me.MashChart.BorderlineWidth = 0
+        Me.MashChart.BorderSkin.BackColor = System.Drawing.SystemColors.Control
+        Me.MashChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.White
+        Me.MashChart.BorderSkin.BorderWidth = 0
+        ChartArea1.Name = "ChartArea1"
+        Me.MashChart.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.MashChart.Legends.Add(Legend1)
+        Me.MashChart.Location = New System.Drawing.Point(563, 91)
+        Me.MashChart.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MashChart.Name = "MashChart"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.MashChart.Series.Add(Series1)
+        Me.MashChart.Size = New System.Drawing.Size(670, 740)
+        Me.MashChart.TabIndex = 422
+        Me.MashChart.Text = "Mash Chart"
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold)
+        Title1.Name = "Title1"
+        Title1.Text = "Mash Temp Chart"
+        Me.MashChart.Titles.Add(Title1)
+        '
         'BrewHistoryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1276, 980)
+        Me.Controls.Add(Me.MashChart)
+        Me.Controls.Add(Me.Label38)
+        Me.Controls.Add(Me.Label34)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label42)
+        Me.Controls.Add(Me.Label36)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.Label26)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.Label46)
+        Me.Controls.Add(Me.Label33)
+        Me.Controls.Add(Me.Label32)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label31)
+        Me.Controls.Add(Me.Label30)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label29)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label27)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.SpargeStartTimeLabel)
         Me.Controls.Add(Me.SpargeStopTimelabel)
         Me.Controls.Add(Me.Label20)
@@ -1238,16 +1205,12 @@ Partial Class BrewHistoryForm
         Me.Controls.Add(Me.StepMashGridView)
         Me.Controls.Add(Me.DeleteSessionButton)
         Me.Controls.Add(Me.PostBoilVolumeLabel)
-        Me.Controls.Add(Label26)
         Me.Controls.Add(Me.PreBoilVolumeLabel)
-        Me.Controls.Add(Label24)
         Me.Controls.Add(Me.OutDoorTempLabel)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.GrainTempLabel)
         Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Label5)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.MashChart)
         Me.Controls.Add(Me.BrewHouseEfficienciesLabel)
         Me.Controls.Add(Me.FinalGravityLabel)
         Me.Controls.Add(Me.RequiredFinalGravityLabel)
@@ -1267,9 +1230,6 @@ Partial Class BrewHistoryForm
         Me.Controls.Add(Me.Label54)
         Me.Controls.Add(Me.EstimatedAbv)
         Me.Controls.Add(Me.Label52)
-        Me.Controls.Add(Label51)
-        Me.Controls.Add(Label50)
-        Me.Controls.Add(Label48)
         Me.Controls.Add(Me.BrewDuration)
         Me.Controls.Add(Me.Label49)
         Me.Controls.Add(Me.Label43)
@@ -1286,7 +1246,6 @@ Partial Class BrewHistoryForm
         Me.Controls.Add(Me.ChillTempChangeLabel)
         Me.Controls.Add(Me.Label39)
         Me.Controls.Add(Me.Label23)
-        Me.Controls.Add(Me.Label38)
         Me.Controls.Add(Me.SpargeDuration)
         Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.ZoomInButton)
@@ -1294,55 +1253,36 @@ Partial Class BrewHistoryForm
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.ChillPerMinutelabel)
         Me.Controls.Add(Me.Label37)
-        Me.Controls.Add(Me.Label42)
         Me.Controls.Add(Me.StartChillChillLabel)
-        Me.Controls.Add(Me.Label34)
-        Me.Controls.Add(Me.Label36)
         Me.Controls.Add(Me.WortCollected)
         Me.Controls.Add(Me.StopChillChillLabel)
         Me.Controls.Add(Me.Label41)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(BeerNotesLabel)
         Me.Controls.Add(Me.BeerNotes)
-        Me.Controls.Add(Label16)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Label9)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Label8)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.BeerIDTextBox)
         Me.Controls.Add(Me.SessionIDTextBox)
         Me.Controls.Add(Me.BrewSessionsDateComboBox)
-        Me.Controls.Add(Label1)
-        Me.Controls.Add(NotesLabel)
         Me.Controls.Add(Me.NotesTextBox)
         Me.Controls.Add(Me.WaterLabel)
         Me.Controls.Add(Me.BeerNameComboBox)
-        Me.Controls.Add(Me.BeerNameLabel)
-        Me.Controls.Add(Me.BatchLabel)
-        Me.Controls.Add(Me.GrainLabel)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "BrewHistoryForm"
         Me.Text = "BrewHistoryForm"
-        CType(Me.MashChart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StepMashGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MashChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents BeerIDTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Label42 As System.Windows.Forms.Label
     Friend WithEvents Label41 As System.Windows.Forms.Label
     Friend WithEvents Label40 As System.Windows.Forms.Label
     Friend WithEvents TotalMinutes As System.Windows.Forms.Label
     Friend WithEvents ChillTempChangeLabel As System.Windows.Forms.Label
     Friend WithEvents Label39 As System.Windows.Forms.Label
-    Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents ChillPercentageLabel As System.Windows.Forms.Label
     Friend WithEvents ChillPerMinutelabel As System.Windows.Forms.Label
@@ -1351,15 +1291,9 @@ Partial Class BrewHistoryForm
     Friend WithEvents SessionIDTextBox As System.Windows.Forms.TextBox
     Friend WithEvents BrewSessionsDateComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents NotesTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Label36 As System.Windows.Forms.Label
-    Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents WaterLabel As System.Windows.Forms.Label
     Friend WithEvents StartChillChillLabel As System.Windows.Forms.Label
     Friend WithEvents BeerNameComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents BeerNameLabel As System.Windows.Forms.Label
-    Friend WithEvents BatchLabel As System.Windows.Forms.Label
-    Friend WithEvents GrainLabel As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents SpargeDuration As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
@@ -1398,7 +1332,6 @@ Partial Class BrewHistoryForm
     Friend WithEvents RequiredFinalGravityLabel As System.Windows.Forms.Label
     Friend WithEvents FinalGravityLabel As System.Windows.Forms.Label
     Friend WithEvents BrewHouseEfficienciesLabel As System.Windows.Forms.Label
-    Friend WithEvents MashChart As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents GrainTempLabel As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
@@ -1417,4 +1350,27 @@ Partial Class BrewHistoryForm
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents SpargeStopTimelabel As System.Windows.Forms.Label
     Friend WithEvents SpargeStartTimeLabel As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents MashChart As System.Windows.Forms.DataVisualization.Charting.Chart
 End Class

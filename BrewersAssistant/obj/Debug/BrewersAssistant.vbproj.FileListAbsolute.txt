@@ -242,9 +242,69 @@ C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssi
 C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.09Beta\BrewersAssistant\obj\Debug\BrewersAssistant.Resources.resources
 C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.09Beta\BrewersAssistant\obj\Debug\GenerateResource.read.1.tlog
 C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.09Beta\BrewersAssistant\obj\Debug\GenerateResource.write.1.tlog
-C:\Users\deansesko\Documents\Visual Studio 2010\Projects\Brewers Assistant Old Versions\BrewersAssistantV0.09Beta\BrewersAssistant\bin\Debug\BrewersAssistant.exe.config
-C:\Users\deansesko\Documents\Visual Studio 2010\Projects\Brewers Assistant Old Versions\BrewersAssistantV0.09Beta\BrewersAssistant\obj\Debug\BrewersAssistant.xml
-C:\Users\deansesko\Documents\Visual Studio 2010\Projects\Brewers Assistant Old Versions\BrewersAssistantV0.09Beta\BrewersAssistant\obj\Debug\BrewersAssistant.pdb
-C:\Users\deansesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Debug\BrewersAssistant.exe.config
-C:\Users\deansesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Debug\BrewersAssistant.xml
-C:\Users\deansesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Debug\BrewersAssistant.pdb
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.exe.config
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.exe
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.xml
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.pdb
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewHistoryForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewingSessionForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewMaintenanceForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomGrainsForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomHopForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomWortAdditionForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.DatabaseSetupForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.GrainMainForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.HomeParentForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.HopMainForm.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.Resources.resources
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.exe
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.pdb
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.xml
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\AGaugeApp.exe
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\OneWireAPI.NET.dll
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.vbproj.GenerateResource.Cache
+C:\Users\DeanSesko.PLANETSESKO\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.vbprojResolveAssemblyReference.cache
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.exe.config
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.exe
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.xml
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.pdb
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.exe
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.pdb
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.xml
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\AGaugeApp.exe
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\bin\Debug\OneWireAPI.NET.dll
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.vbprojResolveAssemblyReference.cache
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewHistoryForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewingSessionForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewMaintenanceForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomGrainsForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomHopForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomWortAdditionForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.DatabaseSetupForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.GrainMainForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.HomeParentForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.HopMainForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.Resources.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.10 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.vbproj.GenerateResource.Cache
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.exe.config
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.exe
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.xml
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.pdb
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.exe
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.pdb
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\bin\Debug\BrewersAssistant.xml
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\bin\Debug\AGaugeApp.exe
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\bin\Debug\OneWireAPI.NET.dll
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.vbprojResolveAssemblyReference.cache
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewHistoryForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewingSessionForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.BrewMaintenanceForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomGrainsForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomHopForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.CustomWortAdditionForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.DatabaseSetupForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.GrainMainForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.HomeParentForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.HopMainForm.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.Resources.resources
+C:\Users\deansesko\Documents\Visual Studio 2010\Projects\BrewersAssistantV0.11 Beta\BrewersAssistant\obj\Debug\BrewersAssistant.vbproj.GenerateResource.Cache

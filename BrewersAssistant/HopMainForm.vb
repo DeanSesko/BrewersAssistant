@@ -26,10 +26,7 @@ Public Class HopMainForm
         End If
 
     End Sub
-    Private Sub HopMainForm_close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
-        ShowMainFormItems()
-
-    End Sub
+  
 
     Private Sub HopMainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized

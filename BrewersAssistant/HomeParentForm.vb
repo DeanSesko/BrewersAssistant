@@ -102,12 +102,7 @@ Public Class HomeParentForm
 
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
-        BrewingSessionForm._continue = False
-
-        Application.Exit()
-
-    End Sub
+  
 
     Public Sub StartmyBrew()
         Panel1.Hide()
@@ -161,4 +156,24 @@ Public Class HomeParentForm
     Private Sub BrewHistory_Click(sender As System.Object, e As System.EventArgs) Handles BrewHistoryButton.Click
         BrewHistory()
     End Sub
+
+
+
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+     
+        Panel1.Hide()
+        Try
+            DatabaseSetupForm.Focus()
+
+        Catch ex As Exception
+
+        End Try
+        DatabaseSetupForm.MdiParent = Me
+        DatabaseSetupForm.Dock = DockStyle.Fill
+        DatabaseSetupForm.Show()
+
+    End Sub
+
+
+ 
 End Class

@@ -11,6 +11,7 @@ Public Class BrewingSessionForm
     Dim starttime As DateTime
     Dim mytotaltime As TimeSpan
     Dim Lastmytime As DateTime = Nothing
+    Dim Charting As Boolean = True
 
     Dim RimControl As Boolean = False
     Dim data As String = Nothing
@@ -19,6 +20,7 @@ Public Class BrewingSessionForm
     Public _continue As Boolean
     Private StepmashCount As Integer = 0
     Private Stepmashindex As Integer = 0
+    Private MiscDuinoTemp As String
     Private MashDuinoTemp As String
     Private RimDuinoTemp As String
     Private HLDuinoTemp As String
@@ -59,27 +61,61 @@ Public Class BrewingSessionForm
     Dim pTerm, iTerm, dTerm As Double
     Dim igain As Double = 0
     Dim dgain As Double = 0
+    Dim Overheated As Boolean = False
+    Public Sub CheckTemps()
+
+        If (HLDuinoTemp) < (HLSetTEMPBOX.Text - 0.75) Then
+            HLTunTempLabel.ForeColor = Color.Blue
+        ElseIf HLDuinoTemp > (HLSetTEMPBOX.Text + 0.75) Then
+            HLTunTempLabel.ForeColor = Color.Red
+        Else
+            HLTunTempLabel.ForeColor = Color.Green
+        End If
+
+        If (MashDuinoTemp) < (MashSetTempValueBox.Text - 0.75) Then
+            MashTunTempLabel.ForeColor = Color.Blue
+        ElseIf MashDuinoTemp > (MashSetTempValueBox.Text + 0.75) Then
+            MashTunTempLabel.ForeColor = Color.Red
+        Else
+            MashTunTempLabel.ForeColor = Color.Green
+        End If
+
+        If (KettleDuino) < (SetKettleTempValueBox.Text - 0.75) Then
+            BoitlKettleTempLabel.ForeColor = Color.Blue
+        ElseIf KettleDuino > (SetKettleTempValueBox.Text + 0.75) Then
+            BoitlKettleTempLabel.ForeColor = Color.Red
+        Else
+            BoitlKettleTempLabel.ForeColor = Color.Green
+        End If
+
+
+
+
+    End Sub
 
     Private Sub BrewingSessionForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         tmrPID.Interval = PID_UPDATE_INTERVAL
-
         tmrPID.Enabled = False
         Me.WindowState = FormWindowState.Maximized
         DisableButtons()
         Dim mysqlString As String = "Select BeerName from  BeerData"
         Dim SQLControl As String = "Name"
         GetSQLDBData(mysqlString, SQLControl)
+        OpenSerialPort()
+
+    End Sub
+    Public Sub OpenSerialPort()
         Try
             _serialPort = New SerialPort()
-            _serialPort.PortName = "COM6"
-            _serialPort.BaudRate = 57600
+            _serialPort.PortName = "COM4"
+            _serialPort.BaudRate = 115200
             _serialPort.Parity = Parity.None
             _serialPort.DataBits = 8
             _serialPort.StopBits = StopBits.One
             _serialPort.Handshake = Handshake.None
-            _serialPort.ReadTimeout = 10
-            _serialPort.WriteTimeout = 10
+            _serialPort.ReadTimeout = 150
+            _serialPort.WriteTimeout = 150
             _serialPort.Open()
             _continue = True
             Dim newthread As New System.Threading.Thread(AddressOf MyComReader)
@@ -88,109 +124,92 @@ Public Class BrewingSessionForm
 
         End Try
 
-
     End Sub
-    Private Sub BrewForm_Close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
-       
 
+    Private Sub BrewForm_Close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
         _continue = False
         Try
+            _serialPort.WriteLine("ghij")
             _serialPort.Close()
             ShowMainFormItems()
-
         Catch
-
         End Try
-
-       
     End Sub
     Private Sub DisableButtons()
-        StartSpargeButton.Enabled = False
-        StopSpargeButton.Enabled = False
-        StartChillButton.Enabled = False
-        StopChillButton.Enabled = False
+        SpargeButton.Enabled = False
+        ChillButton.Enabled = False
         StartBoilTimerButton.Enabled = False
     End Sub
     Private Sub ClearSessioninfo()
-        StartSpargeLabel.Text = ""
-        StopSpargeLabel.Text = ""
-        StartChillLabel.Text = ""
-        StopChillLabel.Text = ""
         SessionIDTextBox.Text = ""
         NotesTextBox.Text = ""
         FirstRunningsGravityTextbox.Text = ""
         StartingGravityTextBox.Text = ""
     End Sub
-    Private Sub StartSpargeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartSpargeButton.Click
-        If Not SessionIDTextBox.Text = "" Then
-            RimTempDisplayLabel.Text = "Sparge Temp"
-            StepMashTempLabel.Text = SpargeTempLabel.Text
-            RimControl = False
-            RIMButtonOff.Enabled = True
-            RimButtonOn.Enabled = True
-            MyTimer.Text = "00:00:00"
-            SpargeChillTimer.Enabled = True
-            Dim mysqlString As String = "UPDATE Brewsessions SET StartSpargeTime = '" & Now & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
-            UpdateDBSql(mysqlString)
-            StartSpargeLabel.Text = Now
-            StartSpargeButton.Enabled = False
-            StopSpargeButton.Enabled = True
-        End If
-    End Sub
-    Private Sub StopSpargeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StopSpargeButton.Click
+    Private Sub StartSpargeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpargeButton.Click
 
         If Not SessionIDTextBox.Text = "" Then
-            SpargeChillTimer.Enabled = False
-            Dim WortCollectedString As String = InputBox("Please Enter the amount of Wort in the Boil Kettle")
-            If DigitChecker(WortCollectedString) = True Then
-                Dim mysqlString As String = "UPDATE Brewsessions SET StopSpargeTime = '" & Now & "', WortCollected='" & WortCollectedString & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
+            If SpargeButton.Text = "Start Sparge" Then
+                MashTimer.Stop()
+                MashSetTempValueBox.Text = SpargeTempLabel.Text
+                RimControl = False
+                RimButton.Enabled = True
+                MyTimer.Text = "00:00:00"
+                SpargeChillTimer.Enabled = True
+                Dim mysqlString As String = "UPDATE Brewsessions SET StartSpargeTime = '" & Now & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
                 UpdateDBSql(mysqlString)
-                StopSpargeLabel.Text = Now
-                StopSpargeButton.Enabled = False
-                StopChillButton.Enabled = False
-                StartChillButton.Enabled = False
-                StartBoilTimerButton.Enabled = True
-                SetupBoilGaugeforBoil()
+                SpargeButton.Text = "Stop Sparge"
+                SpargeButton.BackColor = Color.Red
+
+            Else
+                SpargeButton.Text = "Start Sparge"
+                SpargeButton.BackColor = Color.Green
+                SpargeChillTimer.Enabled = False
+                Dim WortCollectedString As String = InputBox("Please Enter the amount of Wort in the Boil Kettle")
+                If DigitChecker(WortCollectedString) = True Then
+                    Dim mysqlString As String = "UPDATE Brewsessions SET StopSpargeTime = '" & Now & "', WortCollected='" & WortCollectedString & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
+                    UpdateDBSql(mysqlString)
+                    ChillButton.Enabled = False
+                    StartBoilTimerButton.Enabled = True
+
+                End If
             End If
         End If
     End Sub
-    Private Sub StartChillButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartChillButton.Click
+    Private Sub ChillButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChillButton.Click
         If Not SessionIDTextBox.Text = "" Then
-            tmr1 = 0
-            seconds = 0
-            minutes = 0
-            hours = 0
-
-            MyTimer.Text = "00:00:00"
-            SpargeChillTimer.Enabled = True
-            StartChillButton.Enabled = False
-            ChillRatio = 1
-            StartChillLabel.Text = Now
-            StartChillChillLabel.Text = BoitlKettleTempLabel.Text
-            MyStartChillTemp = BoitlKettleTempLabel.Text
-            Dim mysqlString As String = "UPDATE Brewsessions SET StartChillTime = '" & Now & "', startChillTemp='" & MyStartChillTemp & "'WHERE SessionID ='" & SessionIDTextBox.Text & "'"
-            UpdateDBSql(mysqlString)
-            StartBoilTimerButton.Enabled = False
-        End If
-    End Sub
-    Private Sub StopChillButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StopChillButton.Click
-        If Not SessionIDTextBox.Text = "" Then
-            StopChillLabel.Text = Now
-            StopChillChillLabel.Text = BoitlKettleTempLabel.Text
-            Dim mysqlString As String = "UPDATE Brewsessions SET StopChillTime = '" & Now & "', stopChillTemp='" & StopChillChillLabel.Text & "'WHERE SessionID ='" & SessionIDTextBox.Text & "'"
-            UpdateDBSql(mysqlString)
-            SpargeChillTimer.Enabled = False
-            ChillRatio = 0
-            StartChillButton.Enabled = False
-            StopChillButton.Enabled = False
-
+            If ChillButton.Text = "Start Chill" Then
+                tmr1 = 0
+                seconds = 0
+                minutes = 0
+                hours = 0
+                MyTimer.Text = "00:00:00"
+                SpargeChillTimer.Enabled = True
+                ChillRatio = 1
+                StartChillChillLabel.Text = BoitlKettleTempLabel.Text
+                MyStartChillTemp = BoitlKettleTempLabel.Text
+                Dim mysqlString As String = "UPDATE Brewsessions SET StartChillTime = '" & Now & "', startChillTemp='" & MyStartChillTemp & "'WHERE SessionID ='" & SessionIDTextBox.Text & "'"
+                UpdateDBSql(mysqlString)
+                SetKettleTempValueBox.Value = FermTempLabel.Text
+                StartBoilTimerButton.Enabled = False
+                ChillButton.Text = "Stop Chill"
+                ChillButton.BackColor = Color.Red
+            Else
+                StopChillChillLabel.Text = BoitlKettleTempLabel.Text
+                Dim mysqlString As String = "UPDATE Brewsessions SET StopChillTime = '" & Now & "', stopChillTemp='" & StopChillChillLabel.Text & "'WHERE SessionID ='" & SessionIDTextBox.Text & "'"
+                UpdateDBSql(mysqlString)
+                SpargeChillTimer.Enabled = False
+                ChillRatio = 0
+                ChillButton.Text = "Start Chill"
+                ChillButton.BackColor = Color.Green
+                Charting = False
+            End If
         End If
     End Sub
     Private Sub BeerNameComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BeerNameComboBox.SelectedIndexChanged
         HopDataGridView.DataSource = Nothing
         MiscDataGridView.DataSource = Nothing
-        MashChart.Visible = True
-        BoilChart.Visible = True
+        TempatureChart.Visible = True
         BrewSessionsDateComboBox.Items.Clear()
         Dim BeernameString As String = BeerNameComboBox.Text
         BeernameString = BeernameString.Replace("'", "''")
@@ -204,44 +223,20 @@ Public Class BrewingSessionForm
             If Not BeerIDTextBox.Text = "" Then
                 mysqlString = "Select BrewSessionStartTime From BrewSessions Where SessionStatus >0 and BeerID='" & BeerIDTextBox.Text & "'"
                 GetSQLDBData(mysqlString, sqlcontrol)
-
                 mysqlString = "Select potentialSG, weight, weightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
                 Dim DataControll As String = "Efficiencies"
                 GetSQLDBData(mysqlString, DataControll)
+                LoadGrainBill()
                 LoadHops()
                 LoadMisc()
                 LoadMash()
-                SetupBoilChart()
-                SetupMashChart()
-                SetupBoilGaugeforBoil()
-                SetupMashTunGauge()
-                SetupHLtunGaugeforSparge()
+                SetupChart()
 
             End If
         End If
     End Sub
-    Private Sub HLTunZoomOut()
-        If HLTUNSetup = "Mash" Then
-            SetupHLtunGaugeforSparge()
-            HlTunGauge.MinValue = 0
-            HlTunGauge.MaxValue = 220
-            If CDec(HLTunTempLabel.Text) < HlTunGauge.MinValue Then
-                HlTunGauge.Value = HlTunGauge.MinValue
-            Else
-                HlTunGauge.Value = CDec(HLTunTempLabel.Text)
-            End If
-        Else
-            SetupHLtunGaugeforSparge()
-            HlTunGauge.MinValue = 0
-            HlTunGauge.MaxValue = 220
-            If CDec(HLTunTempLabel.Text) < HlTunGauge.MinValue Then
-                HlTunGauge.Value = HlTunGauge.MinValue
-            Else
-                HlTunGauge.Value = CDec(HLTunTempLabel.Text)
-            End If
-        End If
-    End Sub
-    Private Sub BrewCompleteButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BrewCompleteButton.Click
+
+    Private Sub BrewCompleteButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         SaveEndSessionData()
     End Sub
     Private Sub SaveEndSessionData()
@@ -283,10 +278,6 @@ Public Class BrewingSessionForm
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        _continue = False
-        Me.Close()
-    End Sub
     Private Sub MshBoilTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BoilTimer.Tick
         Dim newthread As New System.Threading.Thread(AddressOf BoilTimerTicker)
         newthread.Start()
@@ -301,8 +292,7 @@ Public Class BrewingSessionForm
                 MyTimer.ForeColor = Color.Green
                 FlashBoil = 0
             End If
-            StartChillButton.Enabled = True
-
+            ChillButton.Enabled = True
         Else
 
             Dim ts As TimeSpan = CountDownTime.Subtract(Now)
@@ -322,11 +312,15 @@ Public Class BrewingSessionForm
         WaterNeededLabel.Text = ((CDec(WatertoGrainRatioLabel.Text * CDec(GrainBillLabel.Text))) / 4).ToString
         tempvar = Nothing
     End Sub
-   
+
     Private Sub StartBoilTimerButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartBoilTimerButton.Click
+
+        SetKettleTempValueBox.Value = 212
+
         If DigitChecker(BoilTimeLabel.Text) = True Then
             MyTimer.Text = "00:00:00"
             StepMashButton.Enabled = False
+            ChillButton.Enabled = False
             BoilSpan = CDec(BoilTimeLabel.Text)
             If StartBoilTimerButton.Text = "Start Boil Timer" Then
                 CountDownTime = Now.AddMinutes(BoilSpan)
@@ -334,18 +328,19 @@ Public Class BrewingSessionForm
                 MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & ts.Seconds.ToString
                 BoilTimer.Start()
                 StartBoilTimerButton.Text = "Stop"
+                StartBoilTimerButton.BackColor = Color.Red
                 Dim mysqlString As String = "UPDATE Brewsessions SET StartBoilTime = '" & Now & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
                 UpdateDBSql(mysqlString)
                 MashBoilVar = "Boil"
                 UpdateDBSql(mysqlString)
 
             Else
+                StartBoilTimerButton.BackColor = Color.Green
                 BoilTimer.Stop()
                 StartBoilTimerButton.Text = "Start Boil Timer"
                 Dim mysqlString As String = "UPDATE Brewsessions SET StopBoilTime = '" & Now & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
                 UpdateDBSql(mysqlString)
-                StopChillButton.Enabled = True
-                StartChillButton.Enabled = True
+                ChillButton.Enabled = True
             End If
 
         Else
@@ -353,64 +348,50 @@ Public Class BrewingSessionForm
         End If
 
         If BoilSpan = 0 Then
-
         Else
-
         End If
     End Sub
-    Private Sub Brewsession_close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Closing
-        _continue = False
-        Try
-            _serialPort.Close()
-        Catch
-        End Try
-    End Sub
+
     Private Sub MyComReader()
         Dim mysqlString As String
         Dim timestamp As DateTime
         Dim MytunUpdateinterval As Integer = 0
         Dim MyHLUpdateinterval As Integer = 0
         Dim MyBoilUpdateinterval As Integer = 0
-
-
         Dim LoopControl As String = "Off"
+
         While (_continue)
             Try
-
                 data = _serialPort.ReadLine()
-              
                 TemperatureString = data.Split(",")
                 MyTemp = TemperatureString(1)
-                If RimControl = False Then
-                    _serialPort.Write("b")
-                End If
-
-
                 Select Case MyTemp.TrimEnd()
                     Case "Mash"
+
                         MytunUpdateinterval = MytunUpdateinterval + 1
                         MashDuinoTemp = TemperatureString(0)
+                        'MashDuinoTemp = HLDuinoTemp
                         MashTunTempLabel.Text = MashDuinoTemp.ToString
-                        MashGauge.Value = CDec(MashDuinoTemp)
+
                         If StartingBrewing = True Then
                             If Not MashTemp = MashDuinoTemp Or MytunUpdateinterval >= TempTimerSqlUpdate Then
                                 MashTemp = MashDuinoTemp
                                 mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,temptime) Values ('" & SessionIDTextBox.Text & "','" & MashTUnSensor & "' , '" & MashDuinoTemp & "' , '" & Now & "')"
                                 UpdateDBSql(mysqlString)
                             End If
-
-                            If MytunUpdateinterval >= TempTimerSqlUpdate Then
-                                MashChart.Series("Mash Tun Temperature").Points.AddXY(Now, MashDuinoTemp.ToString)
-                                MashChart.Series("Mash Required Temperature").Points.AddXY(Now, StepMashTempLabel.Text)
-                                MytunUpdateinterval = 0
+                            If Charting = True Then
+                                If MytunUpdateinterval >= TempTimerSqlUpdate Then
+                                    TempatureChart.Series("Current Temperature").Points.AddXY(Now, MashDuinoTemp.ToString)
+                                    TempatureChart.Series("Required Temperature").Points.AddXY(Now, MashSetTempValueBox.Text)
+                                    MytunUpdateinterval = 0
+                                End If
                             End If
                         End If
                     Case "HL"
                         MyHLUpdateinterval = MyHLUpdateinterval + 1
-
                         HLDuinoTemp = TemperatureString(0)
                         HLTunTempLabel.Text = HLDuinoTemp.ToString
-                        HlTunGauge.Value = HLDuinoTemp
+
                         If StartingBrewing = True Then
                             If Not HLTemp = HLDuinoTemp Or MyHLUpdateinterval >= TempTimerSqlUpdate Then
                                 HLTemp = HLDuinoTemp
@@ -420,66 +401,72 @@ Public Class BrewingSessionForm
                             End If
                         End If
                     Case "Kettle"
-
                         MyBoilUpdateinterval = MyBoilUpdateinterval + 1
                         mytotaltime = Now - Lastmytime
                         Lastmytime = Now
                         KettleDuino = TemperatureString(0)
                         BoitlKettleTempLabel.Text = KettleDuino
-                        BoilGauge.Value = KettleDuino
+
                         If StartingBrewing = True Then
                             If Not BoilTemp = KettleDuino Or MyBoilUpdateinterval >= TempTimerSqlUpdate Then
                                 BoilTemp = KettleDuino
                                 mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,TempTime) Values ('" & SessionIDTextBox.Text & "','" & BoilKettleSensor & "' , '" & KettleDuino & "' , '" & Now & "')"
                                 UpdateDBSql(mysqlString)
-
                             End If
                             If MyBoilUpdateinterval >= TempTimerSqlUpdate Then
-                                BoilChart.Series("Boil Temperature").Points.AddXY(Now, BoilTemp)
                                 MyBoilUpdateinterval = 0
                             End If
                         End If
 
-
                     Case "RimTemp"
                         RimDuinoTemp = TemperatureString(0)
-
                         RimTempLabel.Text = RimDuinoTemp
-
 
                     Case "OverHeatTemp"
                         OverHeatDuinoTemp = TemperatureString(0)
-                        OverHeatTempLabel.Text = OverHeatDuinoTemp
-
-                        If OverHeatDuinoTemp > MashDuinoTemp + 2 Or RimDuinoTemp > MashDuinoTemp + 10 Then
-                            OverheatCheckbox.Checked = True
-
-
+                        RimTubeExternalTempLabel.Text = OverHeatDuinoTemp
+                        If RimDuinoTemp > MashDuinoTemp + 10 Then
+                            Overheated = True
+                        End If
+                        If RimControl = True Then
+                            If RimDuinoTemp < MashDuinoTemp + 10 Then
+                                Overheated = False
+                            End If
                         End If
 
-                        If RimControl = True Then
-                            If OverHeatDuinoTemp < MashDuinoTemp + 1 And RimDuinoTemp < MashDuinoTemp + 10 Then
-                                OverheatCheckbox.Checked = False
+                        'If OverHeatDuinoTemp > MashDuinoTemp Or RimDuinoTemp > MashDuinoTemp + 10 Then
+                        '    Overheated = True
+                        'End If
+                        'If RimControl = True Then
+                        '    If OverHeatDuinoTemp < MashDuinoTemp + 1 And RimDuinoTemp < MashDuinoTemp + 10 Then
+                        '        Overheated = False
+                        '    End If
+                        'End If
 
+                    Case "MiscTemp"
+                        MiscDuinoTemp = TemperatureString(0)
+                        MiscTempProbeLabel.Text = MiscDuinoTemp
+                        CurrentWortTemp.Text = MiscDuinoTemp
+                        If DigitChecker(GravityReadingTextBox.Text) Then
+                            If DigitChecker(HydrometerCalibrationTextbox.Text) Then
+                                Dim MyGravity As Decimal = CDec(GravityReadingTextBox.Text) * ((1.00130346 - 0.000134722124 * CDec(CurrentWortTemp.Text) + 0.00000204052596 * CDec(CurrentWortTemp.Text) ^ 2 - 0.00000000232820948 * CDec(CurrentWortTemp.Text) ^ 3) / (1.00130346 - 0.000134722124 * CDec(HydrometerCalibrationTextbox.Text) + 0.00000204052596 * CDec(HydrometerCalibrationTextbox.Text) ^ 2 - 0.00000000232820948 * CDec(HydrometerCalibrationTextbox.Text) ^ 3))
+                                CorrectedGravityLabel.Text = Math.Round(MyGravity, 3).ToString
                             End If
 
                         End If
                 End Select
-
+                CheckTemps()
 
                 TemperatureString = Nothing
                 MyTemp = Nothing
-                'bytes = Nothing
                 timestamp = Nothing
             Catch
-
             End Try
         End While
-    End Sub 'Main
+    End Sub
     Public Sub updateHeater()
         millis = Now - starttime
         heatCurrentTime = millis.TotalMilliseconds
-
         If myerror >= 0 Then
             If (heatCurrentTime - heatLastTime >= 500 Or heatLastTime > heatCurrentTime) Then
                 _turnHeatElementOnOff("a")
@@ -494,15 +481,12 @@ Public Class BrewingSessionForm
         If (heatCurrentTime - heatLastTime >= heatcycles) Then
             _turnHeatElementOnOff("b")
         End If
-      
-
     End Sub
     Public Sub _turnHeatElementOnOff(ByVal OnorOFF As String)
         Try
             _serialPort.WriteLine(OnorOFF)
         Catch
         End Try
-
     End Sub
     Public Sub setHeatPowerPercentage(ByVal power As Double)
         If (power <= 0.0) Then
@@ -513,33 +497,23 @@ Public Class BrewingSessionForm
             power = 1000.0
         End If
         heatcycles = power
-        HeatCyclesLabel.Text = heatcycles.ToString
-
     End Sub
-
-
     Public Function updatePID(ByVal targetTemp As Decimal, ByVal curTemp As Decimal)
         myerror = targetTemp - curTemp
         pTerm = pgain * myerror
-
         istate += myerror
-
         iTerm = igain * istate
-
         dTerm = (dgain * (curTemp - lasttemp))
-
         lasttemp = curTemp
         Return pTerm + iTerm - dTerm
-
     End Function
 
     Private Sub BoitlKettleTempLabel_Change(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BoitlKettleTempLabel.TextChanged
-        If ChillRatio = 1 Or Not StartChillLabel.Text = "" Then
+        If ChillRatio = 1 Then
             Try
                 MyStartChillTemp = CDec(StartChillChillLabel.Text)
                 Dim mydatetime As DateTime
                 Dim elaspedtime As TimeSpan
-                mydatetime = StartChillLabel.Text
                 Dim tempChange As Decimal = MyStartChillTemp - BoilTemp
                 tempChange = Math.Round(tempChange, 2)
                 elaspedtime = (Now.Subtract(mydatetime))
@@ -589,7 +563,6 @@ Public Class BrewingSessionForm
         Else
             MsgBox("Please Select A Beer to Brew", MsgBoxStyle.OkOnly)
         End If
-
     End Sub
     Private Sub ContinueBrewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ContinueBrewButton.Click
         If Not BeerNameComboBox.Text = "" Then
@@ -612,7 +585,6 @@ Public Class BrewingSessionForm
         Else
             MsgBox("Please Select A Beer to Brew", MsgBoxStyle.OkOnly)
         End If
-
     End Sub
     Private Sub BrewSessionsDateComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BrewSessionsDateComboBox.SelectedIndexChanged
         ClearSessioninfo()
@@ -620,8 +592,6 @@ Public Class BrewingSessionForm
         Dim SqlControl As String = "Session"
         GetSQLDBData(mysqlString, SqlControl)
     End Sub
-
-   
     Private Sub LoadHops()
         Dim mysqlString As String = "Select HopName as 'Hop Name', Weight, Mass as 'Units',AdditionTime as 'Time' from  BeerHopBillView where BeerID='" & BeerIDTextBox.Text & "'  order by AdditionTime desc"
         Dim MyDataAdapter = New SqlDataAdapter(mysqlString, AppSettings("ConnectionString"))
@@ -631,10 +601,9 @@ Public Class BrewingSessionForm
         Try
             If (MyDataAdapter.Fill(ds) > 0) Then
                 HopDataGridView.DataSource = ds.Tables(0)
-
             End If
         Catch ex As Exception
-            MessageBox.Show("Error connecting to the database")
+            MessageBox.Show("Error connecting to the Hop Database")
         End Try
     End Sub
     Private Sub LoadMisc()
@@ -648,7 +617,7 @@ Public Class BrewingSessionForm
                 MiscDataGridView.DataSource = ds.Tables(0)
             End If
         Catch ex As Exception
-            MessageBox.Show("Error connecting to the database")
+            MessageBox.Show("Error connecting to the Wort Additions Database")
         End Try
     End Sub
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal SQlControl As String)
@@ -662,10 +631,7 @@ Public Class BrewingSessionForm
             While myReader.Read()
                 BeerNameComboBox.Items.Add(myReader.Item("BeerName"))
             End While
-
         ElseIf SQlControl = "Efficiencies" Then
-
-
             Dim MYGrainptsindex As Decimal = 0
             Dim myGrainWeight2 As Decimal = 0
             Dim myWeightID As Integer
@@ -692,16 +658,9 @@ Public Class BrewingSessionForm
             GrainBillLabel.Text = Math.Round(myGrainWeight2, 2)
             BrewhouseEfficiencieslabel.Text = Math.Round(MYTotalGrainpts / 1000, 3) * (BrewHouseEfficiencyUpDown.Value / 100) + 1
             StrikeTemp()
-
-
-
         ElseIf SQlControl = "StepMashTimer" Then
             While myReader.Read()
-
-                End While
-
-
-
+            End While
         ElseIf SQlControl = "All" Then
             While myReader.Read()
                 MashTypeLable.Text = myReader.Item("MashType").ToString
@@ -712,6 +671,9 @@ Public Class BrewingSessionForm
                 BoilTimeLabel.Text = myReader.Item("BoilTime").ToString
                 VersionLabel.Text = myReader.Item("Version").ToString
                 SpargeTempLabel.Text = myReader.Item("SpargeTemp").ToString
+                FermTempLabel.Text = myReader.Item("FermentationTemp").ToString
+                OriginalGravityLable.Text = myReader.Item("RequiredOriginalGravity").ToString
+
             End While
 
         ElseIf SQlControl = "BrewSessions" Then
@@ -727,41 +689,25 @@ Public Class BrewingSessionForm
             While myReader.Read()
 
                 If Not myReader.Item("StartSpargeTime").Equals(DBNull.Value) Then
-                    StartSpargeLabel.Text = myReader.Item("StartSpargeTime").ToString
                     If Not myReader.Item("StopSpargeTime").Equals(DBNull.Value) Then
-                        StopSpargeLabel.Text = myReader.Item("StopSpargeTime").ToString
-                    Else
-                        StopSpargeButton.Enabled = True
 
+                        SpargeButton.Enabled = False
+                    Else
+                        SpargeButton.Enabled = True
+                        SpargeButton.Text = "Stop Sparge"
+                        SpargeButton.BackColor = Color.Red
+                        SpargeChillTimer.Enabled = True
                     End If
 
                 Else
-                    StartSpargeButton.Enabled = True
-
+                    SpargeButton.Enabled = True
                 End If
-
-
                 If myReader.Item("Startboiltime").Equals(DBNull.Value) Then
-
-
                     StartBoilTimerButton.Enabled = True
                 End If
-
                 If Not myReader.Item("StartChillTime").Equals(DBNull.Value) Then
-
-
-                    StartChillLabel.Text = myReader.Item("StartChillTime").ToString
-                    If Not myReader.Item("StopChillTime").Equals(DBNull.Value) Then
-                        StopChillLabel.Text = myReader.Item("StopChillTime").ToString
-
-                    Else
-                        StopChillButton.Enabled = True
-
-                    End If
                 Else
-
-                    StartChillButton.Enabled = True
-
+                    ChillButton.Enabled = True
                 End If
 
                 If Not myReader.Item("startmashtime").Equals(DBNull.Value) Then
@@ -781,8 +727,6 @@ Public Class BrewingSessionForm
                     End If
                 Else
                     StepMashButton.Enabled = True
-
-
                 End If
                 SessionIDTextBox.Text = myReader.Item("SessionID").ToString
                 StartChillChillLabel.Text = myReader.Item("startChillTemp").ToString
@@ -790,14 +734,12 @@ Public Class BrewingSessionForm
                 FirstRunningsGravityTextbox.Text = myReader.Item("FirstRunningsGravity").ToString
                 StartingGravityTextBox.Text = myReader.Item("ActualOG").ToString
                 BrewCompleteButton.Enabled = True
-
-
             End While
         End If
 
         sqlConnection.Close()
     End Sub
-    Private Sub GrainTempTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GrainTempTextBox.TextChanged
+    Private Sub GrainTempTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         StrikeTemp()
     End Sub
     Private Sub MashTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MashTimer.Tick
@@ -814,86 +756,27 @@ Public Class BrewingSessionForm
                     MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & "0" & ts.Seconds.ToString
                 End If
             Else
-
                 StepMashingRun()
             End If
         End If
+    End Sub
 
 
-
-    End Sub
-    Private Sub HLMinusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HLMinusButton.Click
-        Dim myHLGuage As AGaugeApp.AGauge = HlTunGauge
-        ZoomOut(myHLGuage)
-        SetupHLtunGaugeforSparge()
-    End Sub
-    Private Sub HLPlusBUtton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HLPlusBUtton.Click
-        HlTunGauge.MinValue = 140
-        HlTunGauge.MaxValue = 180
-        HlTunGauge.Range_Idx = 0
-        HlTunGauge.RangeStartValue = 140
-        HlTunGauge.Range_Idx = 4
-        HlTunGauge.RangeEndValue = 180
-        If CDec(HLTunTempLabel.Text) < 140 Then
-            HlTunGauge.Value = 140
-        Else
-            HlTunGauge.Value = CDec(HLTunTempLabel.Text)
-        End If
-    End Sub
     Private Sub ZoomOut(ByVal Gauge As AGaugeApp.AGauge)
         Gauge.MinValue = 0
         Gauge.MaxValue = 220
         Gauge.Value = 0
     End Sub
-    Private Sub MashMinusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MashMinusButton.Click
-        SetupMashTunGauge()
-        MashGauge.MinValue = 0
-        MashGauge.MaxValue = 220
-        If CDec(StepMashTempLabel.Text) < MashGauge.MinValue Then
-            MashGauge.Value = MashGauge.MinValue
-        Else
-            MashGauge.Value = CDec(MashTunTempLabel.Text)
-        End If
-    End Sub
-    Private Sub BoilMinusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BoilMinusButton.Click
-        SetupBoilGaugeforBoil()
-        Dim MyBoilGauge As AGaugeApp.AGauge = BoilGauge
-        ZoomOut(MyBoilGauge)
-    End Sub
+
+
     Private Sub SpargeChillTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpargeChillTimer.Tick
         Dim newthread As New System.Threading.Thread(AddressOf CountUpTimer)
         newthread.Start()
     End Sub
-    Private Sub MashPlusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MashPlusButton.Click
-        MashGauge.MinValue = 100
-        MashGauge.MaxValue = 180
-        MashGauge.Range_Idx = 0
-        MashGauge.RangeStartValue = 100
-        MashGauge.Range_Idx = 4
-        MashGauge.RangeEndValue = 180
-        '  MashGauge.RangeStartValue = 100
 
-        If CDec(MashTunTempLabel.Text) < 100 Then
-            MashGauge.Value = 100
-        Else
-            MashGauge.Value = CDec(MashTunTempLabel.Text)
-        End If
-    End Sub
 
-    Private Sub BoilPlusButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BoilPlusButton.Click
-        BoilGauge.MinValue = 100
-        BoilGauge.MaxValue = 220
-        BoilGauge.Range_Idx = 0
-        BoilGauge.RangeStartValue = 100
-        BoilGauge.Range_Idx = 4
-        BoilGauge.RangeEndValue = 220
-        If CDec(BoitlKettleTempLabel.Text) < 100 Then
-            BoilGauge.Value = 100
-        Else
-            BoilGauge.Value = CDec(BoitlKettleTempLabel.Text)
-        End If
-    End Sub
-   
+
+
     Private Sub CountUpTimer()
         Dim secondtext As String
         Dim minutetext As String
@@ -927,14 +810,9 @@ Public Class BrewingSessionForm
         If Not BeerNameComboBox.Text = "" Then
             Dim Mytemp As Decimal = CDec(HLTunTempLabel.Text)
             If CDec(Mytemp) < CDec(Me.SpargeTempLabel.Text) + 1 And CDec(Mytemp) > CDec(Me.SpargeTempLabel.Text) - 1 Then
-
                 HLTunTempLabel.ForeColor = Color.LimeGreen
-
             ElseIf CDec(Mytemp) < 220 And CDec(Mytemp) > CDec(Me.SpargeTempLabel.Text) + 1 Then
-
                 HLTunTempLabel.ForeColor = Color.Red
-
-
             ElseIf CDec(Mytemp) < CDec(Me.SpargeTempLabel.Text) - 1 Then
                 HLTunTempLabel.ForeColor = Color.Blue
             End If
@@ -944,46 +822,16 @@ Public Class BrewingSessionForm
         If Not BeerNameComboBox.Text = "" Then
             Dim Mytemp As Decimal = CDec(HLTunTempLabel.Text)
             If CDec(Mytemp) < CDec(Me.SpargeTempLabel.Text) + 1 And CDec(Mytemp) > CDec(Me.SpargeTempLabel.Text) - 1 Then
-
                 HLTunTempLabel.ForeColor = Color.LimeGreen
-
             ElseIf CDec(Mytemp) < 220 And CDec(Mytemp) > CDec(Me.SpargeTempLabel.Text) + 1 Then
-
                 HLTunTempLabel.ForeColor = Color.Red
-
-
             ElseIf CDec(Mytemp) < CDec(Me.SpargeTempLabel.Text) - 1 Then
                 HLTunTempLabel.ForeColor = Color.Blue
             End If
         End If
     End Sub
-    Private Sub BoitlKettleTempLabel_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BoitlKettleTempLabel.TextChanged
-        If Not BeerNameComboBox.Text = "" Then
-            Dim Mytemp As Decimal = CDec(MashTunTempLabel.Text)
-            If CDec(Mytemp) < CDec(Me.StepMashTempLabel.Text) + 1 And CDec(Mytemp) > CDec(Me.StepMashTempLabel.Text) - 1 Then
 
-                MashTunTempLabel.ForeColor = Color.LimeGreen
-
-            ElseIf CDec(Mytemp) < 220 And CDec(Mytemp) > CDec(Me.StepMashTempLabel.Text) + 1 Then
-
-                MashTunTempLabel.ForeColor = Color.Red
-
-
-            ElseIf CDec(Mytemp) < CDec(Me.StepMashTempLabel.Text) - 1 Then
-                MashTunTempLabel.ForeColor = Color.Blue
-            End If
-        End If
-    End Sub
-    Private Sub RimButtonOn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RimButtonOn.Click
-        RimControl = True
-        tmrPID.Enabled = True
-    End Sub
-    Private Sub RIMButtonOff_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RIMButtonOff.Click
-        RimControl = False
-        tmrPID.Enabled = False
-
-    End Sub
-    Private Sub BrewHouseEfficiencyUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BrewHouseEfficiencyUpDown.ValueChanged
+    Private Sub BrewHouseEfficiencyUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If Not CDec(BatchSizeLabel.Text) = 0 Then
             Dim mysqlString As String = "Select potentialSG, weight, weightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
             Dim DataControll As String = "Efficiencies"
@@ -991,20 +839,8 @@ Public Class BrewingSessionForm
         End If
 
     End Sub
-    Private Sub GravityCorrectionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GravityCorrectionButton.Click
-        If DigitChecker(GravityReadingTextBox.Text) Then
-            If DigitChecker(CurrentWortTempTextBox.Text) Then
-                If DigitChecker(HydrometerCalibrationTextbox.Text) Then
-
-                    Dim MyGravity As Decimal = CDec(GravityReadingTextBox.Text) * ((1.00130346 - 0.000134722124 * CDec(CurrentWortTempTextBox.Text) + 0.00000204052596 * CDec(CurrentWortTempTextBox.Text) ^ 2 - 0.00000000232820948 * CDec(CurrentWortTempTextBox.Text) ^ 3) / (1.00130346 - 0.000134722124 * CDec(HydrometerCalibrationTextbox.Text) + 0.00000204052596 * CDec(HydrometerCalibrationTextbox.Text) ^ 2 - 0.00000000232820948 * CDec(HydrometerCalibrationTextbox.Text) ^ 3))
-                    CorrectedGravityLabel.Text = Math.Round(MyGravity, 3).ToString
-                End If
-            End If
-        End If
-
-
-    End Sub
-    Private Sub VolumeCalculatorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VolumeCalculatorButton.Click
+   
+    Public Sub VolumeCalculator()
         If DigitChecker(VesselHeightTextBox.Text) Then
             If DigitChecker(VesselDiameterTextBox.Text) Then
                 If DigitChecker(LiquidLevelTextBox.Text) Then
@@ -1023,9 +859,10 @@ Public Class BrewingSessionForm
             End If
         End If
 
+
     End Sub
     Private Sub tmrPID_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrPID.Tick
-        If OverheatCheckbox.Checked = True Then
+        If Overheated = True Then
             _serialPort.Write("b")
         Else
             millis = Now - starttime
@@ -1035,7 +872,8 @@ Public Class BrewingSessionForm
 
             If ((millis.TotalMilliseconds - lastPIDTime) > PID_UPDATE_INTERVAL) Then
                 lastPIDTime = lastPIDTime + PID_UPDATE_INTERVAL
-                heatpower = updatePID(CDec(StepMashTempLabel.Text), MashDuinoTemp)
+                heatpower = updatePID(CDec(MashSetTempValueBox.Text), MashDuinoTemp)
+
                 setHeatPowerPercentage(heatpower)
 
             End If
@@ -1045,14 +883,13 @@ Public Class BrewingSessionForm
     End Sub
 
     Private Sub StepMashButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StepMashButton.Click
-        RimTempDisplayLabel.Text = "Step Temp"
-        Dim mysqlString As String
 
+        Dim mysqlString As String
         HLTUNSetup = "Sparge"
         MyTimer.Text = "00:00:00"
-        StepMashTempLabel.Text = StepMashGridView(0, 0).Value
+        MashSetTempValueBox.Text = StepMashGridView(0, 0).Value
         StepMashTimeLabel.Text = StepMashGridView(1, 0).Value
-        If IsNumeric(StepMashTempLabel.Text) Then
+        If IsNumeric(MashSetTempValueBox.Text) Then
             If IsNumeric(StepMashTimeLabel.Text) Then
                 If StepMashButton.Text = "Start Mashing" Then
                     Stepmashindex = 0
@@ -1064,15 +901,17 @@ Public Class BrewingSessionForm
                     MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & ts.Seconds.ToString
                     MashTimer.Start()
                     StepMashButton.Text = "Stop"
+                    StepMashButton.BackColor = Color.Red
                     mysqlString = "UPDATE Brewsessions SET StartMashTime = '" & Now & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
                     GlobalModule.UpdateDBSql(mysqlString)
                     MashBoilVar = "Mash"
                 Else
                     MashTimer.Stop()
                     StepMashButton.Text = "Start Mashing"
+                    StepMashButton.BackColor = Color.Green
                     mysqlString = "UPDATE Brewsessions SET StopMashTime = '" & Now & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
                     UpdateDBSql(mysqlString)
-                    StartSpargeButton.Enabled = True
+                    SpargeButton.Enabled = True
                     MashBoilVar = ""
                 End If
             End If
@@ -1080,19 +919,21 @@ Public Class BrewingSessionForm
     End Sub
 
     Private Sub StepMashingRun()
-        Stepmashindex = Stepmashindex + 1
-        StepMashTempLabel.Text = StepMashGridView(0, Stepmashindex).Value
-        StepMashTimeLabel.Text = StepMashGridView(1, Stepmashindex).Value
-        If IsNumeric(StepMashTempLabel.Text) Then
+        If IsNumeric(MashSetTempValueBox.Text) Then
             If IsNumeric(StepMashTimeLabel.Text) Then
-                StartBoilTimerButton.Enabled = False
-                mashspan = CDec(StepMashTimeLabel.Text)
-                CountDownTime = Now.AddMinutes(mashspan)
-                Dim ts As TimeSpan = CountDownTime.Subtract(Now)
-                MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & ts.Seconds.ToString
+                Stepmashindex = Stepmashindex + 1
+                If Stepmashindex > 0 And Stepmashindex < StepMashGridView.Rows.Count Then
+                    MashSetTempValueBox.Text = StepMashGridView(0, Stepmashindex).Value
+                    StepMashTimeLabel.Text = StepMashGridView(1, Stepmashindex).Value
+                    StartBoilTimerButton.Enabled = False
+                    mashspan = CDec(StepMashTimeLabel.Text)
+                    CountDownTime = Now.AddMinutes(mashspan)
+                    Dim ts As TimeSpan = CountDownTime.Subtract(Now)
+                    MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & ts.Seconds.ToString
+                End If
+
             End If
         End If
-
     End Sub
     Private Sub LoadMash()
         Dim mysqlString As String = "Select RestTemp as 'Temperature', RestTime as 'Time' from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'  order by RestTemp asc"
@@ -1105,15 +946,117 @@ Public Class BrewingSessionForm
                 StepMashGridView.DataSource = ds.Tables(0)
                 StepmashCount = ds.Tables(0).Rows.Count
             End If
-            'StepMashTempLabel.Text = StepMashGridView(0, 0).Value
-            'StepMashTimeLabel.Text = StepMashGridView(1, 0).Value
-            RimTempDisplayLabel.Text = "Strike Temp"
-            StepMashTempLabel.Text = StrikeTemplabel.Text
+            MashSetTempValueBox.Text = StrikeTemplabel.Text
+            HLSetTEMPBOX.Value = CDec(SpargeTempLabel.Text) + 7
+            SetKettleTempValueBox.Value = CDec(StrikeTemplabel.Text) + 7
         Catch ex As Exception
-            MessageBox.Show("Error connecting to the database")
+            MessageBox.Show("Error connecting to the Mash Database")
         End Try
+    End Sub
+    Private Sub LoadGrainBill()
+        On Error Resume Next
+
+        Dim mysqlString As String = "Select GrainName as 'Grain Name', weight as 'Weight', Mass as 'Units'  from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+        Dim MyDataAdapter = New SqlDataAdapter(mysqlString, AppSettings("ConnectionString"))
+        Dim cmd As SqlCommandBuilder = New SqlCommandBuilder(MyDataAdapter)
+        MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
+        Dim ds As New DataSet()
+        If (MyDataAdapter.Fill(ds) > 0) Then
+            GrainBillGridView.DataSource = ds.Tables(0)
+            Dim column As DataGridViewColumn = GrainBillGridView.Columns(0)
+            column.Width = 160
+        End If
+    End Sub
+    Private Sub HLPumpOnOffButton_Click(sender As System.Object, e As System.EventArgs) Handles HLPumpOnOffButton.Click
+
+        If HLPumpOnOffButton.Text = "HL Pump" Then
+            HLPumpOnOffButton.Text = "Off"
+            HLPumpOnOffButton.BackColor = Color.Red
+
+            _serialPort.WriteLine("c")
+        Else
+            HLPumpOnOffButton.Text = "HL Pump"
+            HLPumpOnOffButton.BackColor = Color.Green
+            _serialPort.WriteLine("g")
+        End If
+    End Sub
+    Private Sub MashPumpOnOffButton_Click(sender As System.Object, e As System.EventArgs) Handles MashPumpOnOffButton.Click
+        If MashPumpOnOffButton.Text = "Mash Pump" Then
+            TurnMashPumpon()
+        Else
+            TrunMashPumpOff()
+            TurnRimOFF()
+        End If
+    End Sub
+    Private Sub RimButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RimButton.Click
+        If RimButton.Text = "RIM On" Then
+            TurnMashPumpon()
+            TurnRimON()
+        Else
+            TurnRimOFF()
+        End If
+    End Sub
+    Public Sub TurnRimON()
+        _serialPort.WriteLine("a")
+        RimControl = True
+        tmrPID.Enabled = True
+        RimButton.Text = "RIM Off"
+        RimButton.BackColor = Color.Red
+    End Sub
+    Public Sub TurnRimOFF()
+        _serialPort.WriteLine("b")
+        RimButton.BackColor = Color.Green
+        RimControl = False
+        tmrPID.Enabled = False
+        RimButton.Text = "RIM On"
+    End Sub
+
+    Public Sub TurnMashPumpon()
+        MashPumpOnOffButton.Text = "Off"
+        MashPumpOnOffButton.BackColor = Color.Red
+        _serialPort.WriteLine("d")
 
     End Sub
 
-    
+    Public Sub TrunMashPumpOff()
+        MashPumpOnOffButton.Text = "Mash Pump"
+        MashPumpOnOffButton.BackColor = Color.Green
+        _serialPort.WriteLine("h")
+    End Sub
+
+
+    Private Sub GrainTempTextBox_ValueChanged(sender As System.Object, e As System.EventArgs) Handles GrainTempTextBox.ValueChanged
+        StrikeTemp()
+        MashSetTempValueBox.Value = StrikeTemplabel.Text
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub BrewCompleteButton_Click_1(sender As Object, e As EventArgs) Handles BrewCompleteButton.Click
+        SaveEndSessionData()
+
+    End Sub
+
+
+    Private Sub RequiredTempDisplayLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub VesselDiameterTextBox_TextChanged(sender As Object, e As EventArgs) Handles VesselDiameterTextBox.TextChanged
+        VolumeCalculator()
+
+    End Sub
+
+    Private Sub VesselHeightTextBox_TextChanged(sender As Object, e As EventArgs) Handles VesselHeightTextBox.TextChanged
+        VolumeCalculator()
+    End Sub
+
+    Private Sub LiquidLevelTextBox_TextChanged(sender As Object, e As EventArgs) Handles LiquidLevelTextBox.TextChanged
+        VolumeCalculator()
+    End Sub
+
+   
 End Class

@@ -17,11 +17,7 @@ Public Class CustomWortAdditionForm
         End If
     End Sub
 
-    Private Sub CustomWortAdditionForm_close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
-        ShowMainFormItems()
-
-    End Sub
-
+  
     Private Sub CustomWortAdditionForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.MiscWortItemNameTextBox.Focus()
     End Sub
