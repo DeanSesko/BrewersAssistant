@@ -1,15 +1,15 @@
 ﻿Imports System.Windows.Forms.DataVisualization.Charting
-
+Imports System.Data.SqlServerCe
 Imports System.Configuration.ConfigurationManager
-Imports System.Data.SqlClient
+'Imports System.Data.SqlClient
 Module GlobalModule
     Friend HLTUNSensor As String = "Hot Liquor Tun Sensor"
     Friend MashTUnSensor As String = "Mash Tun Sensor"
     Friend BoilKettleSensor As String = "Boil Kettle Sensor"
 
     Public Sub UpdateDBSql(ByVal MySqlString As String)
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlceConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlceCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         sqlCommand.CommandText = MySqlString
@@ -53,9 +53,19 @@ Module GlobalModule
 
     End Sub
   
-  
-    Public Sub ShowMainFormItems()
+    Public Sub ShowNewForm(ByVal NewForm As Form)
 
-        HomeParentForm.Panel1.Show()
+        NewForm.ShowDialog()
+
     End Sub
+
+    Public Function CheckComport() As Boolean
+
+        If Not (My.Settings.COMPORT = "") Then
+            CheckComport = True
+        Else
+            CheckComport = True
+        End If
+
+    End Function
 End Module

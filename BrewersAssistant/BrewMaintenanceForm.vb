@@ -1,14 +1,8 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.SqlServerCe
 Imports System.Configuration.ConfigurationManager
 
 Public Class BrewMaintenanceForm
-    Private Sub BrewSessionSetupForm_close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
-        ShowMainFormItems()
-
-    End Sub
-    Private Sub BrewSessionSetupForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
-
+    Private Sub BrewMaintenanceForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim DataControl As String = "BeerName"
         Dim mysqlString As String = "Select BeerName from  BeerData"
         GetSQLDBData(mysqlString, DataControl)
@@ -33,19 +27,21 @@ Public Class BrewMaintenanceForm
         Dim mysqlString As String = "Select * from  beerdata where Beername='" & BeernameString & "'"
         Dim DataControl As String = "BeerData"
         GetSQLDBData(mysqlString, DataControl)
-        mysqlString = "Select GrainBillID , GrainName as 'Grain Name', weight as 'Weight', Mass as 'Units',potentialsg  from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+        mysqlString = "Select GrainBill.GrainBillID, Grains.GrainName, Grainbill.weight as Weight, Weights.mass as UNits, Grains.potentialsg, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
         DataControl = "Grains"
         LoadData(mysqlString, DataControl)
-        mysqlString = "Select HopBillID, HopName as 'Hop Name', Weight, Mass as 'Units', AdditionTime as 'Time' from  BeerHopBillView where BeerID='" & BeerIDTextBox.Text & "' order by AdditionTime"
+        mysqlString = "SELECT HopBill.HopBillID, Hops.HOPName as Name , Weights.Mass  as Units, HopBill.Weight, HopBill.AdditionTime as Time FROM Hops INNER JOIN HopBill ON Hops.HOPID = HopBill.HopID INNER JOIN BeerData ON HopBill.BeerID = BeerData.BeerID INNER JOIN Weights ON HopBill.WeightID = Weights.WeightID where BeerData.BeerID=' " & BeerIDTextBox.Text & "' order by AdditionTime desc"
+
         DataControl = "Hops"
         LoadData(mysqlString, DataControl)
-        mysqlString = "Select WortAdditionBillID, WortAdditionName as 'Item Name', Weight, Mass as 'Units' from  BeerWortBillView where BeerID='" & BeerIDTextBox.Text & "'"
+        mysqlString = "Select WortAdditionBill.WortAdditionBillID, WortAdditions.WortAdditionName as Item, WortAdditionBill.Weight, Weights.Mass as Units , WortAdditionBill.AdditionTime as Time   FROM   WortAdditionBill INNER JOIN Weights ON WortAdditionBill.WeightID = Weights.WeightID INNER JOIN WortAdditions ON WortAdditionBill.WortAdditionID = WortAdditions.WortAdditionsID where WortAdditionBill.BeerID='" & BeerIDTextBox.Text & "'"
         DataControl = "Wort"
         LoadData(mysqlString, DataControl)
         DataControl = "GrainPotenialSQ"
-        mysqlString = "Select potentialSG, weight, weightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+        mysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
+
         GetSQLDBData(mysqlString, DataControl)
-        mysqlString = "Select  stepmashID, RestTemp as 'Temperature' , restTime from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'"
+        mysqlString = "Select  stepmashID, RestTemp as Temperature , restTime from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'"
         DataControl = "StepMash"
         LoadData(mysqlString, DataControl)
 
@@ -84,8 +80,8 @@ Public Class BrewMaintenanceForm
         BeernameString = BeernameString.Replace("'", "''")
         Dim mysqlString As String = "Select * from  beerdata where Beername='" & BeernameString & "'"
         Dim MyDataSet As New DataSet
-        Dim MyDataAdapter = New SqlDataAdapter(mysqlString, AppSettings("ConnectionString"))
-        Dim cmd As SqlCommandBuilder = New SqlCommandBuilder(MyDataAdapter)
+        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
         MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
         MyDataAdapter.Fill(MyDataSet, "beerdata")
         Dim BeerRow As DataRow = MyDataSet.Tables("beerdata").Rows(0)
@@ -246,38 +242,39 @@ MyExit:
         Dim DataControl As String = "GrainWeightsID"
         GetSQLDBData(mysqlString, DataControl)
     End Sub
-    Private Sub AddCustomGrains_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomGrainsButton.Click
-        CustomGrainsForm.Show()
-        CustomGrainsForm.Focus()
-
-    End Sub
+   
     Private Sub RemoveGrainButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemoveGrainButton.Click
+        Try
+            Dim mysqlString As String = "Delete From GrainBill where GrainBillID='" & GrainDataGridView.Item(0, GrainDataGridView.CurrentRow.Index).Value & "'"
+            UpdateDBSql(mysqlString)
+            mysqlString = "Select GrainBillID , GrainName as Name, GrainBill.weight as Weight, Mass as Units, GrainBill.weightid  FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
 
-        Dim mysqlString As String = "Delete From GrainBill where GrainBillID='" & GrainDataGridView.Item(0, GrainDataGridView.CurrentRow.Index).Value & "'"
-        UpdateDBSql(mysqlString)
-        mysqlString = "Select GrainBillID , GrainName as 'Grain Name', weight as 'Weight', Mass as 'Units', weightid  from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
-        Dim DataControl As String = "Grains"
-        LoadData(mysqlString, DataControl)
-        DataControl = "GrainPotenialSQ"
-        mysqlString = "Select potentialSG, weight, weightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
-        GetSQLDBData(mysqlString, DataControl)
+            Dim DataControl As String = "Grains"
+            LoadData(mysqlString, DataControl)
+            DataControl = "GrainPotenialSQ"
+            mysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
+
+
+            GetSQLDBData(mysqlString, DataControl)
+        Catch
+        End Try
 
     End Sub
 
     Private Sub RemoveSelectedHopButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemoveSelectedHopButton.Click
         Dim mysqlString As String = "Delete From HopBill where HopBillID='" & HopDataGridView.Item(0, HopDataGridView.CurrentRow.Index).Value & "'"
         UpdateDBSql(mysqlString)
-        mysqlString = "Select HopBillID, HopName as 'Hop Name', Weight, Mass as 'Units', AdditionTime as 'Time' from  BeerHopBillView where BeerID='" & BeerIDTextBox.Text & "' order by AdditionTime"
+        mysqlString = "SELECT HopBill.HopBillID, Hops.HOPID, Hops.HOPName as Hop , BeerData.BeerID, HopBill.WeightID, Weights.Mass  as Units , HopBill.Weight, HopBill.AdditionTime as Time FROM Hops INNER JOIN HopBill ON Hops.HOPID = HopBill.HopID INNER JOIN BeerData ON HopBill.BeerID = BeerData.BeerID INNER JOIN Weights ON HopBill.WeightID = Weights.WeightID where BeerData.BeerID=' " & BeerIDTextBox.Text & "' order by AdditionTime desc"
         Dim DataControl As String = "Hops"
         LoadData(mysqlString, DataControl)
     End Sub
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal DataControl As String)
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         sqlCommand.CommandText = MySqlString
-        Dim myReader As Data.SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
 
 
         If DataControl = "BeerName" Then
@@ -459,7 +456,7 @@ MyExit:
                             Try
                                 Dim mysqlString As String = "Insert into HopBill(BeerID,HopID,Weight,WeightID,AdditionTime) Values('" & CInt(BeerIDTextBox.Text) & "','" & CInt(HopIDLabel.Text) & "','" & CDec(HopWeightTextBox.Text) & "','" & CDec(HopWeightIDLabel.Text) & "','" & CDec(HopTimeTextBox.Text) & "')"
                                 UpdateDBSql(mysqlString)
-                                mysqlString = "Select HopBillID, HopName as 'Hop Name', Weight, Mass as 'Units', AdditionTime as 'Time' from  BeerHopBillView where BeerID='" & BeerIDTextBox.Text & "' order by AdditionTime"
+                                mysqlString = "SELECT BeerData.BeerID, HopBill.WeightID, HopBill.Weight, HopBill.AdditionTime FROM Hops INNER JOIN HopBill ON Hops.HOPID = HopBill.HopID INNER JOIN BeerData ON HopBill.BeerID = BeerData.BeerID INNER JOIN Weights ON HopBill.WeightID = Weights.WeightID where BeerData.BeerID=' " & BeerIDTextBox.Text & "' order by AdditionTime desc"
 
                                 Dim DataControl As String = "Hops"
                                 LoadData(mysqlString, DataControl)
@@ -490,11 +487,13 @@ MyExit:
                     Try
                         Dim mysqlString As String = "Insert into GrainBill(BeerID,GrainID,Weight,WeightID) Values('" & CInt(BeerIDTextBox.Text) & "','" & CInt(GrainID.Text) & "','" & CDec(GrainWeightTextBox.Text) & "','" & CDec(GrainWeightID.Text) & "')"
                         UpdateDBSql(mysqlString)
-                        mysqlString = "Select GrainBillID , GrainName as 'Grain Name', weight as 'Weight', Mass as 'Units', WeightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+                        '  mysqlString = "Select GrainBillID , GrainName as 'Grain Name', weight as 'Weight', Mass as 'Units', WeightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+                        mysqlString = "Select GrainBill.GrainBillID, Grains.GrainName as  Name,  GrainBill.weight, Weights.Mass as Units  FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where GrainBill.BeerID='" & BeerIDTextBox.Text & "'"
+
                         Dim DataControl As String = "Grains"
                         LoadData(mysqlString, DataControl)
                         DataControl = "GrainPotenialSQ"
-                        mysqlString = "Select potentialSG, weight, weightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+                        mysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
                         GetSQLDBData(mysqlString, DataControl)
                     Catch ex As Exception
                         MsgBox(ex.Message)
@@ -502,22 +501,6 @@ MyExit:
                 End If
             End If
         End If
-    End Sub
-
- 
-
-    Private Sub AddCustomHopsButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomHopsButton.Click
-        CustomHopForm.Show()
-        CustomHopForm.Focus()
-        HopNameComboBox.Items.Clear()
-    End Sub
-  
-
-
-    Private Sub AddCustomWortItemButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomWortItemButton.Click
-        CustomWortAdditionForm.Show()
-        CustomWortAdditionForm.Focus()
-        MiscWortAddNameComboBox.Items.Clear()
     End Sub
 
     Private Sub AddMiscWortItemButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddMiscWortItemButton.Click
@@ -576,8 +559,6 @@ MyExit:
         LoadData(mysqlString, DataControl)
     End Sub
 
-    
-
     Private Sub AddStepMashButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddStepMashButton.Click
         If Not StepMashTempBox.Text = "" Then
             If Not StepMashTimeBox.Text = "" Then
@@ -609,51 +590,54 @@ MyExit:
     End Sub
 
     Private Sub LoadData(ByVal MysqlString As String, ByVal DataControl As String)
-        Dim MyDataAdapter = New SqlDataAdapter(MysqlString, AppSettings("ConnectionString"))
-        Dim cmd As SqlCommandBuilder = New SqlCommandBuilder(MyDataAdapter)
+        Dim MyDataAdapter = New SqlCeDataAdapter(MysqlString, My.Settings.BrewHelperDBConnectionString)
+        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
         MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
         Dim ds As New DataSet()
-        Try
-            If DataControl = "Hops" Then
+        '   Try
+        If DataControl = "Hops" Then
 
-                If (MyDataAdapter.Fill(ds) > 0) Then
-                    HopDataGridView.DataSource = ds.Tables(0)
-                    HopDataGridView.Columns.Item(0).Visible = False
-                End If
-                MysqlString = "Select weight,weightID,AdditionTime from  BeerHopBillView where BeerID='" & BeerIDTextBox.Text & "'"
-                DataControl = "HopWeight"
-                GetSQLDBData(MysqlString, DataControl)
-
-            ElseIf DataControl = "Grains" Then
-
-                If (MyDataAdapter.Fill(ds) > 0) Then
-                    GrainDataGridView.DataSource = ds.Tables(0)
-                    GrainDataGridView.Columns.Item(0).Visible = False
-                End If
-                MysqlString = "Select weight, weightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
-                DataControl = "GrainWeight"
-                GetSQLDBData(MysqlString, DataControl)
-
-            ElseIf DataControl = "Wort" Then
-
-                If (MyDataAdapter.Fill(ds) > 0) Then
-                    MiscWortDataGridView.DataSource = ds.Tables(0)
-                    MiscWortDataGridView.Columns.Item(0).Visible = False
-                End If
-
-            ElseIf DataControl = "StepMash" Then
-                If (MyDataAdapter.Fill(ds) > 0) Then
-                    StepMashDataGridView.Visible = True
-                    StepMashDataGridView.DataSource = ds.Tables(0)
-                    StepMashDataGridView.Columns.Item(0).Visible = False
-                Else
-                    StepMashDataGridView.Visible = False
-
-                End If
+            If (MyDataAdapter.Fill(ds) > 0) Then
+                HopDataGridView.DataSource = ds.Tables(0)
+                HopDataGridView.Columns.Item(0).Visible = False
             End If
-        Catch ex As Exception
-            MessageBox.Show("Error connecting to the database")
-        End Try
+            MysqlString = "SELECT BeerData.BeerID, HopBill.WeightID, HopBill.Weight, HopBill.AdditionTime FROM Hops INNER JOIN HopBill ON Hops.HOPID = HopBill.HopID INNER JOIN BeerData ON HopBill.BeerID = BeerData.BeerID INNER JOIN Weights ON HopBill.WeightID = Weights.WeightID where BeerData.BeerID=' " & BeerIDTextBox.Text & "' order by AdditionTime desc"
+
+            DataControl = "HopWeight"
+            GetSQLDBData(MysqlString, DataControl)
+
+        ElseIf DataControl = "Grains" Then
+
+            If (MyDataAdapter.Fill(ds) > 0) Then
+                GrainDataGridView.DataSource = ds.Tables(0)
+                GrainDataGridView.Columns.Item(0).Visible = False
+            End If
+
+            MysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
+
+            DataControl = "GrainWeight"
+            GetSQLDBData(MysqlString, DataControl)
+
+        ElseIf DataControl = "Wort" Then
+
+            If (MyDataAdapter.Fill(ds) > 0) Then
+                MiscWortDataGridView.DataSource = ds.Tables(0)
+                MiscWortDataGridView.Columns.Item(0).Visible = False
+            End If
+
+        ElseIf DataControl = "StepMash" Then
+            If (MyDataAdapter.Fill(ds) > 0) Then
+                StepMashDataGridView.Visible = True
+                StepMashDataGridView.DataSource = ds.Tables(0)
+                StepMashDataGridView.Columns.Item(0).Visible = False
+            Else
+                StepMashDataGridView.Visible = False
+
+            End If
+        End If
+        ' Catch ex As Exception
+        '    MessageBox.Show("Error connecting to the database")
+        ' End Try
     End Sub
 
 
@@ -663,5 +647,23 @@ MyExit:
         mysqlString = "Select  StepMashID, RestTemp as 'Temperature' , restTime from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'"
         Dim DataControl As String = "StepMash"
         LoadData(mysqlString, DataControl)
+
     End Sub
+
+
+    Private Sub AddCustomHopsButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomHopsButton.Click
+        HopNameComboBox.Items.Clear()
+        ShowNewForm(CustomHopForm)
+    End Sub
+
+    Private Sub AddCustomWortItemButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomWortItemButton.Click
+        MiscWortAddNameComboBox.Items.Clear()
+        ShowNewForm(CustomWortAdditionForm)
+    End Sub
+    Private Sub AddCustomGrains_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomGrainsButton.Click
+        ShowNewForm(CustomGrainsForm)
+    End Sub
+
+ 
+
 End Class

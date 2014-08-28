@@ -1,5 +1,5 @@
 ﻿Imports System.Configuration.ConfigurationManager
-Imports System.Data.SqlClient
+Imports System.Data.SqlServerCe
 Public Class CustomHopForm
 
    
@@ -31,17 +31,19 @@ Public Class CustomHopForm
     End Sub
 
     Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
+        BrewMaintenanceForm.TopMost = True
         Me.Close()
+
     End Sub
 
     Private Sub CloseOut(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Closing
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         Dim mysqlString As String = "Select HopName from Hops order by HopName"
         sqlCommand.CommandText = mysqlString
-        Dim myReader As Data.SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
         While myReader.Read()
             BrewMaintenanceForm.HopNameComboBox.Items.Add(myReader.Item("HopName").ToString)
         End While

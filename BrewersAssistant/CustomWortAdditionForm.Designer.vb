@@ -22,12 +22,12 @@ Partial Class CustomWortAdditionForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MiscAddButton = New System.Windows.Forms.Button
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.MiscWortItemDescriptionTextBox = New System.Windows.Forms.TextBox
-        Me.CloseButton = New System.Windows.Forms.Button
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.MiscWortItemNameTextBox = New System.Windows.Forms.TextBox
+        Me.MiscAddButton = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.MiscWortItemDescriptionTextBox = New System.Windows.Forms.TextBox()
+        Me.CloseButton = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.MiscWortItemNameTextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'MiscAddButton
@@ -58,7 +58,7 @@ Partial Class CustomWortAdditionForm
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(333, 315)
+        Me.CloseButton.Location = New System.Drawing.Point(509, 320)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(75, 23)
         Me.CloseButton.TabIndex = 4
@@ -85,16 +85,15 @@ Partial Class CustomWortAdditionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(412, 343)
+        Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.MiscAddButton)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.MiscWortItemDescriptionTextBox)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.MiscWortItemNameTextBox)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "CustomWortAdditionForm"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Custom Wort Additions"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -22,25 +22,25 @@ Partial Class HopMainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Time = New System.Windows.Forms.Label
-        Me.ExitButton = New System.Windows.Forms.Button
-        Me.UpdateButton = New System.Windows.Forms.Button
-        Me.HopIDLabel = New System.Windows.Forms.Label
-        Me.AddCustomGrainsButton = New System.Windows.Forms.Button
-        Me.HopNameComboBox = New System.Windows.Forms.ComboBox
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.AromaComboBox = New System.Windows.Forms.ComboBox
-        Me.FinishingComboBox = New System.Windows.Forms.ComboBox
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.BitteringComboBox = New System.Windows.Forms.ComboBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.HopOrginTextBox = New System.Windows.Forms.TextBox
-        Me.AlphaAcidTextBox = New System.Windows.Forms.TextBox
-        Me.HopDescriptionTextBox = New System.Windows.Forms.TextBox
-        Me.Label8 = New System.Windows.Forms.Label
+        Me.Time = New System.Windows.Forms.Label()
+        Me.ExitButton = New System.Windows.Forms.Button()
+        Me.UpdateButton = New System.Windows.Forms.Button()
+        Me.HopIDLabel = New System.Windows.Forms.Label()
+        Me.AddCustomHopsButton = New System.Windows.Forms.Button()
+        Me.HopNameComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.AromaComboBox = New System.Windows.Forms.ComboBox()
+        Me.FinishingComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BitteringComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.HopOrginTextBox = New System.Windows.Forms.TextBox()
+        Me.AlphaAcidTextBox = New System.Windows.Forms.TextBox()
+        Me.HopDescriptionTextBox = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Time
@@ -57,7 +57,7 @@ Partial Class HopMainForm
         'ExitButton
         '
         Me.ExitButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ExitButton.Location = New System.Drawing.Point(399, 884)
+        Me.ExitButton.Location = New System.Drawing.Point(514, 327)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(75, 23)
         Me.ExitButton.TabIndex = 336
@@ -83,14 +83,14 @@ Partial Class HopMainForm
         Me.HopIDLabel.Text = "HopID"
         Me.HopIDLabel.Visible = False
         '
-        'AddCustomGrainsButton
+        'AddCustomHopsButton
         '
-        Me.AddCustomGrainsButton.Location = New System.Drawing.Point(347, 81)
-        Me.AddCustomGrainsButton.Name = "AddCustomGrainsButton"
-        Me.AddCustomGrainsButton.Size = New System.Drawing.Size(119, 23)
-        Me.AddCustomGrainsButton.TabIndex = 324
-        Me.AddCustomGrainsButton.Text = "Add Custom Hops"
-        Me.AddCustomGrainsButton.UseVisualStyleBackColor = True
+        Me.AddCustomHopsButton.Location = New System.Drawing.Point(347, 81)
+        Me.AddCustomHopsButton.Name = "AddCustomHopsButton"
+        Me.AddCustomHopsButton.Size = New System.Drawing.Size(119, 23)
+        Me.AddCustomHopsButton.TabIndex = 324
+        Me.AddCustomHopsButton.Text = "Add Custom Hops"
+        Me.AddCustomHopsButton.UseVisualStyleBackColor = True
         '
         'HopNameComboBox
         '
@@ -228,7 +228,7 @@ Partial Class HopMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(481, 912)
+        Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.AromaComboBox)
@@ -246,8 +246,9 @@ Partial Class HopMainForm
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.UpdateButton)
         Me.Controls.Add(Me.HopIDLabel)
-        Me.Controls.Add(Me.AddCustomGrainsButton)
+        Me.Controls.Add(Me.AddCustomHopsButton)
         Me.Controls.Add(Me.HopNameComboBox)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "HopMainForm"
         Me.Text = "HopMainForm"
         Me.ResumeLayout(False)
@@ -258,7 +259,7 @@ Partial Class HopMainForm
     Friend WithEvents ExitButton As System.Windows.Forms.Button
     Friend WithEvents UpdateButton As System.Windows.Forms.Button
     Friend WithEvents HopIDLabel As System.Windows.Forms.Label
-    Friend WithEvents AddCustomGrainsButton As System.Windows.Forms.Button
+    Friend WithEvents AddCustomHopsButton As System.Windows.Forms.Button
     Friend WithEvents HopNameComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label

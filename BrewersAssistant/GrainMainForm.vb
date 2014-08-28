@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.SqlServerCe
 Imports System.Configuration.ConfigurationManager
 
 
@@ -26,8 +26,8 @@ Public Class GrainMainForm
         GrainNameString = GrainNameString.Replace("'", "''")
         Dim mysqlString As String = "Select * from  Grains where GrainName='" & GrainNameString & "'"
         Dim MyDataSet As New DataSet
-        Dim MyDataAdapter = New SqlDataAdapter(mysqlString, AppSettings("ConnectionString"))
-        Dim cmd As SqlCommandBuilder = New SqlCommandBuilder(MyDataAdapter)
+        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
         MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
         MyDataAdapter.Fill(MyDataSet, "Grains")
         Dim GrainRow As DataRow = MyDataSet.Tables("Grains").Rows(0)
@@ -73,12 +73,12 @@ myexit:
 
     End Sub
     Private Sub GetSQLDBData(byval MySqlString As String, ByVal datacontrol As String)
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         sqlCommand.CommandText = MySqlString
-        Dim myReader As Data.SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
         If datacontrol = "Grains" Then
             While myReader.Read()
                 GrainOrginTextBox.Text = myReader.Item("Origin").ToString
@@ -97,13 +97,14 @@ myexit:
    
 
     Private Sub GrainMainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
+
         Dim DataControl As String = "GrainName"
         Dim mysqlString As String = "Select GrainName from Grains"
         GetSQLDBData(mysqlString, DataControl)
     End Sub
 
     Private Sub ExitButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitButton.Click
+
         Me.Close()
 
     End Sub

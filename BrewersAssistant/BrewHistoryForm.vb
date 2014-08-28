@@ -1,5 +1,5 @@
 ﻿Imports System.Configuration.ConfigurationManager
-Imports System.Data.SqlClient
+Imports System.Data.SqlServerCe
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Threading
 
@@ -20,7 +20,7 @@ Public Class BrewHistoryForm
     'Load Form
 
     Private Sub BrewHistoryForm_close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
-        ShowMainFormItems()
+
 
     End Sub
 
@@ -40,8 +40,8 @@ Public Class BrewHistoryForm
 
     Private Sub SetupMashChart()
 
-        MashChart.ChartAreas(0).AxisY.Minimum = 55
-        MashChart.ChartAreas(0).AxisY.Maximum = 175
+        MashChart.ChartAreas(0).AxisY.Minimum = 65
+        MashChart.ChartAreas(0).AxisY.Maximum = 185
         MashChart.ChartAreas(0).AxisY.Interval = 5
         MashChart.ChartAreas(0).AxisX.Interval = 5
         MashChart.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
@@ -92,15 +92,15 @@ Public Class BrewHistoryForm
         sqlcontrol = "BrewSessions"
         mysqlString = "Select BrewSessionStartTime From BrewSessions Where SessionStatus =0 and BeerID='" & BeerIDTextBox.Text & "'"
         GetSQLDBData(mysqlString, sqlcontrol)
-        mysqlString = "Select weight, weightID from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+        mysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
         Dim DataControll As String = "GrainWeight"
         GetSQLDBData(mysqlString, DataControll)
         LoadMash()
     End Sub
 
     Private Sub LoadMash()
-        Dim mysqlString As String = "Select RestTemp as 'Temperature', RestTime as 'Time' from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'  order by RestTemp asc"
-        Dim MyDataAdapter = New SqlDataAdapter(mysqlString, AppSettings("ConnectionString"))
+        Dim mysqlString As String = "Select RestTemp as Temperature, RestTime as Time from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'  order by RestTemp asc"
+        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
         MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
         Dim ds As New DataSet
 
@@ -135,7 +135,6 @@ Public Class BrewHistoryForm
         SpargeDuration.Text = ""
         BoilDurationLabel.Text = ""
         SessionIDTextBox.Text = ""
-        NotesTextBox.Text = ""
         FirstRunningsGravityLabel.Text = ""
         StartingGravityLabel.Text = ""
         MashStartTimeLabel.Text = ""
@@ -145,12 +144,12 @@ Public Class BrewHistoryForm
     End Sub
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal SQlControl As String)
         'On Error Resume Next
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         sqlCommand.CommandText = MySqlString
-        Dim myReader As Data.SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
         On Error Resume Next
 
 
@@ -275,7 +274,7 @@ Public Class BrewHistoryForm
 
                 While myReader.Read()
                     SessionIDTextBox.Text = myReader.Item("SessionID").ToString
-                    NotesTextBox.Text = myReader.Item("Notes").ToString
+                    BeerNotes.Text = myReader.Item("Notes").ToString
                     FirstRunningsGravityLabel.Text = myReader.Item("FirstRunningsGravity").ToString
                     StartingGravityLabel.Text = myReader.Item("ActualOG").ToString
                     GrainTempLabel.Text = myReader.Item("GrainTemp").ToString
@@ -397,34 +396,13 @@ Public Class BrewHistoryForm
         mysqlString = "Select * from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'  order by RestTemp asc"
         GetSQLDBData(mysqlString, SqlControl)
 
-
-        mysqlString = "Select weight, weightID,potentialSG from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
+        mysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
+        '        mysqlString = "Select weight, weightID,potentialSG from  BeerGrainBillView where BeerID='" & BeerIDTextBox.Text & "'"
         Dim DataControll As String = "BrewHouse"
         GetSQLDBData(mysqlString, DataControll)
 
     End Sub
-    Private Sub ZoominButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ZoomInButton.Click
-
-        If zoommin <= 170 Then
-            MashChart.ChartAreas(0).AxisY.Minimum = zoommin
-            zoommin = zoommin + 5
-        End If
-        If zoommax >= CInt(SpargeTempLabel.Text) Then
-            MashChart.ChartAreas(0).AxisY.Maximum = zoommax
-            zoommax = zoommax - 5
-        End If
-    End Sub
-    Private Sub ZoomOutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ZoomOutButton.Click
-        If zoommin >= 0 Then
-            MashChart.ChartAreas(0).AxisY.Minimum = zoommin
-            zoommin = zoommin - 5
-        End If
-        If zoommax <= 200 Then
-            MashChart.ChartAreas(0).AxisY.Maximum = zoommax
-            zoommax = zoommax + 5
-        End If
-
-    End Sub
+   
     Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
         Me.Close()
     End Sub

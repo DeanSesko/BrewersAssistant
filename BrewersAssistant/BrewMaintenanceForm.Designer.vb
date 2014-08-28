@@ -172,7 +172,7 @@ Partial Class BrewMaintenanceForm
         '
         Label6.AutoSize = True
         Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label6.Location = New System.Drawing.Point(10, 729)
+        Label6.Location = New System.Drawing.Point(9, 648)
         Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(35, 13)
@@ -194,7 +194,7 @@ Partial Class BrewMaintenanceForm
         '
         Label38.AutoSize = True
         Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label38.Location = New System.Drawing.Point(11, 375)
+        Label38.Location = New System.Drawing.Point(9, 307)
         Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label38.Name = "Label38"
         Label38.Size = New System.Drawing.Size(76, 13)
@@ -385,7 +385,7 @@ Partial Class BrewMaintenanceForm
         'NotesTextBox
         '
         Me.NotesTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NotesTextBox.Location = New System.Drawing.Point(13, 745)
+        Me.NotesTextBox.Location = New System.Drawing.Point(12, 664)
         Me.NotesTextBox.Multiline = True
         Me.NotesTextBox.Name = "NotesTextBox"
         Me.NotesTextBox.Size = New System.Drawing.Size(508, 83)
@@ -432,7 +432,7 @@ Partial Class BrewMaintenanceForm
         '
         Me.CloseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CloseButton.Location = New System.Drawing.Point(1200, 985)
+        Me.CloseButton.Location = New System.Drawing.Point(693, 733)
         Me.CloseButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(67, 25)
@@ -629,7 +629,7 @@ Partial Class BrewMaintenanceForm
         Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.HopsTab)
         Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.MiscellaneousWortAdditionsTab)
         Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.MashPage)
-        Me.GrainsAndWortAdditionsTabBox.Location = New System.Drawing.Point(14, 400)
+        Me.GrainsAndWortAdditionsTabBox.Location = New System.Drawing.Point(12, 332)
         Me.GrainsAndWortAdditionsTabBox.Name = "GrainsAndWortAdditionsTabBox"
         Me.GrainsAndWortAdditionsTabBox.SelectedIndex = 0
         Me.GrainsAndWortAdditionsTabBox.Size = New System.Drawing.Size(626, 313)
@@ -1271,7 +1271,7 @@ Partial Class BrewMaintenanceForm
         'GrainPotentialLabel
         '
         Me.GrainPotentialLabel.AutoSize = True
-        Me.GrainPotentialLabel.Location = New System.Drawing.Point(94, 375)
+        Me.GrainPotentialLabel.Location = New System.Drawing.Point(92, 307)
         Me.GrainPotentialLabel.Name = "GrainPotentialLabel"
         Me.GrainPotentialLabel.Size = New System.Drawing.Size(46, 13)
         Me.GrainPotentialLabel.TabIndex = 320
@@ -1301,7 +1301,7 @@ Partial Class BrewMaintenanceForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1280, 1024)
+        Me.ClientSize = New System.Drawing.Size(773, 772)
         Me.Controls.Add(Me.MashTypeComboBox)
         Me.Controls.Add(Me.Label39)
         Me.Controls.Add(Me.GrainPotentialLabel)
@@ -1344,7 +1344,7 @@ Partial Class BrewMaintenanceForm
         Me.Controls.Add(Me.BoilTimeTextBox)
         Me.Controls.Add(Me.VersionTextBox)
         Me.Cursor = System.Windows.Forms.Cursors.Default
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "BrewMaintenanceForm"
         Me.Text = "Beer Maintenance"
         CType(Me.GrainDataGridView, System.ComponentModel.ISupportInitialize).EndInit()

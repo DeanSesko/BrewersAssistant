@@ -1,5 +1,5 @@
 ﻿Imports System.Configuration.ConfigurationManager
-Imports System.Data.SqlClient
+Imports System.Data.SqlServerCe
 Public Class CustomWortAdditionForm
 
 
@@ -20,20 +20,23 @@ Public Class CustomWortAdditionForm
   
     Private Sub CustomWortAdditionForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.MiscWortItemNameTextBox.Focus()
+        Me.TopMost = True
     End Sub
 
     Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
+        Me.TopMost = False
+
         Me.Close()
 
     End Sub
     Private Sub CloseOut(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Closing
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         Dim mysqlString As String = "Select WortAdditionName from WortAdditions order by WortAdditionName"
         sqlCommand.CommandText = mysqlString
-        Dim myReader As Data.SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
         While myReader.Read()
             BrewMaintenanceForm.MiscWortAddNameComboBox.Items.Add(myReader.Item("WortAdditionName").ToString)
         End While

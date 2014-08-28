@@ -22,27 +22,27 @@ Partial Class GrainMainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.AddCustomGrainsButton = New System.Windows.Forms.Button
-        Me.OriginLabel = New System.Windows.Forms.Label
-        Me.TypeLabel = New System.Windows.Forms.Label
-        Me.SRMLabel = New System.Windows.Forms.Label
-        Me.PotentialSG = New System.Windows.Forms.Label
-        Me.GrainNameComboBox = New System.Windows.Forms.ComboBox
-        Me.GrainIDLabel = New System.Windows.Forms.Label
-        Me.UpdateButton = New System.Windows.Forms.Button
-        Me.GrainOrginTextBox = New System.Windows.Forms.TextBox
-        Me.PotentialSGTextBox = New System.Windows.Forms.TextBox
-        Me.SrmTextBox = New System.Windows.Forms.TextBox
-        Me.GrainTypeComboBox = New System.Windows.Forms.ComboBox
-        Me.ExitButton = New System.Windows.Forms.Button
-        Me.Time = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.AddCustomGrainsButton = New System.Windows.Forms.Button()
+        Me.OriginLabel = New System.Windows.Forms.Label()
+        Me.TypeLabel = New System.Windows.Forms.Label()
+        Me.SRMLabel = New System.Windows.Forms.Label()
+        Me.PotentialSG = New System.Windows.Forms.Label()
+        Me.GrainNameComboBox = New System.Windows.Forms.ComboBox()
+        Me.GrainIDLabel = New System.Windows.Forms.Label()
+        Me.UpdateButton = New System.Windows.Forms.Button()
+        Me.GrainOrginTextBox = New System.Windows.Forms.TextBox()
+        Me.PotentialSGTextBox = New System.Windows.Forms.TextBox()
+        Me.SrmTextBox = New System.Windows.Forms.TextBox()
+        Me.GrainTypeComboBox = New System.Windows.Forms.ComboBox()
+        Me.ExitButton = New System.Windows.Forms.Button()
+        Me.Time = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 92)
+        Me.Label5.Location = New System.Drawing.Point(12, 97)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(37, 13)
         Me.Label5.TabIndex = 312
@@ -60,42 +60,39 @@ Partial Class GrainMainForm
         'OriginLabel
         '
         Me.OriginLabel.AutoSize = True
-        Me.OriginLabel.Location = New System.Drawing.Point(12, 119)
+        Me.OriginLabel.Location = New System.Drawing.Point(12, 123)
         Me.OriginLabel.Name = "OriginLabel"
         Me.OriginLabel.Size = New System.Drawing.Size(34, 13)
         Me.OriginLabel.TabIndex = 308
         Me.OriginLabel.Text = "Origin"
-        Me.OriginLabel.Visible = False
         '
         'TypeLabel
         '
         Me.TypeLabel.AutoSize = True
-        Me.TypeLabel.Location = New System.Drawing.Point(12, 145)
+        Me.TypeLabel.Location = New System.Drawing.Point(12, 150)
         Me.TypeLabel.Name = "TypeLabel"
         Me.TypeLabel.Size = New System.Drawing.Size(31, 13)
         Me.TypeLabel.TabIndex = 309
         Me.TypeLabel.Text = "Type"
-        Me.TypeLabel.Visible = False
+        Me.TypeLabel.UseWaitCursor = True
         '
         'SRMLabel
         '
         Me.SRMLabel.AutoSize = True
-        Me.SRMLabel.Location = New System.Drawing.Point(12, 172)
+        Me.SRMLabel.Location = New System.Drawing.Point(12, 176)
         Me.SRMLabel.Name = "SRMLabel"
         Me.SRMLabel.Size = New System.Drawing.Size(31, 13)
         Me.SRMLabel.TabIndex = 310
         Me.SRMLabel.Text = "SRM"
-        Me.SRMLabel.Visible = False
         '
         'PotentialSG
         '
         Me.PotentialSG.AutoSize = True
-        Me.PotentialSG.Location = New System.Drawing.Point(15, 198)
+        Me.PotentialSG.Location = New System.Drawing.Point(12, 202)
         Me.PotentialSG.Name = "PotentialSG"
         Me.PotentialSG.Size = New System.Drawing.Size(63, 13)
         Me.PotentialSG.TabIndex = 311
         Me.PotentialSG.Text = "PotentialSG"
-        Me.PotentialSG.Visible = False
         '
         'GrainNameComboBox
         '
@@ -161,7 +158,7 @@ Partial Class GrainMainForm
         'ExitButton
         '
         Me.ExitButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ExitButton.Location = New System.Drawing.Point(921, 887)
+        Me.ExitButton.Location = New System.Drawing.Point(509, 320)
         Me.ExitButton.Name = "ExitButton"
         Me.ExitButton.Size = New System.Drawing.Size(75, 23)
         Me.ExitButton.TabIndex = 321
@@ -183,7 +180,7 @@ Partial Class GrainMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1008, 922)
+        Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.Time)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.GrainTypeComboBox)
@@ -199,7 +196,7 @@ Partial Class GrainMainForm
         Me.Controls.Add(Me.SRMLabel)
         Me.Controls.Add(Me.PotentialSG)
         Me.Controls.Add(Me.GrainNameComboBox)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "GrainMainForm"
         Me.Text = "Grain Maintenance"
         Me.ResumeLayout(False)

@@ -1,9 +1,10 @@
 ﻿Imports System.Configuration.ConfigurationManager
-Imports System.Data.SqlClient
+Imports System.Data.SqlServerCe
 
 Public Class CustomGrainsForm
 
     Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
+        Me.TopMost = False
         Me.Close()
 
     End Sub
@@ -43,13 +44,13 @@ Public Class CustomGrainsForm
 
 
     Private Sub CloseOut(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Closing
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         Dim mysqlString As String = "Select GrainName from Grains order by GrainName"
         sqlCommand.CommandText = mysqlString
-        Dim myReader As Data.SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
         While myReader.Read()
             Try
                 BrewMaintenanceForm.GrainNameComboBox.Items.Add(myReader.Item("GrainName").ToString)
@@ -69,4 +70,8 @@ ExitSub:
     End Sub
 
   
+    Private Sub CustomGrainsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.TopMost = True
+
+    End Sub
 End Class

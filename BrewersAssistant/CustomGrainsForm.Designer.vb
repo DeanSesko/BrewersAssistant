@@ -40,7 +40,7 @@ Partial Class CustomGrainsForm
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(294, 276)
+        Me.CloseButton.Location = New System.Drawing.Point(509, 320)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(75, 23)
         Me.CloseButton.TabIndex = 0
@@ -166,7 +166,7 @@ Partial Class CustomGrainsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(381, 311)
+        Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.MushMashComboBox)
         Me.Controls.Add(Me.Label5)
@@ -181,6 +181,7 @@ Partial Class CustomGrainsForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GrainNameTextBox)
         Me.Controls.Add(Me.CloseButton)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "CustomGrainsForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Custom Grains"

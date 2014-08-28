@@ -22,27 +22,27 @@ Partial Class CustomHopForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CloseButton = New System.Windows.Forms.Button
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.AromaComboBox = New System.Windows.Forms.ComboBox
-        Me.FinishingComboBox = New System.Windows.Forms.ComboBox
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.BitteringComboBox = New System.Windows.Forms.ComboBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.AddButton = New System.Windows.Forms.Button
-        Me.HopOrginTextBox = New System.Windows.Forms.TextBox
-        Me.AlphaAcidTextBox = New System.Windows.Forms.TextBox
-        Me.HopDescriptionTextBox = New System.Windows.Forms.TextBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.HopNameTextBox = New System.Windows.Forms.TextBox
+        Me.CloseButton = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.AromaComboBox = New System.Windows.Forms.ComboBox()
+        Me.FinishingComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BitteringComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.AddButton = New System.Windows.Forms.Button()
+        Me.HopOrginTextBox = New System.Windows.Forms.TextBox()
+        Me.AlphaAcidTextBox = New System.Windows.Forms.TextBox()
+        Me.HopDescriptionTextBox = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.HopNameTextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(335, 318)
+        Me.CloseButton.Location = New System.Drawing.Point(509, 320)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(75, 23)
         Me.CloseButton.TabIndex = 9
@@ -190,7 +190,7 @@ Partial Class CustomHopForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(422, 353)
+        Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.AromaComboBox)
@@ -207,7 +207,7 @@ Partial Class CustomHopForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.HopNameTextBox)
         Me.Controls.Add(Me.CloseButton)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "CustomHopForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Cutom Hops"

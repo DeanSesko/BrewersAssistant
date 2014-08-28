@@ -1,14 +1,14 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.SqlServerCe
 Imports System.Configuration.ConfigurationManager
 
 Public Class HopMainForm
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal datacontrol As String)
-        Dim sqlConnection As New SqlConnection(AppSettings("ConnectionString"))
-        Dim sqlCommand As New SqlCommand()
+        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+        Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         sqlCommand.CommandText = MySqlString
-        Dim myReader As Data.SqlClient.SqlDataReader = sqlCommand.ExecuteReader()
+        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
         If datacontrol = "Hops" Then
             While myReader.Read()
                 HopOrginTextBox.Text = myReader.Item("HopOrigin").ToString
@@ -29,7 +29,7 @@ Public Class HopMainForm
   
 
     Private Sub HopMainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
+
         Dim DataControl As String = "HopName"
         Dim mysqlString As String = "Select HopName from Hops"
         GetSQLDBData(mysqlString, DataControl)
@@ -41,8 +41,8 @@ Public Class HopMainForm
         NameString = NameString.Replace("'", "''")
         Dim mysqlString As String = "Select * from  Hops where HopName='" & NameString & "'"
         Dim MyDataSet As New DataSet
-        Dim MyDataAdapter = New SqlDataAdapter(mysqlString, AppSettings("ConnectionString"))
-        Dim cmd As SqlCommandBuilder = New SqlCommandBuilder(MyDataAdapter)
+        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
         MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
         MyDataAdapter.Fill(MyDataSet, "Hops")
         Dim HopRow As DataRow = MyDataSet.Tables("Hops").Rows(0)
@@ -101,9 +101,8 @@ myexit:
 
     End Sub
 
-    Private Sub AddCustomGrainsButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomGrainsButton.Click
-        CustomHopForm.Show()
-        CustomHopForm.Focus()
+    Private Sub AddCustomHopsButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCustomHopsButton.Click
+        ShowNewForm(CustomGrainsForm)
     End Sub
 
     Private Sub HopNameComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HopNameComboBox.SelectedIndexChanged
@@ -119,6 +118,11 @@ myexit:
         BitteringComboBox.Text = ""
         AlphaAcidTextBox.Text = ""
         HopDescriptionTextBox.Text = ""
+
+    End Sub
+
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Me.Close()
 
     End Sub
 End Class
