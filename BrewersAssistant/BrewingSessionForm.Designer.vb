@@ -34,24 +34,15 @@ Partial Class BrewingSessionForm
         Dim NotesLabel As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.BoilTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BrewSessionsDateComboBox = New System.Windows.Forms.ComboBox()
         Me.ContinueBrewButton = New System.Windows.Forms.Button()
         Me.BrewStartButton = New System.Windows.Forms.Button()
         Me.BoitlKettleTempLabel = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.BeerTables = New System.Windows.Forms.TabPage()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.GrainBillGridView = New System.Windows.Forms.DataGridView()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.MiscDataGridView = New System.Windows.Forms.DataGridView()
-        Me.HopDataGridView = New System.Windows.Forms.DataGridView()
-        Me.StepMashGridView = New System.Windows.Forms.DataGridView()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.BeerInfo = New System.Windows.Forms.TabPage()
         Me.OriginalGravityLable = New System.Windows.Forms.Label()
         Me.FermTempLabel = New System.Windows.Forms.Label()
@@ -76,6 +67,15 @@ Partial Class BrewingSessionForm
         Me.WatertoGrainRatioLabel = New System.Windows.Forms.Label()
         Me.GrainBillLabel = New System.Windows.Forms.Label()
         Me.GrainLabel = New System.Windows.Forms.Label()
+        Me.BeerTables = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GrainBillGridView = New System.Windows.Forms.DataGridView()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.MiscDataGridView = New System.Windows.Forms.DataGridView()
+        Me.HopDataGridView = New System.Windows.Forms.DataGridView()
+        Me.StepMashGridView = New System.Windows.Forms.DataGridView()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.CalculatorsTab = New System.Windows.Forms.TabPage()
         Me.CurrentWortTemp = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
@@ -162,14 +162,14 @@ Partial Class BrewingSessionForm
         Label4 = New System.Windows.Forms.Label()
         Label3 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
+        Me.BeerInfo.SuspendLayout()
+        CType(Me.GrainTempTextBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BrewHouseEfficiencyUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BeerTables.SuspendLayout()
         CType(Me.GrainBillGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MiscDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HopDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StepMashGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.BeerInfo.SuspendLayout()
-        CType(Me.GrainTempTextBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BrewHouseEfficiencyUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CalculatorsTab.SuspendLayout()
         Me.HlTunPanel.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -187,7 +187,7 @@ Partial Class BrewingSessionForm
         '
         Label13.AutoSize = True
         Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label13.Location = New System.Drawing.Point(1, 173)
+        Label13.Location = New System.Drawing.Point(16, 168)
         Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label13.Name = "Label13"
         Label13.Size = New System.Drawing.Size(161, 20)
@@ -198,7 +198,7 @@ Partial Class BrewingSessionForm
         '
         Label5.AutoSize = True
         Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label5.Location = New System.Drawing.Point(1, 219)
+        Label5.Location = New System.Drawing.Point(16, 208)
         Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
         Label5.Size = New System.Drawing.Size(109, 20)
@@ -209,7 +209,7 @@ Partial Class BrewingSessionForm
         '
         Label10.AutoSize = True
         Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label10.Location = New System.Drawing.Point(0, 395)
+        Label10.Location = New System.Drawing.Point(16, 408)
         Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label10.Name = "Label10"
         Label10.Size = New System.Drawing.Size(156, 20)
@@ -220,7 +220,7 @@ Partial Class BrewingSessionForm
         '
         Label7.AutoSize = True
         Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label7.Location = New System.Drawing.Point(0, 361)
+        Label7.Location = New System.Drawing.Point(16, 368)
         Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label7.Name = "Label7"
         Label7.Size = New System.Drawing.Size(145, 20)
@@ -231,7 +231,7 @@ Partial Class BrewingSessionForm
         '
         Label6.AutoSize = True
         Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label6.Location = New System.Drawing.Point(1, 433)
+        Label6.Location = New System.Drawing.Point(16, 448)
         Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(100, 20)
@@ -242,7 +242,7 @@ Partial Class BrewingSessionForm
         '
         Label1.AutoSize = True
         Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label1.Location = New System.Drawing.Point(1, 13)
+        Label1.Location = New System.Drawing.Point(16, 16)
         Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(67, 20)
@@ -253,7 +253,7 @@ Partial Class BrewingSessionForm
         '
         Label9.AutoSize = True
         Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label9.Location = New System.Drawing.Point(296, 48)
+        Label9.Location = New System.Drawing.Point(16, 608)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(118, 20)
         Label9.TabIndex = 458
@@ -263,7 +263,7 @@ Partial Class BrewingSessionForm
         '
         Label8.AutoSize = True
         Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label8.Location = New System.Drawing.Point(296, 13)
+        Label8.Location = New System.Drawing.Point(16, 568)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(165, 20)
         Label8.TabIndex = 456
@@ -273,7 +273,7 @@ Partial Class BrewingSessionForm
         '
         NotesLabel.AutoSize = True
         NotesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NotesLabel.Location = New System.Drawing.Point(0, 594)
+        NotesLabel.Location = New System.Drawing.Point(16, 648)
         NotesLabel.Name = "NotesLabel"
         NotesLabel.Size = New System.Drawing.Size(145, 25)
         NotesLabel.TabIndex = 459
@@ -283,7 +283,7 @@ Partial Class BrewingSessionForm
         '
         Label4.AutoSize = True
         Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label4.Location = New System.Drawing.Point(4, 556)
+        Label4.Location = New System.Drawing.Point(16, 528)
         Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(194, 20)
@@ -294,7 +294,7 @@ Partial Class BrewingSessionForm
         '
         Label3.AutoSize = True
         Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label3.Location = New System.Drawing.Point(1, 467)
+        Label3.Location = New System.Drawing.Point(16, 488)
         Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(181, 20)
@@ -339,19 +339,20 @@ Partial Class BrewingSessionForm
         'BoitlKettleTempLabel
         '
         Me.BoitlKettleTempLabel.AutoSize = True
-        Me.BoitlKettleTempLabel.Font = New System.Drawing.Font("DS-Digital", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BoitlKettleTempLabel.Location = New System.Drawing.Point(4, 11)
+        Me.BoitlKettleTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 62.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BoitlKettleTempLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BoitlKettleTempLabel.Location = New System.Drawing.Point(4, 10)
         Me.BoitlKettleTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BoitlKettleTempLabel.Name = "BoitlKettleTempLabel"
-        Me.BoitlKettleTempLabel.Size = New System.Drawing.Size(292, 95)
+        Me.BoitlKettleTempLabel.Size = New System.Drawing.Size(293, 95)
         Me.BoitlKettleTempLabel.TabIndex = 35
         Me.BoitlKettleTempLabel.Text = "000.00"
         '
         'TabControl1
         '
         Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
-        Me.TabControl1.Controls.Add(Me.BeerTables)
         Me.TabControl1.Controls.Add(Me.BeerInfo)
+        Me.TabControl1.Controls.Add(Me.BeerTables)
         Me.TabControl1.Controls.Add(Me.CalculatorsTab)
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(1001, 205)
@@ -360,6 +361,285 @@ Partial Class BrewingSessionForm
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(767, 803)
         Me.TabControl1.TabIndex = 191
+        '
+        'BeerInfo
+        '
+        Me.BeerInfo.BackColor = System.Drawing.Color.White
+        Me.BeerInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.BeerInfo.Controls.Add(Label3)
+        Me.BeerInfo.Controls.Add(Me.OriginalGravityLable)
+        Me.BeerInfo.Controls.Add(Label4)
+        Me.BeerInfo.Controls.Add(Me.FermTempLabel)
+        Me.BeerInfo.Controls.Add(NotesLabel)
+        Me.BeerInfo.Controls.Add(Me.NotesTextBox)
+        Me.BeerInfo.Controls.Add(Label9)
+        Me.BeerInfo.Controls.Add(Me.StartingGravityTextBox)
+        Me.BeerInfo.Controls.Add(Label8)
+        Me.BeerInfo.Controls.Add(Me.FirstRunningsGravityTextbox)
+        Me.BeerInfo.Controls.Add(Label1)
+        Me.BeerInfo.Controls.Add(Me.VersionLabel)
+        Me.BeerInfo.Controls.Add(Label10)
+        Me.BeerInfo.Controls.Add(Me.StrikeTemplabel)
+        Me.BeerInfo.Controls.Add(Label7)
+        Me.BeerInfo.Controls.Add(Me.SpargeTempLabel)
+        Me.BeerInfo.Controls.Add(Me.BatchSizeLabel)
+        Me.BeerInfo.Controls.Add(Label6)
+        Me.BeerInfo.Controls.Add(Me.WaterNeededLabel1)
+        Me.BeerInfo.Controls.Add(Me.MashTypeLable)
+        Me.BeerInfo.Controls.Add(Me.BatchLabel)
+        Me.BeerInfo.Controls.Add(Me.WaterNeededLabel)
+        Me.BeerInfo.Controls.Add(Me.Label21)
+        Me.BeerInfo.Controls.Add(Me.BoilTimeLabel)
+        Me.BeerInfo.Controls.Add(Me.GrainTempTextBox)
+        Me.BeerInfo.Controls.Add(Me.BrewHouseEfficiencyUpDown)
+        Me.BeerInfo.Controls.Add(Label5)
+        Me.BeerInfo.Controls.Add(Me.BrewhouseEfficiencieslabel)
+        Me.BeerInfo.Controls.Add(Label13)
+        Me.BeerInfo.Controls.Add(Me.WaterLabel)
+        Me.BeerInfo.Controls.Add(Me.GrainTempLabel)
+        Me.BeerInfo.Controls.Add(Me.WatertoGrainRatioLabel)
+        Me.BeerInfo.Controls.Add(Me.GrainBillLabel)
+        Me.BeerInfo.Controls.Add(Me.GrainLabel)
+        Me.BeerInfo.Location = New System.Drawing.Point(4, 30)
+        Me.BeerInfo.Name = "BeerInfo"
+        Me.BeerInfo.Size = New System.Drawing.Size(759, 769)
+        Me.BeerInfo.TabIndex = 5
+        Me.BeerInfo.Text = "Beer Info"
+        '
+        'OriginalGravityLable
+        '
+        Me.OriginalGravityLable.AutoSize = True
+        Me.OriginalGravityLable.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OriginalGravityLable.Location = New System.Drawing.Point(240, 488)
+        Me.OriginalGravityLable.Name = "OriginalGravityLable"
+        Me.OriginalGravityLable.Size = New System.Drawing.Size(43, 24)
+        Me.OriginalGravityLable.TabIndex = 463
+        Me.OriginalGravityLable.Text = "000"
+        '
+        'FermTempLabel
+        '
+        Me.FermTempLabel.AutoSize = True
+        Me.FermTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FermTempLabel.Location = New System.Drawing.Point(240, 528)
+        Me.FermTempLabel.Name = "FermTempLabel"
+        Me.FermTempLabel.Size = New System.Drawing.Size(43, 24)
+        Me.FermTempLabel.TabIndex = 461
+        Me.FermTempLabel.Text = "000"
+        '
+        'NotesTextBox
+        '
+        Me.NotesTextBox.BackColor = System.Drawing.SystemColors.Control
+        Me.NotesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.NotesTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NotesTextBox.Location = New System.Drawing.Point(16, 688)
+        Me.NotesTextBox.Multiline = True
+        Me.NotesTextBox.Name = "NotesTextBox"
+        Me.NotesTextBox.Size = New System.Drawing.Size(736, 64)
+        Me.NotesTextBox.TabIndex = 460
+        '
+        'StartingGravityTextBox
+        '
+        Me.StartingGravityTextBox.BackColor = System.Drawing.SystemColors.Control
+        Me.StartingGravityTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.StartingGravityTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StartingGravityTextBox.Location = New System.Drawing.Point(240, 608)
+        Me.StartingGravityTextBox.Name = "StartingGravityTextBox"
+        Me.StartingGravityTextBox.Size = New System.Drawing.Size(131, 26)
+        Me.StartingGravityTextBox.TabIndex = 457
+        '
+        'FirstRunningsGravityTextbox
+        '
+        Me.FirstRunningsGravityTextbox.BackColor = System.Drawing.SystemColors.Control
+        Me.FirstRunningsGravityTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FirstRunningsGravityTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FirstRunningsGravityTextbox.Location = New System.Drawing.Point(240, 568)
+        Me.FirstRunningsGravityTextbox.Name = "FirstRunningsGravityTextbox"
+        Me.FirstRunningsGravityTextbox.Size = New System.Drawing.Size(128, 26)
+        Me.FirstRunningsGravityTextbox.TabIndex = 455
+        '
+        'VersionLabel
+        '
+        Me.VersionLabel.AutoSize = True
+        Me.VersionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VersionLabel.Location = New System.Drawing.Point(240, 8)
+        Me.VersionLabel.Name = "VersionLabel"
+        Me.VersionLabel.Size = New System.Drawing.Size(43, 24)
+        Me.VersionLabel.TabIndex = 454
+        Me.VersionLabel.Text = "000"
+        '
+        'StrikeTemplabel
+        '
+        Me.StrikeTemplabel.AutoSize = True
+        Me.StrikeTemplabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StrikeTemplabel.Location = New System.Drawing.Point(240, 368)
+        Me.StrikeTemplabel.Name = "StrikeTemplabel"
+        Me.StrikeTemplabel.Size = New System.Drawing.Size(43, 24)
+        Me.StrikeTemplabel.TabIndex = 451
+        Me.StrikeTemplabel.Text = "000"
+        '
+        'SpargeTempLabel
+        '
+        Me.SpargeTempLabel.AutoSize = True
+        Me.SpargeTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SpargeTempLabel.Location = New System.Drawing.Point(240, 408)
+        Me.SpargeTempLabel.Name = "SpargeTempLabel"
+        Me.SpargeTempLabel.Size = New System.Drawing.Size(43, 24)
+        Me.SpargeTempLabel.TabIndex = 448
+        Me.SpargeTempLabel.Text = "000"
+        '
+        'BatchSizeLabel
+        '
+        Me.BatchSizeLabel.AutoSize = True
+        Me.BatchSizeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BatchSizeLabel.Location = New System.Drawing.Point(240, 248)
+        Me.BatchSizeLabel.Name = "BatchSizeLabel"
+        Me.BatchSizeLabel.Size = New System.Drawing.Size(43, 24)
+        Me.BatchSizeLabel.TabIndex = 445
+        Me.BatchSizeLabel.Text = "000"
+        '
+        'WaterNeededLabel1
+        '
+        Me.WaterNeededLabel1.AutoSize = True
+        Me.WaterNeededLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WaterNeededLabel1.Location = New System.Drawing.Point(16, 288)
+        Me.WaterNeededLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.WaterNeededLabel1.Name = "WaterNeededLabel1"
+        Me.WaterNeededLabel1.Size = New System.Drawing.Size(155, 20)
+        Me.WaterNeededLabel1.TabIndex = 443
+        Me.WaterNeededLabel1.Text = "Mash Water Needed"
+        '
+        'MashTypeLable
+        '
+        Me.MashTypeLable.AutoSize = True
+        Me.MashTypeLable.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MashTypeLable.Location = New System.Drawing.Point(240, 328)
+        Me.MashTypeLable.Name = "MashTypeLable"
+        Me.MashTypeLable.Size = New System.Drawing.Size(148, 24)
+        Me.MashTypeLable.TabIndex = 449
+        Me.MashTypeLable.Text = "Sinlge Infusion"
+        '
+        'BatchLabel
+        '
+        Me.BatchLabel.AutoSize = True
+        Me.BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BatchLabel.Location = New System.Drawing.Point(16, 248)
+        Me.BatchLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.BatchLabel.Name = "BatchLabel"
+        Me.BatchLabel.Size = New System.Drawing.Size(160, 20)
+        Me.BatchLabel.TabIndex = 442
+        Me.BatchLabel.Text = "Batch Size in Gallons"
+        '
+        'WaterNeededLabel
+        '
+        Me.WaterNeededLabel.AutoSize = True
+        Me.WaterNeededLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WaterNeededLabel.Location = New System.Drawing.Point(240, 288)
+        Me.WaterNeededLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.WaterNeededLabel.Name = "WaterNeededLabel"
+        Me.WaterNeededLabel.Size = New System.Drawing.Size(71, 24)
+        Me.WaterNeededLabel.TabIndex = 444
+        Me.WaterNeededLabel.Text = "000.00"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(16, 328)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(86, 20)
+        Me.Label21.TabIndex = 446
+        Me.Label21.Text = "Mash Type"
+        '
+        'BoilTimeLabel
+        '
+        Me.BoilTimeLabel.AutoSize = True
+        Me.BoilTimeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BoilTimeLabel.Location = New System.Drawing.Point(240, 448)
+        Me.BoilTimeLabel.Name = "BoilTimeLabel"
+        Me.BoilTimeLabel.Size = New System.Drawing.Size(43, 24)
+        Me.BoilTimeLabel.TabIndex = 441
+        Me.BoilTimeLabel.Text = "000"
+        '
+        'GrainTempTextBox
+        '
+        Me.GrainTempTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrainTempTextBox.Location = New System.Drawing.Point(240, 120)
+        Me.GrainTempTextBox.Name = "GrainTempTextBox"
+        Me.GrainTempTextBox.Size = New System.Drawing.Size(70, 29)
+        Me.GrainTempTextBox.TabIndex = 435
+        Me.GrainTempTextBox.Value = New Decimal(New Integer() {64, 0, 0, 0})
+        '
+        'BrewHouseEfficiencyUpDown
+        '
+        Me.BrewHouseEfficiencyUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BrewHouseEfficiencyUpDown.Location = New System.Drawing.Point(240, 160)
+        Me.BrewHouseEfficiencyUpDown.Name = "BrewHouseEfficiencyUpDown"
+        Me.BrewHouseEfficiencyUpDown.Size = New System.Drawing.Size(70, 29)
+        Me.BrewHouseEfficiencyUpDown.TabIndex = 433
+        '
+        'BrewhouseEfficiencieslabel
+        '
+        Me.BrewhouseEfficiencieslabel.AutoSize = True
+        Me.BrewhouseEfficiencieslabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BrewhouseEfficiencieslabel.Location = New System.Drawing.Point(240, 208)
+        Me.BrewhouseEfficiencieslabel.Name = "BrewhouseEfficiencieslabel"
+        Me.BrewhouseEfficiencieslabel.Size = New System.Drawing.Size(43, 24)
+        Me.BrewhouseEfficiencieslabel.TabIndex = 432
+        Me.BrewhouseEfficiencieslabel.Text = "000"
+        '
+        'WaterLabel
+        '
+        Me.WaterLabel.AutoSize = True
+        Me.WaterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WaterLabel.Location = New System.Drawing.Point(16, 88)
+        Me.WaterLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.WaterLabel.Name = "WaterLabel"
+        Me.WaterLabel.Size = New System.Drawing.Size(205, 20)
+        Me.WaterLabel.TabIndex = 418
+        Me.WaterLabel.Text = "Grain/Water Ratio in Quarts"
+        '
+        'GrainTempLabel
+        '
+        Me.GrainTempLabel.AutoSize = True
+        Me.GrainTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrainTempLabel.Location = New System.Drawing.Point(16, 128)
+        Me.GrainTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.GrainTempLabel.Name = "GrainTempLabel"
+        Me.GrainTempLabel.Size = New System.Drawing.Size(143, 20)
+        Me.GrainTempLabel.TabIndex = 412
+        Me.GrainTempLabel.Text = "Grain Temperature"
+        '
+        'WatertoGrainRatioLabel
+        '
+        Me.WatertoGrainRatioLabel.AutoSize = True
+        Me.WatertoGrainRatioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WatertoGrainRatioLabel.Location = New System.Drawing.Point(240, 88)
+        Me.WatertoGrainRatioLabel.Name = "WatertoGrainRatioLabel"
+        Me.WatertoGrainRatioLabel.Size = New System.Drawing.Size(43, 24)
+        Me.WatertoGrainRatioLabel.TabIndex = 429
+        Me.WatertoGrainRatioLabel.Text = "000"
+        '
+        'GrainBillLabel
+        '
+        Me.GrainBillLabel.AutoSize = True
+        Me.GrainBillLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrainBillLabel.Location = New System.Drawing.Point(240, 48)
+        Me.GrainBillLabel.Name = "GrainBillLabel"
+        Me.GrainBillLabel.Size = New System.Drawing.Size(43, 24)
+        Me.GrainBillLabel.TabIndex = 426
+        Me.GrainBillLabel.Text = "000"
+        '
+        'GrainLabel
+        '
+        Me.GrainLabel.AutoSize = True
+        Me.GrainLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrainLabel.Location = New System.Drawing.Point(16, 56)
+        Me.GrainLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.GrainLabel.Name = "GrainLabel"
+        Me.GrainLabel.Size = New System.Drawing.Size(98, 20)
+        Me.GrainLabel.TabIndex = 414
+        Me.GrainLabel.Text = "lbs of Grains"
         '
         'BeerTables
         '
@@ -413,7 +693,7 @@ Partial Class BrewingSessionForm
         Me.GrainBillGridView.ShowCellToolTips = False
         Me.GrainBillGridView.ShowEditingIcon = False
         Me.GrainBillGridView.ShowRowErrors = False
-        Me.GrainBillGridView.Size = New System.Drawing.Size(703, 187)
+        Me.GrainBillGridView.Size = New System.Drawing.Size(703, 257)
         Me.GrainBillGridView.TabIndex = 411
         '
         'Label18
@@ -422,7 +702,7 @@ Partial Class BrewingSessionForm
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(4, 493)
+        Me.Label18.Location = New System.Drawing.Point(8, 552)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(270, 25)
@@ -440,7 +720,7 @@ Partial Class BrewingSessionForm
         Me.MiscDataGridView.BackgroundColor = System.Drawing.SystemColors.Control
         Me.MiscDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MiscDataGridView.GridColor = System.Drawing.Color.CornflowerBlue
-        Me.MiscDataGridView.Location = New System.Drawing.Point(9, 521)
+        Me.MiscDataGridView.Location = New System.Drawing.Point(8, 584)
         Me.MiscDataGridView.MultiSelect = False
         Me.MiscDataGridView.Name = "MiscDataGridView"
         Me.MiscDataGridView.ReadOnly = True
@@ -465,7 +745,7 @@ Partial Class BrewingSessionForm
         Me.HopDataGridView.BackgroundColor = System.Drawing.SystemColors.Control
         Me.HopDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.HopDataGridView.GridColor = System.Drawing.Color.CornflowerBlue
-        Me.HopDataGridView.Location = New System.Drawing.Point(9, 372)
+        Me.HopDataGridView.Location = New System.Drawing.Point(9, 444)
         Me.HopDataGridView.MultiSelect = False
         Me.HopDataGridView.Name = "HopDataGridView"
         Me.HopDataGridView.ReadOnly = True
@@ -490,7 +770,7 @@ Partial Class BrewingSessionForm
         Me.StepMashGridView.BackgroundColor = System.Drawing.SystemColors.Control
         Me.StepMashGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.StepMashGridView.GridColor = System.Drawing.Color.CornflowerBlue
-        Me.StepMashGridView.Location = New System.Drawing.Point(9, 249)
+        Me.StepMashGridView.Location = New System.Drawing.Point(9, 321)
         Me.StepMashGridView.MultiSelect = False
         Me.StepMashGridView.Name = "StepMashGridView"
         Me.StepMashGridView.ReadOnly = True
@@ -508,7 +788,7 @@ Partial Class BrewingSessionForm
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(4, 344)
+        Me.Label17.Location = New System.Drawing.Point(4, 416)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(58, 25)
@@ -519,291 +799,12 @@ Partial Class BrewingSessionForm
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(4, 221)
+        Me.Label11.Location = New System.Drawing.Point(4, 293)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(302, 25)
         Me.Label11.TabIndex = 389
         Me.Label11.Text = "Step Mash and Sparge Schedule"
-        '
-        'BeerInfo
-        '
-        Me.BeerInfo.BackColor = System.Drawing.Color.White
-        Me.BeerInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.BeerInfo.Controls.Add(Label3)
-        Me.BeerInfo.Controls.Add(Me.OriginalGravityLable)
-        Me.BeerInfo.Controls.Add(Label4)
-        Me.BeerInfo.Controls.Add(Me.FermTempLabel)
-        Me.BeerInfo.Controls.Add(NotesLabel)
-        Me.BeerInfo.Controls.Add(Me.NotesTextBox)
-        Me.BeerInfo.Controls.Add(Label9)
-        Me.BeerInfo.Controls.Add(Me.StartingGravityTextBox)
-        Me.BeerInfo.Controls.Add(Label8)
-        Me.BeerInfo.Controls.Add(Me.FirstRunningsGravityTextbox)
-        Me.BeerInfo.Controls.Add(Label1)
-        Me.BeerInfo.Controls.Add(Me.VersionLabel)
-        Me.BeerInfo.Controls.Add(Label10)
-        Me.BeerInfo.Controls.Add(Me.StrikeTemplabel)
-        Me.BeerInfo.Controls.Add(Label7)
-        Me.BeerInfo.Controls.Add(Me.SpargeTempLabel)
-        Me.BeerInfo.Controls.Add(Me.BatchSizeLabel)
-        Me.BeerInfo.Controls.Add(Label6)
-        Me.BeerInfo.Controls.Add(Me.WaterNeededLabel1)
-        Me.BeerInfo.Controls.Add(Me.MashTypeLable)
-        Me.BeerInfo.Controls.Add(Me.BatchLabel)
-        Me.BeerInfo.Controls.Add(Me.WaterNeededLabel)
-        Me.BeerInfo.Controls.Add(Me.Label21)
-        Me.BeerInfo.Controls.Add(Me.BoilTimeLabel)
-        Me.BeerInfo.Controls.Add(Me.GrainTempTextBox)
-        Me.BeerInfo.Controls.Add(Me.BrewHouseEfficiencyUpDown)
-        Me.BeerInfo.Controls.Add(Label5)
-        Me.BeerInfo.Controls.Add(Me.BrewhouseEfficiencieslabel)
-        Me.BeerInfo.Controls.Add(Label13)
-        Me.BeerInfo.Controls.Add(Me.WaterLabel)
-        Me.BeerInfo.Controls.Add(Me.GrainTempLabel)
-        Me.BeerInfo.Controls.Add(Me.WatertoGrainRatioLabel)
-        Me.BeerInfo.Controls.Add(Me.GrainBillLabel)
-        Me.BeerInfo.Controls.Add(Me.GrainLabel)
-        Me.BeerInfo.Location = New System.Drawing.Point(4, 30)
-        Me.BeerInfo.Name = "BeerInfo"
-        Me.BeerInfo.Size = New System.Drawing.Size(759, 769)
-        Me.BeerInfo.TabIndex = 5
-        Me.BeerInfo.Text = "Beer Info"
-        '
-        'OriginalGravityLable
-        '
-        Me.OriginalGravityLable.AutoSize = True
-        Me.OriginalGravityLable.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OriginalGravityLable.Location = New System.Drawing.Point(216, 464)
-        Me.OriginalGravityLable.Name = "OriginalGravityLable"
-        Me.OriginalGravityLable.Size = New System.Drawing.Size(43, 24)
-        Me.OriginalGravityLable.TabIndex = 463
-        Me.OriginalGravityLable.Text = "000"
-        '
-        'FermTempLabel
-        '
-        Me.FermTempLabel.AutoSize = True
-        Me.FermTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FermTempLabel.Location = New System.Drawing.Point(216, 553)
-        Me.FermTempLabel.Name = "FermTempLabel"
-        Me.FermTempLabel.Size = New System.Drawing.Size(43, 24)
-        Me.FermTempLabel.TabIndex = 461
-        Me.FermTempLabel.Text = "000"
-        '
-        'NotesTextBox
-        '
-        Me.NotesTextBox.BackColor = System.Drawing.SystemColors.Control
-        Me.NotesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NotesTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NotesTextBox.Location = New System.Drawing.Point(5, 622)
-        Me.NotesTextBox.Multiline = True
-        Me.NotesTextBox.Name = "NotesTextBox"
-        Me.NotesTextBox.Size = New System.Drawing.Size(719, 123)
-        Me.NotesTextBox.TabIndex = 460
-        '
-        'StartingGravityTextBox
-        '
-        Me.StartingGravityTextBox.BackColor = System.Drawing.SystemColors.Control
-        Me.StartingGravityTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.StartingGravityTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StartingGravityTextBox.Location = New System.Drawing.Point(470, 46)
-        Me.StartingGravityTextBox.Name = "StartingGravityTextBox"
-        Me.StartingGravityTextBox.Size = New System.Drawing.Size(131, 26)
-        Me.StartingGravityTextBox.TabIndex = 457
-        '
-        'FirstRunningsGravityTextbox
-        '
-        Me.FirstRunningsGravityTextbox.BackColor = System.Drawing.SystemColors.Control
-        Me.FirstRunningsGravityTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FirstRunningsGravityTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FirstRunningsGravityTextbox.Location = New System.Drawing.Point(470, 11)
-        Me.FirstRunningsGravityTextbox.Name = "FirstRunningsGravityTextbox"
-        Me.FirstRunningsGravityTextbox.Size = New System.Drawing.Size(128, 26)
-        Me.FirstRunningsGravityTextbox.TabIndex = 455
-        '
-        'VersionLabel
-        '
-        Me.VersionLabel.AutoSize = True
-        Me.VersionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VersionLabel.Location = New System.Drawing.Point(213, 10)
-        Me.VersionLabel.Name = "VersionLabel"
-        Me.VersionLabel.Size = New System.Drawing.Size(43, 24)
-        Me.VersionLabel.TabIndex = 454
-        Me.VersionLabel.Text = "000"
-        '
-        'StrikeTemplabel
-        '
-        Me.StrikeTemplabel.AutoSize = True
-        Me.StrikeTemplabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StrikeTemplabel.Location = New System.Drawing.Point(213, 357)
-        Me.StrikeTemplabel.Name = "StrikeTemplabel"
-        Me.StrikeTemplabel.Size = New System.Drawing.Size(43, 24)
-        Me.StrikeTemplabel.TabIndex = 451
-        Me.StrikeTemplabel.Text = "000"
-        '
-        'SpargeTempLabel
-        '
-        Me.SpargeTempLabel.AutoSize = True
-        Me.SpargeTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SpargeTempLabel.Location = New System.Drawing.Point(213, 392)
-        Me.SpargeTempLabel.Name = "SpargeTempLabel"
-        Me.SpargeTempLabel.Size = New System.Drawing.Size(43, 24)
-        Me.SpargeTempLabel.TabIndex = 448
-        Me.SpargeTempLabel.Text = "000"
-        '
-        'BatchSizeLabel
-        '
-        Me.BatchSizeLabel.AutoSize = True
-        Me.BatchSizeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BatchSizeLabel.Location = New System.Drawing.Point(213, 249)
-        Me.BatchSizeLabel.Name = "BatchSizeLabel"
-        Me.BatchSizeLabel.Size = New System.Drawing.Size(43, 24)
-        Me.BatchSizeLabel.TabIndex = 445
-        Me.BatchSizeLabel.Text = "000"
-        '
-        'WaterNeededLabel1
-        '
-        Me.WaterNeededLabel1.AutoSize = True
-        Me.WaterNeededLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WaterNeededLabel1.Location = New System.Drawing.Point(-1, 287)
-        Me.WaterNeededLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.WaterNeededLabel1.Name = "WaterNeededLabel1"
-        Me.WaterNeededLabel1.Size = New System.Drawing.Size(155, 20)
-        Me.WaterNeededLabel1.TabIndex = 443
-        Me.WaterNeededLabel1.Text = "Mash Water Needed"
-        '
-        'MashTypeLable
-        '
-        Me.MashTypeLable.AutoSize = True
-        Me.MashTypeLable.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MashTypeLable.Location = New System.Drawing.Point(165, 321)
-        Me.MashTypeLable.Name = "MashTypeLable"
-        Me.MashTypeLable.Size = New System.Drawing.Size(148, 24)
-        Me.MashTypeLable.TabIndex = 449
-        Me.MashTypeLable.Text = "Sinlge Infusion"
-        '
-        'BatchLabel
-        '
-        Me.BatchLabel.AutoSize = True
-        Me.BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BatchLabel.Location = New System.Drawing.Point(0, 252)
-        Me.BatchLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.BatchLabel.Name = "BatchLabel"
-        Me.BatchLabel.Size = New System.Drawing.Size(160, 20)
-        Me.BatchLabel.TabIndex = 442
-        Me.BatchLabel.Text = "Batch Size in Gallons"
-        '
-        'WaterNeededLabel
-        '
-        Me.WaterNeededLabel.AutoSize = True
-        Me.WaterNeededLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WaterNeededLabel.Location = New System.Drawing.Point(210, 284)
-        Me.WaterNeededLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.WaterNeededLabel.Name = "WaterNeededLabel"
-        Me.WaterNeededLabel.Size = New System.Drawing.Size(71, 24)
-        Me.WaterNeededLabel.TabIndex = 444
-        Me.WaterNeededLabel.Text = "000.00"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(0, 324)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(86, 20)
-        Me.Label21.TabIndex = 446
-        Me.Label21.Text = "Mash Type"
-        '
-        'BoilTimeLabel
-        '
-        Me.BoilTimeLabel.AutoSize = True
-        Me.BoilTimeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BoilTimeLabel.Location = New System.Drawing.Point(213, 430)
-        Me.BoilTimeLabel.Name = "BoilTimeLabel"
-        Me.BoilTimeLabel.Size = New System.Drawing.Size(43, 24)
-        Me.BoilTimeLabel.TabIndex = 441
-        Me.BoilTimeLabel.Text = "000"
-        '
-        'GrainTempTextBox
-        '
-        Me.GrainTempTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GrainTempTextBox.Location = New System.Drawing.Point(169, 121)
-        Me.GrainTempTextBox.Name = "GrainTempTextBox"
-        Me.GrainTempTextBox.Size = New System.Drawing.Size(70, 29)
-        Me.GrainTempTextBox.TabIndex = 435
-        Me.GrainTempTextBox.Value = New Decimal(New Integer() {64, 0, 0, 0})
-        '
-        'BrewHouseEfficiencyUpDown
-        '
-        Me.BrewHouseEfficiencyUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BrewHouseEfficiencyUpDown.Location = New System.Drawing.Point(169, 168)
-        Me.BrewHouseEfficiencyUpDown.Name = "BrewHouseEfficiencyUpDown"
-        Me.BrewHouseEfficiencyUpDown.Size = New System.Drawing.Size(70, 29)
-        Me.BrewHouseEfficiencyUpDown.TabIndex = 433
-        '
-        'BrewhouseEfficiencieslabel
-        '
-        Me.BrewhouseEfficiencieslabel.AutoSize = True
-        Me.BrewhouseEfficiencieslabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BrewhouseEfficiencieslabel.Location = New System.Drawing.Point(213, 215)
-        Me.BrewhouseEfficiencieslabel.Name = "BrewhouseEfficiencieslabel"
-        Me.BrewhouseEfficiencieslabel.Size = New System.Drawing.Size(43, 24)
-        Me.BrewhouseEfficiencieslabel.TabIndex = 432
-        Me.BrewhouseEfficiencieslabel.Text = "000"
-        '
-        'WaterLabel
-        '
-        Me.WaterLabel.AutoSize = True
-        Me.WaterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WaterLabel.Location = New System.Drawing.Point(1, 87)
-        Me.WaterLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.WaterLabel.Name = "WaterLabel"
-        Me.WaterLabel.Size = New System.Drawing.Size(205, 20)
-        Me.WaterLabel.TabIndex = 418
-        Me.WaterLabel.Text = "Grain/Water Ratio in Quarts"
-        '
-        'GrainTempLabel
-        '
-        Me.GrainTempLabel.AutoSize = True
-        Me.GrainTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GrainTempLabel.Location = New System.Drawing.Point(0, 126)
-        Me.GrainTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.GrainTempLabel.Name = "GrainTempLabel"
-        Me.GrainTempLabel.Size = New System.Drawing.Size(143, 20)
-        Me.GrainTempLabel.TabIndex = 412
-        Me.GrainTempLabel.Text = "Grain Temperature"
-        '
-        'WatertoGrainRatioLabel
-        '
-        Me.WatertoGrainRatioLabel.AutoSize = True
-        Me.WatertoGrainRatioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WatertoGrainRatioLabel.Location = New System.Drawing.Point(213, 84)
-        Me.WatertoGrainRatioLabel.Name = "WatertoGrainRatioLabel"
-        Me.WatertoGrainRatioLabel.Size = New System.Drawing.Size(43, 24)
-        Me.WatertoGrainRatioLabel.TabIndex = 429
-        Me.WatertoGrainRatioLabel.Text = "000"
-        '
-        'GrainBillLabel
-        '
-        Me.GrainBillLabel.AutoSize = True
-        Me.GrainBillLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GrainBillLabel.Location = New System.Drawing.Point(213, 45)
-        Me.GrainBillLabel.Name = "GrainBillLabel"
-        Me.GrainBillLabel.Size = New System.Drawing.Size(43, 24)
-        Me.GrainBillLabel.TabIndex = 426
-        Me.GrainBillLabel.Text = "000"
-        '
-        'GrainLabel
-        '
-        Me.GrainLabel.AutoSize = True
-        Me.GrainLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GrainLabel.Location = New System.Drawing.Point(1, 48)
-        Me.GrainLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.GrainLabel.Name = "GrainLabel"
-        Me.GrainLabel.Size = New System.Drawing.Size(98, 20)
-        Me.GrainLabel.TabIndex = 414
-        Me.GrainLabel.Text = "lbs of Grains"
         '
         'CalculatorsTab
         '
@@ -845,7 +846,7 @@ Partial Class BrewingSessionForm
         Me.CalculatorsTab.Location = New System.Drawing.Point(4, 30)
         Me.CalculatorsTab.Name = "CalculatorsTab"
         Me.CalculatorsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.CalculatorsTab.Size = New System.Drawing.Size(895, 769)
+        Me.CalculatorsTab.Size = New System.Drawing.Size(759, 769)
         Me.CalculatorsTab.TabIndex = 4
         Me.CalculatorsTab.Text = "Calculators"
         '
@@ -1277,7 +1278,7 @@ Partial Class BrewingSessionForm
         'BeerIDTextBox
         '
         Me.BeerIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BeerIDTextBox.Location = New System.Drawing.Point(764, 76)
+        Me.BeerIDTextBox.Location = New System.Drawing.Point(129, 3)
         Me.BeerIDTextBox.Name = "BeerIDTextBox"
         Me.BeerIDTextBox.Size = New System.Drawing.Size(10, 29)
         Me.BeerIDTextBox.TabIndex = 193
@@ -1286,7 +1287,7 @@ Partial Class BrewingSessionForm
         'SessionIDTextBox
         '
         Me.SessionIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SessionIDTextBox.Location = New System.Drawing.Point(780, 76)
+        Me.SessionIDTextBox.Location = New System.Drawing.Point(145, 3)
         Me.SessionIDTextBox.Name = "SessionIDTextBox"
         Me.SessionIDTextBox.Size = New System.Drawing.Size(10, 29)
         Me.SessionIDTextBox.TabIndex = 295
@@ -1295,24 +1296,24 @@ Partial Class BrewingSessionForm
         'HLTunTempLabel
         '
         Me.HLTunTempLabel.AutoSize = True
-        Me.HLTunTempLabel.Font = New System.Drawing.Font("DS-Digital", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HLTunTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 62.0!)
         Me.HLTunTempLabel.ForeColor = System.Drawing.Color.Red
         Me.HLTunTempLabel.Location = New System.Drawing.Point(8, 11)
         Me.HLTunTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.HLTunTempLabel.Name = "HLTunTempLabel"
-        Me.HLTunTempLabel.Size = New System.Drawing.Size(292, 95)
+        Me.HLTunTempLabel.Size = New System.Drawing.Size(293, 95)
         Me.HLTunTempLabel.TabIndex = 30
         Me.HLTunTempLabel.Text = "000.00"
         '
         'MashTunTempLabel
         '
         Me.MashTunTempLabel.AutoSize = True
-        Me.MashTunTempLabel.Font = New System.Drawing.Font("DS-Digital", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MashTunTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 62.0!)
         Me.MashTunTempLabel.ForeColor = System.Drawing.Color.Red
         Me.MashTunTempLabel.Location = New System.Drawing.Point(4, 10)
         Me.MashTunTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MashTunTempLabel.Name = "MashTunTempLabel"
-        Me.MashTunTempLabel.Size = New System.Drawing.Size(292, 95)
+        Me.MashTunTempLabel.Size = New System.Drawing.Size(293, 95)
         Me.MashTunTempLabel.TabIndex = 34
         Me.MashTunTempLabel.Tag = ""
         Me.MashTunTempLabel.Text = "000.00"
@@ -1509,12 +1510,12 @@ Partial Class BrewingSessionForm
         'MiscTempProbeLabel
         '
         Me.MiscTempProbeLabel.AutoSize = True
-        Me.MiscTempProbeLabel.Font = New System.Drawing.Font("DS-Digital", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MiscTempProbeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 62.0!)
         Me.MiscTempProbeLabel.ForeColor = System.Drawing.Color.Red
         Me.MiscTempProbeLabel.Location = New System.Drawing.Point(8, 11)
         Me.MiscTempProbeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MiscTempProbeLabel.Name = "MiscTempProbeLabel"
-        Me.MiscTempProbeLabel.Size = New System.Drawing.Size(292, 95)
+        Me.MiscTempProbeLabel.Size = New System.Drawing.Size(293, 95)
         Me.MiscTempProbeLabel.TabIndex = 30
         Me.MiscTempProbeLabel.Text = "000.00"
         '
@@ -1542,12 +1543,12 @@ Partial Class BrewingSessionForm
         'RimTempLabel
         '
         Me.RimTempLabel.AutoSize = True
-        Me.RimTempLabel.Font = New System.Drawing.Font("DS-Digital", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RimTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 62.0!)
         Me.RimTempLabel.ForeColor = System.Drawing.Color.Red
         Me.RimTempLabel.Location = New System.Drawing.Point(8, 11)
         Me.RimTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.RimTempLabel.Name = "RimTempLabel"
-        Me.RimTempLabel.Size = New System.Drawing.Size(292, 95)
+        Me.RimTempLabel.Size = New System.Drawing.Size(293, 95)
         Me.RimTempLabel.TabIndex = 30
         Me.RimTempLabel.Text = "000.00"
         '
@@ -1564,12 +1565,12 @@ Partial Class BrewingSessionForm
         'RimTubeExternalTempLabel
         '
         Me.RimTubeExternalTempLabel.AutoSize = True
-        Me.RimTubeExternalTempLabel.Font = New System.Drawing.Font("DS-Digital", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RimTubeExternalTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 62.0!)
         Me.RimTubeExternalTempLabel.ForeColor = System.Drawing.Color.Red
         Me.RimTubeExternalTempLabel.Location = New System.Drawing.Point(8, 11)
         Me.RimTubeExternalTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.RimTubeExternalTempLabel.Name = "RimTubeExternalTempLabel"
-        Me.RimTubeExternalTempLabel.Size = New System.Drawing.Size(292, 95)
+        Me.RimTubeExternalTempLabel.Size = New System.Drawing.Size(293, 95)
         Me.RimTubeExternalTempLabel.TabIndex = 30
         Me.RimTubeExternalTempLabel.Text = "000.00"
         '
@@ -1577,19 +1578,19 @@ Partial Class BrewingSessionForm
         '
         Me.TempatureChart.BorderlineColor = System.Drawing.Color.Black
         Me.TempatureChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea1.Name = "ChartArea1"
-        Me.TempatureChart.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.TempatureChart.Legends.Add(Legend1)
+        ChartArea2.Name = "ChartArea1"
+        Me.TempatureChart.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.TempatureChart.Legends.Add(Legend2)
         Me.TempatureChart.Location = New System.Drawing.Point(12, 580)
         Me.TempatureChart.Name = "TempatureChart"
         Me.TempatureChart.Size = New System.Drawing.Size(965, 424)
         Me.TempatureChart.TabIndex = 418
         Me.TempatureChart.Text = "MashChart"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Title1.Name = "Title1"
-        Title1.Text = "Temperature Chart"
-        Me.TempatureChart.Titles.Add(Title1)
+        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Title2.Name = "Title1"
+        Title2.Text = "Temperature Chart"
+        Me.TempatureChart.Titles.Add(Title2)
         '
         'HLSetTEMPBOX
         '
@@ -1628,8 +1629,9 @@ Partial Class BrewingSessionForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1664, 1166)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackColor = System.Drawing.SystemColors.Window
+        Me.ClientSize = New System.Drawing.Size(1779, 1043)
         Me.Controls.Add(Me.SetKettleTempValueBox)
         Me.Controls.Add(Me.HLSetTEMPBOX)
         Me.Controls.Add(Me.TempatureChart)
@@ -1666,20 +1668,20 @@ Partial Class BrewingSessionForm
         Me.Controls.Add(Me.MashSetTempValueBox)
         Me.Controls.Add(Me.StartBoilTimerButton)
         Me.Controls.Add(Me.HLPumpOnOffButton)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "BrewingSessionForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TabControl1.ResumeLayout(False)
+        Me.BeerInfo.ResumeLayout(False)
+        Me.BeerInfo.PerformLayout()
+        CType(Me.GrainTempTextBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BrewHouseEfficiencyUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BeerTables.ResumeLayout(False)
         Me.BeerTables.PerformLayout()
         CType(Me.GrainBillGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MiscDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HopDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StepMashGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.BeerInfo.ResumeLayout(False)
-        Me.BeerInfo.PerformLayout()
-        CType(Me.GrainTempTextBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BrewHouseEfficiencyUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CalculatorsTab.ResumeLayout(False)
         Me.CalculatorsTab.PerformLayout()
         Me.HlTunPanel.ResumeLayout(False)

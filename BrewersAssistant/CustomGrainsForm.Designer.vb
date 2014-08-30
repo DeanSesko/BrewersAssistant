@@ -166,6 +166,7 @@ Partial Class CustomGrainsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.MushMashComboBox)

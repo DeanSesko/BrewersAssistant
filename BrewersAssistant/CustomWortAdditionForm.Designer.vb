@@ -50,10 +50,10 @@ Partial Class CustomWortAdditionForm
         '
         'MiscWortItemDescriptionTextBox
         '
-        Me.MiscWortItemDescriptionTextBox.Location = New System.Drawing.Point(99, 31)
+        Me.MiscWortItemDescriptionTextBox.Location = New System.Drawing.Point(138, 31)
         Me.MiscWortItemDescriptionTextBox.Multiline = True
         Me.MiscWortItemDescriptionTextBox.Name = "MiscWortItemDescriptionTextBox"
-        Me.MiscWortItemDescriptionTextBox.Size = New System.Drawing.Size(267, 46)
+        Me.MiscWortItemDescriptionTextBox.Size = New System.Drawing.Size(228, 46)
         Me.MiscWortItemDescriptionTextBox.TabIndex = 2
         '
         'CloseButton
@@ -85,6 +85,7 @@ Partial Class CustomWortAdditionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.MiscAddButton)
         Me.Controls.Add(Me.Label8)

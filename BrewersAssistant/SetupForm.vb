@@ -29,6 +29,7 @@ Public Class SetupForm
         If Not (ComPortSetupComboBox.Text = "") Then
             My.Settings.COMPORT = ComPortSetupComboBox.Text
             MsgBox("ComPort has been set to " + ComPortSetupComboBox.Text)
+            OpenSerialPort()
         Else
             MsgBox("Please Enter a Valid ComPot")
         End If

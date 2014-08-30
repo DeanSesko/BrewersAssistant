@@ -35,8 +35,6 @@ Public Class HomeParentForm
         ShowNewForm(GrainMainForm)
 
     End Sub
-
-  
   
     Private Sub ExitBUtton_Click_1(sender As Object, e As EventArgs) Handles ExitBUtton.Click
         Application.Exit()

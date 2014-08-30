@@ -505,6 +505,7 @@ Partial Class SetupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(596, 428)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.SearchModeButton)
@@ -552,6 +553,7 @@ Partial Class SetupForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Sensor1ComboBox)
         Me.Controls.Add(Me.CloseButton)
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False

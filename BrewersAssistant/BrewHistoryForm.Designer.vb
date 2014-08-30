@@ -169,7 +169,7 @@ Partial Class BrewHistoryForm
         '
         Me.TotalMinutes.AutoSize = True
         Me.TotalMinutes.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TotalMinutes.Location = New System.Drawing.Point(364, 842)
+        Me.TotalMinutes.Location = New System.Drawing.Point(392, 840)
         Me.TotalMinutes.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.TotalMinutes.Name = "TotalMinutes"
         Me.TotalMinutes.Size = New System.Drawing.Size(58, 17)
@@ -213,7 +213,7 @@ Partial Class BrewHistoryForm
         '
         Me.ChillPercentageLabel.AutoSize = True
         Me.ChillPercentageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChillPercentageLabel.Location = New System.Drawing.Point(398, 813)
+        Me.ChillPercentageLabel.Location = New System.Drawing.Point(392, 816)
         Me.ChillPercentageLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.ChillPercentageLabel.Name = "ChillPercentageLabel"
         Me.ChillPercentageLabel.Size = New System.Drawing.Size(58, 17)
@@ -256,11 +256,11 @@ Partial Class BrewHistoryForm
         'StopChillChillLabel
         '
         Me.StopChillChillLabel.AutoSize = True
-        Me.StopChillChillLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StopChillChillLabel.Location = New System.Drawing.Point(404, 784)
+        Me.StopChillChillLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.StopChillChillLabel.Location = New System.Drawing.Point(392, 784)
         Me.StopChillChillLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.StopChillChillLabel.Name = "StopChillChillLabel"
-        Me.StopChillChillLabel.Size = New System.Drawing.Size(52, 16)
+        Me.StopChillChillLabel.Size = New System.Drawing.Size(58, 17)
         Me.StopChillChillLabel.TabIndex = 244
         Me.StopChillChillLabel.Text = "000.00"
         '
@@ -1121,6 +1121,7 @@ Partial Class BrewHistoryForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1424, 866)
         Me.Controls.Add(Me.MashChart)
         Me.Controls.Add(Me.Label38)

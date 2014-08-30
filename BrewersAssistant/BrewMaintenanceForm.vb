@@ -343,7 +343,7 @@ MyExit:
                 While myReader.Read()
                 OriginLabel.Text = myReader.Item("Origin").ToString
                     OriginLabel.Visible = True
-                    OriginLabel.Text = myReader.Item("Type").ToString
+                TypeLabel.Text = myReader.Item("Type").ToString
                     TypeLabel.Visible = True
                     SRMLabel.Text = myReader.Item("ColorSRM").ToString
                     SRMLabel.Visible = True

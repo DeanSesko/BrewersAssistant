@@ -107,7 +107,9 @@ myexit:
 
     Private Sub HopNameComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HopNameComboBox.SelectedIndexChanged
         ClearHopinfo()
-        Dim mysqlString As String = "Select * from  Hops where HopName='" & HopNameComboBox.Text & "'"
+        Dim NameString As String = HopNameComboBox.Text
+        NameString = NameString.Replace("'", "''")
+        Dim mysqlString As String = "Select * from  Hops where HopName='" & NameString & "'"
         Dim DataControl As String = "Hops"
         GetSQLDBData(mysqlString, DataControl)
     End Sub

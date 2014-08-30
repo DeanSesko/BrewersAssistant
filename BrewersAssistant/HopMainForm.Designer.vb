@@ -25,7 +25,6 @@ Partial Class HopMainForm
         Me.Time = New System.Windows.Forms.Label()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.UpdateButton = New System.Windows.Forms.Button()
-        Me.HopIDLabel = New System.Windows.Forms.Label()
         Me.AddCustomHopsButton = New System.Windows.Forms.Button()
         Me.HopNameComboBox = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -47,7 +46,7 @@ Partial Class HopMainForm
         '
         Me.Time.AutoSize = True
         Me.Time.Font = New System.Drawing.Font("Microsoft Sans Serif", 35.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Time.Location = New System.Drawing.Point(8, 6)
+        Me.Time.Location = New System.Drawing.Point(16, 8)
         Me.Time.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Time.Name = "Time"
         Me.Time.Size = New System.Drawing.Size(133, 54)
@@ -66,22 +65,12 @@ Partial Class HopMainForm
         '
         'UpdateButton
         '
-        Me.UpdateButton.Location = New System.Drawing.Point(12, 293)
+        Me.UpdateButton.Location = New System.Drawing.Point(16, 328)
         Me.UpdateButton.Name = "UpdateButton"
         Me.UpdateButton.Size = New System.Drawing.Size(75, 23)
         Me.UpdateButton.TabIndex = 331
         Me.UpdateButton.Text = "Update"
         Me.UpdateButton.UseVisualStyleBackColor = True
-        '
-        'HopIDLabel
-        '
-        Me.HopIDLabel.AutoSize = True
-        Me.HopIDLabel.Location = New System.Drawing.Point(426, 9)
-        Me.HopIDLabel.Name = "HopIDLabel"
-        Me.HopIDLabel.Size = New System.Drawing.Size(38, 13)
-        Me.HopIDLabel.TabIndex = 330
-        Me.HopIDLabel.Text = "HopID"
-        Me.HopIDLabel.Visible = False
         '
         'AddCustomHopsButton
         '
@@ -228,6 +217,7 @@ Partial Class HopMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(596, 355)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
@@ -245,7 +235,6 @@ Partial Class HopMainForm
         Me.Controls.Add(Me.Time)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.UpdateButton)
-        Me.Controls.Add(Me.HopIDLabel)
         Me.Controls.Add(Me.AddCustomHopsButton)
         Me.Controls.Add(Me.HopNameComboBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -258,7 +247,6 @@ Partial Class HopMainForm
     Friend WithEvents Time As System.Windows.Forms.Label
     Friend WithEvents ExitButton As System.Windows.Forms.Button
     Friend WithEvents UpdateButton As System.Windows.Forms.Button
-    Friend WithEvents HopIDLabel As System.Windows.Forms.Label
     Friend WithEvents AddCustomHopsButton As System.Windows.Forms.Button
     Friend WithEvents HopNameComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
