@@ -23,20 +23,9 @@ Partial Class BrewingSessionForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Label13 As System.Windows.Forms.Label
-        Dim Label5 As System.Windows.Forms.Label
-        Dim Label10 As System.Windows.Forms.Label
-        Dim Label7 As System.Windows.Forms.Label
-        Dim Label6 As System.Windows.Forms.Label
-        Dim Label1 As System.Windows.Forms.Label
-        Dim Label9 As System.Windows.Forms.Label
-        Dim Label8 As System.Windows.Forms.Label
-        Dim NotesLabel As System.Windows.Forms.Label
-        Dim Label4 As System.Windows.Forms.Label
-        Dim Label3 As System.Windows.Forms.Label
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title7 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.BoilTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BrewSessionsDateComboBox = New System.Windows.Forms.ComboBox()
         Me.ContinueBrewButton = New System.Windows.Forms.Button()
@@ -44,6 +33,10 @@ Partial Class BrewingSessionForm
         Me.BoitlKettleTempLabel = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.BeerInfo = New System.Windows.Forms.TabPage()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.OriginalGravityLable = New System.Windows.Forms.Label()
         Me.FermTempLabel = New System.Windows.Forms.Label()
         Me.NotesTextBox = New System.Windows.Forms.TextBox()
@@ -150,17 +143,13 @@ Partial Class BrewingSessionForm
         Me.HLSetTEMPBOX = New System.Windows.Forms.NumericUpDown()
         Me.SetKettleTempValueBox = New System.Windows.Forms.NumericUpDown()
         Me.StepMashTimeLabel = New System.Windows.Forms.Label()
-        Label13 = New System.Windows.Forms.Label()
-        Label5 = New System.Windows.Forms.Label()
-        Label10 = New System.Windows.Forms.Label()
-        Label7 = New System.Windows.Forms.Label()
-        Label6 = New System.Windows.Forms.Label()
-        Label1 = New System.Windows.Forms.Label()
-        Label9 = New System.Windows.Forms.Label()
-        Label8 = New System.Windows.Forms.Label()
-        NotesLabel = New System.Windows.Forms.Label()
-        Label4 = New System.Windows.Forms.Label()
-        Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.BeerInfo.SuspendLayout()
         CType(Me.GrainTempTextBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,124 +171,6 @@ Partial Class BrewingSessionForm
         CType(Me.HLSetTEMPBOX, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SetKettleTempValueBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label13
-        '
-        Label13.AutoSize = True
-        Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label13.Location = New System.Drawing.Point(16, 168)
-        Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label13.Name = "Label13"
-        Label13.Size = New System.Drawing.Size(161, 20)
-        Label13.TabIndex = 434
-        Label13.Text = "Brewhouse Efficiency"
-        '
-        'Label5
-        '
-        Label5.AutoSize = True
-        Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label5.Location = New System.Drawing.Point(16, 208)
-        Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(109, 20)
-        Label5.TabIndex = 431
-        Label5.Text = "Grain Potenial"
-        '
-        'Label10
-        '
-        Label10.AutoSize = True
-        Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label10.Location = New System.Drawing.Point(16, 408)
-        Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(156, 20)
-        Label10.TabIndex = 452
-        Label10.Text = "Sparge Temperature"
-        '
-        'Label7
-        '
-        Label7.AutoSize = True
-        Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label7.Location = New System.Drawing.Point(16, 368)
-        Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(145, 20)
-        Label7.TabIndex = 450
-        Label7.Text = "Strike Temperature"
-        '
-        'Label6
-        '
-        Label6.AutoSize = True
-        Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label6.Location = New System.Drawing.Point(16, 448)
-        Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(100, 20)
-        Label6.TabIndex = 447
-        Label6.Text = "Boil Duration"
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label1.Location = New System.Drawing.Point(16, 16)
-        Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(67, 20)
-        Label1.TabIndex = 453
-        Label1.Text = "Version:"
-        '
-        'Label9
-        '
-        Label9.AutoSize = True
-        Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label9.Location = New System.Drawing.Point(16, 608)
-        Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(118, 20)
-        Label9.TabIndex = 458
-        Label9.Text = "Starting Gravity"
-        '
-        'Label8
-        '
-        Label8.AutoSize = True
-        Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label8.Location = New System.Drawing.Point(16, 568)
-        Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(165, 20)
-        Label8.TabIndex = 456
-        Label8.Text = "First Runnings Gravity"
-        '
-        'NotesLabel
-        '
-        NotesLabel.AutoSize = True
-        NotesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NotesLabel.Location = New System.Drawing.Point(16, 648)
-        NotesLabel.Name = "NotesLabel"
-        NotesLabel.Size = New System.Drawing.Size(145, 25)
-        NotesLabel.TabIndex = 459
-        NotesLabel.Text = "Session Notes:"
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label4.Location = New System.Drawing.Point(16, 528)
-        Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(194, 20)
-        Label4.TabIndex = 462
-        Label4.Text = "Fermenation Temperature"
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label3.Location = New System.Drawing.Point(16, 488)
-        Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(181, 20)
-        Label3.TabIndex = 464
-        Label3.Text = "Required Ogrinal Gravity"
         '
         'BoilTimer
         '
@@ -344,9 +215,9 @@ Partial Class BrewingSessionForm
         Me.BoitlKettleTempLabel.Location = New System.Drawing.Point(4, 10)
         Me.BoitlKettleTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BoitlKettleTempLabel.Name = "BoitlKettleTempLabel"
-        Me.BoitlKettleTempLabel.Size = New System.Drawing.Size(293, 95)
+        Me.BoitlKettleTempLabel.Size = New System.Drawing.Size(247, 95)
         Me.BoitlKettleTempLabel.TabIndex = 35
-        Me.BoitlKettleTempLabel.Text = "000.00"
+        Me.BoitlKettleTempLabel.Text = "00.00"
         '
         'TabControl1
         '
@@ -366,24 +237,26 @@ Partial Class BrewingSessionForm
         '
         Me.BeerInfo.BackColor = System.Drawing.Color.White
         Me.BeerInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.BeerInfo.Controls.Add(Label3)
+        Me.BeerInfo.Controls.Add(Me.Label3)
+        Me.BeerInfo.Controls.Add(Me.Label4)
+        Me.BeerInfo.Controls.Add(Me.Label8)
+        Me.BeerInfo.Controls.Add(Me.Label19)
+        Me.BeerInfo.Controls.Add(Me.Label9)
+        Me.BeerInfo.Controls.Add(Me.Label1)
+        Me.BeerInfo.Controls.Add(Me.Label6)
+        Me.BeerInfo.Controls.Add(Me.Label7)
+        Me.BeerInfo.Controls.Add(Me.Label10)
+        Me.BeerInfo.Controls.Add(Me.Label5)
+        Me.BeerInfo.Controls.Add(Me.Label13)
         Me.BeerInfo.Controls.Add(Me.OriginalGravityLable)
-        Me.BeerInfo.Controls.Add(Label4)
         Me.BeerInfo.Controls.Add(Me.FermTempLabel)
-        Me.BeerInfo.Controls.Add(NotesLabel)
         Me.BeerInfo.Controls.Add(Me.NotesTextBox)
-        Me.BeerInfo.Controls.Add(Label9)
         Me.BeerInfo.Controls.Add(Me.StartingGravityTextBox)
-        Me.BeerInfo.Controls.Add(Label8)
         Me.BeerInfo.Controls.Add(Me.FirstRunningsGravityTextbox)
-        Me.BeerInfo.Controls.Add(Label1)
         Me.BeerInfo.Controls.Add(Me.VersionLabel)
-        Me.BeerInfo.Controls.Add(Label10)
         Me.BeerInfo.Controls.Add(Me.StrikeTemplabel)
-        Me.BeerInfo.Controls.Add(Label7)
         Me.BeerInfo.Controls.Add(Me.SpargeTempLabel)
         Me.BeerInfo.Controls.Add(Me.BatchSizeLabel)
-        Me.BeerInfo.Controls.Add(Label6)
         Me.BeerInfo.Controls.Add(Me.WaterNeededLabel1)
         Me.BeerInfo.Controls.Add(Me.MashTypeLable)
         Me.BeerInfo.Controls.Add(Me.BatchLabel)
@@ -392,9 +265,7 @@ Partial Class BrewingSessionForm
         Me.BeerInfo.Controls.Add(Me.BoilTimeLabel)
         Me.BeerInfo.Controls.Add(Me.GrainTempTextBox)
         Me.BeerInfo.Controls.Add(Me.BrewHouseEfficiencyUpDown)
-        Me.BeerInfo.Controls.Add(Label5)
         Me.BeerInfo.Controls.Add(Me.BrewhouseEfficiencieslabel)
-        Me.BeerInfo.Controls.Add(Label13)
         Me.BeerInfo.Controls.Add(Me.WaterLabel)
         Me.BeerInfo.Controls.Add(Me.GrainTempLabel)
         Me.BeerInfo.Controls.Add(Me.WatertoGrainRatioLabel)
@@ -406,15 +277,53 @@ Partial Class BrewingSessionForm
         Me.BeerInfo.TabIndex = 5
         Me.BeerInfo.Text = "Beer Info"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(16, 368)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(145, 20)
+        Me.Label7.TabIndex = 468
+        Me.Label7.Text = "Strike Temperature"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(16, 408)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(156, 20)
+        Me.Label10.TabIndex = 467
+        Me.Label10.Text = "Sparge Temperature"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(16, 208)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(109, 20)
+        Me.Label5.TabIndex = 466
+        Me.Label5.Text = "Grain Potenial"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(16, 168)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(168, 20)
+        Me.Label13.TabIndex = 465
+        Me.Label13.Text = "Brew House Efficiency"
+        '
         'OriginalGravityLable
         '
         Me.OriginalGravityLable.AutoSize = True
         Me.OriginalGravityLable.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OriginalGravityLable.Location = New System.Drawing.Point(240, 488)
         Me.OriginalGravityLable.Name = "OriginalGravityLable"
-        Me.OriginalGravityLable.Size = New System.Drawing.Size(43, 24)
+        Me.OriginalGravityLable.Size = New System.Drawing.Size(60, 24)
         Me.OriginalGravityLable.TabIndex = 463
-        Me.OriginalGravityLable.Text = "000"
+        Me.OriginalGravityLable.Text = "00.00"
         '
         'FermTempLabel
         '
@@ -422,9 +331,9 @@ Partial Class BrewingSessionForm
         Me.FermTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FermTempLabel.Location = New System.Drawing.Point(240, 528)
         Me.FermTempLabel.Name = "FermTempLabel"
-        Me.FermTempLabel.Size = New System.Drawing.Size(43, 24)
+        Me.FermTempLabel.Size = New System.Drawing.Size(60, 24)
         Me.FermTempLabel.TabIndex = 461
-        Me.FermTempLabel.Text = "000"
+        Me.FermTempLabel.Text = "00.00"
         '
         'NotesTextBox
         '
@@ -463,9 +372,9 @@ Partial Class BrewingSessionForm
         Me.VersionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VersionLabel.Location = New System.Drawing.Point(240, 8)
         Me.VersionLabel.Name = "VersionLabel"
-        Me.VersionLabel.Size = New System.Drawing.Size(43, 24)
+        Me.VersionLabel.Size = New System.Drawing.Size(60, 24)
         Me.VersionLabel.TabIndex = 454
-        Me.VersionLabel.Text = "000"
+        Me.VersionLabel.Text = "00.00"
         '
         'StrikeTemplabel
         '
@@ -473,9 +382,9 @@ Partial Class BrewingSessionForm
         Me.StrikeTemplabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StrikeTemplabel.Location = New System.Drawing.Point(240, 368)
         Me.StrikeTemplabel.Name = "StrikeTemplabel"
-        Me.StrikeTemplabel.Size = New System.Drawing.Size(43, 24)
+        Me.StrikeTemplabel.Size = New System.Drawing.Size(60, 24)
         Me.StrikeTemplabel.TabIndex = 451
-        Me.StrikeTemplabel.Text = "000"
+        Me.StrikeTemplabel.Text = "00.00"
         '
         'SpargeTempLabel
         '
@@ -483,9 +392,9 @@ Partial Class BrewingSessionForm
         Me.SpargeTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpargeTempLabel.Location = New System.Drawing.Point(240, 408)
         Me.SpargeTempLabel.Name = "SpargeTempLabel"
-        Me.SpargeTempLabel.Size = New System.Drawing.Size(43, 24)
+        Me.SpargeTempLabel.Size = New System.Drawing.Size(60, 24)
         Me.SpargeTempLabel.TabIndex = 448
-        Me.SpargeTempLabel.Text = "000"
+        Me.SpargeTempLabel.Text = "00.00"
         '
         'BatchSizeLabel
         '
@@ -493,9 +402,9 @@ Partial Class BrewingSessionForm
         Me.BatchSizeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BatchSizeLabel.Location = New System.Drawing.Point(240, 248)
         Me.BatchSizeLabel.Name = "BatchSizeLabel"
-        Me.BatchSizeLabel.Size = New System.Drawing.Size(43, 24)
+        Me.BatchSizeLabel.Size = New System.Drawing.Size(60, 24)
         Me.BatchSizeLabel.TabIndex = 445
-        Me.BatchSizeLabel.Text = "000"
+        Me.BatchSizeLabel.Text = "00.00"
         '
         'WaterNeededLabel1
         '
@@ -536,9 +445,9 @@ Partial Class BrewingSessionForm
         Me.WaterNeededLabel.Location = New System.Drawing.Point(240, 288)
         Me.WaterNeededLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.WaterNeededLabel.Name = "WaterNeededLabel"
-        Me.WaterNeededLabel.Size = New System.Drawing.Size(71, 24)
+        Me.WaterNeededLabel.Size = New System.Drawing.Size(60, 24)
         Me.WaterNeededLabel.TabIndex = 444
-        Me.WaterNeededLabel.Text = "000.00"
+        Me.WaterNeededLabel.Text = "00.00"
         '
         'Label21
         '
@@ -557,9 +466,9 @@ Partial Class BrewingSessionForm
         Me.BoilTimeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BoilTimeLabel.Location = New System.Drawing.Point(240, 448)
         Me.BoilTimeLabel.Name = "BoilTimeLabel"
-        Me.BoilTimeLabel.Size = New System.Drawing.Size(43, 24)
+        Me.BoilTimeLabel.Size = New System.Drawing.Size(60, 24)
         Me.BoilTimeLabel.TabIndex = 441
-        Me.BoilTimeLabel.Text = "000"
+        Me.BoilTimeLabel.Text = "00.00"
         '
         'GrainTempTextBox
         '
@@ -584,9 +493,9 @@ Partial Class BrewingSessionForm
         Me.BrewhouseEfficiencieslabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BrewhouseEfficiencieslabel.Location = New System.Drawing.Point(240, 208)
         Me.BrewhouseEfficiencieslabel.Name = "BrewhouseEfficiencieslabel"
-        Me.BrewhouseEfficiencieslabel.Size = New System.Drawing.Size(43, 24)
+        Me.BrewhouseEfficiencieslabel.Size = New System.Drawing.Size(60, 24)
         Me.BrewhouseEfficiencieslabel.TabIndex = 432
-        Me.BrewhouseEfficiencieslabel.Text = "000"
+        Me.BrewhouseEfficiencieslabel.Text = "00.00"
         '
         'WaterLabel
         '
@@ -616,9 +525,9 @@ Partial Class BrewingSessionForm
         Me.WatertoGrainRatioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WatertoGrainRatioLabel.Location = New System.Drawing.Point(240, 88)
         Me.WatertoGrainRatioLabel.Name = "WatertoGrainRatioLabel"
-        Me.WatertoGrainRatioLabel.Size = New System.Drawing.Size(43, 24)
+        Me.WatertoGrainRatioLabel.Size = New System.Drawing.Size(60, 24)
         Me.WatertoGrainRatioLabel.TabIndex = 429
-        Me.WatertoGrainRatioLabel.Text = "000"
+        Me.WatertoGrainRatioLabel.Text = "00.00"
         '
         'GrainBillLabel
         '
@@ -626,9 +535,9 @@ Partial Class BrewingSessionForm
         Me.GrainBillLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrainBillLabel.Location = New System.Drawing.Point(240, 48)
         Me.GrainBillLabel.Name = "GrainBillLabel"
-        Me.GrainBillLabel.Size = New System.Drawing.Size(43, 24)
+        Me.GrainBillLabel.Size = New System.Drawing.Size(60, 24)
         Me.GrainBillLabel.TabIndex = 426
-        Me.GrainBillLabel.Text = "000"
+        Me.GrainBillLabel.Text = "00.00"
         '
         'GrainLabel
         '
@@ -856,9 +765,9 @@ Partial Class BrewingSessionForm
         Me.CurrentWortTemp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CurrentWortTemp.Location = New System.Drawing.Point(176, 171)
         Me.CurrentWortTemp.Name = "CurrentWortTemp"
-        Me.CurrentWortTemp.Size = New System.Drawing.Size(35, 17)
+        Me.CurrentWortTemp.Size = New System.Drawing.Size(49, 17)
         Me.CurrentWortTemp.TabIndex = 421
-        Me.CurrentWortTemp.Text = "000"
+        Me.CurrentWortTemp.Text = "00.00"
         '
         'Label41
         '
@@ -889,9 +798,9 @@ Partial Class BrewingSessionForm
         Me.StartChillChillLabel.Location = New System.Drawing.Point(131, 693)
         Me.StartChillChillLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.StartChillChillLabel.Name = "StartChillChillLabel"
-        Me.StartChillChillLabel.Size = New System.Drawing.Size(58, 17)
+        Me.StartChillChillLabel.Size = New System.Drawing.Size(49, 17)
         Me.StartChillChillLabel.TabIndex = 419
-        Me.StartChillChillLabel.Text = "000.00"
+        Me.StartChillChillLabel.Text = "00.00"
         '
         'StopChillChillLabel
         '
@@ -900,9 +809,9 @@ Partial Class BrewingSessionForm
         Me.StopChillChillLabel.Location = New System.Drawing.Point(131, 717)
         Me.StopChillChillLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.StopChillChillLabel.Name = "StopChillChillLabel"
-        Me.StopChillChillLabel.Size = New System.Drawing.Size(58, 17)
+        Me.StopChillChillLabel.Size = New System.Drawing.Size(49, 17)
         Me.StopChillChillLabel.TabIndex = 420
-        Me.StopChillChillLabel.Text = "000.00"
+        Me.StopChillChillLabel.Text = "00.00"
         '
         'Label35
         '
@@ -955,9 +864,9 @@ Partial Class BrewingSessionForm
         Me.ChillPerMinutelabel.Location = New System.Drawing.Point(131, 649)
         Me.ChillPerMinutelabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ChillPerMinutelabel.Name = "ChillPerMinutelabel"
-        Me.ChillPerMinutelabel.Size = New System.Drawing.Size(58, 17)
+        Me.ChillPerMinutelabel.Size = New System.Drawing.Size(49, 17)
         Me.ChillPerMinutelabel.TabIndex = 412
-        Me.ChillPerMinutelabel.Text = "000.00"
+        Me.ChillPerMinutelabel.Text = "00.00"
         '
         'TotalMinutes
         '
@@ -966,9 +875,9 @@ Partial Class BrewingSessionForm
         Me.TotalMinutes.Location = New System.Drawing.Point(131, 670)
         Me.TotalMinutes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.TotalMinutes.Name = "TotalMinutes"
-        Me.TotalMinutes.Size = New System.Drawing.Size(58, 17)
+        Me.TotalMinutes.Size = New System.Drawing.Size(49, 17)
         Me.TotalMinutes.TabIndex = 415
-        Me.TotalMinutes.Text = "000.00"
+        Me.TotalMinutes.Text = "00.00"
         '
         'ChillPercentageLabel
         '
@@ -977,9 +886,9 @@ Partial Class BrewingSessionForm
         Me.ChillPercentageLabel.Location = New System.Drawing.Point(131, 628)
         Me.ChillPercentageLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ChillPercentageLabel.Name = "ChillPercentageLabel"
-        Me.ChillPercentageLabel.Size = New System.Drawing.Size(58, 17)
+        Me.ChillPercentageLabel.Size = New System.Drawing.Size(49, 17)
         Me.ChillPercentageLabel.TabIndex = 410
-        Me.ChillPercentageLabel.Text = "000.00"
+        Me.ChillPercentageLabel.Text = "00.00"
         '
         'ChillTempChangeLabel
         '
@@ -988,9 +897,9 @@ Partial Class BrewingSessionForm
         Me.ChillTempChangeLabel.Location = New System.Drawing.Point(131, 608)
         Me.ChillTempChangeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ChillTempChangeLabel.Name = "ChillTempChangeLabel"
-        Me.ChillTempChangeLabel.Size = New System.Drawing.Size(58, 17)
+        Me.ChillTempChangeLabel.Size = New System.Drawing.Size(49, 17)
         Me.ChillTempChangeLabel.TabIndex = 408
-        Me.ChillTempChangeLabel.Text = "000.00"
+        Me.ChillTempChangeLabel.Text = "00.00"
         '
         'Label39
         '
@@ -1020,9 +929,9 @@ Partial Class BrewingSessionForm
         Me.VesselCapacityLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VesselCapacityLabel.Location = New System.Drawing.Point(190, 453)
         Me.VesselCapacityLabel.Name = "VesselCapacityLabel"
-        Me.VesselCapacityLabel.Size = New System.Drawing.Size(35, 17)
+        Me.VesselCapacityLabel.Size = New System.Drawing.Size(49, 17)
         Me.VesselCapacityLabel.TabIndex = 406
-        Me.VesselCapacityLabel.Text = "000"
+        Me.VesselCapacityLabel.Text = "00.00"
         '
         'LiquidLevelTextBox
         '
@@ -1059,9 +968,9 @@ Partial Class BrewingSessionForm
         Me.GallonsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GallonsLabel.Location = New System.Drawing.Point(190, 479)
         Me.GallonsLabel.Name = "GallonsLabel"
-        Me.GallonsLabel.Size = New System.Drawing.Size(35, 17)
+        Me.GallonsLabel.Size = New System.Drawing.Size(49, 17)
         Me.GallonsLabel.TabIndex = 402
-        Me.GallonsLabel.Text = "000"
+        Me.GallonsLabel.Text = "00.00"
         '
         'Label30
         '
@@ -1140,9 +1049,9 @@ Partial Class BrewingSessionForm
         Me.CorrectedGravityLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CorrectedGravityLabel.Location = New System.Drawing.Point(176, 212)
         Me.CorrectedGravityLabel.Name = "CorrectedGravityLabel"
-        Me.CorrectedGravityLabel.Size = New System.Drawing.Size(35, 17)
+        Me.CorrectedGravityLabel.Size = New System.Drawing.Size(49, 17)
         Me.CorrectedGravityLabel.TabIndex = 389
-        Me.CorrectedGravityLabel.Text = "000"
+        Me.CorrectedGravityLabel.Text = "00.00"
         '
         'Label24
         '
@@ -1301,9 +1210,9 @@ Partial Class BrewingSessionForm
         Me.HLTunTempLabel.Location = New System.Drawing.Point(8, 11)
         Me.HLTunTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.HLTunTempLabel.Name = "HLTunTempLabel"
-        Me.HLTunTempLabel.Size = New System.Drawing.Size(293, 95)
+        Me.HLTunTempLabel.Size = New System.Drawing.Size(247, 95)
         Me.HLTunTempLabel.TabIndex = 30
-        Me.HLTunTempLabel.Text = "000.00"
+        Me.HLTunTempLabel.Text = "00.00"
         '
         'MashTunTempLabel
         '
@@ -1313,10 +1222,10 @@ Partial Class BrewingSessionForm
         Me.MashTunTempLabel.Location = New System.Drawing.Point(4, 10)
         Me.MashTunTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MashTunTempLabel.Name = "MashTunTempLabel"
-        Me.MashTunTempLabel.Size = New System.Drawing.Size(293, 95)
+        Me.MashTunTempLabel.Size = New System.Drawing.Size(247, 95)
         Me.MashTunTempLabel.TabIndex = 34
         Me.MashTunTempLabel.Tag = ""
-        Me.MashTunTempLabel.Text = "000.00"
+        Me.MashTunTempLabel.Text = "00.00"
         '
         'MashTimer
         '
@@ -1515,9 +1424,9 @@ Partial Class BrewingSessionForm
         Me.MiscTempProbeLabel.Location = New System.Drawing.Point(8, 11)
         Me.MiscTempProbeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MiscTempProbeLabel.Name = "MiscTempProbeLabel"
-        Me.MiscTempProbeLabel.Size = New System.Drawing.Size(293, 95)
+        Me.MiscTempProbeLabel.Size = New System.Drawing.Size(247, 95)
         Me.MiscTempProbeLabel.TabIndex = 30
-        Me.MiscTempProbeLabel.Text = "000.00"
+        Me.MiscTempProbeLabel.Text = "00.00"
         '
         'Label15
         '
@@ -1548,9 +1457,9 @@ Partial Class BrewingSessionForm
         Me.RimTempLabel.Location = New System.Drawing.Point(8, 11)
         Me.RimTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.RimTempLabel.Name = "RimTempLabel"
-        Me.RimTempLabel.Size = New System.Drawing.Size(293, 95)
+        Me.RimTempLabel.Size = New System.Drawing.Size(247, 95)
         Me.RimTempLabel.TabIndex = 30
-        Me.RimTempLabel.Text = "000.00"
+        Me.RimTempLabel.Text = "00.00"
         '
         'Panel4
         '
@@ -1570,27 +1479,27 @@ Partial Class BrewingSessionForm
         Me.RimTubeExternalTempLabel.Location = New System.Drawing.Point(8, 11)
         Me.RimTubeExternalTempLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.RimTubeExternalTempLabel.Name = "RimTubeExternalTempLabel"
-        Me.RimTubeExternalTempLabel.Size = New System.Drawing.Size(293, 95)
+        Me.RimTubeExternalTempLabel.Size = New System.Drawing.Size(247, 95)
         Me.RimTubeExternalTempLabel.TabIndex = 30
-        Me.RimTubeExternalTempLabel.Text = "000.00"
+        Me.RimTubeExternalTempLabel.Text = "00.00"
         '
         'TempatureChart
         '
         Me.TempatureChart.BorderlineColor = System.Drawing.Color.Black
         Me.TempatureChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea1.Name = "ChartArea1"
-        Me.TempatureChart.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.TempatureChart.Legends.Add(Legend1)
+        ChartArea7.Name = "ChartArea1"
+        Me.TempatureChart.ChartAreas.Add(ChartArea7)
+        Legend7.Name = "Legend1"
+        Me.TempatureChart.Legends.Add(Legend7)
         Me.TempatureChart.Location = New System.Drawing.Point(12, 580)
         Me.TempatureChart.Name = "TempatureChart"
         Me.TempatureChart.Size = New System.Drawing.Size(965, 424)
         Me.TempatureChart.TabIndex = 418
         Me.TempatureChart.Text = "MashChart"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Title1.Name = "Title1"
-        Title1.Text = "Temperature Chart"
-        Me.TempatureChart.Titles.Add(Title1)
+        Title7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Title7.Name = "Title1"
+        Title7.Text = "Temperature Chart"
+        Me.TempatureChart.Titles.Add(Title7)
         '
         'HLSetTEMPBOX
         '
@@ -1620,9 +1529,73 @@ Partial Class BrewingSessionForm
         Me.StepMashTimeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StepMashTimeLabel.Location = New System.Drawing.Point(139, 529)
         Me.StepMashTimeLabel.Name = "StepMashTimeLabel"
-        Me.StepMashTimeLabel.Size = New System.Drawing.Size(43, 24)
+        Me.StepMashTimeLabel.Size = New System.Drawing.Size(60, 24)
         Me.StepMashTimeLabel.TabIndex = 393
-        Me.StepMashTimeLabel.Text = "000"
+        Me.StepMashTimeLabel.Text = "00.00"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(16, 448)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(100, 20)
+        Me.Label6.TabIndex = 469
+        Me.Label6.Text = "Boil Duration"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(16, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(63, 20)
+        Me.Label1.TabIndex = 470
+        Me.Label1.Text = "Version"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(16, 608)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(118, 20)
+        Me.Label9.TabIndex = 471
+        Me.Label9.Text = "Starting Gravity"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.Label19.Location = New System.Drawing.Point(16, 648)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(145, 25)
+        Me.Label19.TabIndex = 473
+        Me.Label19.Text = "Session Notes:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(16, 568)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(165, 20)
+        Me.Label8.TabIndex = 474
+        Me.Label8.Text = "First Runnings Gravity"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(16, 528)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(194, 20)
+        Me.Label4.TabIndex = 475
+        Me.Label4.Text = "Fermenation Temperature"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(16, 488)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(181, 20)
+        Me.Label3.TabIndex = 476
+        Me.Label3.Text = "Required Ogrinal Gravity"
         '
         'BrewingSessionForm
         '
@@ -1817,4 +1790,15 @@ Partial Class BrewingSessionForm
     Friend WithEvents SetKettleTempValueBox As System.Windows.Forms.NumericUpDown
     Friend WithEvents OriginalGravityLable As System.Windows.Forms.Label
     Friend WithEvents StepMashTimeLabel As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

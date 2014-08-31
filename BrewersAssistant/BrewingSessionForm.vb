@@ -5,45 +5,43 @@ Imports System.Threading
 
 Public Class BrewingSessionForm
 
-    Private _serialPort As SerialPort
+    Dim _serialPort As SerialPort
     Dim starttime As DateTime
     Dim mytotaltime As TimeSpan
     Dim Lastmytime As DateTime = Nothing
     Dim Charting As Boolean = True
     Dim RimControl As Boolean = False
-    Public _continue As Boolean
-    Private StepmashCount As Integer = 0
-    Private Stepmashindex As Integer = 0
-    Private CountDownTime As DateTime
-    Private BoilSpan As Decimal = 0
-    Private mashspan As Decimal = 0
-    Private ChillRatio As Integer = 0
-    Private MyStartChillTemp As Decimal = 0
-    Private BoilTemp As Decimal = 0
-    Private OverHeatDuinoTemp As Decimal = 0
-    Private HLTUNSetup As String = "Mash"
-    Private StartingBrewing As Boolean = False
-    Private MashBoilVar As String
-    Private TempTimerSqlUpdate As Integer = 25
-    Private tmr1 As Integer
-    Private Milliseconds As Integer = 0
-    Private seconds As Integer = 0
-    Private minutes As Integer = 0
+    Dim _continue As Boolean
+    Dim StepmashCount As Integer = 0
+    Dim Stepmashindex As Integer = 0
+    Dim CountDownTime As DateTime
+    Dim BoilSpan As Decimal = 0
+    Dim mashspan As Decimal = 0
+    Dim ChillRatio As Integer = 0
+    Dim MyStartChillTemp As Decimal = 0
+    Dim BoilTemp As Decimal = 0
+    Dim OverHeatDuinoTemp As Decimal = 0
+
+    Dim StartingBrewing As Boolean = False
+    Dim MashBoilVar As String
+    Dim TempTimerSqlUpdate As Integer = 25
+    Dim tmr1 As Integer
+    Dim Milliseconds As Integer = 0
+    Dim seconds As Integer = 0
+    Dim minutes As Integer = 0
     Dim hours As Integer = 0
-
-
     Dim Overheated As Boolean = False
     '  PID Variables 
 
     Dim myerror As Double
-    Dim turnHeatElementOnOff As Boolean
+
     Dim lastPIDTime As Long
     Dim PID_UPDATE_INTERVAL As Integer = 100
     Dim millis As TimeSpan
     Dim heatCurrentTime, heatLastTime As Long
     Dim heatpower, heatcycles As Double
     Dim istate As Decimal = 0
-    Dim curtemp, lasttemp As Decimal
+    Dim lasttemp As Decimal
     Dim pgain As Double = 75
     Dim pTerm, iTerm, dTerm As Double
     Dim igain As Double = 0
@@ -194,32 +192,32 @@ Public Class BrewingSessionForm
 
    
     Private Sub SaveEndSessionData()
+        Dim UserPostBOil As String = InputBox("Please Enter the Post Boil Wort Collected")
+        Dim MyDataSet As New DataSet
+        Dim mysqlString As String = "UPDATE Brewsessions SET BrewSessionStopTime = '" & Now & "', SessionStatus='0' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
+        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
+        Dim sqlString As String = "UPDATE Brewsessions SET PostBoilWOrtCollected = '" & UserPostBOil & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
+        Dim BrewSessionData As DataRow = MyDataSet.Tables("BrewSessions").Rows(0)
         Try
             If Not SessionIDTextBox.Text = "" Then
                 If DigitChecker(FirstRunningsGravityTextbox.Text) = True Then
                     If DigitChecker(StartingGravityTextBox.Text) = True Then
-                        Dim UserPostBOil As String = InputBox("Please Enter the Post Boil Wort Collected")
                         If DigitChecker(UserPostBOil) = True Then
                             If Not BeerNameComboBox.Text = "" Then
                                 If MessageBox.Show("Are you sure you want to finish this brew session? ", "Finish", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                                    Dim mysqlString As String = "UPDATE Brewsessions SET BrewSessionStopTime = '" & Now & "', SessionStatus='0' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
                                     DisableButtons()
                                     StartingBrewing = False
                                     UpdateDBSql(mysqlString)
                                     mysqlString = "Select * from  Brewsessions WHERE SessionID ='" & SessionIDTextBox.Text & "'"
-                                    Dim MyDataSet As New DataSet
-                                    Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
-                                    Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
                                     MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
                                     MyDataAdapter.Fill(MyDataSet, "BrewSessions")
-                                    Dim BrewSessionData As DataRow = MyDataSet.Tables("BrewSessions").Rows(0)
                                     BrewSessionData("FirstRunningsGravity") = FirstRunningsGravityTextbox.Text
                                     BrewSessionData("ActualOG") = StartingGravityTextBox.Text
                                     If Not NotesTextBox.Text = "" Then
                                         BrewSessionData("Notes") = NotesTextBox.Text
                                     End If
                                     MyDataAdapter.Update(MyDataSet, "BrewSessions")
-                                    Dim sqlString As String = "UPDATE Brewsessions SET PostBoilWOrtCollected = '" & UserPostBOil & "' WHERE SessionID ='" & SessionIDTextBox.Text & "'"
                                     UpdateDBSql(sqlString)
                                     Me.Close()
                                 End If
@@ -229,8 +227,14 @@ Public Class BrewingSessionForm
                 End If
             End If
         Catch ex As Exception
+            MyDataSet.Dispose()
+            cmd.Dispose()
+            MyDataAdapter.Dispose()
             MsgBox(ex.Message)
         End Try
+        MyDataSet.Dispose()
+        cmd.Dispose()
+        MyDataAdapter.Dispose()
     End Sub
     Private Sub MshBoilTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BoilTimer.Tick
         Dim newthread As New System.Threading.Thread(AddressOf BoilTimerTicker)
@@ -250,7 +254,7 @@ Public Class BrewingSessionForm
 
         End If
     End Sub
-    Private Sub StrikeTemp()
+    Public Sub StrikeTemp()
         On Error Resume Next
         Dim tempvar As Decimal = 0
         tempvar = (0.2 / CDec(WatertoGrainRatioLabel.Text)) * (CDec(StepMashGridView(0, 0).Value) - CDec(GrainTempTextBox.Text)) + CDec(StepMashGridView(0, 0).Value)
@@ -877,7 +881,7 @@ Public Class BrewingSessionForm
     Private Sub StepMashButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StepMashButton.Click
 
         Dim mysqlString As String
-        HLTUNSetup = "Sparge"
+
         MyTimer.Text = "00:00:00"
         MashSetTempValueBox.Text = StepMashGridView(0, 0).Value
         StepMashTimeLabel.Text = StepMashGridView(1, 0).Value
@@ -943,6 +947,9 @@ Public Class BrewingSessionForm
         Catch ex As Exception
             MessageBox.Show("Error connecting to the Mash Database")
         End Try
+
+        MyDataAdapter.Dispose()
+
     End Sub
     Private Sub LoadGrainBill()
         On Error Resume Next
@@ -956,6 +963,8 @@ Public Class BrewingSessionForm
             Dim column As DataGridViewColumn = GrainBillGridView.Columns(0)
             column.Width = 160
         End If
+        cmd.Dispose()
+
     End Sub
     Private Sub HLPumpOnOffButton_Click(sender As System.Object, e As System.EventArgs) Handles HLPumpOnOffButton.Click
         If HLPumpOnOffButton.Text = "HL Pump Off" Then
@@ -972,7 +981,7 @@ Public Class BrewingSessionForm
         If MashPumpOnOffButton.Text = "Mash Pump Off" Then
             TurnMashPumpon()
         Else
-            TrunMashPumpOff()
+            TurnMashPumpOff()
             TurnRimOFF()
         End If
     End Sub
@@ -1003,7 +1012,7 @@ Public Class BrewingSessionForm
         MashPumpOnOffButton.BackColor = Color.Red
         _serialPort.WriteLine("d")
     End Sub
-    Public Sub TrunMashPumpOff()
+    Public Sub TurnMashPumpOff()
         MashPumpOnOffButton.Text = "Mash Pump Off"
         MashPumpOnOffButton.BackColor = Color.Green
         _serialPort.WriteLine("h")

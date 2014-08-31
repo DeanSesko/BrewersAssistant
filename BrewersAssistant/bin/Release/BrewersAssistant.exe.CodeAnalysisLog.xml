@@ -1,0 +1,1324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewersAssistant.exe">
+   <Modules>
+    <Module Name="brewersassistant.exe">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'BrewersAssistant.exe' with a strong name key.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'BrewersAssistant.exe' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Warning">Because assembly 'BrewersAssistant.exe' contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="BrewersAssistant">
+       <Types>
+        <Type Name="BrewHelperDBDataSet" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+BeerDataDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.BeerDataDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+BrewSessionsDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.BrewSessionsDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+GrainBillDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.GrainBillDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+GrainsDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.GrainsDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+HopBillDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.HopBillDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+HopsDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.HopsDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+SensorsDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.SensorsDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+StepMashTableDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.StepMashTableDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+TemperaturesDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.TemperaturesDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+WeightsDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.WeightsDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+WortAdditionBillDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Wort" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Wort' in type name 'BrewHelperDBDataSet.WortAdditionBillDataTable'.</Issue>
+          </Message>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.WortAdditionBillDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+WortAdditionBillRow" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Wort" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Wort' in type name 'BrewHelperDBDataSet.WortAdditionBillRow'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+WortAdditionsDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Wort" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Wort' in type name 'BrewHelperDBDataSet.WortAdditionsDataTable'.</Issue>
+          </Message>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BrewHelperDBDataSet.WortAdditionsDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHelperDBDataSet+WortAdditionsRow" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Wort" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Wort' in type name 'BrewHelperDBDataSet.WortAdditionsRow'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BrewHistoryForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ClearBeerData()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="66">'BrewHistoryForm.ClearBeerData()' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSQLDBData(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="143">'BrewHistoryForm.GetSQLDBData(String, String)' has a cyclomatic complexity of 217. Rewrite or refactor the method to reduce complexity to 25.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="Method" Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="143">'BrewHistoryForm.GetSQLDBData(String, String)' has a maintainability index of 0. Rewrite or refactor the method to increase its maintainability index (MI). An MI below 10 indicates poor maintainability, an MI between 10 and 20 indicates moderate maintainability, and an MI above 20 indicates good maintainability.</Issue>
+            </Message>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="145">In method 'BrewHistoryForm.GetSQLDBData(String, String)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="144">In method 'BrewHistoryForm.GetSQLDBData(String, String)', call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="148">The query string passed to 'SqlCeCommand.CommandText.Set(String)' in 'BrewHistoryForm.GetSQLDBData(String, String)' could contain the following variables 'MySqlString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.DateTime.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="319">Because the behavior of 'Date.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewHistoryForm.GetSQLDBData(String, String)' with a call to 'Date.ToString(IFormatProvider)'. If the result of 'Date.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="320">Because the behavior of 'Date.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewHistoryForm.GetSQLDBData(String, String)' with a call to 'Date.ToString(IFormatProvider)'. If the result of 'Date.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="321">Because the behavior of 'Date.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewHistoryForm.GetSQLDBData(String, String)' with a call to 'Date.ToString(IFormatProvider)'. If the result of 'Date.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="322">Because the behavior of 'Date.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewHistoryForm.GetSQLDBData(String, String)' with a call to 'Date.ToString(IFormatProvider)'. If the result of 'Date.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+            <Message Id="System.Decimal.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="282">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewHistoryForm.GetSQLDBData(String, String)' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="335">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewHistoryForm.GetSQLDBData(String, String)' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+            <Message Id="System.Double.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="348">Because the behavior of 'Double.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewHistoryForm.GetSQLDBData(String, String)' with a call to 'Double.ToString(IFormatProvider)'. If the result of 'Double.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="25">In method 'BrewHistoryForm.InitializeComponent()', object 'ChartArea1' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'ChartArea1' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="26">In method 'BrewHistoryForm.InitializeComponent()', object 'Legend1' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Legend1' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="27">In method 'BrewHistoryForm.InitializeComponent()', object 'Series1' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Series1' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="28">In method 'BrewHistoryForm.InitializeComponent()', object 'Title1' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Title1' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.TabPage.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="1232">Method 'BrewHistoryForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'TabPage.Text.Set(String)'. Retrieve the following string(s) from a resource table instead: "Boil Statistics".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="846">Method 'BrewHistoryForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'TabPage.Text.Set(String)'. Retrieve the following string(s) from a resource table instead: "Brew House".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="1259">Method 'BrewHistoryForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'TabPage.Text.Set(String)'. Retrieve the following string(s) from a resource table instead: "Chill Statistics".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="1079">Method 'BrewHistoryForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'TabPage.Text.Set(String)'. Retrieve the following string(s) from a resource table instead: "Mash Information".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="1217">Method 'BrewHistoryForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'TabPage.Text.Set(String)'. Retrieve the following string(s) from a resource table instead: "Sparge Statistics".</Issue>
+            </Message>
+            <Message Id="Lbs" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="689">Correct the spelling of the unrecognized token 'Lbs' in the literal '"Lbs of Grain"'.</Issue>
+            </Message>
+            <Message Id="Sparge" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="330">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Sparge Duration"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="620">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Sparge Start Time"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="473">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Sparge Statistics"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="1217">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Sparge Statistics"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="631">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Sparge Stop Time"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="725">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Sparge Temp"'.</Issue>
+            </Message>
+            <Message Id="Wort" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.Designer.vb" Line="352">Correct the spelling of the unrecognized token 'Wort' in the literal '"Wort Collected"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadMash()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="100">In method 'BrewHistoryForm.LoadMash()', object 'MyDataAdapter' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="114">Object 'MyDataAdapter' can be disposed more than once in method 'BrewHistoryForm.LoadMash()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 114</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="113">Object 'ds' can be disposed more than once in method 'BrewHistoryForm.LoadMash()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 113</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="105">Modify 'BrewHistoryForm.LoadMash()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="100">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewHistoryForm.LoadMash()' could contain the following variables 'Me.BeerIDTextBox.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="101">Be sure to set the DataSet Locale property wherever 'BrewHistoryForm.LoadMash()' creates an instance of that type.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="111">Change 'BrewHistoryForm.LoadMash()' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetupMashChart()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="57">In method 'BrewHistoryForm.SetupMashChart()', object 'mashConstant' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'mashConstant' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewHistoryForm.vb" Line="47">In method 'BrewHistoryForm.SetupMashChart()', object 'mashSeries' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'mashSeries' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BrewingSessionForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#_turnHeatElementOnOff(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="487">Modify 'BrewingSessionForm._turnHeatElementOnOff(String)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="OFF" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="487">In member 'BrewingSessionForm._turnHeatElementOnOff(String)', correct the casing of 'OFF' in parameter name 'OnorOFF' by changing it to 'Off'.</Issue>
+            </Message>
+            <Message Id="Onor" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="487">In member 'BrewingSessionForm._turnHeatElementOnOff(String)', correct the casing of 'Onor' in parameter name 'OnorOFF' by changing it to 'onor'.</Issue>
+            </Message>
+            <Message Id="turn" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="487">Correct the casing of 'turn' in member name 'BrewingSessionForm._turnHeatElementOnOff(String)' by changing it to 'Turn'.</Issue>
+            </Message>
+            <Message Id="Onor" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="487">In method 'BrewingSessionForm._turnHeatElementOnOff(String)', correct the spelling of 'Onor' in parameter name 'OnorOFF' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="487">Remove the underscores from member name 'BrewingSessionForm._turnHeatElementOnOff(String)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BoilTimerTicker()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="250">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoilTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="250">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoilTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="250">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoilTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="252">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoilTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="252">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoilTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="252">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoilTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BoitlKettleTempLabel_Change(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="528">Modify 'BrewingSessionForm.BoitlKettleTempLabel_Change(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.Decimal.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="524">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoitlKettleTempLabel_Change(Object, EventArgs)' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="528">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoitlKettleTempLabel_Change(Object, EventArgs)' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+            <Message Id="System.Double.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="521">Because the behavior of 'Double.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.BoitlKettleTempLabel_Change(Object, EventArgs)' with a call to 'Double.ToString(IFormatProvider)'. If the result of 'Double.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BrewForm_Close(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="89">Modify 'BrewingSessionForm.BrewForm_Close(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="ghij" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="88">Correct the spelling of the unrecognized token 'ghij' in the literal '"ghij"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BrewHouseEfficiencyUpDown_ValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="829">'BrewingSessionForm.BrewHouseEfficiencyUpDown_ValueChanged(Object, EventArgs)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSQLDBData(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="626">In method 'BrewingSessionForm.GetSQLDBData(String, String)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="627">In method 'BrewingSessionForm.GetSQLDBData(String, String)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="Sparge" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="700">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Stop Sparge"'.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="631">The query string passed to 'SqlCeCommand.CommandText.Set(String)' in 'BrewingSessionForm.GetSQLDBData(String, String)' could contain the following variables 'MySqlString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="726">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.GetSQLDBData(String, String)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="726">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.GetSQLDBData(String, String)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="726">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.GetSQLDBData(String, String)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GrainTempTextBox_TextChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="746">'BrewingSessionForm.GrainTempTextBox_TextChanged(Object, EventArgs)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="26">In method 'BrewingSessionForm.InitializeComponent()', object 'ChartArea7' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'ChartArea7' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="27">In method 'BrewingSessionForm.InitializeComponent()', object 'Legend7' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Legend7' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="28">In method 'BrewingSessionForm.InitializeComponent()', object 'Title7' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Title7' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="Fermenation" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1589">Correct the spelling of the unrecognized token 'Fermenation' in the literal '"Fermenation Temperature"'.</Issue>
+            </Message>
+            <Message Id="Graivty" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1095">Correct the spelling of the unrecognized token 'Graivty' in the literal '"Graivty Reading"'.</Issue>
+            </Message>
+            <Message Id="Luiquid" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="952">Correct the spelling of the unrecognized token 'Luiquid' in the literal '"Distance of Luiquid to Top in Inches"'.</Issue>
+            </Message>
+            <Message Id="MashChart" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1498">Correct the spelling of the unrecognized token 'MashChart' in the literal '"MashChart"'.</Issue>
+            </Message>
+            <Message Id="Ogrinal" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1598">Correct the spelling of the unrecognized token 'Ogrinal' in the literal '"Required Ogrinal Gravity"'.</Issue>
+            </Message>
+            <Message Id="Potenial" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="305">Correct the spelling of the unrecognized token 'Potenial' in the literal '"Grain Potenial"'.</Issue>
+            </Message>
+            <Message Id="Runnings" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1580">Correct the spelling of the unrecognized token 'Runnings' in the literal '"First Runnings Gravity"'.</Issue>
+            </Message>
+            <Message Id="Sinlge" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="428">Correct the spelling of the unrecognized token 'Sinlge' in the literal '"Sinlge Infusion"'.</Issue>
+            </Message>
+            <Message Id="Sparge" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="296">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Sparge Temperature"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1171">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Start Sparge"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="716">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Step Mash and Sparge Schedule"'.</Issue>
+            </Message>
+            <Message Id="Tun" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1385">Correct the spelling of the unrecognized token 'Tun' in the literal '"HL Tun"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="1396">Correct the spelling of the unrecognized token 'Tun' in the literal '"Mash Tun"'.</Issue>
+            </Message>
+            <Message Id="Wort" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="619">Correct the spelling of the unrecognized token 'Wort' in the literal '"Miscellaneous Wort Additions"'.</Issue>
+            </Message>
+            <Message Id="lbs" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.Designer.vb" Line="551">Correct the spelling of the unrecognized token 'lbs' in the literal '"lbs of Grains"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadGrainBill()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="957">In method 'BrewingSessionForm.LoadGrainBill()', call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="958">In method 'BrewingSessionForm.LoadGrainBill()', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="960">In method 'BrewingSessionForm.LoadGrainBill()', call System.IDisposable.Dispose on object 'ds' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="957">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewingSessionForm.LoadGrainBill()' could contain the following variables 'Me.BeerIDTextBox.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="960">Be sure to set the DataSet Locale property wherever 'BrewingSessionForm.LoadGrainBill()' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadHops()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="598">In method 'BrewingSessionForm.LoadHops()', call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="599">In method 'BrewingSessionForm.LoadHops()', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="601">In method 'BrewingSessionForm.LoadHops()', call System.IDisposable.Dispose on object 'ds' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="604">Modify 'BrewingSessionForm.LoadHops()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="599">'BrewingSessionForm.LoadHops()' declares a variable, 'cmd', of type 'SqlCeCommandBuilder', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="598">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewingSessionForm.LoadHops()' could contain the following variables 'Me.BeerIDTextBox.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="601">Be sure to set the DataSet Locale property wherever 'BrewingSessionForm.LoadHops()' creates an instance of that type.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="607">Change 'BrewingSessionForm.LoadHops()' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadMash()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="935">In method 'BrewingSessionForm.LoadMash()', object 'MyDataAdapter' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="936">In method 'BrewingSessionForm.LoadMash()', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="938">In method 'BrewingSessionForm.LoadMash()', call System.IDisposable.Dispose on object 'ds' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="946">Modify 'BrewingSessionForm.LoadMash()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="936">'BrewingSessionForm.LoadMash()' declares a variable, 'cmd', of type 'SqlCeCommandBuilder', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="935">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewingSessionForm.LoadMash()' could contain the following variables 'Me.BeerIDTextBox.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="938">Be sure to set the DataSet Locale property wherever 'BrewingSessionForm.LoadMash()' creates an instance of that type.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="948">Change 'BrewingSessionForm.LoadMash()' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadMisc()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="613">In method 'BrewingSessionForm.LoadMisc()', call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="614">In method 'BrewingSessionForm.LoadMisc()', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="616">In method 'BrewingSessionForm.LoadMisc()', call System.IDisposable.Dispose on object 'ds' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="619">Modify 'BrewingSessionForm.LoadMisc()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="Wort" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="622">Correct the spelling of the unrecognized token 'Wort' in the literal '"Error connecting to the Wort Additions Database"'.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="614">'BrewingSessionForm.LoadMisc()' declares a variable, 'cmd', of type 'SqlCeCommandBuilder', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="613">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewingSessionForm.LoadMisc()' could contain the following variables 'Me.BeerIDTextBox.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="616">Be sure to set the DataSet Locale property wherever 'BrewingSessionForm.LoadMisc()' creates an instance of that type.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="622">Change 'BrewingSessionForm.LoadMisc()' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MashBoilVar" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BrewingSessionForm.MashBoilVar' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MashTimerTicker()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="757">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.MashTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="757">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.MashTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="757">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.MashTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="759">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.MashTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="759">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.MashTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="759">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.MashTimerTicker()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Milliseconds" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BrewingSessionForm.Milliseconds' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MyComReader()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="307">'BrewingSessionForm.MyComReader()' has a cyclomatic complexity of 35. Rewrite or refactor the method to reduce complexity to 25.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="462">Modify 'BrewingSessionForm.MyComReader()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.Decimal.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="453">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.MyComReader()' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#mytotaltime" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BrewingSessionForm.mytotaltime' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenSerialPort()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="78">Modify 'BrewingSessionForm.OpenSerialPort()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveEndSessionData()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="198">In method 'BrewingSessionForm.SaveEndSessionData()', object 'MyDataAdapter' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="196">In method 'BrewingSessionForm.SaveEndSessionData()', object 'MyDataSet' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'MyDataSet' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="199">In method 'BrewingSessionForm.SaveEndSessionData()', object 'cmd' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="237">Object 'MyDataAdapter' can be disposed more than once in method 'BrewingSessionForm.SaveEndSessionData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 237</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="235">Object 'MyDataSet' can be disposed more than once in method 'BrewingSessionForm.SaveEndSessionData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 235</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="236">Object 'cmd' can be disposed more than once in method 'BrewingSessionForm.SaveEndSessionData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 236</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="222">Modify 'BrewingSessionForm.SaveEndSessionData()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="198">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewingSessionForm.SaveEndSessionData()' could contain the following variables 'Conversions.ToString(DateAndTime.Now)', 'New String(5)(3)'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="196">Be sure to set the DataSet Locale property wherever 'BrewingSessionForm.SaveEndSessionData()' creates an instance of that type.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="208">Change 'BrewingSessionForm.SaveEndSessionData()' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#setHeatPowerPercentage(System.Double)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="set" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="492">Correct the casing of 'set' in member name 'BrewingSessionForm.setHeatPowerPercentage(Double)' by changing it to 'Set'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StartBoilTimerButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="277">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StartBoilTimerButton_Click(Object, EventArgs)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="277">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StartBoilTimerButton_Click(Object, EventArgs)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="277">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StartBoilTimerButton_Click(Object, EventArgs)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StartSpargeButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="Sparge" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="120">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Start Sparge"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="117">Correct the spelling of the unrecognized token 'Sparge' in the literal '"Stop Sparge"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StepMashButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="897">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StepMashButton_Click(Object, EventArgs)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="897">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StepMashButton_Click(Object, EventArgs)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="897">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StepMashButton_Click(Object, EventArgs)' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StepMashingRun()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="928">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StepMashingRun()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="928">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StepMashingRun()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="928">Because the behavior of 'Integer.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StepMashingRun()' with a call to 'Integer.ToString(IFormatProvider)'. If the result of 'Integer.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StrikeTemp()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Decimal.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="262">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.StrikeTemp()' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TurnMashPumpOff()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.IO.Ports.SerialPort.WriteLine(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="1018">Method 'BrewingSessionForm.TurnMashPumpOff()' passes a literal string as parameter 'text' of a call to 'SerialPort.WriteLine(String)'. Retrieve the following string(s) from a resource table instead: "h".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.ButtonBase.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="1016">Method 'BrewingSessionForm.TurnMashPumpOff()' passes a literal string as parameter 'value' of a call to 'ButtonBase.Text.Set(String)'. Retrieve the following string(s) from a resource table instead: "Mash Pump Off".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TurnMashPumpon()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Pumpon" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="1011">Correct the spelling of 'Pumpon' in member name 'BrewingSessionForm.TurnMashPumpon()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TurnRimOFF()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="OFF" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="1004">Correct the casing of 'OFF' in member name 'BrewingSessionForm.TurnRimOFF()' by changing it to 'Off'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#updateHeater()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="update" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="468">Correct the casing of 'update' in member name 'BrewingSessionForm.updateHeater()' by changing it to 'Update'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#updatePID(System.Decimal,System.Decimal)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="PID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="502">Correct the casing of 'PID' in member name 'BrewingSessionForm.updatePID(Decimal, Decimal)' by changing it to 'Pid'.</Issue>
+            </Message>
+            <Message Id="update" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="502">Correct the casing of 'update' in member name 'BrewingSessionForm.updatePID(Decimal, Decimal)' by changing it to 'Update'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#VolumeCalculator()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Decimal.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="847">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.VolumeCalculator()' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewingSessionForm.vb" Line="851">Because the behavior of 'Decimal.ToString()' could vary based on the current user's locale settings, replace this call in 'BrewingSessionForm.VolumeCalculator()' with a call to 'Decimal.ToString(IFormatProvider)'. If the result of 'Decimal.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BrewMaintenanceForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddGrainstoBeerButton_Click_1(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="497">Modify 'BrewMaintenanceForm.AddGrainstoBeerButton_Click_1(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddHopsButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="462">Modify 'BrewMaintenanceForm.AddHopsButton_Click(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddMiscWortItemButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="518">Modify 'BrewMaintenanceForm.AddMiscWortItemButton_Click(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddStepMashButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="573">Modify 'BrewMaintenanceForm.AddStepMashButton_Click(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteBrewSessionData()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="50">Change 'BrewMaintenanceForm.DeleteBrewSessionData()' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetSQLDBData(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="272">'BrewMaintenanceForm.GetSQLDBData(String, String)' has a cyclomatic complexity of 42. Rewrite or refactor the method to reduce complexity to 25.</Issue>
+            </Message>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="272">In method 'BrewMaintenanceForm.GetSQLDBData(String, String)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="273">In method 'BrewMaintenanceForm.GetSQLDBData(String, String)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="364">Modify 'BrewMaintenanceForm.GetSQLDBData(String, String)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="381">Modify 'BrewMaintenanceForm.GetSQLDBData(String, String)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="276">The query string passed to 'SqlCeCommand.CommandText.Set(String)' in 'BrewMaintenanceForm.GetSQLDBData(String, String)' could contain the following variables 'MySqlString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GrainListBox_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="209">'BrewMaintenanceForm.GrainListBox_SelectedIndexChanged(Object, EventArgs)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="137">In method 'BrewMaintenanceForm.InitializeComponent()', object 'Label1' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Label1' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="139">In method 'BrewMaintenanceForm.InitializeComponent()', object 'Label26' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Label26' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="140">In method 'BrewMaintenanceForm.InitializeComponent()', object 'Label38' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Label38' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="138">In method 'BrewMaintenanceForm.InitializeComponent()', object 'Label6' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'Label6' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="136">In method 'BrewMaintenanceForm.InitializeComponent()', object 'SessionIDLabel' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'SessionIDLabel' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="Brewhouse" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="195">Correct the spelling of the unrecognized token 'Brewhouse' in the literal '"Brewhouse Efficiency"'.</Issue>
+            </Message>
+            <Message Id="GrainID" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="463">Correct the spelling of the unrecognized token 'GrainID' in the literal '"GrainID"'.</Issue>
+            </Message>
+            <Message Id="HopIDLabel" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="919">Correct the spelling of the unrecognized token 'HopIDLabel' in the literal '"HopIDLabel"'.</Issue>
+            </Message>
+            <Message Id="HopWeightIDLabel" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="929">Correct the spelling of the unrecognized token 'HopWeightIDLabel' in the literal '"HopWeightIDLabel"'.</Issue>
+            </Message>
+            <Message Id="Orgin" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="687">Correct the spelling of the unrecognized token 'Orgin' in the literal '"Orgin"'.</Issue>
+            </Message>
+            <Message Id="OriginLabel" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="432">Correct the spelling of the unrecognized token 'OriginLabel' in the literal '"OriginLabel"'.</Issue>
+            </Message>
+            <Message Id="PotentialSG" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="493">Correct the spelling of the unrecognized token 'PotentialSG' in the literal '"PotentialSG"'.</Issue>
+            </Message>
+            <Message Id="WeightID" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="577">Correct the spelling of the unrecognized token 'WeightID' in the literal '"WeightID"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="1117">Correct the spelling of the unrecognized token 'WeightID' in the literal '"WeightID"'.</Issue>
+            </Message>
+            <Message Id="Wort" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="976">Correct the spelling of the unrecognized token 'Wort' in the literal '"Miscellaneous Wort Additions"'.</Issue>
+            </Message>
+            <Message Id="WortID" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.Designer.vb" Line="1107">Correct the spelling of the unrecognized token 'WortID' in the literal '"WortID"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadData(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="596">In method 'BrewMaintenanceForm.LoadData(String, String)', object 'ds' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'ds' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="593">In method 'BrewMaintenanceForm.LoadData(String, String)', call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="594">In method 'BrewMaintenanceForm.LoadData(String, String)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="594">'BrewMaintenanceForm.LoadData(String, String)' declares a variable, 'cmd', of type 'SqlCeCommandBuilder', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="593">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewMaintenanceForm.LoadData(String, String)' could contain the following variables 'MysqlString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="596">Be sure to set the DataSet Locale property wherever 'BrewMaintenanceForm.LoadData(String, String)' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveGrainButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="258">Modify 'BrewMaintenanceForm.RemoveGrainButton_Click(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateBrewsessiondata()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="83">In method 'BrewMaintenanceForm.UpdateBrewsessiondata()', call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="82">In method 'BrewMaintenanceForm.UpdateBrewsessiondata()', call System.IDisposable.Dispose on object 'MyDataSet' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="84">In method 'BrewMaintenanceForm.UpdateBrewsessiondata()', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="167">Modify 'BrewMaintenanceForm.UpdateBrewsessiondata()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="84">'BrewMaintenanceForm.UpdateBrewsessiondata()' declares a variable, 'cmd', of type 'SqlCeCommandBuilder', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="83">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'BrewMaintenanceForm.UpdateBrewsessiondata()' could contain the following variables 'BeernameString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="BrewMaintenanceForm.vb" Line="82">Be sure to set the DataSet Locale property wherever 'BrewMaintenanceForm.UpdateBrewsessiondata()' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CustomGrainsForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CloseOut(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomGrainsForm.vb" Line="47">In method 'CustomGrainsForm.CloseOut(Object, EventArgs)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomGrainsForm.vb" Line="48">In method 'CustomGrainsForm.CloseOut(Object, EventArgs)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomGrainsForm.vb" Line="56">Modify 'CustomGrainsForm.CloseOut(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomGrainsForm.vb" Line="61">Modify 'CustomGrainsForm.CloseOut(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CustomHopForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CloseOut(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomHopForm.vb" Line="40">In method 'CustomHopForm.CloseOut(Object, EventArgs)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomHopForm.vb" Line="41">In method 'CustomHopForm.CloseOut(Object, EventArgs)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="Cutom" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomHopForm.Designer.vb" Line="230">Correct the spelling of the unrecognized token 'Cutom' in the literal '"Add Cutom Hops"'.</Issue>
+            </Message>
+            <Message Id="Orgin" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomHopForm.Designer.vb" Line="140">Correct the spelling of the unrecognized token 'Orgin' in the literal '"Orgin"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CustomWortAdditionForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Wort" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Wort' in type name 'CustomWortAdditionForm'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#CloseOut(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomWortAdditionForm.vb" Line="33">In method 'CustomWortAdditionForm.CloseOut(Object, EventArgs)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomWortAdditionForm.vb" Line="34">In method 'CustomWortAdditionForm.CloseOut(Object, EventArgs)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="Wort" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="CustomWortAdditionForm.Designer.vb" Line="104">Correct the spelling of the unrecognized token 'Wort' in the literal '"Add Custom Wort Additions"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="GlobalModule" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#DigitChecker(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="25">Modify 'GlobalModule.DigitChecker(String)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.Decimal.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="24">Because the behavior of 'Decimal.Parse(String)' could vary based on the current user's locale settings, replace this call in 'GlobalModule.DigitChecker(String)' with a call to 'Decimal.Parse(String, IFormatProvider)'. If the result of 'Decimal.Parse(String, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture()' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture()'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetupChart()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="49">In method 'GlobalModule.SetupChart()', object 'mashConstant' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'mashConstant' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="40">In method 'GlobalModule.SetupChart()', object 'mashSeries' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'mashSeries' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateDBSql(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="11">In method 'GlobalModule.UpdateDBSql(String)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="12">In method 'GlobalModule.UpdateDBSql(String)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="19">Object 'sqlConnection' can be disposed more than once in method 'GlobalModule.UpdateDBSql(String)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 19</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GlobalModule.vb" Line="15">The query string passed to 'SqlCeCommand.CommandText.Set(String)' in 'GlobalModule.UpdateDBSql(String)' could contain the following variables 'MySqlString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="GrainMainForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetSQLDBData(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="78">In method 'GrainMainForm.GetSQLDBData(String, String)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="79">In method 'GrainMainForm.GetSQLDBData(String, String)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="82">The query string passed to 'SqlCeCommand.CommandText.Set(String)' in 'GrainMainForm.GetSQLDBData(String, String)' could contain the following variables 'MySqlString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="GrainID" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.Designer.vb" Line="122">Correct the spelling of the unrecognized token 'GrainID' in the literal '"GrainID"'.</Issue>
+            </Message>
+            <Message Id="PotentialSG" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.Designer.vb" Line="101">Correct the spelling of the unrecognized token 'PotentialSG' in the literal '"PotentialSG"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="29">In method 'GrainMainForm.Update_Click(Object, EventArgs)', object 'MyDataAdapter' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="28">In method 'GrainMainForm.Update_Click(Object, EventArgs)', object 'MyDataSet' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'MyDataSet' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="30">In method 'GrainMainForm.Update_Click(Object, EventArgs)', object 'cmd' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="65">Modify 'GrainMainForm.Update_Click(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="29">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'GrainMainForm.Update_Click(Object, EventArgs)' could contain the following variables 'GrainNameString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="GrainMainForm.vb" Line="28">Be sure to set the DataSet Locale property wherever 'GrainMainForm.Update_Click(Object, EventArgs)' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="HomeParentForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="Histroy" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HomeParentForm.Designer.vb" Line="58">Correct the spelling of the unrecognized token 'Histroy' in the literal '"Brewing Histroy"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StartmyBrew()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Startmy" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HomeParentForm.vb" Line="8">Correct the spelling of 'Startmy' in member name 'HomeParentForm.StartmyBrew()' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HomeParentForm.vb" Line="8">The 'this' parameter (or 'Me' in Visual Basic) of 'HomeParentForm.StartmyBrew()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="HopMainForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetSQLDBData(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="6">In method 'HopMainForm.GetSQLDBData(String, String)', object 'sqlConnection' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'sqlConnection' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="7">In method 'HopMainForm.GetSQLDBData(String, String)', call System.IDisposable.Dispose on object 'sqlCommand' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="10">The query string passed to 'SqlCeCommand.CommandText.Set(String)' in 'HopMainForm.GetSQLDBData(String, String)' could contain the following variables 'MySqlString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="HopMainForm" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.Designer.vb" Line="259">Correct the spelling of the unrecognized token 'HopMainForm' in the literal '"HopMainForm"'.</Issue>
+            </Message>
+            <Message Id="Orgin" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.Designer.vb" Line="186">Correct the spelling of the unrecognized token 'Orgin' in the literal '"Orgin"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="44">In method 'HopMainForm.UpdateButton_Click(Object, EventArgs)', call System.IDisposable.Dispose on object 'MyDataAdapter' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="43">In method 'HopMainForm.UpdateButton_Click(Object, EventArgs)', call System.IDisposable.Dispose on object 'MyDataSet' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="45">In method 'HopMainForm.UpdateButton_Click(Object, EventArgs)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="93">Modify 'HopMainForm.UpdateButton_Click(Object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="cmd" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="45">'HopMainForm.UpdateButton_Click(Object, EventArgs)' declares a variable, 'cmd', of type 'SqlCeCommandBuilder', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="44">The query string passed to 'SqlCeDataAdapter.New(String, String)' in 'HopMainForm.UpdateButton_Click(Object, EventArgs)' could contain the following variables 'NameString'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Error" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="HopMainForm.vb" Line="43">Be sure to set the DataSet Locale property wherever 'HopMainForm.UpdateButton_Click(Object, EventArgs)' creates an instance of that type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SetupForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CloseSetupForm()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="SetupForm.vb" Line="67">Modify 'SetupForm.CloseSetupForm()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Form.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="SetupForm.Designer.vb" Line="582">Method 'SetupForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Form.Text.Set(String)'. Retrieve the following string(s) from a resource table instead: "Sensor Setup".</Issue>
+            </Message>
+            <Message Id="CompPort" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="SetupForm.Designer.vb" Line="411">Correct the spelling of the unrecognized token 'CompPort' in the literal '"Set CompPort"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MyComReader()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="SetupForm.vb" Line="100">Modify 'SetupForm.MyComReader()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenSerialPort()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="SetupForm.vb" Line="54">Modify 'SetupForm.OpenSerialPort()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SearchModeButton_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.IO.Ports.SerialPort.WriteLine(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant" File="SetupForm.vb" Line="128">Method 'SetupForm.SearchModeButton_Click(Object, EventArgs)' passes a literal string as parameter 'text' of a call to 'SerialPort.WriteLine(String)'. Retrieve the following string(s) from a resource table instead: "s".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="BrewersAssistant.BrewHelperDBDataSetTableAdapters">
+       <Types>
+        <Type Name="WortAdditionBillTableAdapter" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Wort" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Wort' in type name 'WortAdditionBillTableAdapter'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="WortAdditionsTableAdapter" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Wort" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2014-08-31 06:53:19Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Wort' in type name 'WortAdditionsTableAdapter'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502">
+   <Name>Avoid excessive complexity</Name>
+   <Description>Method implementations that are exceedingly complex increase the challenge of understanding and maintaining code.</Description>
+   <Resolution Name="Default">{0} has a cyclomatic complexity of {1}. Rewrite or refactor the method to reduce complexity to {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182212(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505">
+   <Name>Avoid unmaintainable code</Name>
+   <Description>Types and methods with a high degree of class coupling, cyclomatic complexity and/or program length can be difficult to maintain.</Description>
+   <Resolution Name="Method">{0} has a maintainability index of {1}. Rewrite or refactor the method to increase its maintainability index (MI). An MI below {2} indicates poor maintainability, an MI between {2} and {3} indicates moderate maintainability, and an MI above {3} indicates good maintainability.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386043(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Avoid unused private fields</Name>
+   <Description>Private fields were detected that do not appear to be accessed within the assembly. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Dispose objects before losing scope</Name>
+   <Description>If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.</Description>
+   <Resolution Name="ExceptionEdge">In method {0}, object {1} is not disposed along all exception paths. Call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Resolution Name="NonExceptionEdge">In method {0}, call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 237</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>Do not pass literals as localized parameters</Name>
+   <Description>Literal strings that are embedded in source code are difficult to localize. Avoid passing literal strings as arguments in circumstances where a localized string is generally expected.</Description>
+   <Resolution Name="KnownValue">Method {0} passes a literal string as parameter '{1}' of a call to {2}. Retrieve the following string(s) from a resource table instead: {3}.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="MemberParameter">In member {0}, correct the casing of '{1}' in parameter name {2} by changing it to '{3}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+   <Name>Identifiers should not contain underscores</Name>
+   <Description>Do not use underscores when specifying identifiers. Some generated Visual Studio identifiers for applications contain underscore characters. Underscore characters should generally be avoided in public identifiers.</Description>
+   <Resolution Name="Member">Remove the underscores from member name {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182245(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+   <Name>Implement ISerializable correctly</Name>
+   <Description>If a type is assignable to ISerializable, it should implement GetObjectData. For unsealed types, the GetObjectData method should be callable and overridable by derived types.</Description>
+   <Resolution Name="Default">Add an implementation of GetObjectData to type {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182342(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204">
+   <Name>Literals should be spelled correctly</Name>
+   <Description>This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.</Description>
+   <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/bb264488(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+   <Name>Mark assemblies with NeutralResourcesLanguageAttribute</Name>
+   <Description>The NeutralResourcesLanguage attribute informs the ResourceManager of the language used to render the neutral culture's resources for an assembly. When looking up resources in the same culture as the neutral resources language, the ResourceManager automatically uses the resources located in the main assembly, instead of searching for a satellite assembly with the current user interface culture for the current thread. This will improve lookup performance for the first resource you load and can reduce your working set.</Description>
+   <Resolution Name="Default">Because assembly {0} contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb385967(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306">
+   <Name>Set locale for data types</Name>
+   <Description>In most cases, Locale should be explicitly set to CultureInfo.InvariantCulture on DataSet and DataTable instances. Upon creation of a DataSet or DataTable instance, the Locale is set to the current culture. In most cases, the Locale should be set to CultureInfo.InvariantCulture to guarantee proper sorting behavior in all cultures.</Description>
+   <Resolution Name="Default">Be sure to set the {0} Locale property wherever {1} creates an instance of that type.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182188(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternate">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be based on input from the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify {4}.</Resolution>
+   <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+   <Name>Specify MessageBoxOptions</Name>
+   <Description>In order to run correctly on right-to-left systems, all calls to MessageBox.Show should use the overload that specifies MessageBoxOptions as an argument. Programs should detect whether they are running on a right-to-left system at run-time and pass the appropriate MessageBoxOptions value in order to display correctly.</Description>
+   <Resolution Name="Default">Change {0} to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182191(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

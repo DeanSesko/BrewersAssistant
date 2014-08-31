@@ -5,9 +5,7 @@ Imports System.Threading
 
 Public Class BrewHistoryForm
     
-    Private OutdoorSensor As String
-    Private zoommin As Integer = 60
-    Private zoommax As Integer = 200
+ 
    
     Private GrainPotential As Decimal = 0
     Private MYTotalGrainpts As Decimal = 0
@@ -56,7 +54,7 @@ Public Class BrewHistoryForm
         mashSeries.Color = Color.Red
         mashSeries.XValueType = ChartValueType.DateTime
         MashChart.Series.Add(mashSeries)
-        Dim mashConstant As New Series("Mash Required Temperature")
+        Dim mashConstant As Series = New Series("Mash Required Temperature")
         mashConstant.ChartType = SeriesChartType.Line
         mashConstant.BorderWidth = 4
         mashConstant.Color = Color.Black
@@ -100,20 +98,20 @@ Public Class BrewHistoryForm
     Private Sub LoadMash()
         Dim mysqlString As String = "Select RestTemp as Temperature, RestTime as Time from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'  order by RestTemp asc"
         Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
-        MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
         Dim ds As New DataSet
-
         Try
+            MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
             If (MyDataAdapter.Fill(ds) > 0) Then
                 StepMashGridView.DataSource = ds.Tables(0)
 
             End If
         Catch ex As Exception
+            ds.Dispose()
+            MyDataAdapter.Dispose()
             MessageBox.Show("Error connecting to the database")
         End Try
-        MyDataAdapter.Dispose()
         ds.Dispose()
-
+        MyDataAdapter.Dispose()
 
     End Sub
 
@@ -142,14 +140,14 @@ Public Class BrewHistoryForm
         SpargeStopTimelabel.Text = " "
     End Sub
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal SQlControl As String)
-        'On Error Resume Next
+        On Error Resume Next
         Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
         Dim sqlCommand As New SqlCeCommand()
         sqlConnection.Open()
         sqlCommand.Connection = sqlConnection
         sqlCommand.CommandText = MySqlString
         Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
-        On Error Resume Next
+
 
 
         Select Case SQlControl
@@ -360,6 +358,7 @@ Public Class BrewHistoryForm
         End Select
         myReader.Close()
         sqlConnection.Close()
+
     End Sub
     Private Sub UpdatePostBoilVolume()
         Dim UserPostBOil As String = InputBox("Please Enter the Post Boil Wort Collected")

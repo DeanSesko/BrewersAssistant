@@ -3,9 +3,8 @@ Imports System.Threading
 
 Public Class SetupForm
     Private _SerialPort As SerialPort
-    Public _continue As Boolean
+    Private _continue As Boolean
     Dim data As String = Nothing
-    Dim Sensor As String = Nothing
     Dim TemperatureString() As String = Nothing
     Dim MyTemp As String = Nothing
     Dim MySensorName As String = Nothing
@@ -100,6 +99,9 @@ Public Class SetupForm
                     Case "Sensor6"
                         Sensor6TempLabel.Text = MyTemp.ToString
 
+                    Case Else
+
+
                 End Select
             Catch
 
@@ -124,29 +126,31 @@ Public Class SetupForm
 
     Private Sub SearchModeButton_Click(sender As Object, e As EventArgs) Handles SearchModeButton.Click
         _SerialPort.WriteLine("s")
-        Sensor1TempLabel.Text = "00.00"
-        Sensor2TempLabel.Text = "00.00"
-        Sensor3TempLabel.Text = "00.00"
-        Sensor4TempLabel.Text = "00.00"
-        Sensor5TempLabel.Text = "00.00"
-        Sensor6TempLabel.Text = "00.00"
-        '  MsgBox("Search Code Sent")
+
+
+        Sensor1TempLabel.Text = My.Resources.DefaultDecimal
+        Sensor2TempLabel.Text = My.Resources.DefaultDecimal
+        Sensor3TempLabel.Text = My.Resources.DefaultDecimal
+        Sensor4TempLabel.Text = My.Resources.DefaultDecimal
+        Sensor5TempLabel.Text = My.Resources.DefaultDecimal
+        Sensor6TempLabel.Text = My.Resources.DefaultDecimal
+
     End Sub
 
 
-    Public Function CheckSensors(ByVal MySensor As String) As String
+    Shared Function CheckSensors(ByVal mySensor As String) As String
 
-        If MySensor = My.Settings.Sensor1 Then
+        If mySensor = My.Settings.Sensor1 Then
             CheckSensors = "Sensor1"
-        ElseIf MySensor = My.Settings.Sensor2 Then
+        ElseIf mySensor = My.Settings.Sensor2 Then
             CheckSensors = "Sensor2"
-        ElseIf MySensor = My.Settings.Sensor3 Then
+        ElseIf mySensor = My.Settings.Sensor3 Then
             CheckSensors = "Sensor3"
-        ElseIf MySensor = My.Settings.Sensor4 Then
+        ElseIf mySensor = My.Settings.Sensor4 Then
             CheckSensors = "Sensor4"
-        ElseIf MySensor = My.Settings.Sensor5 Then
+        ElseIf mySensor = My.Settings.Sensor5 Then
             CheckSensors = "Sensor5"
-        ElseIf MySensor = My.Settings.Sensor6 Then
+        ElseIf mySensor = My.Settings.Sensor6 Then
             CheckSensors = "Sensor6"
         Else
             CheckSensors = "False"

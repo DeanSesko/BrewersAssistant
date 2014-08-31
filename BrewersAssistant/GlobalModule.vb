@@ -16,6 +16,8 @@ Module GlobalModule
         sqlCommand.ExecuteNonQuery()
         sqlCommand = Nothing
         sqlConnection.Close()
+        sqlConnection.Dispose()
+
     End Sub
     Public Function DigitChecker(ByVal MyNumber As String) As Boolean
         Try

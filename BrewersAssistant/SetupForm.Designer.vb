@@ -20,7 +20,7 @@ Partial Class SetupForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId:="System.Windows.Forms.ButtonBase.set_Text(System.String)")> <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CloseButton = New System.Windows.Forms.Button()
         Me.Sensor1ComboBox = New System.Windows.Forms.ComboBox()
@@ -450,7 +450,7 @@ Partial Class SetupForm
         Me.Sensor1TempLabel.Name = "Sensor1TempLabel"
         Me.Sensor1TempLabel.Size = New System.Drawing.Size(52, 17)
         Me.Sensor1TempLabel.TabIndex = 39
-        Me.Sensor1TempLabel.Text = "000.00"
+        Me.Sensor1TempLabel.Text = My.Resources.DefaultDecimal
         '
         'Sensor2TempLabel
         '
@@ -460,7 +460,7 @@ Partial Class SetupForm
         Me.Sensor2TempLabel.Name = "Sensor2TempLabel"
         Me.Sensor2TempLabel.Size = New System.Drawing.Size(52, 17)
         Me.Sensor2TempLabel.TabIndex = 40
-        Me.Sensor2TempLabel.Text = "000.00"
+        Me.Sensor2TempLabel.Text = My.Resources.DefaultDecimal
         '
         'Sensor3TempLabel
         '
@@ -470,7 +470,7 @@ Partial Class SetupForm
         Me.Sensor3TempLabel.Name = "Sensor3TempLabel"
         Me.Sensor3TempLabel.Size = New System.Drawing.Size(52, 17)
         Me.Sensor3TempLabel.TabIndex = 41
-        Me.Sensor3TempLabel.Text = "000.00"
+        Me.Sensor3TempLabel.Text = My.Resources.DefaultDecimal
         '
         'Sensor4TempLabel
         '
@@ -480,7 +480,7 @@ Partial Class SetupForm
         Me.Sensor4TempLabel.Name = "Sensor4TempLabel"
         Me.Sensor4TempLabel.Size = New System.Drawing.Size(52, 17)
         Me.Sensor4TempLabel.TabIndex = 42
-        Me.Sensor4TempLabel.Text = "000.00"
+        Me.Sensor4TempLabel.Text = My.Resources.DefaultDecimal
         '
         'Sensor5TempLabel
         '
@@ -490,7 +490,7 @@ Partial Class SetupForm
         Me.Sensor5TempLabel.Name = "Sensor5TempLabel"
         Me.Sensor5TempLabel.Size = New System.Drawing.Size(52, 17)
         Me.Sensor5TempLabel.TabIndex = 43
-        Me.Sensor5TempLabel.Text = "000.00"
+        Me.Sensor5TempLabel.Text = My.Resources.DefaultDecimal
         '
         'Sensor6TempLabel
         '
@@ -500,7 +500,7 @@ Partial Class SetupForm
         Me.Sensor6TempLabel.Name = "Sensor6TempLabel"
         Me.Sensor6TempLabel.Size = New System.Drawing.Size(52, 17)
         Me.Sensor6TempLabel.TabIndex = 44
-        Me.Sensor6TempLabel.Text = "000.00"
+        Me.Sensor6TempLabel.Text = My.Resources.DefaultDecimal
         '
         'SearchModeButton
         '

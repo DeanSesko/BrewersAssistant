@@ -157,3 +157,25 @@ C:\Users\DeanSesko\Documents\Visual Studio 2008\Projects\BrewersAssistantV0.08Be
 C:\Users\DeanSesko\Documents\Visual Studio 2008\Projects\BrewersAssistantV0.08Beta\BrewersAssistant\bin\Release\BrewersAssistant.xml
 C:\Users\DeanSesko\Documents\Visual Studio 2008\Projects\BrewersAssistantV0.08Beta\BrewersAssistant\bin\Release\AGaugeApp.exe
 C:\Users\DeanSesko\Documents\Visual Studio 2008\Projects\BrewersAssistantV0.08Beta\BrewersAssistant\bin\Release\OneWireAPI.NET.dll
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewHelperDB.sdf
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewersAssistant.exe.config
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewersAssistant.exe
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewersAssistant.pdb
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewersAssistant.xml
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.BrewHistoryForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.BrewingSessionForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.BrewMaintenanceForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.CustomGrainsForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.CustomHopForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.CustomWortAdditionForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.GrainMainForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.HomeParentForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.HopMainForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.Resources.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.SetupForm.resources
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.vbproj.GenerateResource.Cache
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.exe
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.xml
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\obj\Release\BrewersAssistant.pdb
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewersAssistant.exe.CodeAnalysisLog.xml
+Z:\DeanSesko\OneDrive\Documents\Projects\BrewersAssistant\BrewersAssistant\bin\Release\BrewersAssistant.exe.lastcodeanalysissucceeded

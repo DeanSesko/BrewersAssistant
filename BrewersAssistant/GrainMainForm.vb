@@ -68,8 +68,10 @@ Public Class GrainMainForm
             MsgBox(ex.Message)
         End Try
 myexit:
-        MyDataSet = Nothing
-        MyDataAdapter = Nothing
+
+        MyDataAdapter.Dispose()
+        MyDataSet.Dispose()
+        cmd.Dispose()
 
     End Sub
     Private Sub GetSQLDBData(byval MySqlString As String, ByVal datacontrol As String)

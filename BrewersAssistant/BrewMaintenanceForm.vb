@@ -638,6 +638,8 @@ MyExit:
         ' Catch ex As Exception
         '    MessageBox.Show("Error connecting to the database")
         ' End Try
+        ds.Dispose()
+
     End Sub
 
 

@@ -1,7 +1,7 @@
 ﻿Imports System.Windows.Forms
 
 Public Class HomeParentForm
-    Private m_ChildFormNumber As Integer
+
 
 
     Public Sub StartmyBrew()

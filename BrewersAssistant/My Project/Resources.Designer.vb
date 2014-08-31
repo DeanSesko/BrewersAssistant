@@ -59,5 +59,14 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 00.00.
+        '''</summary>
+        Friend ReadOnly Property DefaultDecimal() As String
+            Get
+                Return ResourceManager.GetString("DefaultDecimal", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

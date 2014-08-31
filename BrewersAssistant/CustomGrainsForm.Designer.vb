@@ -20,7 +20,7 @@ Partial Class CustomGrainsForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId:="Orgin")> <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CloseButton = New System.Windows.Forms.Button()
         Me.GrainNameTextBox = New System.Windows.Forms.TextBox()
@@ -121,7 +121,7 @@ Partial Class CustomGrainsForm
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 17)
         Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Orgin"
+        Me.Label2.Text = "Origin"
         '
         'Label3
         '

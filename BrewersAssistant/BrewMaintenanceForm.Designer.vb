@@ -71,8 +71,12 @@ Partial Class BrewMaintenanceForm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GrainsAndWortAdditionsTabBox = New System.Windows.Forms.TabControl()
         Me.GrainsTab = New System.Windows.Forms.TabPage()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
         Me.HopsTab = New System.Windows.Forms.TabPage()
         Me.RemoveSelectedHopButton = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -129,10 +133,6 @@ Partial Class BrewMaintenanceForm
         Me.GrainPotentialLabel = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.MashTypeComboBox = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
         SessionIDLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
@@ -527,9 +527,9 @@ Partial Class BrewMaintenanceForm
         Me.GrainWeightLabel.AutoSize = True
         Me.GrainWeightLabel.Location = New System.Drawing.Point(320, 128)
         Me.GrainWeightLabel.Name = "GrainWeightLabel"
-        Me.GrainWeightLabel.Size = New System.Drawing.Size(60, 17)
+        Me.GrainWeightLabel.Size = New System.Drawing.Size(44, 17)
         Me.GrainWeightLabel.TabIndex = 296
-        Me.GrainWeightLabel.Text = "000.000"
+        Me.GrainWeightLabel.Text = "00.00"
         '
         'GrainWeightComboBox
         '
@@ -677,6 +677,25 @@ Partial Class BrewMaintenanceForm
         Me.GrainsTab.TabIndex = 0
         Me.GrainsTab.Text = "Grains"
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(432, 24)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(43, 17)
+        Me.Label13.TabIndex = 308
+        Me.Label13.Text = "Orgin"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(432, 48)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(40, 17)
+        Me.Label14.TabIndex = 309
+        Me.Label14.Text = "Type"
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -694,6 +713,24 @@ Partial Class BrewMaintenanceForm
         Me.Label12.Size = New System.Drawing.Size(56, 17)
         Me.Label12.TabIndex = 306
         Me.Label12.Text = "Amount"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(432, 72)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(38, 17)
+        Me.Label30.TabIndex = 310
+        Me.Label30.Text = "SRM"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(432, 96)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(102, 17)
+        Me.Label42.TabIndex = 311
+        Me.Label42.Text = "Grain Potential"
         '
         'HopsTab
         '
@@ -841,9 +878,9 @@ Partial Class BrewMaintenanceForm
         Me.hopWeightLabel.AutoSize = True
         Me.hopWeightLabel.Location = New System.Drawing.Point(304, 136)
         Me.hopWeightLabel.Name = "hopWeightLabel"
-        Me.hopWeightLabel.Size = New System.Drawing.Size(60, 17)
+        Me.hopWeightLabel.Size = New System.Drawing.Size(44, 17)
         Me.hopWeightLabel.TabIndex = 326
-        Me.hopWeightLabel.Text = "000.000"
+        Me.hopWeightLabel.Text = "00.00"
         '
         'HopWeightTextBox
         '
@@ -1207,7 +1244,7 @@ Partial Class BrewMaintenanceForm
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(64, 17)
         Me.Label31.TabIndex = 310
-        Me.Label31.Text = "Mintues"
+        Me.Label31.Text = "Minutes"
         '
         'Label32
         '
@@ -1290,9 +1327,9 @@ Partial Class BrewMaintenanceForm
         Me.GrainPotentialLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
         Me.GrainPotentialLabel.Location = New System.Drawing.Point(152, 456)
         Me.GrainPotentialLabel.Name = "GrainPotentialLabel"
-        Me.GrainPotentialLabel.Size = New System.Drawing.Size(67, 17)
+        Me.GrainPotentialLabel.Size = New System.Drawing.Size(49, 17)
         Me.GrainPotentialLabel.TabIndex = 320
-        Me.GrainPotentialLabel.Text = "0.00000"
+        Me.GrainPotentialLabel.Text = "00.00"
         '
         'Label39
         '
@@ -1314,43 +1351,6 @@ Partial Class BrewMaintenanceForm
         Me.MashTypeComboBox.Name = "MashTypeComboBox"
         Me.MashTypeComboBox.Size = New System.Drawing.Size(250, 24)
         Me.MashTypeComboBox.TabIndex = 4
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(432, 24)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(43, 17)
-        Me.Label13.TabIndex = 308
-        Me.Label13.Text = "Orgin"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(432, 48)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(40, 17)
-        Me.Label14.TabIndex = 309
-        Me.Label14.Text = "Type"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(432, 72)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(38, 17)
-        Me.Label30.TabIndex = 310
-        Me.Label30.Text = "SRM"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(432, 96)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(102, 17)
-        Me.Label42.TabIndex = 311
-        Me.Label42.Text = "Grain Potential"
         '
         'BrewMaintenanceForm
         '
