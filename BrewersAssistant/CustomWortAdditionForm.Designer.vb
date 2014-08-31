@@ -32,9 +32,10 @@ Partial Class CustomWortAdditionForm
         '
         'MiscAddButton
         '
-        Me.MiscAddButton.Location = New System.Drawing.Point(7, 121)
+        Me.MiscAddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.MiscAddButton.Location = New System.Drawing.Point(16, 128)
         Me.MiscAddButton.Name = "MiscAddButton"
-        Me.MiscAddButton.Size = New System.Drawing.Size(359, 23)
+        Me.MiscAddButton.Size = New System.Drawing.Size(408, 30)
         Me.MiscAddButton.TabIndex = 3
         Me.MiscAddButton.Text = "Add"
         Me.MiscAddButton.UseVisualStyleBackColor = True
@@ -42,15 +43,17 @@ Partial Class CustomWortAdditionForm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(4, 34)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label8.Location = New System.Drawing.Point(16, 64)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 13)
+        Me.Label8.Size = New System.Drawing.Size(79, 17)
         Me.Label8.TabIndex = 52
         Me.Label8.Text = "Description"
         '
         'MiscWortItemDescriptionTextBox
         '
-        Me.MiscWortItemDescriptionTextBox.Location = New System.Drawing.Point(138, 31)
+        Me.MiscWortItemDescriptionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.MiscWortItemDescriptionTextBox.Location = New System.Drawing.Point(192, 64)
         Me.MiscWortItemDescriptionTextBox.Multiline = True
         Me.MiscWortItemDescriptionTextBox.Name = "MiscWortItemDescriptionTextBox"
         Me.MiscWortItemDescriptionTextBox.Size = New System.Drawing.Size(228, 46)
@@ -58,9 +61,10 @@ Partial Class CustomWortAdditionForm
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(509, 320)
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(488, 392)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(75, 23)
+        Me.CloseButton.Size = New System.Drawing.Size(120, 30)
         Me.CloseButton.TabIndex = 4
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
@@ -68,17 +72,19 @@ Partial Class CustomWortAdditionForm
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(4, 8)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label9.Location = New System.Drawing.Point(16, 24)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(128, 13)
+        Me.Label9.Size = New System.Drawing.Size(168, 17)
         Me.Label9.TabIndex = 51
         Me.Label9.Text = "Miscellaneous Item Name"
         '
         'MiscWortItemNameTextBox
         '
-        Me.MiscWortItemNameTextBox.Location = New System.Drawing.Point(138, 5)
+        Me.MiscWortItemNameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.MiscWortItemNameTextBox.Location = New System.Drawing.Point(192, 24)
         Me.MiscWortItemNameTextBox.Name = "MiscWortItemNameTextBox"
-        Me.MiscWortItemNameTextBox.Size = New System.Drawing.Size(228, 20)
+        Me.MiscWortItemNameTextBox.Size = New System.Drawing.Size(228, 23)
         Me.MiscWortItemNameTextBox.TabIndex = 1
         '
         'CustomWortAdditionForm
@@ -86,7 +92,7 @@ Partial Class CustomWortAdditionForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(596, 355)
+        Me.ClientSize = New System.Drawing.Size(624, 446)
         Me.Controls.Add(Me.MiscAddButton)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.MiscWortItemDescriptionTextBox)

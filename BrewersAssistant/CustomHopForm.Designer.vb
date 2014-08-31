@@ -42,9 +42,10 @@ Partial Class CustomHopForm
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(509, 320)
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(488, 392)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(75, 23)
+        Me.CloseButton.Size = New System.Drawing.Size(120, 30)
         Me.CloseButton.TabIndex = 9
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
@@ -52,18 +53,20 @@ Partial Class CustomHopForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 166)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label7.Location = New System.Drawing.Point(20, 285)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(37, 13)
+        Me.Label7.Size = New System.Drawing.Size(49, 17)
         Me.Label7.TabIndex = 62
         Me.Label7.Text = "Aroma"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 139)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label3.Location = New System.Drawing.Point(20, 237)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 13)
+        Me.Label3.Size = New System.Drawing.Size(64, 17)
         Me.Label3.TabIndex = 61
         Me.Label3.Text = "Finishing"
         '
@@ -72,11 +75,12 @@ Partial Class CustomHopForm
         Me.AromaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.AromaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.AromaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.AromaComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.AromaComboBox.FormattingEnabled = True
         Me.AromaComboBox.Items.AddRange(New Object() {"Yes", "No"})
-        Me.AromaComboBox.Location = New System.Drawing.Point(79, 163)
+        Me.AromaComboBox.Location = New System.Drawing.Point(120, 280)
         Me.AromaComboBox.Name = "AromaComboBox"
-        Me.AromaComboBox.Size = New System.Drawing.Size(93, 21)
+        Me.AromaComboBox.Size = New System.Drawing.Size(93, 24)
         Me.AromaComboBox.TabIndex = 53
         '
         'FinishingComboBox
@@ -84,19 +88,21 @@ Partial Class CustomHopForm
         Me.FinishingComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.FinishingComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.FinishingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FinishingComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.FinishingComboBox.FormattingEnabled = True
         Me.FinishingComboBox.Items.AddRange(New Object() {"Yes", "No"})
-        Me.FinishingComboBox.Location = New System.Drawing.Point(79, 136)
+        Me.FinishingComboBox.Location = New System.Drawing.Point(120, 232)
         Me.FinishingComboBox.Name = "FinishingComboBox"
-        Me.FinishingComboBox.Size = New System.Drawing.Size(93, 21)
+        Me.FinishingComboBox.Size = New System.Drawing.Size(93, 24)
         Me.FinishingComboBox.TabIndex = 52
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 193)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label6.Location = New System.Drawing.Point(20, 333)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(58, 13)
+        Me.Label6.Size = New System.Drawing.Size(75, 17)
         Me.Label6.TabIndex = 60
         Me.Label6.Text = "Alpha Acid"
         '
@@ -105,66 +111,74 @@ Partial Class CustomHopForm
         Me.BitteringComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.BitteringComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.BitteringComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.BitteringComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BitteringComboBox.FormattingEnabled = True
         Me.BitteringComboBox.Items.AddRange(New Object() {"Yes", "No"})
-        Me.BitteringComboBox.Location = New System.Drawing.Point(79, 110)
+        Me.BitteringComboBox.Location = New System.Drawing.Point(120, 184)
         Me.BitteringComboBox.Name = "BitteringComboBox"
-        Me.BitteringComboBox.Size = New System.Drawing.Size(93, 21)
+        Me.BitteringComboBox.Size = New System.Drawing.Size(93, 24)
         Me.BitteringComboBox.TabIndex = 51
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 113)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label5.Location = New System.Drawing.Point(20, 189)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 13)
+        Me.Label5.Size = New System.Drawing.Size(60, 17)
         Me.Label5.TabIndex = 59
         Me.Label5.Text = "Bittering"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 87)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label4.Location = New System.Drawing.Point(20, 141)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(32, 13)
+        Me.Label4.Size = New System.Drawing.Size(43, 17)
         Me.Label4.TabIndex = 58
         Me.Label4.Text = "Orgin"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 35)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label2.Location = New System.Drawing.Point(16, 80)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 13)
+        Me.Label2.Size = New System.Drawing.Size(79, 17)
         Me.Label2.TabIndex = 57
         Me.Label2.Text = "Description"
         '
         'AddButton
         '
-        Me.AddButton.Location = New System.Drawing.Point(15, 216)
+        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.AddButton.Location = New System.Drawing.Point(16, 368)
         Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(292, 23)
+        Me.AddButton.Size = New System.Drawing.Size(328, 30)
         Me.AddButton.TabIndex = 55
         Me.AddButton.Text = "Add"
         Me.AddButton.UseVisualStyleBackColor = True
         '
         'HopOrginTextBox
         '
-        Me.HopOrginTextBox.Location = New System.Drawing.Point(79, 84)
+        Me.HopOrginTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.HopOrginTextBox.Location = New System.Drawing.Point(120, 136)
         Me.HopOrginTextBox.Name = "HopOrginTextBox"
-        Me.HopOrginTextBox.Size = New System.Drawing.Size(228, 20)
+        Me.HopOrginTextBox.Size = New System.Drawing.Size(228, 23)
         Me.HopOrginTextBox.TabIndex = 50
         '
         'AlphaAcidTextBox
         '
-        Me.AlphaAcidTextBox.Location = New System.Drawing.Point(79, 190)
+        Me.AlphaAcidTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.AlphaAcidTextBox.Location = New System.Drawing.Point(120, 328)
         Me.AlphaAcidTextBox.Name = "AlphaAcidTextBox"
-        Me.AlphaAcidTextBox.Size = New System.Drawing.Size(93, 20)
+        Me.AlphaAcidTextBox.Size = New System.Drawing.Size(93, 23)
         Me.AlphaAcidTextBox.TabIndex = 54
         '
         'HopDescriptionTextBox
         '
-        Me.HopDescriptionTextBox.Location = New System.Drawing.Point(79, 32)
+        Me.HopDescriptionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.HopDescriptionTextBox.Location = New System.Drawing.Point(120, 72)
         Me.HopDescriptionTextBox.Multiline = True
         Me.HopDescriptionTextBox.Name = "HopDescriptionTextBox"
         Me.HopDescriptionTextBox.Size = New System.Drawing.Size(228, 46)
@@ -173,17 +187,19 @@ Partial Class CustomHopForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label1.Location = New System.Drawing.Point(16, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(27, 13)
+        Me.Label1.Size = New System.Drawing.Size(34, 17)
         Me.Label1.TabIndex = 56
         Me.Label1.Text = "Hop"
         '
         'HopNameTextBox
         '
-        Me.HopNameTextBox.Location = New System.Drawing.Point(79, 6)
+        Me.HopNameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.HopNameTextBox.Location = New System.Drawing.Point(120, 32)
         Me.HopNameTextBox.Name = "HopNameTextBox"
-        Me.HopNameTextBox.Size = New System.Drawing.Size(228, 20)
+        Me.HopNameTextBox.Size = New System.Drawing.Size(228, 23)
         Me.HopNameTextBox.TabIndex = 48
         '
         'CustomHopForm
@@ -191,7 +207,7 @@ Partial Class CustomHopForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(596, 355)
+        Me.ClientSize = New System.Drawing.Size(624, 446)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.AromaComboBox)

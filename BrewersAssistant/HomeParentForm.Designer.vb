@@ -97,7 +97,7 @@ Partial Class HomeParentForm
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1424, 862)
+        Me.Panel1.Size = New System.Drawing.Size(1350, 730)
         Me.Panel1.TabIndex = 13
         '
         'ExitBUtton
@@ -105,7 +105,7 @@ Partial Class HomeParentForm
         Me.ExitBUtton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ExitBUtton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ExitBUtton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExitBUtton.Location = New System.Drawing.Point(1000, 792)
+        Me.ExitBUtton.Location = New System.Drawing.Point(912, 648)
         Me.ExitBUtton.Name = "ExitBUtton"
         Me.ExitBUtton.Size = New System.Drawing.Size(411, 61)
         Me.ExitBUtton.TabIndex = 28
@@ -141,7 +141,7 @@ Partial Class HomeParentForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
-        Me.ClientSize = New System.Drawing.Size(1424, 862)
+        Me.ClientSize = New System.Drawing.Size(1350, 730)
         Me.Controls.Add(Me.Panel1)
         Me.IsMdiContainer = True
         Me.Name = "HomeParentForm"

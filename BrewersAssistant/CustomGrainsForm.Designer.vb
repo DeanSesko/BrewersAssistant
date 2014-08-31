@@ -40,48 +40,54 @@ Partial Class CustomGrainsForm
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(509, 320)
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(488, 400)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(75, 23)
+        Me.CloseButton.Size = New System.Drawing.Size(120, 30)
         Me.CloseButton.TabIndex = 0
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
         '
         'GrainNameTextBox
         '
-        Me.GrainNameTextBox.Location = New System.Drawing.Point(79, 6)
+        Me.GrainNameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.GrainNameTextBox.Location = New System.Drawing.Point(104, 16)
         Me.GrainNameTextBox.Name = "GrainNameTextBox"
-        Me.GrainNameTextBox.Size = New System.Drawing.Size(228, 20)
+        Me.GrainNameTextBox.Size = New System.Drawing.Size(348, 23)
         Me.GrainNameTextBox.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label1.Location = New System.Drawing.Point(16, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 13)
+        Me.Label1.Size = New System.Drawing.Size(43, 17)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Grain"
         '
         'GrainOrginTextBox
         '
-        Me.GrainOrginTextBox.Location = New System.Drawing.Point(79, 32)
+        Me.GrainOrginTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.GrainOrginTextBox.Location = New System.Drawing.Point(104, 64)
         Me.GrainOrginTextBox.Name = "GrainOrginTextBox"
-        Me.GrainOrginTextBox.Size = New System.Drawing.Size(228, 20)
+        Me.GrainOrginTextBox.Size = New System.Drawing.Size(348, 23)
         Me.GrainOrginTextBox.TabIndex = 3
         '
         'PotentialSGTextBox
         '
-        Me.PotentialSGTextBox.Location = New System.Drawing.Point(143, 137)
+        Me.PotentialSGTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.PotentialSGTextBox.Location = New System.Drawing.Point(200, 256)
         Me.PotentialSGTextBox.Name = "PotentialSGTextBox"
-        Me.PotentialSGTextBox.Size = New System.Drawing.Size(93, 20)
+        Me.PotentialSGTextBox.Size = New System.Drawing.Size(136, 23)
         Me.PotentialSGTextBox.TabIndex = 4
         '
         'SRMTextBox
         '
-        Me.SRMTextBox.Location = New System.Drawing.Point(79, 84)
+        Me.SRMTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SRMTextBox.Location = New System.Drawing.Point(104, 160)
         Me.SRMTextBox.Name = "SRMTextBox"
-        Me.SRMTextBox.Size = New System.Drawing.Size(93, 20)
+        Me.SRMTextBox.Size = New System.Drawing.Size(96, 23)
         Me.SRMTextBox.TabIndex = 5
         '
         'GrainTypeComboBox
@@ -89,18 +95,20 @@ Partial Class CustomGrainsForm
         Me.GrainTypeComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.GrainTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.GrainTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.GrainTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.GrainTypeComboBox.FormattingEnabled = True
         Me.GrainTypeComboBox.Items.AddRange(New Object() {"Adjunct", "Dry Extract", "Extract", "Grain", "Sugar"})
-        Me.GrainTypeComboBox.Location = New System.Drawing.Point(79, 58)
+        Me.GrainTypeComboBox.Location = New System.Drawing.Point(104, 112)
         Me.GrainTypeComboBox.Name = "GrainTypeComboBox"
-        Me.GrainTypeComboBox.Size = New System.Drawing.Size(228, 21)
+        Me.GrainTypeComboBox.Size = New System.Drawing.Size(352, 24)
         Me.GrainTypeComboBox.TabIndex = 7
         '
         'AddButton
         '
-        Me.AddButton.Location = New System.Drawing.Point(15, 174)
+        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.AddButton.Location = New System.Drawing.Point(8, 296)
         Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(292, 23)
+        Me.AddButton.Size = New System.Drawing.Size(328, 30)
         Me.AddButton.TabIndex = 8
         Me.AddButton.Text = "Add"
         Me.AddButton.UseVisualStyleBackColor = True
@@ -108,36 +116,40 @@ Partial Class CustomGrainsForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 35)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label2.Location = New System.Drawing.Point(16, 64)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(32, 13)
+        Me.Label2.Size = New System.Drawing.Size(43, 17)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Orgin"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 61)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label3.Location = New System.Drawing.Point(16, 112)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.Size = New System.Drawing.Size(79, 17)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Grain Type"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 87)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label4.Location = New System.Drawing.Point(16, 160)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 13)
+        Me.Label4.Size = New System.Drawing.Size(75, 17)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "SRM Color"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 113)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label5.Location = New System.Drawing.Point(16, 208)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(59, 13)
+        Me.Label5.Size = New System.Drawing.Size(76, 17)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Must Mash"
         '
@@ -146,19 +158,21 @@ Partial Class CustomGrainsForm
         Me.MushMashComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.MushMashComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.MushMashComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.MushMashComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.MushMashComboBox.FormattingEnabled = True
         Me.MushMashComboBox.Items.AddRange(New Object() {"Yes", "No"})
-        Me.MushMashComboBox.Location = New System.Drawing.Point(79, 110)
+        Me.MushMashComboBox.Location = New System.Drawing.Point(104, 208)
         Me.MushMashComboBox.Name = "MushMashComboBox"
-        Me.MushMashComboBox.Size = New System.Drawing.Size(93, 21)
+        Me.MushMashComboBox.Size = New System.Drawing.Size(93, 24)
         Me.MushMashComboBox.TabIndex = 13
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 140)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label6.Location = New System.Drawing.Point(16, 256)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(125, 13)
+        Me.Label6.Size = New System.Drawing.Size(165, 17)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Potential Specific Gravity"
         '
@@ -167,7 +181,7 @@ Partial Class CustomGrainsForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(596, 355)
+        Me.ClientSize = New System.Drawing.Size(624, 446)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.MushMashComboBox)
         Me.Controls.Add(Me.Label5)

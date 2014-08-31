@@ -25,8 +25,7 @@ Public Class BrewHistoryForm
     End Sub
 
     Private Sub BrewHistoryForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
-
+      
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         'Setup Mash Chart 
         SetupMashChart()

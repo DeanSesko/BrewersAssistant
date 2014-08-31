@@ -34,9 +34,9 @@ Partial Class BrewingSessionForm
         Dim NotesLabel As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.BoilTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BrewSessionsDateComboBox = New System.Windows.Forms.ComboBox()
         Me.ContinueBrewButton = New System.Windows.Forms.Button()
@@ -1578,19 +1578,19 @@ Partial Class BrewingSessionForm
         '
         Me.TempatureChart.BorderlineColor = System.Drawing.Color.Black
         Me.TempatureChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea2.Name = "ChartArea1"
-        Me.TempatureChart.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.TempatureChart.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.TempatureChart.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.TempatureChart.Legends.Add(Legend1)
         Me.TempatureChart.Location = New System.Drawing.Point(12, 580)
         Me.TempatureChart.Name = "TempatureChart"
         Me.TempatureChart.Size = New System.Drawing.Size(965, 424)
         Me.TempatureChart.TabIndex = 418
         Me.TempatureChart.Text = "MashChart"
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Title2.Name = "Title1"
-        Title2.Text = "Temperature Chart"
-        Me.TempatureChart.Titles.Add(Title2)
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Title1.Name = "Title1"
+        Title1.Text = "Temperature Chart"
+        Me.TempatureChart.Titles.Add(Title1)
         '
         'HLSetTEMPBOX
         '

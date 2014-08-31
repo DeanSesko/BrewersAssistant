@@ -1,7 +1,5 @@
 ﻿Imports System.IO.Ports
-Imports System.Configuration.ConfigurationManager
 Imports System.Data.SqlServerCe
-Imports System.IO
 Imports System.Threading
 
 
@@ -12,43 +10,32 @@ Public Class BrewingSessionForm
     Dim mytotaltime As TimeSpan
     Dim Lastmytime As DateTime = Nothing
     Dim Charting As Boolean = True
-
     Dim RimControl As Boolean = False
-    Dim data As String = Nothing
-    Dim TemperatureString() As String = Nothing
-    Dim MyTemp As String = Nothing
     Public _continue As Boolean
     Private StepmashCount As Integer = 0
     Private Stepmashindex As Integer = 0
-    Private MiscDuinoTemp As String
-    Private MashDuinoTemp As String
-    Private RimDuinoTemp As String
-    Private HLDuinoTemp As String
-    Private KettleDuino As String
     Private CountDownTime As DateTime
     Private BoilSpan As Decimal = 0
     Private mashspan As Decimal = 0
     Private ChillRatio As Integer = 0
     Private MyStartChillTemp As Decimal = 0
     Private BoilTemp As Decimal = 0
-    Private MashTemp As Decimal = 0
-    Private HLTemp As Decimal = 0
     Private OverHeatDuinoTemp As Decimal = 0
-    Private FlashBoil As Integer = 0
-    Private OutdoorSensor As String
     Private HLTUNSetup As String = "Mash"
     Private StartingBrewing As Boolean = False
     Private MashBoilVar As String
-    Private AdapterError As Integer = 0
     Private TempTimerSqlUpdate As Integer = 25
     Private tmr1 As Integer
     Private Milliseconds As Integer = 0
     Private seconds As Integer = 0
     Private minutes As Integer = 0
     Dim hours As Integer = 0
-    Dim MyMashstarttime As DateTime
+
+
+    Dim Overheated As Boolean = False
+    '  PID Variables 
+
     Dim myerror As Double
-    Dim latestReading As Double
     Dim turnHeatElementOnOff As Boolean
     Dim lastPIDTime As Long
     Dim PID_UPDATE_INTERVAL As Integer = 100
@@ -61,7 +48,7 @@ Public Class BrewingSessionForm
     Dim pTerm, iTerm, dTerm As Double
     Dim igain As Double = 0
     Dim dgain As Double = 0
-    Dim Overheated As Boolean = False
+
   
 
     Private Sub BrewingSessionForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -70,8 +57,6 @@ Public Class BrewingSessionForm
         tmrPID.Enabled = False
         Me.WindowState = FormWindowState.Maximized
 
-
-        DisableButtons()
         Dim mysqlString As String = "Select BeerName from  BeerData"
         Dim SQLControl As String = "Name"
         GetSQLDBData(mysqlString, SQLControl)
@@ -253,22 +238,15 @@ Public Class BrewingSessionForm
     End Sub
     Private Sub BoilTimerTicker()
         If CountDownTime < Now Then
-            If FlashBoil = 0 Then
-                My.Computer.Audio.PlaySystemSound(Media.SystemSounds.Beep)
-                MyTimer.ForeColor = Color.Red
-                FlashBoil = 1
-            Else
-                MyTimer.ForeColor = Color.Green
-                FlashBoil = 0
-            End If
+            My.Computer.Audio.PlaySystemSound(Media.SystemSounds.Beep)
             ChillButton.Enabled = True
         Else
-            Dim ts As TimeSpan = CountDownTime.Subtract(Now)
-            If ts.Seconds > 9 Then
-                MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & ts.Seconds.ToString
-            Else
-                MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & "0" & ts.Seconds.ToString
-            End If
+        Dim ts As TimeSpan = CountDownTime.Subtract(Now)
+        If ts.Seconds > 9 Then
+            MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & ts.Seconds.ToString
+        Else
+            MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & "0" & ts.Seconds.ToString
+        End If
 
         End If
     End Sub
@@ -325,10 +303,12 @@ Public Class BrewingSessionForm
         Dim MytunUpdateinterval As Integer = 0
         Dim MyHLUpdateinterval As Integer = 0
         Dim MyBoilUpdateinterval As Integer = 0
-        Dim LoopControl As String = "Off"
         Dim Sensor As String = Nothing
-
-
+        Dim data As String = Nothing
+        Dim TemperatureString() As String = Nothing
+        Dim MyTemp As String = Nothing
+        Dim MashTemp As Decimal = 0
+        Dim HLTemp As Decimal = 0
 
         While (_continue)
             Try
@@ -355,7 +335,6 @@ Public Class BrewingSessionForm
                     Case "Sensor6"
                         Sensor = My.Settings.Sensor6
 
-                 
                 End Select
 
 
@@ -363,66 +342,90 @@ Public Class BrewingSessionForm
                     Case "Mash"
 
                         MytunUpdateinterval = MytunUpdateinterval + 1
-                        MashDuinoTemp = TemperatureString(0)
-                        MashTunTempLabel.Text = MashDuinoTemp.ToString
+                        MashTunTempLabel.Text = TemperatureString(0)
 
                         If StartingBrewing = True Then
-                            If Not MashTemp = MashDuinoTemp Or MytunUpdateinterval >= TempTimerSqlUpdate Then
-                                MashTemp = MashDuinoTemp
-                                mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,temptime) Values ('" & SessionIDTextBox.Text & "','" & MashTUnSensor & "' , '" & MashDuinoTemp & "' , '" & Now & "')"
+                            If Not MashTemp = TemperatureString(0) Or MytunUpdateinterval >= TempTimerSqlUpdate Then
+                                MashTemp = TemperatureString(0)
+                                mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,temptime) Values ('" & SessionIDTextBox.Text & "','" & MashTUnSensor & "' , '" & TemperatureString(0) & "' , '" & Now & "')"
                                 UpdateDBSql(mysqlString)
                             End If
                             If Charting = True Then
                                 If MytunUpdateinterval >= TempTimerSqlUpdate Then
-                                    TempatureChart.Series("Current Temperature").Points.AddXY(Now, MashDuinoTemp.ToString)
+                                    TempatureChart.Series("Current Temperature").Points.AddXY(Now, TemperatureString(0).ToString)
                                     TempatureChart.Series("Required Temperature").Points.AddXY(Now, MashSetTempValueBox.Text)
                                     MytunUpdateinterval = 0
                                 End If
                             End If
                         End If
+
+                        If (TemperatureString(0)) < (MashSetTempValueBox.Text - 0.75) Then
+                            MashTunTempLabel.ForeColor = Color.Blue
+                        ElseIf TemperatureString(0) > (MashSetTempValueBox.Text + 0.75) Then
+                            MashTunTempLabel.ForeColor = Color.Red
+                        Else
+                            MashTunTempLabel.ForeColor = Color.Green
+                        End If
+
+
                     Case "HL"
                         MyHLUpdateinterval = MyHLUpdateinterval + 1
-                        HLDuinoTemp = TemperatureString(0)
-                        HLTunTempLabel.Text = HLDuinoTemp.ToString
+
+                        HLTunTempLabel.Text = TemperatureString(0)
 
                         If StartingBrewing = True Then
-                            If Not HLTemp = HLDuinoTemp Or MyHLUpdateinterval >= TempTimerSqlUpdate Then
-                                HLTemp = HLDuinoTemp
-                                mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,temptime) Values ('" & SessionIDTextBox.Text & "','" & HLTUNSensor & "' , '" & HLDuinoTemp & "' , '" & Now & "')"
+                            If Not HLTemp = TemperatureString(0) Or MyHLUpdateinterval >= TempTimerSqlUpdate Then
+                                HLTemp = TemperatureString(0)
+                                mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,temptime) Values ('" & SessionIDTextBox.Text & "','" & HLTUNSensor & "' , '" & TemperatureString(0) & "' , '" & Now & "')"
                                 UpdateDBSql(mysqlString)
                                 MyHLUpdateinterval = 0
                             End If
                         End If
+                        If (TemperatureString(0)) < (HLSetTEMPBOX.Text - 0.75) Then
+                            HLTunTempLabel.ForeColor = Color.Blue
+                        ElseIf TemperatureString(0) > (HLSetTEMPBOX.Text + 0.75) Then
+                            HLTunTempLabel.ForeColor = Color.Red
+                        Else
+                            HLTunTempLabel.ForeColor = Color.Green
+                        End If
+
+
+
                     Case "Kettle"
                         MyBoilUpdateinterval = MyBoilUpdateinterval + 1
                         mytotaltime = Now - Lastmytime
                         Lastmytime = Now
-                        KettleDuino = TemperatureString(0)
-                        BoitlKettleTempLabel.Text = KettleDuino
+                        BoitlKettleTempLabel.Text = TemperatureString(0)
 
                         If StartingBrewing = True Then
-                            If Not BoilTemp = KettleDuino Or MyBoilUpdateinterval >= TempTimerSqlUpdate Then
-                                BoilTemp = KettleDuino
-                                mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,TempTime) Values ('" & SessionIDTextBox.Text & "','" & BoilKettleSensor & "' , '" & KettleDuino & "' , '" & Now & "')"
+                            If Not BoilTemp = TemperatureString(0) Or MyBoilUpdateinterval >= TempTimerSqlUpdate Then
+                                BoilTemp = TemperatureString(0)
+                                mysqlString = "Insert into Temperatures (SessionId,SensorName,Temp,TempTime) Values ('" & SessionIDTextBox.Text & "','" & BoilKettleSensor & "' , '" & TemperatureString(0) & "' , '" & Now & "')"
                                 UpdateDBSql(mysqlString)
                             End If
                             If MyBoilUpdateinterval >= TempTimerSqlUpdate Then
                                 MyBoilUpdateinterval = 0
                             End If
                         End If
-
+                        If (TemperatureString(0)) < (SetKettleTempValueBox.Text - 0.75) Then
+                            BoitlKettleTempLabel.ForeColor = Color.Blue
+                        ElseIf TemperatureString(0) > (SetKettleTempValueBox.Text + 0.75) Then
+                            BoitlKettleTempLabel.ForeColor = Color.Red
+                        Else
+                            BoitlKettleTempLabel.ForeColor = Color.Green
+                        End If
                     Case "RimTemp"
-                        RimDuinoTemp = TemperatureString(0)
-                        RimTempLabel.Text = RimDuinoTemp
+
+                        RimTempLabel.Text = TemperatureString(0)
 
                     Case "OverHeatTemp"
                         OverHeatDuinoTemp = TemperatureString(0)
                         RimTubeExternalTempLabel.Text = OverHeatDuinoTemp
-                        If RimDuinoTemp > MashDuinoTemp + 10 Then
+                        If TemperatureString(0) > TemperatureString(0) + 10 Then
                             Overheated = True
                         End If
                         If RimControl = True Then
-                            If RimDuinoTemp < MashDuinoTemp + 10 Then
+                            If TemperatureString(0) < TemperatureString(0) + 10 Then
                                 Overheated = False
                             End If
                         End If
@@ -437,9 +440,9 @@ Public Class BrewingSessionForm
                         'End If
 
                     Case "MiscTemp"
-                        MiscDuinoTemp = TemperatureString(0)
-                        MiscTempProbeLabel.Text = MiscDuinoTemp
-                        CurrentWortTemp.Text = MiscDuinoTemp
+
+                        MiscTempProbeLabel.Text = TemperatureString(0)
+                        CurrentWortTemp.Text = TemperatureString(0)
                         If DigitChecker(GravityReadingTextBox.Text) Then
                             If DigitChecker(HydrometerCalibrationTextbox.Text) Then
                                 Dim MyGravity As Decimal = CDec(GravityReadingTextBox.Text) * ((1.00130346 - 0.000134722124 * CDec(CurrentWortTemp.Text) + 0.00000204052596 * CDec(CurrentWortTemp.Text) ^ 2 - 0.00000000232820948 * CDec(CurrentWortTemp.Text) ^ 3) / (1.00130346 - 0.000134722124 * CDec(HydrometerCalibrationTextbox.Text) + 0.00000204052596 * CDec(HydrometerCalibrationTextbox.Text) ^ 2 - 0.00000000232820948 * CDec(HydrometerCalibrationTextbox.Text) ^ 3))
@@ -449,7 +452,6 @@ Public Class BrewingSessionForm
 
                         End If
                 End Select
-                CheckTemps()
 
                 TemperatureString = Nothing
                 MyTemp = Nothing
@@ -850,6 +852,7 @@ Public Class BrewingSessionForm
 
 
     End Sub
+
     Private Sub tmrPID_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrPID.Tick
         If Overheated = True Then
             _serialPort.Write("b")
@@ -861,7 +864,7 @@ Public Class BrewingSessionForm
 
             If ((millis.TotalMilliseconds - lastPIDTime) > PID_UPDATE_INTERVAL) Then
                 lastPIDTime = lastPIDTime + PID_UPDATE_INTERVAL
-                heatpower = updatePID(CDec(MashSetTempValueBox.Text), MashDuinoTemp)
+                heatpower = updatePID(CDec(MashSetTempValueBox.Text), CDec(MashTunTempLabel.Text))
 
                 setHeatPowerPercentage(heatpower)
 
@@ -920,7 +923,6 @@ Public Class BrewingSessionForm
                     Dim ts As TimeSpan = CountDownTime.Subtract(Now)
                     MyTimer.Text = ts.Hours.ToString & ":" & ts.Minutes.ToString & ":" & ts.Seconds.ToString
                 End If
-
             End If
         End If
     End Sub
@@ -996,67 +998,30 @@ Public Class BrewingSessionForm
         tmrPID.Enabled = False
         RimButton.Text = "RIM Heat Off"
     End Sub
-
     Public Sub TurnMashPumpon()
         MashPumpOnOffButton.Text = "Mash Pump Running"
         MashPumpOnOffButton.BackColor = Color.Red
         _serialPort.WriteLine("d")
-
     End Sub
-
     Public Sub TrunMashPumpOff()
         MashPumpOnOffButton.Text = "Mash Pump Off"
         MashPumpOnOffButton.BackColor = Color.Green
         _serialPort.WriteLine("h")
     End Sub
-
     Private Sub GrainTempTextBox_ValueChanged(sender As System.Object, e As System.EventArgs) Handles GrainTempTextBox.ValueChanged
         StrikeTemp()
         MashSetTempValueBox.Value = StrikeTemplabel.Text
     End Sub
-
     Private Sub BrewCompleteButton_Click_1(sender As Object, e As EventArgs) Handles BrewCompleteButton.Click
         SaveEndSessionData()
-
     End Sub
-
     Private Sub VesselDiameterTextBox_TextChanged(sender As Object, e As EventArgs) Handles VesselDiameterTextBox.TextChanged
         VolumeCalculator()
     End Sub
-
     Private Sub VesselHeightTextBox_TextChanged(sender As Object, e As EventArgs) Handles VesselHeightTextBox.TextChanged
         VolumeCalculator()
     End Sub
-
     Private Sub LiquidLevelTextBox_TextChanged(sender As Object, e As EventArgs) Handles LiquidLevelTextBox.TextChanged
         VolumeCalculator()
-    End Sub
-
-    Public Sub CheckTemps()
-
-        If (HLDuinoTemp) < (HLSetTEMPBOX.Text - 0.75) Then
-            HLTunTempLabel.ForeColor = Color.Blue
-        ElseIf HLDuinoTemp > (HLSetTEMPBOX.Text + 0.75) Then
-            HLTunTempLabel.ForeColor = Color.Red
-        Else
-            HLTunTempLabel.ForeColor = Color.Green
-        End If
-
-        If (MashDuinoTemp) < (MashSetTempValueBox.Text - 0.75) Then
-            MashTunTempLabel.ForeColor = Color.Blue
-        ElseIf MashDuinoTemp > (MashSetTempValueBox.Text + 0.75) Then
-            MashTunTempLabel.ForeColor = Color.Red
-        Else
-            MashTunTempLabel.ForeColor = Color.Green
-        End If
-
-        If (KettleDuino) < (SetKettleTempValueBox.Text - 0.75) Then
-            BoitlKettleTempLabel.ForeColor = Color.Blue
-        ElseIf KettleDuino > (SetKettleTempValueBox.Text + 0.75) Then
-            BoitlKettleTempLabel.ForeColor = Color.Red
-        Else
-            BoitlKettleTempLabel.ForeColor = Color.Green
-        End If
-
     End Sub
 End Class
