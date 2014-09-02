@@ -39,7 +39,7 @@ Partial Class HomeParentForm
         Me.StartBrewButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.StartBrewButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.StartBrewButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StartBrewButton.Location = New System.Drawing.Point(8, 16)
+        Me.StartBrewButton.Location = New System.Drawing.Point(16, 8)
         Me.StartBrewButton.Name = "StartBrewButton"
         Me.StartBrewButton.Size = New System.Drawing.Size(411, 61)
         Me.StartBrewButton.TabIndex = 19
@@ -51,11 +51,11 @@ Partial Class HomeParentForm
         Me.BrewHistoryButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BrewHistoryButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.BrewHistoryButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BrewHistoryButton.Location = New System.Drawing.Point(8, 160)
+        Me.BrewHistoryButton.Location = New System.Drawing.Point(16, 152)
         Me.BrewHistoryButton.Name = "BrewHistoryButton"
         Me.BrewHistoryButton.Size = New System.Drawing.Size(411, 61)
         Me.BrewHistoryButton.TabIndex = 20
-        Me.BrewHistoryButton.Text = "Brewing Histroy"
+        Me.BrewHistoryButton.Text = "Brewing History"
         Me.BrewHistoryButton.UseVisualStyleBackColor = False
         '
         'BrewMaintButton
@@ -63,7 +63,7 @@ Partial Class HomeParentForm
         Me.BrewMaintButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BrewMaintButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.BrewMaintButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BrewMaintButton.Location = New System.Drawing.Point(8, 88)
+        Me.BrewMaintButton.Location = New System.Drawing.Point(16, 80)
         Me.BrewMaintButton.Name = "BrewMaintButton"
         Me.BrewMaintButton.Size = New System.Drawing.Size(411, 61)
         Me.BrewMaintButton.TabIndex = 24
@@ -75,7 +75,7 @@ Partial Class HomeParentForm
         Me.SetupButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.SetupButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetupButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SetupButton.Location = New System.Drawing.Point(8, 376)
+        Me.SetupButton.Location = New System.Drawing.Point(16, 368)
         Me.SetupButton.Name = "SetupButton"
         Me.SetupButton.Size = New System.Drawing.Size(411, 61)
         Me.SetupButton.TabIndex = 25
@@ -97,7 +97,7 @@ Partial Class HomeParentForm
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1350, 730)
+        Me.Panel1.Size = New System.Drawing.Size(1208, 653)
         Me.Panel1.TabIndex = 13
         '
         'ExitBUtton
@@ -105,7 +105,7 @@ Partial Class HomeParentForm
         Me.ExitBUtton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ExitBUtton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ExitBUtton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExitBUtton.Location = New System.Drawing.Point(912, 648)
+        Me.ExitBUtton.Location = New System.Drawing.Point(776, 576)
         Me.ExitBUtton.Name = "ExitBUtton"
         Me.ExitBUtton.Size = New System.Drawing.Size(411, 61)
         Me.ExitBUtton.TabIndex = 28
@@ -117,7 +117,7 @@ Partial Class HomeParentForm
         Me.GrainsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.GrainsButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.GrainsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GrainsButton.Location = New System.Drawing.Point(8, 304)
+        Me.GrainsButton.Location = New System.Drawing.Point(16, 296)
         Me.GrainsButton.Name = "GrainsButton"
         Me.GrainsButton.Size = New System.Drawing.Size(411, 61)
         Me.GrainsButton.TabIndex = 27
@@ -129,7 +129,7 @@ Partial Class HomeParentForm
         Me.HopsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.HopsButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.HopsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HopsButton.Location = New System.Drawing.Point(8, 232)
+        Me.HopsButton.Location = New System.Drawing.Point(16, 224)
         Me.HopsButton.Name = "HopsButton"
         Me.HopsButton.Size = New System.Drawing.Size(411, 61)
         Me.HopsButton.TabIndex = 26
@@ -141,7 +141,7 @@ Partial Class HomeParentForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
-        Me.ClientSize = New System.Drawing.Size(1350, 730)
+        Me.ClientSize = New System.Drawing.Size(1208, 653)
         Me.Controls.Add(Me.Panel1)
         Me.IsMdiContainer = True
         Me.Name = "HomeParentForm"

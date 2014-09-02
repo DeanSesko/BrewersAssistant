@@ -17,10 +17,10 @@ Public Class CustomGrainsForm
             MyGrainName = MyGrainName.Replace("'", "''")
             Dim myGrainOrgin As String = GrainOrginTextBox.Text
             myGrainOrgin = myGrainOrgin.Replace("'", "''")
-            If DigitChecker(SRMTextBox.Text) = True Then
+            If DigitChecker(SRMTextBox.Text, "SRM") = True Then
                 If Not GrainTypeComboBox.Text = "" Then
                     If Not MushMashComboBox.Text = "" Then
-                        If DigitChecker(PotentialSGTextBox.Text) = True Then
+                        If DigitChecker(PotentialSGTextBox.Text, " Potential Gravity") = True Then
                             Dim mysqlString As String = "Insert into Grains(GrainName,Origin,Type,ColorSrm,MustMash,PotentialSG) Values('" & _
                             MyGrainName & "','" & myGrainOrgin & "','" & GrainTypeComboBox.Text & "','" & SRMTextBox.Text & "','" & _
                             MushMashComboBox.Text & "','" & PotentialSGTextBox.Text & "')"
@@ -44,29 +44,37 @@ Public Class CustomGrainsForm
 
 
     Private Sub CloseOut(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Closing
-        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
-        Dim sqlCommand As New SqlCeCommand()
-        sqlConnection.Open()
-        sqlCommand.Connection = sqlConnection
-        Dim mysqlString As String = "Select GrainName from Grains order by GrainName"
-        sqlCommand.CommandText = mysqlString
-        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
-        While myReader.Read()
-            Try
-                BrewMaintenanceForm.GrainNameComboBox.Items.Add(myReader.Item("GrainName").ToString)
-                GoTo ExitSub
-            Catch ex As Exception
-            End Try
-            Try
-                GrainMainForm.GrainNameComboBox.Items.Add(myReader.Item("GrainName").ToString)
-                GoTo ExitSub
-            Catch ex As Exception
+        Using sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+            Using sqlCommand As New SqlCeCommand()
+                sqlConnection.Open()
+                sqlCommand.Connection = sqlConnection
+                Dim mysqlString As String = "Select GrainName from Grains order by GrainName"
+                sqlCommand.CommandText = mysqlString
+                Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
+                While myReader.Read()
+                    Try
+                        BrewMaintenanceForm.GrainNameComboBox.Items.Add(myReader.Item("GrainName").ToString)
+                        GoTo ExitSub
+                    Catch
+                    End Try
+                    Try
+                        GrainMainForm.GrainNameComboBox.Items.Add(myReader.Item("GrainName").ToString)
 
-            End Try
-        End While
-ExitSub:
-        myReader = Nothing
-        sqlConnection.Close()
+                   
+                    Catch
+
+                    End Try
+                End While
+Exitsub:
+                myReader = Nothing
+             
+
+            End Using
+
+
+        End Using
+
+
     End Sub
 
   

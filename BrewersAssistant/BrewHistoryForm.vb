@@ -23,7 +23,7 @@ Public Class BrewHistoryForm
     End Sub
 
     Private Sub BrewHistoryForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-      
+
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         'Setup Mash Chart 
         SetupMashChart()
@@ -45,15 +45,14 @@ Public Class BrewHistoryForm
         MashChart.ChartAreas(0).AxisX.LabelStyle.Format = "hh:mm:ss"
         MashChart.Series.Clear()
         Dim mashSeries As New Series("Mash Tun Temperature")
-
         MashChart.Legends("Legend1").Docking = Docking.Right
-
-
         mashSeries.ChartType = SeriesChartType.Line
         mashSeries.BorderWidth = 4
         mashSeries.Color = Color.Red
         mashSeries.XValueType = ChartValueType.DateTime
         MashChart.Series.Add(mashSeries)
+
+
         Dim mashConstant As Series = New Series("Mash Required Temperature")
         mashConstant.ChartType = SeriesChartType.Line
         mashConstant.BorderWidth = 4
@@ -61,8 +60,9 @@ Public Class BrewHistoryForm
         mashConstant.XValueType = ChartValueType.DateTime
         MashChart.Series.Add(mashConstant)
 
+
     End Sub
-    Private Sub ClearBeerData()
+    Public Sub ClearBeerData()
         BeerNameComboBox.Text = ""
         BatchSizeLabel.Text = ""
         WatertoGrainRatioLabel.Text = ""
@@ -97,21 +97,26 @@ Public Class BrewHistoryForm
 
     Private Sub LoadMash()
         Dim mysqlString As String = "Select RestTemp as Temperature, RestTime as Time from  StepMashTable where BeerID='" & BeerIDTextBox.Text & "'  order by RestTemp asc"
-        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
-        Dim ds As New DataSet
-        Try
-            MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
-            If (MyDataAdapter.Fill(ds) > 0) Then
-                StepMashGridView.DataSource = ds.Tables(0)
+        Using MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+            Dim ds As New DataSet
 
-            End If
-        Catch ex As Exception
+
+            Try
+                MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
+                If (MyDataAdapter.Fill(ds) > 0) Then
+                    StepMashGridView.DataSource = ds.Tables(0)
+
+                End If
+            Catch
+                ds.Dispose()
+                ds = Nothing
+                MsgBox("Error connecting to the database")
+            End Try
             ds.Dispose()
-            MyDataAdapter.Dispose()
-            MessageBox.Show("Error connecting to the database")
-        End Try
-        ds.Dispose()
-        MyDataAdapter.Dispose()
+            ds = Nothing
+
+
+        End Using
 
     End Sub
 
@@ -139,225 +144,258 @@ Public Class BrewHistoryForm
         SpargeStartTimeLabel.Text = " "
         SpargeStopTimelabel.Text = " "
     End Sub
+
+    Private Sub FillNameComboBox(ByVal myreader As SqlCeDataReader)
+        While myReader.Read()
+            BeerNameComboBox.Items.Add(myReader.Item("BeerName"))
+        End While
+        myreader.Close()
+    End Sub
+
+    Private Sub GetGrainWeight(ByVal myreader As SqlCeDataReader)
+        Dim myGrainWeight As Decimal = 0
+        Dim myWeightID As Integer
+        While myreader.Read()
+            myWeightID = myreader.Item("weightID")
+            If myWeightID = 1 Then
+                myGrainWeight = myGrainWeight + myreader.Item("Weight")
+            ElseIf myWeightID = 2 Then
+                myGrainWeight = myGrainWeight + (myreader.Item("Weight") / 16)
+            End If
+
+        End While
+        GrainBillLabel.Text = Math.Round(myGrainWeight, 2)
+        myreader.Close()
+    End Sub
+    Private Sub BrewHouseCalc(ByVal myreader As SqlCeDataReader)
+        Dim MYGrainptsindex As Decimal = 0
+        Dim myGrainWeight As Decimal = 0
+        Dim myWeightID As Integer
+        While myreader.Read()
+            myWeightID = myreader.Item("weightID")
+            MYGrainptsindex = myreader.Item("potentialSG")
+            If Not MYGrainptsindex = 0 Then
+                MYGrainptsindex = (MYGrainptsindex - 1) * 1000
+            End If
+            If myWeightID = 1 Then
+                myGrainWeight = myGrainWeight + myreader.Item("Weight")
+                GrainPotential = (MYGrainptsindex * myreader.Item("Weight")) / CDec(postBoilVolume)
+            ElseIf myWeightID = 2 Then
+                myGrainWeight = myGrainWeight + (myreader.Item("Weight") / 16)
+                GrainPotential = (MYGrainptsindex * (myreader.Item("Weight") / 16)) / CDec(postBoilVolume)
+            End If
+            MYTotalGrainpts = MYTotalGrainpts + GrainPotential
+            MYGrainptsindex = 0
+            GrainPotential = 0
+        End While
+        BrewHouseEfficienciesLabel.Text = Math.Round(((CDec(StartingGravityLabel.Text) - 1) * 1000) / MYTotalGrainpts, 2) * 100
+        myreader.Close()
+    End Sub
+
+
+    Private Sub GetAllData(ByVal myreader As SqlCeDataReader)
+
+        While myreader.Read()
+            BeerIDTextBox.Text = myreader.Item("BeerID").ToString
+            BatchSizeLabel.Text = myreader.Item("BatchSize").ToString
+            WatertoGrainRatioLabel.Text = myreader.Item("WatertoGrainRatio").ToString
+            BoilTimeLabel.Text = myreader.Item("BoilTime").ToString
+            RequiredOriginalGravityLabel.Text = myreader.Item("RequiredOriginalGravity").ToString
+            RequiredFinalGravityLabel.Text = myreader.Item("RequiredFinalGravity").ToString
+            VersionLabel.Text = myreader.Item("Version").ToString
+            SpargeTempLabel.Text = myreader.Item("SpargeTemp").ToString
+            BeerNotes.Text = myreader.Item("Notes").ToString
+            Dim MyestimatedAbv As Decimal = 0
+            If IsNumeric(RequiredOriginalGravityLabel.Text) Then
+                If IsNumeric(RequiredFinalGravityLabel.Text) Then
+                    MyestimatedAbv = (76.08 * (CDec(RequiredOriginalGravityLabel.Text) - CDec(RequiredFinalGravityLabel.Text)) / (1.775 - CDec(RequiredOriginalGravityLabel.Text)))
+                    MyestimatedAbv = MyestimatedAbv * (CDec(RequiredFinalGravityLabel.Text) / 0.794)
+                    EstimatedAbv.Text = Math.Round(MyestimatedAbv, 2)
+                Else
+                    EstimatedAbv.Text = ""
+                End If
+            Else
+                EstimatedAbv.Text = ""
+            End If
+
+        End While
+        SetupMashChart()
+        myreader.Close()
+    End Sub
+
+    Private Sub FillBrewSessions(ByVal myreader As SqlCeDataReader)
+        While myreader.Read()
+            BrewSessionsDateComboBox.Items.Add(myreader.Item(0).ToString)
+        End While
+        myreader.Close()
+    End Sub
+    Private Sub GetSqlTemps1(ByVal myreader As SqlCeDataReader)
+        MashChart.Series("Mash Tun Temperature").Points.Clear()
+        While (myreader.Read)
+            MashChart.Series("Mash Tun Temperature").Points.AddXY(myreader.Item("TempTime"), myreader.Item("temp"))
+        End While
+        myreader.Close()
+    End Sub
+
+    Private Sub GetSqlTemps2(ByVal myreader As SqlCeDataReader)
+        Dim myStartMashTime As Date = MashStartTimeLabel.Text
+        Dim myStopMashtime As Date = MashStopTimeLabel.Text
+        Dim myStartSpargetime As Date = SpargeStartTimeLabel.Text
+        Dim myStopSpargetime As Date = SpargeStopTimelabel.Text
+        Dim TotalMashTime As Decimal = 0
+
+        Dim index As Integer = 0
+        MashChart.Series("Mash Required Temperature").Points.Clear()
+
+        Dim temp As Decimal
+
+        While (myreader.Read)
+            If index = 0 Then
+                temp = myreader.Item("RestTemp")
+                TotalMashTime = TotalMashTime + myreader.Item("RestTime")
+                MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime, temp)
+                MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime.AddMinutes(TotalMashTime), temp)
+                index = index + 1
+            Else
+                temp = myreader.Item("RestTemp")
+                MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime.AddMinutes(TotalMashTime), temp)
+                TotalMashTime = TotalMashTime + myreader.Item("RestTime")
+                MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime.AddMinutes(TotalMashTime), temp)
+            End If
+
+
+        End While
+        MashChart.Series("Mash Required Temperature").Points.AddXY(myStopMashtime, temp)
+        MashChart.Series("Mash Required Temperature").Points.AddXY(myStartSpargetime, SpargeTempLabel.Text)
+        MashChart.Series("Mash Required Temperature").Points.AddXY(myStopSpargetime, SpargeTempLabel.Text)
+        myreader.Close()
+    End Sub
+    Private Sub GetSqlSessionData(ByVal myreader As SqlCeDataReader)
+
+        While myreader.Read()
+            SessionIDTextBox.Text = myreader.Item("SessionID").ToString
+            BeerNotes.Text = myreader.Item("Notes").ToString
+            FirstRunningsGravityLabel.Text = myreader.Item("FirstRunningsGravity").ToString
+            StartingGravityLabel.Text = myreader.Item("ActualOG").ToString
+            GrainTempLabel.Text = myreader.Item("GrainTemp").ToString
+            OutDoorTempLabel.Text = myreader.Item("OutDoorTemp").ToString
+
+            If Not myreader.Item("PostBoilWortCollected").Equals(DBNull.Value) Then
+                postBoilVolume = myreader.Item("PostBoilWortCollected")
+                PostBoilVolumeLabel.Text = postBoilVolume
+            Else
+                UpdatePostBoilVolume()
+            End If
+
+            Dim MYfinalGravity As String = myreader.Item("FinalGravity").ToString
+            If Not MYfinalGravity = "" And DigitChecker(MYfinalGravity, "Final Gravity") Then
+                FinalGravityLabel.Text = MYfinalGravity
+                Dim MyActualABV As Decimal
+                MyActualABV = (76.08 * (CDec(StartingGravityLabel.Text) - CDec(FinalGravityLabel.Text)) / (1.775 - CDec(StartingGravityLabel.Text)))
+                MyActualABV = MyActualABV * (CDec(FinalGravityLabel.Text) / 0.794)
+                ActualABVLabel.Text = Math.Round(MyActualABV, 2)
+                MyActualABV = 0
+
+            Else
+                UpdateMyfinalGravity()
+            End If
+
+            brewStart = myreader.Item("BrewSessionStartTime")
+            brewStop = myreader.Item("BrewSessionStopTime")
+            Dim BrewTs As TimeSpan = brewStop - brewStart
+            BrewDuration.Text = BrewTs.Hours & ":" & BrewTs.Minutes & ":" & BrewTs.Seconds
+            startSparge = myreader.Item("StartSpargeTime")
+            StopSparge = myreader.Item("StopSpargeTime")
+            Dim startchill As DateTime = myreader.Item("StartChillTime")
+            Dim stopchill As DateTime = myreader.Item("StopChillTime")
+            StartChillChillLabel.Text = myreader.Item("StartChillTemp").ToString
+            StopChillChillLabel.Text = myreader.Item("StopChillTemp").ToString
+            Dim Spargets As TimeSpan = StopSparge - startSparge
+            Me.SpargeDuration.Text = Math.Round(Spargets.TotalMinutes, 2) & " Minutes"
+            WortCollected.Text = myreader.Item("WortCollected")
+            Dim StartMash As DateTime = myreader.Item("StartMashTime")
+            Dim StopMash As DateTime = myreader.Item("StopMashTime")
+            Dim MashTs As TimeSpan = StopMash - StartMash
+            MashStartTimeLabel.Text = StartMash
+            MashStopTimeLabel.Text = StopMash
+            SpargeStartTimeLabel.Text = startSparge
+            SpargeStopTimelabel.Text = StopSparge
+            Me.MashDurationLabel.Text = Math.Round(MashTs.TotalMinutes, 2) & " Minutes"
+
+            Dim StartBoil As DateTime = myreader.Item("StartboilTime")
+            Dim StopBoil As DateTime = myreader.Item("StopboilTime")
+            Dim boilTs As TimeSpan = StopBoil - StartBoil
+            BoilDurationLabel.Text = Math.Round(boilTs.TotalMinutes, 2) & " Minutes"
+            Dim spargeratio As Decimal = CDec(WortCollected.Text)
+            SpargeColltionRatio.Text = Math.Round(spargeratio / Spargets.TotalMinutes, 2)
+            ChillTempChangeLabel.Text = CDec(StartChillChillLabel.Text) - CDec(StopChillChillLabel.Text)
+            Dim ChillPercentage As Decimal = CDec(StartChillChillLabel.Text) / CDec(StopChillChillLabel.Text)
+            ChillPercentage = ChillPercentage * 100
+            ChillPercentage = Math.Round(ChillPercentage - 100, 2)
+            ChillPercentageLabel.Text = ChillPercentage
+            Dim elaspedtime As TimeSpan
+            Dim MyStartChillTemp As Decimal = CDec(StartChillChillLabel.Text)
+            Dim tempChange As Decimal = MyStartChillTemp - CDec(StopChillChillLabel.Text)
+            tempChange = Math.Round(tempChange, 2)
+            PreBoilVolumeLabel.Text = myreader.Item("WortCollected")
+
+            elaspedtime = (stopchill.Subtract(startchill))
+
+            Dim MyChillPerminute As Decimal = tempChange / elaspedtime.TotalMinutes
+            MyChillPerminute = Math.Round(MyChillPerminute, 2)
+            ChillPerMinutelabel.Text = MyChillPerminute
+            ChillTempChangeLabel.Text = Math.Round(tempChange, 2)
+            TotalMinutes.Text = Math.Round(elaspedtime.TotalMinutes, 2)
+
+
+        End While
+        myreader.Close()
+    End Sub
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal SQlControl As String)
-        On Error Resume Next
-        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
-        Dim sqlCommand As New SqlCeCommand()
-        sqlConnection.Open()
-        sqlCommand.Connection = sqlConnection
-        sqlCommand.CommandText = MySqlString
-        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
+
+        Using sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+            Using sqlCommand As New SqlCeCommand()
+                sqlConnection.Open()
+                sqlCommand.Connection = sqlConnection
+                sqlCommand.CommandText = MySqlString
+                Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
 
 
+                Select Case SQlControl
+                    Case "Name"
+                        FillNameComboBox(myReader)
 
-        Select Case SQlControl
-            Case "Name"
-                While myReader.Read()
-                    BeerNameComboBox.Items.Add(myReader.Item("BeerName"))
-                End While
+                    Case "GrainWeight"
+                        GetGrainWeight(myReader)
 
-            Case "GrainWeight"
-                Dim myGrainWeight As Decimal = 0
-                Dim myWeightID As Integer
-                While myReader.Read()
-                    myWeightID = myReader.Item("weightID")
-                    If myWeightID = 1 Then
-                        myGrainWeight = myGrainWeight + myReader.Item("Weight")
-                    ElseIf myWeightID = 2 Then
-                        myGrainWeight = myGrainWeight + (myReader.Item("Weight") / 16)
-                    End If
+                    Case "BrewHouse"
+                        BrewHouseCalc(myReader)
 
-                End While
-                GrainBillLabel.Text = Math.Round(myGrainWeight, 2)
+                    Case "All"
+                        GetAllData(myReader)
 
-            Case "BrewHouse"
+                    Case "BrewSessions"
+                        FillBrewSessions(myReader)
 
 
-                Dim MYGrainptsindex As Decimal = 0
-                Dim myGrainWeight As Decimal = 0
-                Dim myWeightID As Integer
-                While myReader.Read()
-                    myWeightID = myReader.Item("weightID")
-                    MYGrainptsindex = myReader.Item("potentialSG")
-                    If Not MYGrainptsindex = 0 Then
-                        MYGrainptsindex = (MYGrainptsindex - 1) * 1000
-                    End If
-                    If myWeightID = 1 Then
-                        myGrainWeight = myGrainWeight + myReader.Item("Weight")
-                        GrainPotential = (MYGrainptsindex * myReader.Item("Weight")) / CDec(postBoilVolume)
-                    ElseIf myWeightID = 2 Then
-                        myGrainWeight = myGrainWeight + (myReader.Item("Weight") / 16)
-                        GrainPotential = (MYGrainptsindex * (myReader.Item("Weight") / 16)) / CDec(postBoilVolume)
-                    End If
-                    MYTotalGrainpts = MYTotalGrainpts + GrainPotential
-                    MYGrainptsindex = 0
-                    GrainPotential = 0
-                End While
-                BrewHouseEfficienciesLabel.Text = Math.Round(((CDec(StartingGravityLabel.Text) - 1) * 1000) / MYTotalGrainpts, 2) * 100
+                    Case "Temps"
+                        GetSqlTemps1(myReader)
 
 
+                    Case "Temps2"
 
-            Case "All"
-                While myReader.Read()
-                    BeerIDTextBox.Text = myReader.Item("BeerID").ToString
-                    BatchSizeLabel.Text = myReader.Item("BatchSize").ToString
-                    WatertoGrainRatioLabel.Text = myReader.Item("WatertoGrainRatio").ToString
-                    BoilTimeLabel.Text = myReader.Item("BoilTime").ToString
-                    RequiredOriginalGravityLabel.Text = myReader.Item("RequiredOriginalGravity").ToString
-                    RequiredFinalGravityLabel.Text = myReader.Item("RequiredFinalGravity").ToString
-                    VersionLabel.Text = myReader.Item("Version").ToString
-                    SpargeTempLabel.Text = myReader.Item("SpargeTemp").ToString
-                    BeerNotes.Text = myReader.Item("Notes").ToString
-                    Dim MyestimatedAbv As Decimal = 0
-                    If IsNumeric(RequiredOriginalGravityLabel.Text) Then
-                        If IsNumeric(RequiredFinalGravityLabel.Text) Then
-                            MyestimatedAbv = (76.08 * (CDec(RequiredOriginalGravityLabel.Text) - CDec(RequiredFinalGravityLabel.Text)) / (1.775 - CDec(RequiredOriginalGravityLabel.Text)))
-                            MyestimatedAbv = MyestimatedAbv * (CDec(RequiredFinalGravityLabel.Text) / 0.794)
-                            EstimatedAbv.Text = Math.Round(MyestimatedAbv, 2)
-                        Else
-                            EstimatedAbv.Text = ""
-                        End If
-                    Else
-                        EstimatedAbv.Text = ""
-                    End If
+                        GetSqlTemps2(myReader)
 
-                End While
-                SetupMashChart()
-            Case "BrewSessions"
-                While myReader.Read()
-                    BrewSessionsDateComboBox.Items.Add(myReader.Item(0).ToString)
-                End While
+                    Case "Session"
+                        GetSqlSessionData(myReader)
 
-            Case "Temps"
-                MashChart.Series("Mash Tun Temperature").Points.Clear()
-
-                While (myReader.Read)
-                    MashChart.Series("Mash Tun Temperature").Points.AddXY(myReader.Item("TempTime"), myReader.Item("temp"))
-                End While
-
-            Case "Temps2"
-                Dim myStartMashTime As Date = MashStartTimeLabel.Text
-                Dim myStopMashtime As Date = MashStopTimeLabel.Text
-                Dim myStartSpargetime As Date = SpargeStartTimeLabel.Text
-                Dim myStopSpargetime As Date = SpargeStopTimelabel.Text
-                Dim TotalMashTime As Decimal = 0
-
-                Dim index As Integer = 0
-                MashChart.Series("Mash Required Temperature").Points.Clear()
-
-                Dim temp As Decimal
-
-                While (myReader.Read)
-                    If index = 0 Then
-                        temp = myReader.Item("RestTemp")
-                        TotalMashTime = TotalMashTime + myReader.Item("RestTime")
-                        MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime, temp)
-                        MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime.AddMinutes(TotalMashTime), temp)
-                        index = index + 1
-                    Else
-                        temp = myReader.Item("RestTemp")
-                        MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime.AddMinutes(TotalMashTime), temp)
-                        TotalMashTime = TotalMashTime + myReader.Item("RestTime")
-                        MashChart.Series("Mash Required Temperature").Points.AddXY(myStartMashTime.AddMinutes(TotalMashTime), temp)
-                    End If
+                End Select
+                myReader.Close()
 
 
-                End While
-                MashChart.Series("Mash Required Temperature").Points.AddXY(myStopMashtime, temp)
-                MashChart.Series("Mash Required Temperature").Points.AddXY(myStartSpargetime, SpargeTempLabel.Text)
-                MashChart.Series("Mash Required Temperature").Points.AddXY(myStopSpargetime, SpargeTempLabel.Text)
+            End Using
+        End Using
 
-            Case "Session"
-
-                While myReader.Read()
-                    SessionIDTextBox.Text = myReader.Item("SessionID").ToString
-                    BeerNotes.Text = myReader.Item("Notes").ToString
-                    FirstRunningsGravityLabel.Text = myReader.Item("FirstRunningsGravity").ToString
-                    StartingGravityLabel.Text = myReader.Item("ActualOG").ToString
-                    GrainTempLabel.Text = myReader.Item("GrainTemp").ToString
-                    OutDoorTempLabel.Text = myReader.Item("OutDoorTemp").ToString
-
-                    If Not myReader.Item("PostBoilWortCollected").Equals(DBNull.Value) Then
-                        postBoilVolume = myReader.Item("PostBoilWortCollected")
-                        PostBoilVolumeLabel.Text = postBoilVolume.ToString
-
-
-                    Else
-                        UpdatePostBoilVolume()
-                    End If
-
-
-                    Dim MYfinalGravity As String = myReader.Item("FinalGravity").ToString
-                    If Not MYfinalGravity = "" And DigitChecker(MYfinalGravity) Then
-                        FinalGravityLabel.Text = MYfinalGravity
-                        Dim MyActualABV As Decimal
-                        MyActualABV = (76.08 * (CDec(StartingGravityLabel.Text) - CDec(FinalGravityLabel.Text)) / (1.775 - CDec(StartingGravityLabel.Text)))
-                        MyActualABV = MyActualABV * (CDec(FinalGravityLabel.Text) / 0.794)
-                        ActualABVLabel.Text = Math.Round(MyActualABV, 2)
-                        MyActualABV = 0
-
-                    Else
-                        UpdateMyfinalGravity()
-                    End If
-
-                    brewStart = myReader.Item("BrewSessionStartTime")
-                    brewStop = myReader.Item("BrewSessionStopTime")
-                    Dim BrewTs As TimeSpan = brewStop - brewStart
-                    BrewDuration.Text = BrewTs.Hours & ":" & BrewTs.Minutes & ":" & BrewTs.Seconds
-                    startSparge = myReader.Item("StartSpargeTime")
-                    StopSparge = myReader.Item("StopSpargeTime")
-                    Dim startchill As DateTime = myReader.Item("StartChillTime")
-                    Dim stopchill As DateTime = myReader.Item("StopChillTime")
-                    StartChillChillLabel.Text = myReader.Item("StartChillTemp").ToString
-                    StopChillChillLabel.Text = myReader.Item("StopChillTemp").ToString
-                    Dim Spargets As TimeSpan = StopSparge - startSparge
-                    SpargeDuration.Text = Math.Round(Spargets.TotalMinutes, 2) & " Minutes"
-                    WortCollected.Text = myReader.Item("WortCollected")
-                    Dim StartMash As DateTime = myReader.Item("StartMashTime")
-                    Dim StopMash As DateTime = myReader.Item("StopMashTime")
-                    Dim MashTs As TimeSpan = StopMash - StartMash
-                    MashStartTimeLabel.Text = StartMash.ToString
-                    MashStopTimeLabel.Text = StopMash.ToString
-                    SpargeStartTimelabel.Text = startSparge.ToString
-                    SpargeStopTimelabel.Text = StopSparge.ToString
-                    MashDurationLabel.Text = Math.Round(MashTs.TotalMinutes, 2) & " Minutes"
-
-                    Dim StartBoil As DateTime = myReader.Item("StartboilTime")
-                    Dim StopBoil As DateTime = myReader.Item("StopboilTime")
-                    Dim boilTs As TimeSpan = StopBoil - StartBoil
-                    BoilDurationLabel.Text = Math.Round(boilTs.TotalMinutes, 2) & " Minutes"
-                    Dim spargeratio As Decimal = CDec(WortCollected.Text)
-                    SpargeColltionRatio.Text = Math.Round(spargeratio / Spargets.TotalMinutes, 2)
-                    ChillTempChangeLabel.Text = CDec(StartChillChillLabel.Text) - CDec(StopChillChillLabel.Text)
-                    Dim ChillPercentage As Decimal = CDec(StartChillChillLabel.Text) / CDec(StopChillChillLabel.Text)
-                    ChillPercentage = ChillPercentage * 100
-                    ChillPercentage = Math.Round(ChillPercentage - 100, 2)
-                    ChillPercentageLabel.Text = ChillPercentage.ToString
-                    Dim elaspedtime As TimeSpan
-                    Dim MyStartChillTemp As Decimal = CDec(StartChillChillLabel.Text)
-                    Dim tempChange As Decimal = MyStartChillTemp - CDec(StopChillChillLabel.Text)
-                    tempChange = Math.Round(tempChange, 2)
-                    PreBoilVolumeLabel.Text = myReader.Item("WortCollected")
-
-                    elaspedtime = (stopchill.Subtract(startchill))
-
-                    Dim MyChillPerminute As Decimal = tempChange / elaspedtime.TotalMinutes
-                    MyChillPerminute = Math.Round(MyChillPerminute, 2)
-                    ChillPerMinutelabel.Text = MyChillPerminute
-                    ChillTempChangeLabel.Text = Math.Round(tempChange, 2)
-                    TotalMinutes.Text = Math.Round(elaspedtime.TotalMinutes, 2).ToString
-
-
-                End While
-            Case "DeleteSession"
-
-
-
-            Case "DeleteTemps"
-
-        End Select
-        myReader.Close()
-        sqlConnection.Close()
 
     End Sub
     Private Sub UpdatePostBoilVolume()
@@ -400,7 +438,7 @@ Public Class BrewHistoryForm
         GetSQLDBData(mysqlString, DataControll)
 
     End Sub
-   
+
     Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
         Me.Close()
     End Sub
@@ -414,7 +452,7 @@ Public Class BrewHistoryForm
     End Sub
 
 
-  
+
     Private Sub SpargeTempLabel_Click(sender As System.Object, e As System.EventArgs) Handles SpargeTempLabel.Click
 
     End Sub

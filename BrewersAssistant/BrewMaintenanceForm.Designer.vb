@@ -22,11 +22,6 @@ Partial Class BrewMaintenanceForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim SessionIDLabel As System.Windows.Forms.Label
-        Dim Label1 As System.Windows.Forms.Label
-        Dim Label6 As System.Windows.Forms.Label
-        Dim Label26 As System.Windows.Forms.Label
-        Dim Label38 As System.Windows.Forms.Label
         Me.DeleteButton = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -37,9 +32,7 @@ Partial Class BrewMaintenanceForm
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.BatchLabel = New System.Windows.Forms.Label()
         Me.BeerIDTextBox = New System.Windows.Forms.TextBox()
-        Me.BatchSizeTextBox = New System.Windows.Forms.TextBox()
         Me.VersionTextBox = New System.Windows.Forms.TextBox()
         Me.BoilTimeTextBox = New System.Windows.Forms.TextBox()
         Me.FermentationTempBox = New System.Windows.Forms.TextBox()
@@ -61,7 +54,6 @@ Partial Class BrewMaintenanceForm
         Me.AddGrainsButton = New System.Windows.Forms.Button()
         Me.GrainWeightLabel = New System.Windows.Forms.Label()
         Me.GrainWeightComboBox = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.GrainWeightTextBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GrainWeightID = New System.Windows.Forms.Label()
@@ -70,7 +62,26 @@ Partial Class BrewMaintenanceForm
         Me.RemoveGrainButton = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GrainsAndWortAdditionsTabBox = New System.Windows.Forms.TabControl()
+        Me.BeerSettings = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.BatchLabel = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.GrainPotentialLabel = New System.Windows.Forms.Label()
+        Me.BatchSizeTextBox = New System.Windows.Forms.TextBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.MashTypeComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BrewhouseEfficiencyBox = New System.Windows.Forms.TextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
         Me.GrainsTab = New System.Windows.Forms.TabPage()
+        Me.TotalGrainWeight = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -122,24 +133,10 @@ Partial Class BrewMaintenanceForm
         Me.StepMashTempBox = New System.Windows.Forms.TextBox()
         Me.AddStepMashButton = New System.Windows.Forms.Button()
         Me.StepMashDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.BrewhouseEfficiencyBox = New System.Windows.Forms.TextBox()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.GrainPotentialLabel = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.MashTypeComboBox = New System.Windows.Forms.ComboBox()
-        SessionIDLabel = New System.Windows.Forms.Label()
-        Label1 = New System.Windows.Forms.Label()
-        Label6 = New System.Windows.Forms.Label()
-        Label26 = New System.Windows.Forms.Label()
-        Label38 = New System.Windows.Forms.Label()
+        Me.SessionIDLabel = New System.Windows.Forms.Label()
         CType(Me.GrainDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrainsAndWortAdditionsTabBox.SuspendLayout()
+        Me.BeerSettings.SuspendLayout()
         Me.GrainsTab.SuspendLayout()
         Me.HopsTab.SuspendLayout()
         CType(Me.HopDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,78 +146,24 @@ Partial Class BrewMaintenanceForm
         CType(Me.StepMashDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'SessionIDLabel
-        '
-        SessionIDLabel.AutoSize = True
-        SessionIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        SessionIDLabel.Location = New System.Drawing.Point(640, 192)
-        SessionIDLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        SessionIDLabel.Name = "SessionIDLabel"
-        SessionIDLabel.Size = New System.Drawing.Size(46, 13)
-        SessionIDLabel.TabIndex = 229
-        SessionIDLabel.Text = "Beer ID:"
-        SessionIDLabel.Visible = False
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Label1.Location = New System.Drawing.Point(16, 376)
-        Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(63, 17)
-        Label1.TabIndex = 258
-        Label1.Text = "Version"
-        '
-        'Label6
-        '
-        Label6.AutoSize = True
-        Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Label6.Location = New System.Drawing.Point(16, 856)
-        Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(45, 17)
-        Label6.TabIndex = 270
-        Label6.Text = "Notes"
-        '
-        'Label26
-        '
-        Label26.AutoSize = True
-        Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Label26.Location = New System.Drawing.Point(16, 416)
-        Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label26.Name = "Label26"
-        Label26.Size = New System.Drawing.Size(162, 17)
-        Label26.TabIndex = 317
-        Label26.Text = "Brewhouse Efficiency"
-        '
-        'Label38
-        '
-        Label38.AutoSize = True
-        Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Label38.Location = New System.Drawing.Point(16, 456)
-        Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Label38.Name = "Label38"
-        Label38.Size = New System.Drawing.Size(117, 17)
-        Label38.TabIndex = 319
-        Label38.Text = "Grain Potential"
-        '
         'DeleteButton
         '
-        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.DeleteButton.Location = New System.Drawing.Point(688, 80)
+        Me.DeleteButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DeleteButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.DeleteButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.DeleteButton.Location = New System.Drawing.Point(912, 136)
         Me.DeleteButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DeleteButton.Name = "DeleteButton"
-        Me.DeleteButton.Size = New System.Drawing.Size(67, 25)
+        Me.DeleteButton.Size = New System.Drawing.Size(274, 45)
         Me.DeleteButton.TabIndex = 28
         Me.DeleteButton.Text = "Delete"
-        Me.DeleteButton.UseVisualStyleBackColor = True
+        Me.DeleteButton.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(16, 256)
+        Me.Label2.Location = New System.Drawing.Point(16, 248)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(148, 17)
@@ -231,7 +174,7 @@ Partial Class BrewMaintenanceForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(16, 336)
+        Me.Label4.Location = New System.Drawing.Point(12, 327)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(100, 17)
@@ -242,7 +185,7 @@ Partial Class BrewMaintenanceForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(16, 296)
+        Me.Label3.Location = New System.Drawing.Point(12, 287)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(122, 17)
@@ -264,7 +207,7 @@ Partial Class BrewMaintenanceForm
         '
         Me.WaterLabel.AutoSize = True
         Me.WaterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.WaterLabel.Location = New System.Drawing.Point(16, 136)
+        Me.WaterLabel.Location = New System.Drawing.Point(16, 184)
         Me.WaterLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.WaterLabel.Name = "WaterLabel"
         Me.WaterLabel.Size = New System.Drawing.Size(230, 17)
@@ -275,7 +218,7 @@ Partial Class BrewMaintenanceForm
         '
         Me.BoilTimeLabel.AutoSize = True
         Me.BoilTimeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.BoilTimeLabel.Location = New System.Drawing.Point(16, 216)
+        Me.BoilTimeLabel.Location = New System.Drawing.Point(12, 63)
         Me.BoilTimeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BoilTimeLabel.Name = "BoilTimeLabel"
         Me.BoilTimeLabel.Size = New System.Drawing.Size(75, 17)
@@ -284,20 +227,22 @@ Partial Class BrewMaintenanceForm
         '
         'UpdateButton
         '
-        Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.UpdateButton.Location = New System.Drawing.Point(688, 48)
+        Me.UpdateButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UpdateButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.UpdateButton.Location = New System.Drawing.Point(912, 80)
         Me.UpdateButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.UpdateButton.Name = "UpdateButton"
-        Me.UpdateButton.Size = New System.Drawing.Size(67, 25)
+        Me.UpdateButton.Size = New System.Drawing.Size(274, 45)
         Me.UpdateButton.TabIndex = 26
         Me.UpdateButton.Text = "Update"
-        Me.UpdateButton.UseVisualStyleBackColor = True
+        Me.UpdateButton.UseVisualStyleBackColor = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(225, 181)
+        Me.Label8.Location = New System.Drawing.Point(225, 221)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(17, 13)
@@ -308,28 +253,17 @@ Partial Class BrewMaintenanceForm
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label7.Location = New System.Drawing.Point(16, 176)
+        Me.Label7.Location = New System.Drawing.Point(16, 216)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(105, 17)
         Me.Label7.TabIndex = 273
         Me.Label7.Text = "Sparge Temp"
         '
-        'BatchLabel
-        '
-        Me.BatchLabel.AutoSize = True
-        Me.BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.BatchLabel.Location = New System.Drawing.Point(16, 56)
-        Me.BatchLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.BatchLabel.Name = "BatchLabel"
-        Me.BatchLabel.Size = New System.Drawing.Size(163, 17)
-        Me.BatchLabel.TabIndex = 216
-        Me.BatchLabel.Text = "Batch Size in Gallons"
-        '
         'BeerIDTextBox
         '
         Me.BeerIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BeerIDTextBox.Location = New System.Drawing.Point(696, 192)
+        Me.BeerIDTextBox.Location = New System.Drawing.Point(576, 16)
         Me.BeerIDTextBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BeerIDTextBox.Name = "BeerIDTextBox"
         Me.BeerIDTextBox.ReadOnly = True
@@ -338,18 +272,10 @@ Partial Class BrewMaintenanceForm
         Me.BeerIDTextBox.TabStop = False
         Me.BeerIDTextBox.Visible = False
         '
-        'BatchSizeTextBox
-        '
-        Me.BatchSizeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.BatchSizeTextBox.Location = New System.Drawing.Point(208, 56)
-        Me.BatchSizeTextBox.Name = "BatchSizeTextBox"
-        Me.BatchSizeTextBox.Size = New System.Drawing.Size(112, 23)
-        Me.BatchSizeTextBox.TabIndex = 2
-        '
         'VersionTextBox
         '
         Me.VersionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.VersionTextBox.Location = New System.Drawing.Point(96, 376)
+        Me.VersionTextBox.Location = New System.Drawing.Point(104, 24)
         Me.VersionTextBox.Name = "VersionTextBox"
         Me.VersionTextBox.Size = New System.Drawing.Size(88, 23)
         Me.VersionTextBox.TabIndex = 12
@@ -357,7 +283,7 @@ Partial Class BrewMaintenanceForm
         'BoilTimeTextBox
         '
         Me.BoilTimeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.BoilTimeTextBox.Location = New System.Drawing.Point(112, 216)
+        Me.BoilTimeTextBox.Location = New System.Drawing.Point(108, 63)
         Me.BoilTimeTextBox.Name = "BoilTimeTextBox"
         Me.BoilTimeTextBox.Size = New System.Drawing.Size(74, 23)
         Me.BoilTimeTextBox.TabIndex = 8
@@ -365,7 +291,7 @@ Partial Class BrewMaintenanceForm
         'FermentationTempBox
         '
         Me.FermentationTempBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.FermentationTempBox.Location = New System.Drawing.Point(176, 256)
+        Me.FermentationTempBox.Location = New System.Drawing.Point(176, 248)
         Me.FermentationTempBox.Name = "FermentationTempBox"
         Me.FermentationTempBox.Size = New System.Drawing.Size(74, 23)
         Me.FermentationTempBox.TabIndex = 9
@@ -373,7 +299,7 @@ Partial Class BrewMaintenanceForm
         'OGravityTextBox
         '
         Me.OGravityTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.OGravityTextBox.Location = New System.Drawing.Point(176, 296)
+        Me.OGravityTextBox.Location = New System.Drawing.Point(172, 287)
         Me.OGravityTextBox.Name = "OGravityTextBox"
         Me.OGravityTextBox.Size = New System.Drawing.Size(74, 23)
         Me.OGravityTextBox.TabIndex = 10
@@ -381,7 +307,7 @@ Partial Class BrewMaintenanceForm
         'FGravityTextBox
         '
         Me.FGravityTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.FGravityTextBox.Location = New System.Drawing.Point(136, 336)
+        Me.FGravityTextBox.Location = New System.Drawing.Point(132, 327)
         Me.FGravityTextBox.Name = "FGravityTextBox"
         Me.FGravityTextBox.Size = New System.Drawing.Size(74, 23)
         Me.FGravityTextBox.TabIndex = 11
@@ -389,16 +315,16 @@ Partial Class BrewMaintenanceForm
         'NotesTextBox
         '
         Me.NotesTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.NotesTextBox.Location = New System.Drawing.Point(24, 888)
+        Me.NotesTextBox.Location = New System.Drawing.Point(92, 447)
         Me.NotesTextBox.Multiline = True
         Me.NotesTextBox.Name = "NotesTextBox"
-        Me.NotesTextBox.Size = New System.Drawing.Size(508, 64)
+        Me.NotesTextBox.Size = New System.Drawing.Size(716, 64)
         Me.NotesTextBox.TabIndex = 23
         '
         'SpargeTemptextbox
         '
         Me.SpargeTemptextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.SpargeTemptextbox.Location = New System.Drawing.Point(144, 176)
+        Me.SpargeTemptextbox.Location = New System.Drawing.Point(144, 216)
         Me.SpargeTemptextbox.Name = "SpargeTemptextbox"
         Me.SpargeTemptextbox.Size = New System.Drawing.Size(74, 23)
         Me.SpargeTemptextbox.TabIndex = 6
@@ -406,7 +332,7 @@ Partial Class BrewMaintenanceForm
         'WaterToGrainRatioTextBox
         '
         Me.WaterToGrainRatioTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.WaterToGrainRatioTextBox.Location = New System.Drawing.Point(264, 136)
+        Me.WaterToGrainRatioTextBox.Location = New System.Drawing.Point(264, 184)
         Me.WaterToGrainRatioTextBox.Name = "WaterToGrainRatioTextBox"
         Me.WaterToGrainRatioTextBox.Size = New System.Drawing.Size(104, 23)
         Me.WaterToGrainRatioTextBox.TabIndex = 6
@@ -429,29 +355,31 @@ Partial Class BrewMaintenanceForm
         Me.OriginLabel.Name = "OriginLabel"
         Me.OriginLabel.Size = New System.Drawing.Size(81, 17)
         Me.OriginLabel.TabIndex = 287
-        Me.OriginLabel.Text = "OriginLabel"
+        Me.OriginLabel.Text = "Origin Label"
         Me.OriginLabel.Visible = False
         '
         'CloseButton
         '
         Me.CloseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.CloseButton.Location = New System.Drawing.Point(696, 928)
+        Me.CloseButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(912, 592)
         Me.CloseButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(67, 25)
+        Me.CloseButton.Size = New System.Drawing.Size(274, 45)
         Me.CloseButton.TabIndex = 29
         Me.CloseButton.Text = "&Close"
-        Me.CloseButton.UseVisualStyleBackColor = True
+        Me.CloseButton.UseVisualStyleBackColor = False
         '
         'AddCustomGrainsButton
         '
+        Me.AddCustomGrainsButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.AddCustomGrainsButton.Location = New System.Drawing.Point(335, 24)
         Me.AddCustomGrainsButton.Name = "AddCustomGrainsButton"
         Me.AddCustomGrainsButton.Size = New System.Drawing.Size(75, 23)
         Me.AddCustomGrainsButton.TabIndex = 286
         Me.AddCustomGrainsButton.Text = "Add Custom Grains"
-        Me.AddCustomGrainsButton.UseVisualStyleBackColor = True
+        Me.AddCustomGrainsButton.UseVisualStyleBackColor = False
         '
         'GrainID
         '
@@ -515,12 +443,13 @@ Partial Class BrewMaintenanceForm
         '
         'AddGrainsButton
         '
+        Me.AddGrainsButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.AddGrainsButton.Location = New System.Drawing.Point(6, 88)
         Me.AddGrainsButton.Name = "AddGrainsButton"
         Me.AddGrainsButton.Size = New System.Drawing.Size(75, 23)
         Me.AddGrainsButton.TabIndex = 293
         Me.AddGrainsButton.Text = "Add Grains"
-        Me.AddGrainsButton.UseVisualStyleBackColor = True
+        Me.AddGrainsButton.UseVisualStyleBackColor = False
         '
         'GrainWeightLabel
         '
@@ -541,15 +470,6 @@ Partial Class BrewMaintenanceForm
         Me.GrainWeightComboBox.Name = "GrainWeightComboBox"
         Me.GrainWeightComboBox.Size = New System.Drawing.Size(121, 24)
         Me.GrainWeightComboBox.TabIndex = 298
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(184, 128)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(127, 17)
-        Me.Label11.TabIndex = 295
-        Me.Label11.Text = "Total Grain Weight"
         '
         'GrainWeightTextBox
         '
@@ -579,13 +499,15 @@ Partial Class BrewMaintenanceForm
         '
         'NewButton
         '
-        Me.NewButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.NewButton.Location = New System.Drawing.Point(688, 16)
+        Me.NewButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NewButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.NewButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.NewButton.Location = New System.Drawing.Point(912, 24)
         Me.NewButton.Name = "NewButton"
-        Me.NewButton.Size = New System.Drawing.Size(68, 23)
+        Me.NewButton.Size = New System.Drawing.Size(274, 45)
         Me.NewButton.TabIndex = 302
         Me.NewButton.Text = "New"
-        Me.NewButton.UseVisualStyleBackColor = True
+        Me.NewButton.UseVisualStyleBackColor = False
         '
         'GrainDataGridView
         '
@@ -609,17 +531,18 @@ Partial Class BrewMaintenanceForm
         Me.GrainDataGridView.ShowCellToolTips = False
         Me.GrainDataGridView.ShowEditingIcon = False
         Me.GrainDataGridView.ShowRowErrors = False
-        Me.GrainDataGridView.Size = New System.Drawing.Size(714, 150)
+        Me.GrainDataGridView.Size = New System.Drawing.Size(800, 376)
         Me.GrainDataGridView.TabIndex = 303
         '
         'RemoveGrainButton
         '
+        Me.RemoveGrainButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.RemoveGrainButton.Location = New System.Drawing.Point(87, 88)
         Me.RemoveGrainButton.Name = "RemoveGrainButton"
         Me.RemoveGrainButton.Size = New System.Drawing.Size(128, 23)
         Me.RemoveGrainButton.TabIndex = 304
         Me.RemoveGrainButton.Text = "Remove Selected Grain"
-        Me.RemoveGrainButton.UseVisualStyleBackColor = True
+        Me.RemoveGrainButton.UseVisualStyleBackColor = False
         '
         'Label5
         '
@@ -632,20 +555,242 @@ Partial Class BrewMaintenanceForm
         '
         'GrainsAndWortAdditionsTabBox
         '
+        Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.BeerSettings)
         Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.GrainsTab)
         Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.HopsTab)
         Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.MiscellaneousWortAdditionsTab)
         Me.GrainsAndWortAdditionsTabBox.Controls.Add(Me.MashPage)
         Me.GrainsAndWortAdditionsTabBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.GrainsAndWortAdditionsTabBox.Location = New System.Drawing.Point(16, 504)
+        Me.GrainsAndWortAdditionsTabBox.Location = New System.Drawing.Point(16, 64)
         Me.GrainsAndWortAdditionsTabBox.Name = "GrainsAndWortAdditionsTabBox"
         Me.GrainsAndWortAdditionsTabBox.SelectedIndex = 0
-        Me.GrainsAndWortAdditionsTabBox.Size = New System.Drawing.Size(736, 344)
+        Me.GrainsAndWortAdditionsTabBox.Size = New System.Drawing.Size(832, 568)
         Me.GrainsAndWortAdditionsTabBox.TabIndex = 307
+        '
+        'BeerSettings
+        '
+        Me.BeerSettings.BackColor = System.Drawing.SystemColors.Window
+        Me.BeerSettings.Controls.Add(Me.Label6)
+        Me.BeerSettings.Controls.Add(Me.Label26)
+        Me.BeerSettings.Controls.Add(Me.BatchLabel)
+        Me.BeerSettings.Controls.Add(Me.Label11)
+        Me.BeerSettings.Controls.Add(Me.GrainPotentialLabel)
+        Me.BeerSettings.Controls.Add(Me.BatchSizeTextBox)
+        Me.BeerSettings.Controls.Add(Me.VersionTextBox)
+        Me.BeerSettings.Controls.Add(Me.Label36)
+        Me.BeerSettings.Controls.Add(Me.MashTypeComboBox)
+        Me.BeerSettings.Controls.Add(Me.Label37)
+        Me.BeerSettings.Controls.Add(Me.NotesTextBox)
+        Me.BeerSettings.Controls.Add(Me.Label1)
+        Me.BeerSettings.Controls.Add(Me.BrewhouseEfficiencyBox)
+        Me.BeerSettings.Controls.Add(Me.Label39)
+        Me.BeerSettings.Controls.Add(Me.Label35)
+        Me.BeerSettings.Controls.Add(Me.WaterLabel)
+        Me.BeerSettings.Controls.Add(Me.Label9)
+        Me.BeerSettings.Controls.Add(Me.WaterToGrainRatioTextBox)
+        Me.BeerSettings.Controls.Add(Me.Label31)
+        Me.BeerSettings.Controls.Add(Me.Label32)
+        Me.BeerSettings.Controls.Add(Me.Label33)
+        Me.BeerSettings.Controls.Add(Me.Label7)
+        Me.BeerSettings.Controls.Add(Me.SpargeTemptextbox)
+        Me.BeerSettings.Controls.Add(Me.Label8)
+        Me.BeerSettings.Controls.Add(Me.Label3)
+        Me.BeerSettings.Controls.Add(Me.BoilTimeLabel)
+        Me.BeerSettings.Controls.Add(Me.Label4)
+        Me.BeerSettings.Controls.Add(Me.Label2)
+        Me.BeerSettings.Controls.Add(Me.FermentationTempBox)
+        Me.BeerSettings.Controls.Add(Me.FGravityTextBox)
+        Me.BeerSettings.Controls.Add(Me.BoilTimeTextBox)
+        Me.BeerSettings.Controls.Add(Me.OGravityTextBox)
+        Me.BeerSettings.Location = New System.Drawing.Point(4, 25)
+        Me.BeerSettings.Name = "BeerSettings"
+        Me.BeerSettings.Size = New System.Drawing.Size(824, 539)
+        Me.BeerSettings.TabIndex = 5
+        Me.BeerSettings.Text = "Beer Information"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label6.Location = New System.Drawing.Point(12, 447)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(50, 17)
+        Me.Label6.TabIndex = 324
+        Me.Label6.Text = "Notes"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label26.Location = New System.Drawing.Point(12, 367)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(117, 17)
+        Me.Label26.TabIndex = 326
+        Me.Label26.Text = "Grain Potential"
+        '
+        'BatchLabel
+        '
+        Me.BatchLabel.AutoSize = True
+        Me.BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.BatchLabel.Location = New System.Drawing.Point(16, 104)
+        Me.BatchLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.BatchLabel.Name = "BatchLabel"
+        Me.BatchLabel.Size = New System.Drawing.Size(163, 17)
+        Me.BatchLabel.TabIndex = 325
+        Me.BatchLabel.Text = "Batch Size in Gallons"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.Location = New System.Drawing.Point(16, 400)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(169, 17)
+        Me.Label11.TabIndex = 325
+        Me.Label11.Text = "Brew House Efficiency"
+        '
+        'GrainPotentialLabel
+        '
+        Me.GrainPotentialLabel.AutoSize = True
+        Me.GrainPotentialLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.GrainPotentialLabel.Location = New System.Drawing.Point(148, 367)
+        Me.GrainPotentialLabel.Name = "GrainPotentialLabel"
+        Me.GrainPotentialLabel.Size = New System.Drawing.Size(49, 17)
+        Me.GrainPotentialLabel.TabIndex = 320
+        Me.GrainPotentialLabel.Text = "00.00"
+        '
+        'BatchSizeTextBox
+        '
+        Me.BatchSizeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BatchSizeTextBox.Location = New System.Drawing.Point(208, 104)
+        Me.BatchSizeTextBox.Name = "BatchSizeTextBox"
+        Me.BatchSizeTextBox.Size = New System.Drawing.Size(112, 23)
+        Me.BatchSizeTextBox.TabIndex = 324
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label36.Location = New System.Drawing.Point(216, 24)
+        Me.Label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(110, 17)
+        Me.Label36.TabIndex = 315
+        Me.Label36.Text = "Example: 1.00"
+        '
+        'MashTypeComboBox
+        '
+        Me.MashTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.MashTypeComboBox.FormattingEnabled = True
+        Me.MashTypeComboBox.Items.AddRange(New Object() {"Single Infusion", "Step Mash"})
+        Me.MashTypeComboBox.Location = New System.Drawing.Point(128, 144)
+        Me.MashTypeComboBox.Name = "MashTypeComboBox"
+        Me.MashTypeComboBox.Size = New System.Drawing.Size(250, 24)
+        Me.MashTypeComboBox.TabIndex = 4
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label37.Location = New System.Drawing.Point(304, 400)
+        Me.Label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(21, 17)
+        Me.Label37.TabIndex = 318
+        Me.Label37.Text = "%"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(12, 23)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(63, 17)
+        Me.Label1.TabIndex = 323
+        Me.Label1.Text = "Version"
+        '
+        'BrewhouseEfficiencyBox
+        '
+        Me.BrewhouseEfficiencyBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BrewhouseEfficiencyBox.Location = New System.Drawing.Point(200, 400)
+        Me.BrewhouseEfficiencyBox.Name = "BrewhouseEfficiencyBox"
+        Me.BrewhouseEfficiencyBox.Size = New System.Drawing.Size(88, 20)
+        Me.BrewhouseEfficiencyBox.TabIndex = 316
+        Me.BrewhouseEfficiencyBox.Text = "75"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label39.Location = New System.Drawing.Point(16, 144)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(87, 17)
+        Me.Label39.TabIndex = 321
+        Me.Label39.Text = "Mash Type"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label35.Location = New System.Drawing.Point(228, 327)
+        Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(119, 17)
+        Me.Label35.TabIndex = 314
+        Me.Label35.Text = "Example: 1.015"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label9.Location = New System.Drawing.Point(260, 287)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(119, 17)
+        Me.Label9.TabIndex = 313
+        Me.Label9.Text = "Example: 1.054"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label31.Location = New System.Drawing.Point(196, 63)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(64, 17)
+        Me.Label31.TabIndex = 310
+        Me.Label31.Text = "Minutes"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(256, 248)
+        Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(17, 13)
+        Me.Label32.TabIndex = 311
+        Me.Label32.Text = "°F"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label33.Location = New System.Drawing.Point(384, 184)
+        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(110, 17)
+        Me.Label33.TabIndex = 312
+        Me.Label33.Text = "Example: 1.25"
         '
         'GrainsTab
         '
         Me.GrainsTab.BackColor = System.Drawing.SystemColors.Window
+        Me.GrainsTab.Controls.Add(Me.TotalGrainWeight)
         Me.GrainsTab.Controls.Add(Me.Label13)
         Me.GrainsTab.Controls.Add(Me.Label14)
         Me.GrainsTab.Controls.Add(Me.Label15)
@@ -669,22 +814,30 @@ Partial Class BrewMaintenanceForm
         Me.GrainsTab.Controls.Add(Me.GrainWeightLabel)
         Me.GrainsTab.Controls.Add(Me.GrainWeightTextBox)
         Me.GrainsTab.Controls.Add(Me.GrainWeightComboBox)
-        Me.GrainsTab.Controls.Add(Me.Label11)
         Me.GrainsTab.Location = New System.Drawing.Point(4, 25)
         Me.GrainsTab.Name = "GrainsTab"
         Me.GrainsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.GrainsTab.Size = New System.Drawing.Size(728, 315)
+        Me.GrainsTab.Size = New System.Drawing.Size(824, 539)
         Me.GrainsTab.TabIndex = 0
         Me.GrainsTab.Text = "Grains"
+        '
+        'TotalGrainWeight
+        '
+        Me.TotalGrainWeight.AutoSize = True
+        Me.TotalGrainWeight.Location = New System.Drawing.Point(176, 128)
+        Me.TotalGrainWeight.Name = "TotalGrainWeight"
+        Me.TotalGrainWeight.Size = New System.Drawing.Size(127, 17)
+        Me.TotalGrainWeight.TabIndex = 312
+        Me.TotalGrainWeight.Text = "Total Grain Weight"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(432, 24)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(43, 17)
+        Me.Label13.Size = New System.Drawing.Size(46, 17)
         Me.Label13.TabIndex = 308
-        Me.Label13.Text = "Orgin"
+        Me.Label13.Text = "Origin"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label14
@@ -756,18 +909,19 @@ Partial Class BrewMaintenanceForm
         Me.HopsTab.Controls.Add(Me.Label17)
         Me.HopsTab.Location = New System.Drawing.Point(4, 25)
         Me.HopsTab.Name = "HopsTab"
-        Me.HopsTab.Size = New System.Drawing.Size(728, 315)
+        Me.HopsTab.Size = New System.Drawing.Size(824, 539)
         Me.HopsTab.TabIndex = 2
         Me.HopsTab.Text = "Hops and Misc Additions"
         '
         'RemoveSelectedHopButton
         '
+        Me.RemoveSelectedHopButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.RemoveSelectedHopButton.Location = New System.Drawing.Point(96, 104)
         Me.RemoveSelectedHopButton.Name = "RemoveSelectedHopButton"
         Me.RemoveSelectedHopButton.Size = New System.Drawing.Size(128, 23)
         Me.RemoveSelectedHopButton.TabIndex = 338
         Me.RemoveSelectedHopButton.Text = "Remove Selected Hop"
-        Me.RemoveSelectedHopButton.UseVisualStyleBackColor = True
+        Me.RemoveSelectedHopButton.UseVisualStyleBackColor = False
         '
         'Label29
         '
@@ -814,12 +968,13 @@ Partial Class BrewMaintenanceForm
         '
         'AddCustomHopsButton
         '
+        Me.AddCustomHopsButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.AddCustomHopsButton.Location = New System.Drawing.Point(335, 24)
         Me.AddCustomHopsButton.Name = "AddCustomHopsButton"
         Me.AddCustomHopsButton.Size = New System.Drawing.Size(75, 23)
         Me.AddCustomHopsButton.TabIndex = 6
         Me.AddCustomHopsButton.Text = "Add Custom Grains"
-        Me.AddCustomHopsButton.UseVisualStyleBackColor = True
+        Me.AddCustomHopsButton.UseVisualStyleBackColor = False
         '
         'HopDataGridView
         '
@@ -843,7 +998,7 @@ Partial Class BrewMaintenanceForm
         Me.HopDataGridView.ShowCellToolTips = False
         Me.HopDataGridView.ShowEditingIcon = False
         Me.HopDataGridView.ShowRowErrors = False
-        Me.HopDataGridView.Size = New System.Drawing.Size(712, 150)
+        Me.HopDataGridView.Size = New System.Drawing.Size(800, 368)
         Me.HopDataGridView.TabIndex = 331
         '
         'Label18
@@ -866,12 +1021,13 @@ Partial Class BrewMaintenanceForm
         '
         'AddHopsButton
         '
+        Me.AddHopsButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.AddHopsButton.Location = New System.Drawing.Point(8, 104)
         Me.AddHopsButton.Name = "AddHopsButton"
         Me.AddHopsButton.Size = New System.Drawing.Size(75, 23)
         Me.AddHopsButton.TabIndex = 5
         Me.AddHopsButton.Text = "Add Hops"
-        Me.AddHopsButton.UseVisualStyleBackColor = True
+        Me.AddHopsButton.UseVisualStyleBackColor = False
         '
         'hopWeightLabel
         '
@@ -971,18 +1127,19 @@ Partial Class BrewMaintenanceForm
         Me.MiscellaneousWortAdditionsTab.Location = New System.Drawing.Point(4, 25)
         Me.MiscellaneousWortAdditionsTab.Name = "MiscellaneousWortAdditionsTab"
         Me.MiscellaneousWortAdditionsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.MiscellaneousWortAdditionsTab.Size = New System.Drawing.Size(728, 315)
+        Me.MiscellaneousWortAdditionsTab.Size = New System.Drawing.Size(824, 539)
         Me.MiscellaneousWortAdditionsTab.TabIndex = 3
         Me.MiscellaneousWortAdditionsTab.Text = "Miscellaneous Wort Additions"
         '
         'RemoveMiscWortItemButton
         '
+        Me.RemoveMiscWortItemButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.RemoveMiscWortItemButton.Location = New System.Drawing.Point(87, 90)
         Me.RemoveMiscWortItemButton.Name = "RemoveMiscWortItemButton"
         Me.RemoveMiscWortItemButton.Size = New System.Drawing.Size(128, 23)
         Me.RemoveMiscWortItemButton.TabIndex = 357
         Me.RemoveMiscWortItemButton.Text = "Remove Selected Item"
-        Me.RemoveMiscWortItemButton.UseVisualStyleBackColor = True
+        Me.RemoveMiscWortItemButton.UseVisualStyleBackColor = False
         '
         'Label22
         '
@@ -1029,12 +1186,13 @@ Partial Class BrewMaintenanceForm
         '
         'AddCustomWortItemButton
         '
+        Me.AddCustomWortItemButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.AddCustomWortItemButton.Location = New System.Drawing.Point(335, 26)
         Me.AddCustomWortItemButton.Name = "AddCustomWortItemButton"
         Me.AddCustomWortItemButton.Size = New System.Drawing.Size(75, 23)
         Me.AddCustomWortItemButton.TabIndex = 344
         Me.AddCustomWortItemButton.Text = "Add Custom Grains"
-        Me.AddCustomWortItemButton.UseVisualStyleBackColor = True
+        Me.AddCustomWortItemButton.UseVisualStyleBackColor = False
         '
         'MiscWortDataGridView
         '
@@ -1058,7 +1216,7 @@ Partial Class BrewMaintenanceForm
         Me.MiscWortDataGridView.ShowCellToolTips = False
         Me.MiscWortDataGridView.ShowEditingIcon = False
         Me.MiscWortDataGridView.ShowRowErrors = False
-        Me.MiscWortDataGridView.Size = New System.Drawing.Size(712, 172)
+        Me.MiscWortDataGridView.Size = New System.Drawing.Size(800, 384)
         Me.MiscWortDataGridView.TabIndex = 352
         '
         'Label27
@@ -1072,12 +1230,13 @@ Partial Class BrewMaintenanceForm
         '
         'AddMiscWortItemButton
         '
+        Me.AddMiscWortItemButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.AddMiscWortItemButton.Location = New System.Drawing.Point(6, 90)
         Me.AddMiscWortItemButton.Name = "AddMiscWortItemButton"
         Me.AddMiscWortItemButton.Size = New System.Drawing.Size(75, 23)
         Me.AddMiscWortItemButton.TabIndex = 343
         Me.AddMiscWortItemButton.Text = "Add Item"
-        Me.AddMiscWortItemButton.UseVisualStyleBackColor = True
+        Me.AddMiscWortItemButton.UseVisualStyleBackColor = False
         '
         'MiscWortAmountTextBox
         '
@@ -1150,18 +1309,19 @@ Partial Class BrewMaintenanceForm
         Me.MashPage.Location = New System.Drawing.Point(4, 25)
         Me.MashPage.Name = "MashPage"
         Me.MashPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.MashPage.Size = New System.Drawing.Size(728, 315)
+        Me.MashPage.Size = New System.Drawing.Size(824, 539)
         Me.MashPage.TabIndex = 4
         Me.MashPage.Text = "Mash Schedule"
         '
         'RemoveRestButton
         '
-        Me.RemoveRestButton.Location = New System.Drawing.Point(6, 108)
+        Me.RemoveRestButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.RemoveRestButton.Location = New System.Drawing.Point(6, 52)
         Me.RemoveRestButton.Name = "RemoveRestButton"
         Me.RemoveRestButton.Size = New System.Drawing.Size(128, 23)
         Me.RemoveRestButton.TabIndex = 359
         Me.RemoveRestButton.Text = "Remove Selected Item"
-        Me.RemoveRestButton.UseVisualStyleBackColor = True
+        Me.RemoveRestButton.UseVisualStyleBackColor = False
         '
         'Label41
         '
@@ -1203,12 +1363,13 @@ Partial Class BrewMaintenanceForm
         '
         'AddStepMashButton
         '
+        Me.AddStepMashButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.AddStepMashButton.Location = New System.Drawing.Point(6, 6)
         Me.AddStepMashButton.Name = "AddStepMashButton"
         Me.AddStepMashButton.Size = New System.Drawing.Size(64, 23)
         Me.AddStepMashButton.TabIndex = 354
         Me.AddStepMashButton.Text = "Set"
-        Me.AddStepMashButton.UseVisualStyleBackColor = True
+        Me.AddStepMashButton.UseVisualStyleBackColor = False
         '
         'StepMashDataGridView
         '
@@ -1222,7 +1383,7 @@ Partial Class BrewMaintenanceForm
         Me.StepMashDataGridView.BackgroundColor = System.Drawing.SystemColors.Control
         Me.StepMashDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.StepMashDataGridView.GridColor = System.Drawing.Color.CornflowerBlue
-        Me.StepMashDataGridView.Location = New System.Drawing.Point(8, 136)
+        Me.StepMashDataGridView.Location = New System.Drawing.Point(8, 80)
         Me.StepMashDataGridView.MultiSelect = False
         Me.StepMashDataGridView.Name = "StepMashDataGridView"
         Me.StepMashDataGridView.ReadOnly = True
@@ -1232,179 +1393,42 @@ Partial Class BrewMaintenanceForm
         Me.StepMashDataGridView.ShowCellToolTips = False
         Me.StepMashDataGridView.ShowEditingIcon = False
         Me.StepMashDataGridView.ShowRowErrors = False
-        Me.StepMashDataGridView.Size = New System.Drawing.Size(712, 168)
+        Me.StepMashDataGridView.Size = New System.Drawing.Size(800, 448)
         Me.StepMashDataGridView.TabIndex = 353
         '
-        'Label31
+        'SessionIDLabel
         '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label31.Location = New System.Drawing.Point(200, 216)
-        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(64, 17)
-        Me.Label31.TabIndex = 310
-        Me.Label31.Text = "Minutes"
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(256, 256)
-        Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(17, 13)
-        Me.Label32.TabIndex = 311
-        Me.Label32.Text = "°F"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label33.Location = New System.Drawing.Point(384, 136)
-        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(110, 17)
-        Me.Label33.TabIndex = 312
-        Me.Label33.Text = "Example: 1.25"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label9.Location = New System.Drawing.Point(264, 296)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 17)
-        Me.Label9.TabIndex = 313
-        Me.Label9.Text = "Example: 1.054"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label35.Location = New System.Drawing.Point(232, 336)
-        Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(119, 17)
-        Me.Label35.TabIndex = 314
-        Me.Label35.Text = "Example: 1.015"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label36.Location = New System.Drawing.Point(208, 376)
-        Me.Label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(110, 17)
-        Me.Label36.TabIndex = 315
-        Me.Label36.Text = "Example: 1.00"
-        '
-        'BrewhouseEfficiencyBox
-        '
-        Me.BrewhouseEfficiencyBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BrewhouseEfficiencyBox.Location = New System.Drawing.Point(200, 416)
-        Me.BrewhouseEfficiencyBox.Name = "BrewhouseEfficiencyBox"
-        Me.BrewhouseEfficiencyBox.Size = New System.Drawing.Size(88, 20)
-        Me.BrewhouseEfficiencyBox.TabIndex = 316
-        Me.BrewhouseEfficiencyBox.Text = "75"
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label37.Location = New System.Drawing.Point(304, 416)
-        Me.Label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(21, 17)
-        Me.Label37.TabIndex = 318
-        Me.Label37.Text = "%"
-        '
-        'GrainPotentialLabel
-        '
-        Me.GrainPotentialLabel.AutoSize = True
-        Me.GrainPotentialLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.GrainPotentialLabel.Location = New System.Drawing.Point(152, 456)
-        Me.GrainPotentialLabel.Name = "GrainPotentialLabel"
-        Me.GrainPotentialLabel.Size = New System.Drawing.Size(49, 17)
-        Me.GrainPotentialLabel.TabIndex = 320
-        Me.GrainPotentialLabel.Text = "00.00"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label39.Location = New System.Drawing.Point(16, 96)
-        Me.Label39.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(87, 17)
-        Me.Label39.TabIndex = 321
-        Me.Label39.Text = "Mash Type"
-        '
-        'MashTypeComboBox
-        '
-        Me.MashTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.MashTypeComboBox.FormattingEnabled = True
-        Me.MashTypeComboBox.Items.AddRange(New Object() {"Single Infusion", "Step Mash"})
-        Me.MashTypeComboBox.Location = New System.Drawing.Point(128, 96)
-        Me.MashTypeComboBox.Name = "MashTypeComboBox"
-        Me.MashTypeComboBox.Size = New System.Drawing.Size(250, 24)
-        Me.MashTypeComboBox.TabIndex = 4
+        Me.SessionIDLabel.AutoSize = True
+        Me.SessionIDLabel.Location = New System.Drawing.Point(520, 16)
+        Me.SessionIDLabel.Name = "SessionIDLabel"
+        Me.SessionIDLabel.Size = New System.Drawing.Size(40, 13)
+        Me.SessionIDLabel.TabIndex = 322
+        Me.SessionIDLabel.Text = "Beer ID"
+        Me.SessionIDLabel.Visible = False
         '
         'BrewMaintenanceForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(773, 964)
-        Me.Controls.Add(Me.MashTypeComboBox)
-        Me.Controls.Add(Me.Label39)
-        Me.Controls.Add(Me.GrainPotentialLabel)
-        Me.Controls.Add(Label38)
-        Me.Controls.Add(Me.Label37)
-        Me.Controls.Add(Label26)
-        Me.Controls.Add(Me.BrewhouseEfficiencyBox)
-        Me.Controls.Add(Me.Label36)
-        Me.Controls.Add(Me.Label35)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label33)
-        Me.Controls.Add(Me.Label32)
-        Me.Controls.Add(Me.Label31)
+        Me.ClientSize = New System.Drawing.Size(1208, 656)
+        Me.Controls.Add(Me.SessionIDLabel)
         Me.Controls.Add(Me.GrainsAndWortAdditionsTabBox)
         Me.Controls.Add(Me.NewButton)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.BeerNameLabel)
-        Me.Controls.Add(Me.WaterLabel)
-        Me.Controls.Add(Me.BoilTimeLabel)
-        Me.Controls.Add(SessionIDLabel)
         Me.Controls.Add(Me.UpdateButton)
-        Me.Controls.Add(Label1)
         Me.Controls.Add(Me.DeleteButton)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BeerNameComboBox)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Label6)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.WaterToGrainRatioTextBox)
-        Me.Controls.Add(Me.SpargeTemptextbox)
-        Me.Controls.Add(Me.BatchLabel)
-        Me.Controls.Add(Me.NotesTextBox)
-        Me.Controls.Add(Me.FGravityTextBox)
-        Me.Controls.Add(Me.OGravityTextBox)
         Me.Controls.Add(Me.BeerIDTextBox)
-        Me.Controls.Add(Me.FermentationTempBox)
-        Me.Controls.Add(Me.BatchSizeTextBox)
-        Me.Controls.Add(Me.BoilTimeTextBox)
-        Me.Controls.Add(Me.VersionTextBox)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "BrewMaintenanceForm"
         Me.Text = "Beer Maintenance"
         CType(Me.GrainDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrainsAndWortAdditionsTabBox.ResumeLayout(False)
+        Me.BeerSettings.ResumeLayout(False)
+        Me.BeerSettings.PerformLayout()
         Me.GrainsTab.ResumeLayout(False)
         Me.GrainsTab.PerformLayout()
         Me.HopsTab.ResumeLayout(False)
@@ -1430,9 +1454,7 @@ Partial Class BrewMaintenanceForm
     Friend WithEvents UpdateButton As System.Windows.Forms.Button
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents BatchLabel As System.Windows.Forms.Label
     Friend WithEvents BeerIDTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents BatchSizeTextBox As System.Windows.Forms.TextBox
     Friend WithEvents VersionTextBox As System.Windows.Forms.TextBox
     Friend WithEvents BoilTimeTextBox As System.Windows.Forms.TextBox
     Friend WithEvents FermentationTempBox As System.Windows.Forms.TextBox
@@ -1454,7 +1476,6 @@ Partial Class BrewMaintenanceForm
     Friend WithEvents AddGrainsButton As System.Windows.Forms.Button
     Friend WithEvents GrainWeightLabel As System.Windows.Forms.Label
     Friend WithEvents GrainWeightComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents GrainWeightTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents GrainWeightID As System.Windows.Forms.Label
@@ -1526,4 +1547,13 @@ Partial Class BrewMaintenanceForm
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents SessionIDLabel As System.Windows.Forms.Label
+    Friend WithEvents TotalGrainWeight As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents BeerSettings As System.Windows.Forms.TabPage
+    Friend WithEvents BatchLabel As System.Windows.Forms.Label
+    Friend WithEvents BatchSizeTextBox As System.Windows.Forms.TextBox
 End Class

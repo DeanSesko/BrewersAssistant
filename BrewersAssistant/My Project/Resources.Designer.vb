@@ -61,11 +61,146 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to s.
+        '''</summary>
+        Friend ReadOnly Property ArduinoSetupString() As String
+            Get
+                Return ResourceManager.GetString("ArduinoSetupString", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to Finished.
+        '''</summary>
+        Friend ReadOnly Property CompleteBrewingSessionButtonTitle() As String
+            Get
+                Return ResourceManager.GetString("CompleteBrewingSessionButtonTitle", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to Are you sure you want to finish this brew session?.
+        '''</summary>
+        Friend ReadOnly Property CompleteBrewiningSessionButtonText() As String
+            Get
+                Return ResourceManager.GetString("CompleteBrewiningSessionButtonText", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
         '''  Looks up a localized string similar to 00.00.
         '''</summary>
         Friend ReadOnly Property DefaultDecimal() As String
             Get
                 Return ResourceManager.GetString("DefaultDecimal", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to Are you sure you want to delete this record?.
+        '''</summary>
+        Friend ReadOnly Property DeleteSessionButtonText() As String
+            Get
+                Return ResourceManager.GetString("DeleteSessionButtonText", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to Delete.
+        '''</summary>
+        Friend ReadOnly Property DeleteSessionTitleText() As String
+            Get
+                Return ResourceManager.GetString("DeleteSessionTitleText", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to g.
+        '''</summary>
+        Friend ReadOnly Property HLPumpOff() As String
+            Get
+                Return ResourceManager.GetString("HLPumpOff", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to c.
+        '''</summary>
+        Friend ReadOnly Property HLPumpON() As String
+            Get
+                Return ResourceManager.GetString("HLPumpON", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to Mash Pump Off.
+        '''</summary>
+        Friend ReadOnly Property MashButtonOffText() As String
+            Get
+                Return ResourceManager.GetString("MashButtonOffText", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to Mash Pump Running.
+        '''</summary>
+        Friend ReadOnly Property MashButtonOnText() As String
+            Get
+                Return ResourceManager.GetString("MashButtonOnText", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to h.
+        '''</summary>
+        Friend ReadOnly Property MashPumpOff() As String
+            Get
+                Return ResourceManager.GetString("MashPumpOff", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to d.
+        '''</summary>
+        Friend ReadOnly Property MashPumpOn() As String
+            Get
+                Return ResourceManager.GetString("MashPumpOn", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to RIM Heat Off.
+        '''</summary>
+        Friend ReadOnly Property RimButtonOffText() As String
+            Get
+                Return ResourceManager.GetString("RimButtonOffText", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to RIM Heating.
+        '''</summary>
+        Friend ReadOnly Property RimButtonOnText() As String
+            Get
+                Return ResourceManager.GetString("RimButtonOnText", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to b.
+        '''</summary>
+        Friend ReadOnly Property RimOff() As String
+            Get
+                Return ResourceManager.GetString("RimOff", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  Looks up a localized string similar to a.
+        '''</summary>
+        Friend ReadOnly Property RimOn() As String
+            Get
+                Return ResourceManager.GetString("RimOn", resourceCulture)
             End Get
         End Property
     End Module

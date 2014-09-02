@@ -8,28 +8,30 @@ Module GlobalModule
     Friend BoilKettleSensor As String = "Boil Kettle Sensor"
 
     Public Sub UpdateDBSql(ByVal MySqlString As String)
-        Dim sqlConnection As New SqlceConnection(My.Settings.BrewHelperDBConnectionString)
-        Dim sqlCommand As New SqlceCommand()
-        sqlConnection.Open()
-        sqlCommand.Connection = sqlConnection
-        sqlCommand.CommandText = MySqlString
-        sqlCommand.ExecuteNonQuery()
-        sqlCommand = Nothing
-        sqlConnection.Close()
-        sqlConnection.Dispose()
+        Using sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+            Using sqlCommand As New SqlCeCommand()
+                sqlConnection.Open()
+                sqlCommand.Connection = sqlConnection
+                sqlCommand.CommandText = MySqlString
+                sqlCommand.ExecuteNonQuery()
 
+            End Using
+            sqlConnection.Close()
+        End Using
     End Sub
-    Public Function DigitChecker(ByVal MyNumber As String) As Boolean
+    Public Function DigitChecker(ByVal MyNumber As String, ByVal Reason As String) As Boolean
         Try
             Decimal.Parse(MyNumber)
             DigitChecker = True
         Catch
-            DigitChecker = False
 
+            DigitChecker = False
+            MsgBox("Please Enter A Valid Number " & Reason)
         End Try
     End Function
     Public Sub SetupChart()
-
+        Dim mashSeries As New Series("Current Temperature")
+        Dim mashConstant As New Series("Required Temperature")
         BrewingSessionForm.TempatureChart.ChartAreas(0).AxisY.Minimum = 50
         BrewingSessionForm.TempatureChart.ChartAreas(0).AxisY.Maximum = 215
         BrewingSessionForm.TempatureChart.ChartAreas(0).AxisY.Interval = 10
@@ -37,21 +39,20 @@ Module GlobalModule
         BrewingSessionForm.TempatureChart.ChartAreas(0).AxisX.IntervalType = DateTimeIntervalType.Minutes
         BrewingSessionForm.TempatureChart.ChartAreas(0).AxisX.LabelStyle.Format = "hh:mm:ss"
         BrewingSessionForm.TempatureChart.Series.Clear()
-        Dim mashSeries As New Series("Current Temperature")
+
         BrewingSessionForm.TempatureChart.Legends("Legend1").Docking = Docking.Top
-
-
         mashSeries.ChartType = SeriesChartType.Line
         mashSeries.BorderWidth = 4
         mashSeries.Color = Color.Red
         mashSeries.XValueType = ChartValueType.DateTime
         BrewingSessionForm.TempatureChart.Series.Add(mashSeries)
-        Dim mashConstant As New Series("Required Temperature")
+
         mashConstant.ChartType = SeriesChartType.Line
         mashConstant.BorderWidth = 4
         mashConstant.Color = Color.Black
         mashConstant.XValueType = ChartValueType.DateTime
         BrewingSessionForm.TempatureChart.Series.Add(mashConstant)
+       
 
     End Sub
   

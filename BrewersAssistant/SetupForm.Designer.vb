@@ -70,14 +70,16 @@ Partial Class SetupForm
         '
         'CloseButton
         '
+        Me.CloseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.CloseButton.Location = New System.Drawing.Point(640, 520)
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(488, 504)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(120, 30)
+        Me.CloseButton.Size = New System.Drawing.Size(274, 45)
         Me.CloseButton.TabIndex = 1
         Me.CloseButton.Text = "&Close"
-        Me.CloseButton.UseVisualStyleBackColor = True
+        Me.CloseButton.UseVisualStyleBackColor = False
         '
         'Sensor1ComboBox
         '
@@ -113,43 +115,47 @@ Partial Class SetupForm
         '
         'SetSensor1Button
         '
+        Me.SetSensor1Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor1Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SetSensor1Button.Location = New System.Drawing.Point(376, 160)
         Me.SetSensor1Button.Name = "SetSensor1Button"
         Me.SetSensor1Button.Size = New System.Drawing.Size(120, 30)
         Me.SetSensor1Button.TabIndex = 5
         Me.SetSensor1Button.Text = "Set Sensor"
-        Me.SetSensor1Button.UseVisualStyleBackColor = True
+        Me.SetSensor1Button.UseVisualStyleBackColor = False
         '
         'ClearSensor1Button
         '
+        Me.ClearSensor1Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor1Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ClearSensor1Button.Location = New System.Drawing.Point(520, 160)
+        Me.ClearSensor1Button.Location = New System.Drawing.Point(552, 160)
         Me.ClearSensor1Button.Name = "ClearSensor1Button"
         Me.ClearSensor1Button.Size = New System.Drawing.Size(120, 30)
         Me.ClearSensor1Button.TabIndex = 6
         Me.ClearSensor1Button.Text = "Clear Sensor 1"
-        Me.ClearSensor1Button.UseVisualStyleBackColor = True
+        Me.ClearSensor1Button.UseVisualStyleBackColor = False
         '
         'ClearSensor2Button
         '
+        Me.ClearSensor2Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor2Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ClearSensor2Button.Location = New System.Drawing.Point(520, 208)
+        Me.ClearSensor2Button.Location = New System.Drawing.Point(552, 208)
         Me.ClearSensor2Button.Name = "ClearSensor2Button"
         Me.ClearSensor2Button.Size = New System.Drawing.Size(120, 30)
         Me.ClearSensor2Button.TabIndex = 11
         Me.ClearSensor2Button.Text = "Clear Sensor 2"
-        Me.ClearSensor2Button.UseVisualStyleBackColor = True
+        Me.ClearSensor2Button.UseVisualStyleBackColor = False
         '
         'SetSensor2Button
         '
+        Me.SetSensor2Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor2Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SetSensor2Button.Location = New System.Drawing.Point(376, 208)
         Me.SetSensor2Button.Name = "SetSensor2Button"
         Me.SetSensor2Button.Size = New System.Drawing.Size(120, 30)
         Me.SetSensor2Button.TabIndex = 10
         Me.SetSensor2Button.Text = "Set Sensor"
-        Me.SetSensor2Button.UseVisualStyleBackColor = True
+        Me.SetSensor2Button.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -185,23 +191,25 @@ Partial Class SetupForm
         '
         'ClearSensor3Button
         '
+        Me.ClearSensor3Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor3Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ClearSensor3Button.Location = New System.Drawing.Point(520, 256)
+        Me.ClearSensor3Button.Location = New System.Drawing.Point(552, 256)
         Me.ClearSensor3Button.Name = "ClearSensor3Button"
         Me.ClearSensor3Button.Size = New System.Drawing.Size(120, 30)
         Me.ClearSensor3Button.TabIndex = 16
         Me.ClearSensor3Button.Text = "Clear Sensor 3"
-        Me.ClearSensor3Button.UseVisualStyleBackColor = True
+        Me.ClearSensor3Button.UseVisualStyleBackColor = False
         '
         'SetSensor3Button
         '
+        Me.SetSensor3Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor3Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SetSensor3Button.Location = New System.Drawing.Point(376, 256)
         Me.SetSensor3Button.Name = "SetSensor3Button"
         Me.SetSensor3Button.Size = New System.Drawing.Size(120, 30)
         Me.SetSensor3Button.TabIndex = 15
         Me.SetSensor3Button.Text = "Set Sensor"
-        Me.SetSensor3Button.UseVisualStyleBackColor = True
+        Me.SetSensor3Button.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -237,23 +245,25 @@ Partial Class SetupForm
         '
         'ClearSensor4Button
         '
+        Me.ClearSensor4Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor4Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ClearSensor4Button.Location = New System.Drawing.Point(520, 304)
+        Me.ClearSensor4Button.Location = New System.Drawing.Point(552, 304)
         Me.ClearSensor4Button.Name = "ClearSensor4Button"
         Me.ClearSensor4Button.Size = New System.Drawing.Size(120, 30)
         Me.ClearSensor4Button.TabIndex = 21
         Me.ClearSensor4Button.Text = "Clear Sensor 4"
-        Me.ClearSensor4Button.UseVisualStyleBackColor = True
+        Me.ClearSensor4Button.UseVisualStyleBackColor = False
         '
         'SetSensor4Button
         '
+        Me.SetSensor4Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor4Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SetSensor4Button.Location = New System.Drawing.Point(376, 304)
         Me.SetSensor4Button.Name = "SetSensor4Button"
         Me.SetSensor4Button.Size = New System.Drawing.Size(120, 30)
         Me.SetSensor4Button.TabIndex = 20
         Me.SetSensor4Button.Text = "Set Sensor"
-        Me.SetSensor4Button.UseVisualStyleBackColor = True
+        Me.SetSensor4Button.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -289,23 +299,25 @@ Partial Class SetupForm
         '
         'ClearSensor5Button
         '
+        Me.ClearSensor5Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor5Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ClearSensor5Button.Location = New System.Drawing.Point(520, 352)
+        Me.ClearSensor5Button.Location = New System.Drawing.Point(552, 352)
         Me.ClearSensor5Button.Name = "ClearSensor5Button"
         Me.ClearSensor5Button.Size = New System.Drawing.Size(120, 30)
         Me.ClearSensor5Button.TabIndex = 26
         Me.ClearSensor5Button.Text = "Clear Sensor 5"
-        Me.ClearSensor5Button.UseVisualStyleBackColor = True
+        Me.ClearSensor5Button.UseVisualStyleBackColor = False
         '
         'SetSensor5Button
         '
+        Me.SetSensor5Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor5Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SetSensor5Button.Location = New System.Drawing.Point(376, 352)
         Me.SetSensor5Button.Name = "SetSensor5Button"
         Me.SetSensor5Button.Size = New System.Drawing.Size(120, 30)
         Me.SetSensor5Button.TabIndex = 25
         Me.SetSensor5Button.Text = "Set Sensor"
-        Me.SetSensor5Button.UseVisualStyleBackColor = True
+        Me.SetSensor5Button.UseVisualStyleBackColor = False
         '
         'Label8
         '
@@ -341,23 +353,25 @@ Partial Class SetupForm
         '
         'ClearSensor6Button
         '
+        Me.ClearSensor6Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor6Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ClearSensor6Button.Location = New System.Drawing.Point(520, 400)
+        Me.ClearSensor6Button.Location = New System.Drawing.Point(552, 400)
         Me.ClearSensor6Button.Name = "ClearSensor6Button"
         Me.ClearSensor6Button.Size = New System.Drawing.Size(120, 30)
         Me.ClearSensor6Button.TabIndex = 31
         Me.ClearSensor6Button.Text = "Clear Sensor 6"
-        Me.ClearSensor6Button.UseVisualStyleBackColor = True
+        Me.ClearSensor6Button.UseVisualStyleBackColor = False
         '
         'SetSensor6Button
         '
+        Me.SetSensor6Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor6Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SetSensor6Button.Location = New System.Drawing.Point(376, 400)
         Me.SetSensor6Button.Name = "SetSensor6Button"
         Me.SetSensor6Button.Size = New System.Drawing.Size(120, 30)
         Me.SetSensor6Button.TabIndex = 30
         Me.SetSensor6Button.Text = "Set Sensor"
-        Me.SetSensor6Button.UseVisualStyleBackColor = True
+        Me.SetSensor6Button.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -393,23 +407,25 @@ Partial Class SetupForm
         '
         'ClearComportButton
         '
+        Me.ClearComportButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearComportButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ClearComportButton.Location = New System.Drawing.Point(520, 64)
+        Me.ClearComportButton.Location = New System.Drawing.Point(552, 64)
         Me.ClearComportButton.Name = "ClearComportButton"
         Me.ClearComportButton.Size = New System.Drawing.Size(120, 30)
         Me.ClearComportButton.TabIndex = 36
         Me.ClearComportButton.Text = "Clear Comport"
-        Me.ClearComportButton.UseVisualStyleBackColor = True
+        Me.ClearComportButton.UseVisualStyleBackColor = False
         '
         'SetComportButton
         '
+        Me.SetComportButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetComportButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.SetComportButton.Location = New System.Drawing.Point(376, 64)
         Me.SetComportButton.Name = "SetComportButton"
         Me.SetComportButton.Size = New System.Drawing.Size(120, 30)
         Me.SetComportButton.TabIndex = 35
-        Me.SetComportButton.Text = "Set CompPort"
-        Me.SetComportButton.UseVisualStyleBackColor = True
+        Me.SetComportButton.Text = "Set Com-Port"
+        Me.SetComportButton.UseVisualStyleBackColor = False
         '
         'ComPortSetupComboBox
         '
@@ -448,9 +464,9 @@ Partial Class SetupForm
         Me.Sensor1TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Sensor1TempLabel.Location = New System.Drawing.Point(288, 160)
         Me.Sensor1TempLabel.Name = "Sensor1TempLabel"
-        Me.Sensor1TempLabel.Size = New System.Drawing.Size(52, 17)
+        Me.Sensor1TempLabel.Size = New System.Drawing.Size(44, 17)
         Me.Sensor1TempLabel.TabIndex = 39
-        Me.Sensor1TempLabel.Text = My.Resources.DefaultDecimal
+        Me.Sensor1TempLabel.Text = "00.00"
         '
         'Sensor2TempLabel
         '
@@ -458,9 +474,9 @@ Partial Class SetupForm
         Me.Sensor2TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Sensor2TempLabel.Location = New System.Drawing.Point(288, 208)
         Me.Sensor2TempLabel.Name = "Sensor2TempLabel"
-        Me.Sensor2TempLabel.Size = New System.Drawing.Size(52, 17)
+        Me.Sensor2TempLabel.Size = New System.Drawing.Size(44, 17)
         Me.Sensor2TempLabel.TabIndex = 40
-        Me.Sensor2TempLabel.Text = My.Resources.DefaultDecimal
+        Me.Sensor2TempLabel.Text = "00.00"
         '
         'Sensor3TempLabel
         '
@@ -468,9 +484,9 @@ Partial Class SetupForm
         Me.Sensor3TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Sensor3TempLabel.Location = New System.Drawing.Point(288, 256)
         Me.Sensor3TempLabel.Name = "Sensor3TempLabel"
-        Me.Sensor3TempLabel.Size = New System.Drawing.Size(52, 17)
+        Me.Sensor3TempLabel.Size = New System.Drawing.Size(44, 17)
         Me.Sensor3TempLabel.TabIndex = 41
-        Me.Sensor3TempLabel.Text = My.Resources.DefaultDecimal
+        Me.Sensor3TempLabel.Text = "00.00"
         '
         'Sensor4TempLabel
         '
@@ -478,9 +494,9 @@ Partial Class SetupForm
         Me.Sensor4TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Sensor4TempLabel.Location = New System.Drawing.Point(288, 304)
         Me.Sensor4TempLabel.Name = "Sensor4TempLabel"
-        Me.Sensor4TempLabel.Size = New System.Drawing.Size(52, 17)
+        Me.Sensor4TempLabel.Size = New System.Drawing.Size(44, 17)
         Me.Sensor4TempLabel.TabIndex = 42
-        Me.Sensor4TempLabel.Text = My.Resources.DefaultDecimal
+        Me.Sensor4TempLabel.Text = "00.00"
         '
         'Sensor5TempLabel
         '
@@ -488,9 +504,9 @@ Partial Class SetupForm
         Me.Sensor5TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Sensor5TempLabel.Location = New System.Drawing.Point(288, 352)
         Me.Sensor5TempLabel.Name = "Sensor5TempLabel"
-        Me.Sensor5TempLabel.Size = New System.Drawing.Size(52, 17)
+        Me.Sensor5TempLabel.Size = New System.Drawing.Size(44, 17)
         Me.Sensor5TempLabel.TabIndex = 43
-        Me.Sensor5TempLabel.Text = My.Resources.DefaultDecimal
+        Me.Sensor5TempLabel.Text = "00.00"
         '
         'Sensor6TempLabel
         '
@@ -498,25 +514,26 @@ Partial Class SetupForm
         Me.Sensor6TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Sensor6TempLabel.Location = New System.Drawing.Point(288, 400)
         Me.Sensor6TempLabel.Name = "Sensor6TempLabel"
-        Me.Sensor6TempLabel.Size = New System.Drawing.Size(52, 17)
+        Me.Sensor6TempLabel.Size = New System.Drawing.Size(44, 17)
         Me.Sensor6TempLabel.TabIndex = 44
-        Me.Sensor6TempLabel.Text = My.Resources.DefaultDecimal
+        Me.Sensor6TempLabel.Text = "00.00"
         '
         'SearchModeButton
         '
-        Me.SearchModeButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.SearchModeButton.Location = New System.Drawing.Point(24, 520)
+        Me.SearchModeButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.SearchModeButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.SearchModeButton.Location = New System.Drawing.Point(24, 504)
         Me.SearchModeButton.Name = "SearchModeButton"
-        Me.SearchModeButton.Size = New System.Drawing.Size(120, 30)
+        Me.SearchModeButton.Size = New System.Drawing.Size(274, 45)
         Me.SearchModeButton.TabIndex = 45
         Me.SearchModeButton.Text = "GO"
-        Me.SearchModeButton.UseVisualStyleBackColor = True
+        Me.SearchModeButton.UseVisualStyleBackColor = False
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(16, 472)
+        Me.Label16.Location = New System.Drawing.Point(16, 448)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(273, 31)
         Me.Label16.TabIndex = 46
@@ -574,11 +591,8 @@ Partial Class SetupForm
         Me.Controls.Add(Me.CloseButton)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "SetupForm"
-        Me.ShowIcon = False
-        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sensor Setup"
         Me.ResumeLayout(False)
         Me.PerformLayout()

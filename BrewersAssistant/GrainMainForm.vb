@@ -25,75 +25,84 @@ Public Class GrainMainForm
         Dim GrainNameString As String = GrainNameComboBox.Text
         GrainNameString = GrainNameString.Replace("'", "''")
         Dim mysqlString As String = "Select * from  Grains where GrainName='" & GrainNameString & "'"
-        Dim MyDataSet As New DataSet
-        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
-        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
-        MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
-        MyDataAdapter.Fill(MyDataSet, "Grains")
-        Dim GrainRow As DataRow = MyDataSet.Tables("Grains").Rows(0)
+        Using MyDataSet As New DataSet
+            Using MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+                Using cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
+                    MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
+                    MyDataAdapter.Fill(MyDataSet, "Grains")
+                    Dim GrainRow As DataRow = MyDataSet.Tables("Grains").Rows(0)
 
-        If Not GrainOrginTextBox.Text = "" Then
-            GrainRow("origin") = GrainOrginTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Grain Origin")
-            GoTo MyExit
-        End If
+                    If Not GrainOrginTextBox.Text = "" Then
+                        GrainRow("origin") = GrainOrginTextBox.Text
+                    Else
+                        MsgBox("Please Enter A Valid Value for:  Grain Origin")
+                        GoTo MyExit
+                    End If
 
-        If Not GrainTypeComboBox.Text = "" Then
-            GrainRow("Type") = GrainTypeComboBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Grain Origin")
-            GoTo MyExit
-        End If
+                    If Not GrainTypeComboBox.Text = "" Then
+                        GrainRow("Type") = GrainTypeComboBox.Text
+                    Else
+                        MsgBox("Please Enter A Valid Value for: Grain Origin")
+                        GoTo MyExit
+                    End If
 
-        If DigitChecker(SrmTextBox.Text) = True Then
-            GrainRow("ColorSrm") = CInt(SrmTextBox.Text)
-        Else
-            MsgBox("Please Enter A Valid Value for:  SRM Color")
-        End If
+                    If DigitChecker(SrmTextBox.Text, "SRM Color") = True Then
+                        GrainRow("ColorSrm") = CInt(SrmTextBox.Text)
+                    Else
+                        GoTo MyExit
+                    End If
 
-        If DigitChecker(PotentialSGTextBox.Text) = True Then
-            GrainRow("PotentialSG") = PotentialSGTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for: Potential Gravity")
-            GoTo MyExit
-        End If
+                    If DigitChecker(PotentialSGTextBox.Text, "Potential Gravity") = True Then
+                        GrainRow("PotentialSG") = PotentialSGTextBox.Text
+                    Else
+                        GoTo MyExit
+                    End If
 
-        Try
+                    Try
+                        MyDataAdapter.Update(MyDataSet, "Grains")
+                        MsgBox("Item Successfully Updated")
+                        GoTo myexit
+                    Catch
 
-            MyDataAdapter.Update(MyDataSet, "Grains")
-            MsgBox("Item Successfully Updated")
-            GoTo myexit
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+                    End Try
 myexit:
+                 
+                End Using
+               
 
-        MyDataAdapter.Dispose()
-        MyDataSet.Dispose()
-        cmd.Dispose()
+            End Using
+
+
+        End Using
+
 
     End Sub
     Private Sub GetSQLDBData(byval MySqlString As String, ByVal datacontrol As String)
-        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
-        Dim sqlCommand As New SqlCeCommand()
-        sqlConnection.Open()
-        sqlCommand.Connection = sqlConnection
-        sqlCommand.CommandText = MySqlString
-        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
-        If datacontrol = "Grains" Then
-            While myReader.Read()
-                GrainOrginTextBox.Text = myReader.Item("Origin").ToString
-                GrainTypeComboBox.Text = myReader.Item("Type").ToString
-                SrmTextBox.Text = myReader.Item("ColorSRM").ToString
-                PotentialSGTextBox.Text = myReader.Item("PotentialSG").ToString
-                GrainIDLabel.Text = myReader.Item("GrainID").ToString
-            End While
-        ElseIf datacontrol = "GrainName" Then
-            While myReader.Read()
-                GrainNameComboBox.Items.Add(myReader.Item("GrainName"))
-            End While
-        End If
+        Using sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+            Using sqlCommand As New SqlCeCommand()
+                sqlConnection.Open()
+                sqlCommand.Connection = sqlConnection
+                sqlCommand.CommandText = MySqlString
+                Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
+                If datacontrol = "Grains" Then
+                    While myReader.Read()
+                        GrainOrginTextBox.Text = myReader.Item("Origin").ToString
+                        GrainTypeComboBox.Text = myReader.Item("Type").ToString
+                        SrmTextBox.Text = myReader.Item("ColorSRM").ToString
+                        PotentialSGTextBox.Text = myReader.Item("PotentialSG").ToString
+                        GrainIDLabel.Text = myReader.Item("GrainID").ToString
+                    End While
+                ElseIf datacontrol = "GrainName" Then
+                    While myReader.Read()
+                        GrainNameComboBox.Items.Add(myReader.Item("GrainName"))
+                    End While
+                End If
+               
+            End Using
+
+        
+        End Using
+
 
     End Sub
    

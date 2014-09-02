@@ -3,27 +3,34 @@ Imports System.Configuration.ConfigurationManager
 
 Public Class HopMainForm
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal datacontrol As String)
-        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
-        Dim sqlCommand As New SqlCeCommand()
-        sqlConnection.Open()
-        sqlCommand.Connection = sqlConnection
-        sqlCommand.CommandText = MySqlString
-        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
-        If datacontrol = "Hops" Then
-            While myReader.Read()
-                HopOrginTextBox.Text = myReader.Item("HopOrigin").ToString
-                HopDescriptionTextBox.Text = myReader.Item("HopDescription").ToString
-                BitteringComboBox.Text = myReader.Item("HopBIttering").ToString
-                FinishingComboBox.Text = myReader.Item("HopFinishing").ToString
-                AlphaAcidTextBox.Text = myReader.Item("HopAlphaAcid").ToString
-                AromaComboBox.Text = myReader.Item("HopAroma").ToString
+        Using sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+            Using sqlCommand As New SqlCeCommand()
+                sqlConnection.Open()
+                sqlCommand.Connection = sqlConnection
+                sqlCommand.CommandText = MySqlString
+                Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
+                If datacontrol = "Hops" Then
+                    While myReader.Read()
+                        HopOrginTextBox.Text = myReader.Item("HopOrigin").ToString
+                        HopDescriptionTextBox.Text = myReader.Item("HopDescription").ToString
+                        BitteringComboBox.Text = myReader.Item("HopBIttering").ToString
+                        FinishingComboBox.Text = myReader.Item("HopFinishing").ToString
+                        AlphaAcidTextBox.Text = myReader.Item("HopAlphaAcid").ToString
+                        AromaComboBox.Text = myReader.Item("HopAroma").ToString
 
-            End While
-        ElseIf datacontrol = "HopName" Then
-            While myReader.Read()
-                HopNameComboBox.Items.Add(myReader.Item("HopName"))
-            End While
-        End If
+                    End While
+                ElseIf datacontrol = "HopName" Then
+                    While myReader.Read()
+                        HopNameComboBox.Items.Add(myReader.Item("HopName"))
+                    End While
+                End If
+
+
+
+            End Using
+         
+        End Using
+
 
     End Sub
   
@@ -40,64 +47,73 @@ Public Class HopMainForm
         Dim NameString As String = HopNameComboBox.Text
         NameString = NameString.Replace("'", "''")
         Dim mysqlString As String = "Select * from  Hops where HopName='" & NameString & "'"
-        Dim MyDataSet As New DataSet
-        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
-        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
-        MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
-        MyDataAdapter.Fill(MyDataSet, "Hops")
-        Dim HopRow As DataRow = MyDataSet.Tables("Hops").Rows(0)
+        Using MyDataSet As New DataSet
+            Using MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+                Using cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
+                    MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
+                    MyDataAdapter.Fill(MyDataSet, "Hops")
+                    Dim HopRow As DataRow = MyDataSet.Tables("Hops").Rows(0)
 
-        If Not HopOrginTextBox.Text = "" Then
-            HopRow("Hoporigin") = HopOrginTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Hop Origin")
-            GoTo MyExit
-        End If
+                    If Not HopOrginTextBox.Text = "" Then
+                        HopRow("Hoporigin") = HopOrginTextBox.Text
+                    Else
+                        MsgBox("Please Enter A Valid Value for:  Hop Origin")
+                        GoTo MyExit
+                    End If
 
-        If Not HopDescriptionTextBox.Text = "" Then
-            HopRow("HopDescription") = HopDescriptionTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  the Description")
-            GoTo MyExit
-        End If
+                    If Not HopDescriptionTextBox.Text = "" Then
+                        HopRow("HopDescription") = HopDescriptionTextBox.Text
+                    Else
+                        MsgBox("Please Enter A Valid Value for:  the Description")
+                        GoTo MyExit
+                    End If
 
-        If Not BitteringComboBox.Text = "" Then
-            HopRow("HopBittering") = BitteringComboBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Hop Bittering")
-        End If
+                    If Not BitteringComboBox.Text = "" Then
+                        HopRow("HopBittering") = BitteringComboBox.Text
+                    Else
+                        MsgBox("Please Enter A Valid Value for:  Hop Bittering")
+                    End If
 
-        If Not FinishingComboBox.Text = "" Then
-            HopRow("HopFinishing") = FinishingComboBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for: Hop Finishing")
-            GoTo MyExit
-        End If
-        If Not AromaComboBox.Text = "" Then
-            HopRow("HopAroma") = AromaComboBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for: Hop Aroma")
-            GoTo MyExit
-        End If
-
-        If DigitChecker(AlphaAcidTextBox.Text) = True Then
-            HopRow("HopAlphaAcid") = CDec(AlphaAcidTextBox.Text)
-        Else
-            MsgBox("Please Enter A Valid Value for:  Hop Alpha Acid")
-        End If
+                    If Not FinishingComboBox.Text = "" Then
+                        HopRow("HopFinishing") = FinishingComboBox.Text
+                    Else
+                        MsgBox("Please Enter A Valid Value for: Hop Finishing")
+                        GoTo MyExit
+                    End If
+                    If Not AromaComboBox.Text = "" Then
+                        HopRow("HopAroma") = AromaComboBox.Text
+                    Else
 
 
-        Try
+                    End If
 
-            MyDataAdapter.Update(MyDataSet, "Hops")
-            MsgBox("Item Successfully Updated")
-            GoTo myexit
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+                    If DigitChecker(AlphaAcidTextBox.Text, "Hop Alpha Acid") = True Then
+                        HopRow("HopAlphaAcid") = CDec(AlphaAcidTextBox.Text)
+
+                    End If
+
+
+                    Try
+
+                        MyDataAdapter.Update(MyDataSet, "Hops")
+                        MsgBox("Item Successfully Updated")
+
+                    Catch
+
+                      
+                    End Try
 myexit:
-        MyDataSet = Nothing
-        MyDataAdapter = Nothing
+                 
+
+
+                End Using
+             
+
+            End Using
+
+           
+        End Using
+
 
     End Sub
 

@@ -40,13 +40,14 @@ Partial Class CustomGrainsForm
         '
         'CloseButton
         '
-        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.CloseButton.Location = New System.Drawing.Point(488, 400)
+        Me.CloseButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(488, 504)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(120, 30)
+        Me.CloseButton.Size = New System.Drawing.Size(274, 45)
         Me.CloseButton.TabIndex = 0
         Me.CloseButton.Text = "Close"
-        Me.CloseButton.UseVisualStyleBackColor = True
+        Me.CloseButton.UseVisualStyleBackColor = False
         '
         'GrainNameTextBox
         '
@@ -105,13 +106,14 @@ Partial Class CustomGrainsForm
         '
         'AddButton
         '
-        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.AddButton.Location = New System.Drawing.Point(8, 296)
+        Me.AddButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.AddButton.Location = New System.Drawing.Point(16, 296)
         Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(328, 30)
+        Me.AddButton.Size = New System.Drawing.Size(274, 45)
         Me.AddButton.TabIndex = 8
         Me.AddButton.Text = "Add"
-        Me.AddButton.UseVisualStyleBackColor = True
+        Me.AddButton.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -119,7 +121,7 @@ Partial Class CustomGrainsForm
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label2.Location = New System.Drawing.Point(16, 64)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 17)
+        Me.Label2.Size = New System.Drawing.Size(46, 17)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Origin"
         '
@@ -181,7 +183,7 @@ Partial Class CustomGrainsForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(624, 446)
+        Me.ClientSize = New System.Drawing.Size(784, 566)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.MushMashComboBox)
         Me.Controls.Add(Me.Label5)

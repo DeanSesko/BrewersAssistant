@@ -117,7 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArduinoSetupString" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="CompleteBrewingSessionButtonTitle" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="CompleteBrewiningSessionButtonText" xml:space="preserve">
+    <value>Are you sure you want to finish this brew session?</value>
+  </data>
   <data name="DefaultDecimal" xml:space="preserve">
     <value>00.00</value>
+  </data>
+  <data name="DeleteSessionButtonText" xml:space="preserve">
+    <value>Are you sure you want to delete this record?</value>
+  </data>
+  <data name="DeleteSessionTitleText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="HLPumpOff" xml:space="preserve">
+    <value>g</value>
+  </data>
+  <data name="HLPumpON" xml:space="preserve">
+    <value>c</value>
+  </data>
+  <data name="MashButtonOffText" xml:space="preserve">
+    <value>Mash Pump Off</value>
+  </data>
+  <data name="MashButtonOnText" xml:space="preserve">
+    <value>Mash Pump Running</value>
+  </data>
+  <data name="MashPumpOff" xml:space="preserve">
+    <value>h</value>
+  </data>
+  <data name="MashPumpOn" xml:space="preserve">
+    <value>d</value>
+  </data>
+  <data name="RimButtonOffText" xml:space="preserve">
+    <value>RIM Heat Off</value>
+  </data>
+  <data name="RimButtonOnText" xml:space="preserve">
+    <value>RIM Heating</value>
+  </data>
+  <data name="RimOff" xml:space="preserve">
+    <value>b</value>
+  </data>
+  <data name="RimOn" xml:space="preserve">
+    <value>a</value>
   </data>
 </root>

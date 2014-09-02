@@ -30,18 +30,23 @@ Public Class CustomWortAdditionForm
 
     End Sub
     Private Sub CloseOut(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Closing
-        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
-        Dim sqlCommand As New SqlCeCommand()
-        sqlConnection.Open()
-        sqlCommand.Connection = sqlConnection
-        Dim mysqlString As String = "Select WortAdditionName from WortAdditions order by WortAdditionName"
-        sqlCommand.CommandText = mysqlString
-        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
-        While myReader.Read()
-            BrewMaintenanceForm.MiscWortAddNameComboBox.Items.Add(myReader.Item("WortAdditionName").ToString)
-        End While
-        myReader = Nothing
-        sqlConnection.Close()
+        Using sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+            Using sqlCommand As New SqlCeCommand()
+                sqlConnection.Open()
+                sqlCommand.Connection = sqlConnection
+                Dim mysqlString As String = "Select WortAdditionName from WortAdditions order by WortAdditionName"
+                sqlCommand.CommandText = mysqlString
+                Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
+                While myReader.Read()
+                    BrewMaintenanceForm.MiscWortAddNameComboBox.Items.Add(myReader.Item("WortAdditionName").ToString)
+                End While
+
+
+
+            End Using
+
+        End Using
+
     End Sub
 
 End Class

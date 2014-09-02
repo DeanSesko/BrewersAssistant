@@ -51,13 +51,14 @@ Partial Class GrainMainForm
         '
         'AddCustomGrainsButton
         '
-        Me.AddCustomGrainsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.AddCustomGrainsButton.Location = New System.Drawing.Point(24, 352)
+        Me.AddCustomGrainsButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.AddCustomGrainsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.AddCustomGrainsButton.Location = New System.Drawing.Point(24, 368)
         Me.AddCustomGrainsButton.Name = "AddCustomGrainsButton"
-        Me.AddCustomGrainsButton.Size = New System.Drawing.Size(320, 30)
+        Me.AddCustomGrainsButton.Size = New System.Drawing.Size(274, 45)
         Me.AddCustomGrainsButton.TabIndex = 307
         Me.AddCustomGrainsButton.Text = "Add Custom Grains"
-        Me.AddCustomGrainsButton.UseVisualStyleBackColor = True
+        Me.AddCustomGrainsButton.UseVisualStyleBackColor = False
         '
         'OriginLabel
         '
@@ -124,13 +125,14 @@ Partial Class GrainMainForm
         '
         'UpdateButton
         '
-        Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.UpdateButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.UpdateButton.Location = New System.Drawing.Point(24, 304)
         Me.UpdateButton.Name = "UpdateButton"
-        Me.UpdateButton.Size = New System.Drawing.Size(320, 30)
+        Me.UpdateButton.Size = New System.Drawing.Size(274, 45)
         Me.UpdateButton.TabIndex = 315
         Me.UpdateButton.Text = "Update"
-        Me.UpdateButton.UseVisualStyleBackColor = True
+        Me.UpdateButton.UseVisualStyleBackColor = False
         '
         'GrainOrginTextBox
         '
@@ -170,13 +172,14 @@ Partial Class GrainMainForm
         'ExitButton
         '
         Me.ExitButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ExitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ExitButton.Location = New System.Drawing.Point(648, 520)
+        Me.ExitButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ExitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.ExitButton.Location = New System.Drawing.Point(488, 504)
         Me.ExitButton.Name = "ExitButton"
-        Me.ExitButton.Size = New System.Drawing.Size(120, 30)
+        Me.ExitButton.Size = New System.Drawing.Size(274, 45)
         Me.ExitButton.TabIndex = 321
         Me.ExitButton.Text = "Close"
-        Me.ExitButton.UseVisualStyleBackColor = True
+        Me.ExitButton.UseVisualStyleBackColor = False
         '
         'Time
         '
@@ -212,6 +215,7 @@ Partial Class GrainMainForm
         Me.Controls.Add(Me.GrainNameComboBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "GrainMainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Grain Maintenance"
         Me.ResumeLayout(False)
         Me.PerformLayout()

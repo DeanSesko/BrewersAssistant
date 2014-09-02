@@ -3,6 +3,7 @@ Imports System.Configuration.ConfigurationManager
 
 Public Class BrewMaintenanceForm
     Private Sub BrewMaintenanceForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         Dim DataControl As String = "BeerName"
         Dim mysqlString As String = "Select BeerName from  BeerData"
         GetSQLDBData(mysqlString, DataControl)
@@ -47,7 +48,7 @@ Public Class BrewMaintenanceForm
 
     End Sub
     Private Sub DeleteBrewSessionData()
-        If MessageBox.Show("Are you sure you want to delete this record? ", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+        If MessageBox.Show(My.Resources.DeleteSessionButtonText, My.Resources.DeleteSessionTitleText, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.RightAlign, False) = Windows.Forms.DialogResult.No Then
         ElseIf (Windows.Forms.DialogResult.Yes) Then
             If Not BeerNameComboBox.Text = "" Then
                 Dim mysqlString As String = "Select SessionID from Brewsessions where beerID='" & BeerIDTextBox.Text & "'"
@@ -79,101 +80,105 @@ Public Class BrewMaintenanceForm
         Dim BeernameString As String = BeerNameComboBox.Text
         BeernameString = BeernameString.Replace("'", "''")
         Dim mysqlString As String = "Select * from  beerdata where Beername='" & BeernameString & "'"
-        Dim MyDataSet As New DataSet
-        Dim MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
-        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
-        MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
-        MyDataAdapter.Fill(MyDataSet, "beerdata")
-        Dim BeerRow As DataRow = MyDataSet.Tables("beerdata").Rows(0)
+        Using MyDataSet As New DataSet
+            Using MyDataAdapter = New SqlCeDataAdapter(mysqlString, My.Settings.BrewHelperDBConnectionString)
+                Using cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
+                    MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
+                    MyDataAdapter.Fill(MyDataSet, "beerdata")
+                    Dim BeerRow As DataRow = MyDataSet.Tables("beerdata").Rows(0)
 
-        If DigitChecker(BatchSizeTextBox.Text) = True Then
-            BeerRow("BatchSize") = BatchSizeTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Batch Size")
-            GoTo MyExit
-        End If
+                    If DigitChecker(BatchSizeTextBox.Text, "Batch Size") = True Then
+                        BeerRow("BatchSize") = BatchSizeTextBox.Text
+                    Else
 
-        If DigitChecker(WaterToGrainRatioTextBox.Text) = True Then
-            BeerRow("WatertoGrainRatio") = WaterToGrainRatioTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Water to Grain Ratio")
-            GoTo MyExit
-        End If
+                        GoTo MyExit
+                    End If
 
-      
+                    If DigitChecker(WaterToGrainRatioTextBox.Text, " Water to Grain Ratio") = True Then
+                        BeerRow("WatertoGrainRatio") = WaterToGrainRatioTextBox.Text
+                    Else
 
+                        GoTo MyExit
+                    End If
 
+                    If DigitChecker(BoilTimeTextBox.Text, " Boil Temp") = True Then
+                        BeerRow("BoilTime") = BoilTimeTextBox.Text
+                    Else
 
-        If DigitChecker(BoilTimeTextBox.Text) = True Then
-            BeerRow("BoilTime") = BoilTimeTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Boil Temp")
-            GoTo MyExit
-        End If
+                        GoTo MyExit
+                    End If
 
 
 
-        If DigitChecker(SpargeTemptextbox.Text) = True Then
-            BeerRow("SpargeTemp") = SpargeTemptextbox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Sparge Temperature")
-            GoTo MyExit
+                    If DigitChecker(SpargeTemptextbox.Text, "Sparge Temperature") = True Then
+                        BeerRow("SpargeTemp") = SpargeTemptextbox.Text
+                    Else
 
-        End If
-        If DigitChecker(VersionTextBox.Text) = True Then
-            BeerRow("Version") = VersionTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Version Number")
-            GoTo MyExit
+                        GoTo MyExit
 
-        End If
-        If DigitChecker(FermentationTempBox.Text) = True Then
-            BeerRow("FermentationTemp") = FermentationTempBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Fermentation Temperature")
-            GoTo MyExit
+                    End If
+                    If DigitChecker(VersionTextBox.Text, " Version Number") = True Then
+                        BeerRow("Version") = VersionTextBox.Text
+                    Else
 
-        End If
-        If DigitChecker(FGravityTextBox.Text) = True Then
-            BeerRow("RequiredFinalGravity") = FGravityTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Final Gravity")
-            GoTo MyExit
+                        GoTo MyExit
 
-        End If
-        If DigitChecker(OGravityTextBox.Text) = True Then
-            BeerRow("RequiredOriginalGravity") = OGravityTextBox.Text
-        Else
-            MsgBox("Please Enter A Valid Value for:  Original Gravity")
-            GoTo MyExit
-        End If
+                    End If
+                    If DigitChecker(FermentationTempBox.Text, " Fermentation Temperature") = True Then
+                        BeerRow("FermentationTemp") = FermentationTempBox.Text
+                    Else
 
-        If DigitChecker(BrewhouseEfficiencyBox.Text) = True Then
-            BeerRow("BrewHouseEfficiencies") = (BrewhouseEfficiencyBox.Text / 100)
-        Else
-            MsgBox("Please Enter A Valid Value for:  Brewhouse Efficiency")
-            GoTo MyExit
-        End If
+                        GoTo MyExit
 
-        If Not NotesTextBox.Text = "" Then
-            BeerRow("Notes") = NotesTextBox.Text
-        End If
-        If Not MashTypeComboBox.Text = "" Then
+                    End If
+                    If DigitChecker(FGravityTextBox.Text, " Final Gravity") = True Then
+                        BeerRow("RequiredFinalGravity") = FGravityTextBox.Text
+                    Else
 
-            BeerRow("MashType") = MashTypeComboBox.Text
-        End If
+                        GoTo MyExit
 
-        Try
-            MyDataAdapter.Update(MyDataSet, "beerdata")
+                    End If
+                    If DigitChecker(OGravityTextBox.Text, " Original Gravity") = True Then
+                        BeerRow("RequiredOriginalGravity") = OGravityTextBox.Text
+                    Else
 
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+                        GoTo MyExit
+                    End If
 
-        MyDataSet = Nothing
-        MyDataAdapter = Nothing
+                    If DigitChecker(BrewhouseEfficiencyBox.Text, "Brewhouse Efficiency") = True Then
+                        BeerRow("BrewHouseEfficiencies") = (BrewhouseEfficiencyBox.Text / 100)
+                    Else
+
+                        GoTo MyExit
+                    End If
+
+                    If Not NotesTextBox.Text = "" Then
+                        BeerRow("Notes") = NotesTextBox.Text
+                    End If
+                    If Not MashTypeComboBox.Text = "" Then
+
+                        BeerRow("MashType") = MashTypeComboBox.Text
+                    End If
+
+                    Try
+                        MyDataAdapter.Update(MyDataSet, "beerdata")
+
+                    Catch
+
+                     
+                    End Try
 
 MyExit:
+
+
+                End Using
+             
+            End Using
+
+
+        End Using
+
+
     End Sub
 
     Private Sub UpdateButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateButton.Click
@@ -205,11 +210,7 @@ MyExit:
         SRMLabel.Text = ""
         PotentialSG.Text = ""
     End Sub
-    Private Sub GrainListBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim mysqlString As String = "Select * from  BeerGrainBillView where GrainName='" & GrainWeightComboBox.Text & "'"
-        Dim DataControl As String = "GrainBillID"
-        GetSQLDBData(mysqlString, DataControl)
-    End Sub
+   
     Private Sub NewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewButton.Click
         NewBrewRecord()
     End Sub
@@ -242,7 +243,7 @@ MyExit:
         Dim DataControl As String = "GrainWeightsID"
         GetSQLDBData(mysqlString, DataControl)
     End Sub
-   
+
     Private Sub RemoveGrainButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemoveGrainButton.Click
         Try
             Dim mysqlString As String = "Delete From GrainBill where GrainBillID='" & GrainDataGridView.Item(0, GrainDataGridView.CurrentRow.Index).Value & "'"
@@ -269,169 +270,174 @@ MyExit:
         LoadData(mysqlString, DataControl)
     End Sub
     Private Sub GetSQLDBData(ByVal MySqlString As String, ByVal DataControl As String)
-        Dim sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
-        Dim sqlCommand As New SqlCeCommand()
-        sqlConnection.Open()
-        sqlCommand.Connection = sqlConnection
-        sqlCommand.CommandText = MySqlString
-        Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
+        Using sqlConnection As New SqlCeConnection(My.Settings.BrewHelperDBConnectionString)
+            Using sqlCommand As New SqlCeCommand()
+                sqlConnection.Open()
+                sqlCommand.Connection = sqlConnection
+                sqlCommand.CommandText = MySqlString
+                Dim myReader As SqlCeDataReader = sqlCommand.ExecuteReader()
 
 
-        If DataControl = "BeerName" Then
-            While myReader.Read()
-                BeerNameComboBox.Items.Add(myReader.Item("BeerName"))
-            End While
-        
-
-        ElseIf DataControl = "DeleteTemps" Then
-            While myReader.Read()
-
-                MySqlString = "Delete from Temperatures where SessionID='" & myReader.Item("SessionID") & "'"
-                UpdateDBSql(MySqlString)
-            End While
-        ElseIf DataControl = "BeerData" Then
-            While myReader.Read()
-                BeerIDTextBox.Text = myReader.Item("BeerID").ToString
-                BatchSizeTextBox.Text = myReader.Item("BatchSize").ToString
-                WaterToGrainRatioTextBox.Text = myReader.Item("WatertoGrainRatio").ToString
-               BoilTimeTextBox.Text = myReader.Item("BoilTime").ToString
-                VersionTextBox.Text = myReader.Item("Version").ToString
-                NotesTextBox.Text = myReader.Item("Notes").ToString
-                SpargeTemptextbox.Text = myReader.Item("SpargeTemp").ToString
-                OGravityTextBox.Text = myReader.Item("RequiredOriginalGravity").ToString
-                FGravityTextBox.Text = myReader.Item("RequiredFinalGravity").ToString
-                FermentationTempBox.Text = myReader.Item("FermentationTemp").ToString
-                MashTypeComboBox.Text = myReader.Item("MashType").ToString
-            End While
-        ElseIf DataControl = "GrainName" Then
-            While myReader.Read()
-                GrainNameComboBox.Items.Add(myReader.Item("GrainName"))
-            End While
-
-        ElseIf DataControl = "GrainPotenialSQ" Then
-          
-            Dim MYGrainptsindex As Decimal = 0
-            Dim myGrainWeight2 As Decimal = 0
-            Dim myWeightID As Integer
-            Dim GrainPotential As Decimal
-            Dim MYTotalGrainpts As Decimal
-
-            While myReader.Read()
-                myWeightID = myReader.Item("weightID")
-                MYGrainptsindex = myReader.Item("potentialSG")
-                If Not MYGrainptsindex = 0 Then
-                    MYGrainptsindex = (MYGrainptsindex - 1) * 1000
-                End If
-                If myWeightID = 1 Then
-                    myGrainWeight2 = myGrainWeight2 + myReader.Item("Weight")
-                    GrainPotential = (MYGrainptsindex * myReader.Item("Weight")) / CDec(BatchSizeTextBox.Text)
-                ElseIf myWeightID = 2 Then
-                    myGrainWeight2 = myGrainWeight2 + (myReader.Item("Weight") / 16)
-                    GrainPotential = (MYGrainptsindex * (myReader.Item("Weight") / 16)) / CDec(BatchSizeTextBox.Text)
-                End If
-                MYTotalGrainpts = MYTotalGrainpts + GrainPotential
-                MYGrainptsindex = 0
-                GrainPotential = 0
-            End While
-            Dim myGrainPotentialSG As Decimal = Math.Round(MYTotalGrainpts / 1000, 3) * (CDec(BrewhouseEfficiencyBox.Text) / 100) + 1
-            GrainPotentialLabel.Text = Math.Round(myGrainPotentialSG, 3)
+                If DataControl = "BeerName" Then
+                    While myReader.Read()
+                        BeerNameComboBox.Items.Add(myReader.Item("BeerName"))
+                    End While
 
 
-        ElseIf DataControl = "Grains" Then
+                ElseIf DataControl = "DeleteTemps" Then
+                    While myReader.Read()
 
+                        MySqlString = "Delete from Temperatures where SessionID='" & myReader.Item("SessionID") & "'"
+                        UpdateDBSql(MySqlString)
+                    End While
+                ElseIf DataControl = "BeerData" Then
+                    While myReader.Read()
+                        BeerIDTextBox.Text = myReader.Item("BeerID").ToString
+                        BatchSizeTextBox.Text = myReader.Item("BatchSize").ToString
+                        WaterToGrainRatioTextBox.Text = myReader.Item("WatertoGrainRatio").ToString
+                        BoilTimeTextBox.Text = myReader.Item("BoilTime").ToString
+                        VersionTextBox.Text = myReader.Item("Version").ToString
+                        NotesTextBox.Text = myReader.Item("Notes").ToString
+                        SpargeTemptextbox.Text = myReader.Item("SpargeTemp").ToString
+                        OGravityTextBox.Text = myReader.Item("RequiredOriginalGravity").ToString
+                        FGravityTextBox.Text = myReader.Item("RequiredFinalGravity").ToString
+                        FermentationTempBox.Text = myReader.Item("FermentationTemp").ToString
+                        MashTypeComboBox.Text = myReader.Item("MashType").ToString
+                    End While
+                ElseIf DataControl = "GrainName" Then
+                    While myReader.Read()
+                        GrainNameComboBox.Items.Add(myReader.Item("GrainName"))
+                    End While
 
-                While myReader.Read()
-                OriginLabel.Text = myReader.Item("Origin").ToString
-                    OriginLabel.Visible = True
-                TypeLabel.Text = myReader.Item("Type").ToString
-                    TypeLabel.Visible = True
-                    SRMLabel.Text = myReader.Item("ColorSRM").ToString
-                    SRMLabel.Visible = True
-                    PotentialSG.Text = myReader.Item("PotentialSG").ToString
-                    PotentialSG.Visible = True
-                    GrainID.Text = myReader.Item("GrainID").ToString
-                End While
-        ElseIf DataControl = "GrainWeight" Then
-                Dim myGrainWeight As Decimal = 0
-                Dim myWeightID As Integer
-                While myReader.Read()
-                    Try
+                ElseIf DataControl = "GrainPotenialSQ" Then
+
+                    Dim MYGrainptsindex As Decimal = 0
+                    Dim myGrainWeight2 As Decimal = 0
+                    Dim myWeightID As Integer
+                    Dim GrainPotential As Decimal
+                    Dim MYTotalGrainpts As Decimal
+
+                    While myReader.Read()
                         myWeightID = myReader.Item("weightID")
-
-                        If myWeightID = 1 Then
-                            myGrainWeight = myGrainWeight + myReader.Item("Weight")
-                        ElseIf myWeightID = 2 Then
-                            myGrainWeight = myGrainWeight + (myReader.Item("Weight") / 16)
+                        MYGrainptsindex = myReader.Item("potentialSG")
+                        If Not MYGrainptsindex = 0 Then
+                            MYGrainptsindex = (MYGrainptsindex - 1) * 1000
                         End If
-
-                    Catch
-                    End Try
-                End While
-                GrainWeightLabel.Text = Math.Round(myGrainWeight, 2)
-
-        ElseIf DataControl = "HopWeight" Then
-                Dim myHopWeight As Decimal = 0
-                Dim myWeightID As Integer
-                While myReader.Read()
-                    Try
-                        myWeightID = myReader.Item("weightID")
                         If myWeightID = 1 Then
-                            myHopWeight = myHopWeight + (myReader.Item("Weight") * 16)
+                            myGrainWeight2 = myGrainWeight2 + myReader.Item("Weight")
+                            GrainPotential = (MYGrainptsindex * myReader.Item("Weight")) / CDec(BatchSizeTextBox.Text)
                         ElseIf myWeightID = 2 Then
-                            myHopWeight = myHopWeight + myReader.Item("Weight")
+                            myGrainWeight2 = myGrainWeight2 + (myReader.Item("Weight") / 16)
+                            GrainPotential = (MYGrainptsindex * (myReader.Item("Weight") / 16)) / CDec(BatchSizeTextBox.Text)
                         End If
-                    Catch
-                    End Try
+                        MYTotalGrainpts = MYTotalGrainpts + GrainPotential
+                        MYGrainptsindex = 0
+                        GrainPotential = 0
+                    End While
+                    Dim myGrainPotentialSG As Decimal = Math.Round(MYTotalGrainpts / 1000, 3) * (CDec(BrewhouseEfficiencyBox.Text) / 100) + 1
+                    GrainPotentialLabel.Text = Math.Round(myGrainPotentialSG, 3)
 
-                End While
-                hopWeightLabel.Text = Math.Round(myHopWeight, 2)
-        ElseIf DataControl = "Weights" Then
-                While myReader.Read()
 
-                    GrainWeightComboBox.Items.Add(myReader.Item("Mass").ToString)
-                    HopsWeightComboBox.Items.Add(myReader.Item("Mass").ToString)
-                    MiscWortAddWeightUnitComboBox.Items.Add(myReader.Item("Mass").ToString)
-                End While
-        ElseIf DataControl = "GrainWeightsID" Then
-                While myReader.Read()
+                ElseIf DataControl = "Grains" Then
 
-                    GrainWeightID.Text = myReader.Item("WeightID").ToString
-                End While
-        ElseIf DataControl = "HopWeightsID" Then
-                While myReader.Read()
 
-                    HopWeightIDLabel.Text = myReader.Item("WeightID").ToString
-                End While
+                    While myReader.Read()
+                        OriginLabel.Text = myReader.Item("Origin").ToString
+                        OriginLabel.Visible = True
+                        TypeLabel.Text = myReader.Item("Type").ToString
+                        TypeLabel.Visible = True
+                        SRMLabel.Text = myReader.Item("ColorSRM").ToString
+                        SRMLabel.Visible = True
+                        PotentialSG.Text = myReader.Item("PotentialSG").ToString
+                        PotentialSG.Visible = True
+                        GrainID.Text = myReader.Item("GrainID").ToString
+                    End While
+                ElseIf DataControl = "GrainWeight" Then
+                    Dim myGrainWeight As Decimal = 0
+                    Dim myWeightID As Integer
+                    While myReader.Read()
+                        Try
+                            myWeightID = myReader.Item("weightID")
 
-        ElseIf DataControl = "MiscWortWeightsID" Then
-                While myReader.Read()
+                            If myWeightID = 1 Then
+                                myGrainWeight = myGrainWeight + myReader.Item("Weight")
+                            ElseIf myWeightID = 2 Then
+                                myGrainWeight = myGrainWeight + (myReader.Item("Weight") / 16)
+                            End If
 
-                    MiscWeightIDLabel.Text = myReader.Item("WeightID").ToString
-                End While
+                        Catch
+                        End Try
+                    End While
+                    GrainWeightLabel.Text = Math.Round(myGrainWeight, 2)
 
-        ElseIf DataControl = "HopNames" Then
-                While myReader.Read()
-                    HopNameComboBox.Items.Add(myReader.Item("HopName").ToString)
-                End While
+                ElseIf DataControl = "HopWeight" Then
+                    Dim myHopWeight As Decimal = 0
+                    Dim myWeightID As Integer
+                    While myReader.Read()
+                        Try
+                            myWeightID = myReader.Item("weightID")
+                            If myWeightID = 1 Then
+                                myHopWeight = myHopWeight + (myReader.Item("Weight") * 16)
+                            ElseIf myWeightID = 2 Then
+                                myHopWeight = myHopWeight + myReader.Item("Weight")
+                            End If
+                        Catch
+                        End Try
 
-        ElseIf DataControl = "Hops" Then
-                While myReader.Read()
-                    HopIDLabel.Text = myReader.Item("HopID").ToString
-                End While
-        ElseIf DataControl = "WortNames" Then
-                While myReader.Read()
-                    MiscWortAddNameComboBox.Items.Add(myReader.Item("WortAdditionName").ToString)
-                End While
-        ElseIf DataControl = "WortItems" Then
-                While myReader.Read()
-                    MiscWortIDLabel.Text = myReader.Item("WortAdditionsID").ToString
+                    End While
+                    hopWeightLabel.Text = Math.Round(myHopWeight, 2)
+                ElseIf DataControl = "Weights" Then
+                    While myReader.Read()
 
-                End While
-        End If
+                        GrainWeightComboBox.Items.Add(myReader.Item("Mass").ToString)
+                        HopsWeightComboBox.Items.Add(myReader.Item("Mass").ToString)
+                        MiscWortAddWeightUnitComboBox.Items.Add(myReader.Item("Mass").ToString)
+                    End While
+                ElseIf DataControl = "GrainWeightsID" Then
+                    While myReader.Read()
+
+                        GrainWeightID.Text = myReader.Item("WeightID").ToString
+                    End While
+                ElseIf DataControl = "HopWeightsID" Then
+                    While myReader.Read()
+
+                        HopWeightIDLabel.Text = myReader.Item("WeightID").ToString
+                    End While
+
+                ElseIf DataControl = "MiscWortWeightsID" Then
+                    While myReader.Read()
+
+                        MiscWeightIDLabel.Text = myReader.Item("WeightID").ToString
+                    End While
+
+                ElseIf DataControl = "HopNames" Then
+                    While myReader.Read()
+                        HopNameComboBox.Items.Add(myReader.Item("HopName").ToString)
+                    End While
+
+                ElseIf DataControl = "Hops" Then
+                    While myReader.Read()
+                        HopIDLabel.Text = myReader.Item("HopID").ToString
+                    End While
+                ElseIf DataControl = "WortNames" Then
+                    While myReader.Read()
+                        MiscWortAddNameComboBox.Items.Add(myReader.Item("WortAdditionName").ToString)
+                    End While
+                ElseIf DataControl = "WortItems" Then
+                    While myReader.Read()
+                        MiscWortIDLabel.Text = myReader.Item("WortAdditionsID").ToString
+
+                    End While
+                End If
 
                 myReader = Nothing
 
-                sqlConnection.Close()
+
+            End Using
+
+
+        End Using
+
     End Sub
     Private Sub HopComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HopNameComboBox.SelectedIndexChanged
         Dim HopName As String = HopNameComboBox.Text
@@ -450,9 +456,9 @@ MyExit:
     Private Sub AddHopsButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddHopsButton.Click
         If Not HopNameComboBox.Text = "" Then
             If Not HopWeightTextBox.Text = "" Then
-                If DigitChecker(HopWeightTextBox.Text) Then
-                    If DigitChecker(HopWeightIDLabel.Text) Then
-                        If DigitChecker(HopTimeTextBox.Text) Then
+                If DigitChecker(HopWeightTextBox.Text, "Hop Weight") Then
+                    If DigitChecker(HopWeightIDLabel.Text, "Hop Weight ID") Then
+                        If DigitChecker(HopTimeTextBox.Text, "Hop Time") Then
                             Try
                                 Dim mysqlString As String = "Insert into HopBill(BeerID,HopID,Weight,WeightID,AdditionTime) Values('" & CInt(BeerIDTextBox.Text) & "','" & CInt(HopIDLabel.Text) & "','" & CDec(HopWeightTextBox.Text) & "','" & CDec(HopWeightIDLabel.Text) & "','" & CDec(HopTimeTextBox.Text) & "')"
                                 UpdateDBSql(mysqlString)
@@ -495,8 +501,8 @@ MyExit:
                         DataControl = "GrainPotenialSQ"
                         mysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
                         GetSQLDBData(mysqlString, DataControl)
-                    Catch ex As Exception
-                        MsgBox(ex.Message)
+                    Catch
+
                     End Try
                 End If
             End If
@@ -590,55 +596,64 @@ MyExit:
     End Sub
 
     Private Sub LoadData(ByVal MysqlString As String, ByVal DataControl As String)
-        Dim MyDataAdapter = New SqlCeDataAdapter(MysqlString, My.Settings.BrewHelperDBConnectionString)
-        Dim cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
-        MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
-        Dim ds As New DataSet()
-        '   Try
-        If DataControl = "Hops" Then
+        Using MyDataAdapter = New SqlCeDataAdapter(MysqlString, My.Settings.BrewHelperDBConnectionString)
+            Using cmd As SqlCeCommandBuilder = New SqlCeCommandBuilder(MyDataAdapter)
+                MyDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
+                Using ds As New DataSet()
+                    Try
+                        If DataControl = "Hops" Then
 
-            If (MyDataAdapter.Fill(ds) > 0) Then
-                HopDataGridView.DataSource = ds.Tables(0)
-                HopDataGridView.Columns.Item(0).Visible = False
-            End If
-            MysqlString = "SELECT BeerData.BeerID, HopBill.WeightID, HopBill.Weight, HopBill.AdditionTime FROM Hops INNER JOIN HopBill ON Hops.HOPID = HopBill.HopID INNER JOIN BeerData ON HopBill.BeerID = BeerData.BeerID INNER JOIN Weights ON HopBill.WeightID = Weights.WeightID where BeerData.BeerID=' " & BeerIDTextBox.Text & "' order by AdditionTime desc"
+                            If (MyDataAdapter.Fill(ds) > 0) Then
+                                HopDataGridView.DataSource = ds.Tables(0)
+                                HopDataGridView.Columns.Item(0).Visible = False
+                            End If
+                            MysqlString = "SELECT BeerData.BeerID, HopBill.WeightID, HopBill.Weight, HopBill.AdditionTime FROM Hops INNER JOIN HopBill ON Hops.HOPID = HopBill.HopID INNER JOIN BeerData ON HopBill.BeerID = BeerData.BeerID INNER JOIN Weights ON HopBill.WeightID = Weights.WeightID where BeerData.BeerID=' " & BeerIDTextBox.Text & "' order by AdditionTime desc"
 
-            DataControl = "HopWeight"
-            GetSQLDBData(MysqlString, DataControl)
+                            DataControl = "HopWeight"
+                            GetSQLDBData(MysqlString, DataControl)
 
-        ElseIf DataControl = "Grains" Then
+                        ElseIf DataControl = "Grains" Then
 
-            If (MyDataAdapter.Fill(ds) > 0) Then
-                GrainDataGridView.DataSource = ds.Tables(0)
-                GrainDataGridView.Columns.Item(0).Visible = False
-            End If
+                            If (MyDataAdapter.Fill(ds) > 0) Then
+                                GrainDataGridView.DataSource = ds.Tables(0)
+                                GrainDataGridView.Columns.Item(0).Visible = False
+                            End If
 
-            MysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
+                            MysqlString = "Select Grains.potentialSG, GrainBill.weight, GrainBill.weightID FROM GrainBill INNER JOIN Grains ON GrainBill.GrainID =  Grains.GrainID INNER JOIN Weights ON GrainBill.WeightID = Weights.WeightID  where BeerID='" & BeerIDTextBox.Text & "'"
 
-            DataControl = "GrainWeight"
-            GetSQLDBData(MysqlString, DataControl)
+                            DataControl = "GrainWeight"
+                            GetSQLDBData(MysqlString, DataControl)
 
-        ElseIf DataControl = "Wort" Then
+                        ElseIf DataControl = "Wort" Then
 
-            If (MyDataAdapter.Fill(ds) > 0) Then
-                MiscWortDataGridView.DataSource = ds.Tables(0)
-                MiscWortDataGridView.Columns.Item(0).Visible = False
-            End If
+                            If (MyDataAdapter.Fill(ds) > 0) Then
+                                MiscWortDataGridView.DataSource = ds.Tables(0)
+                                MiscWortDataGridView.Columns.Item(0).Visible = False
+                            End If
 
-        ElseIf DataControl = "StepMash" Then
-            If (MyDataAdapter.Fill(ds) > 0) Then
-                StepMashDataGridView.Visible = True
-                StepMashDataGridView.DataSource = ds.Tables(0)
-                StepMashDataGridView.Columns.Item(0).Visible = False
-            Else
-                StepMashDataGridView.Visible = False
+                        ElseIf DataControl = "StepMash" Then
+                            If (MyDataAdapter.Fill(ds) > 0) Then
+                                StepMashDataGridView.Visible = True
+                                StepMashDataGridView.DataSource = ds.Tables(0)
+                                StepMashDataGridView.Columns.Item(0).Visible = False
+                            Else
+                                StepMashDataGridView.Visible = False
 
-            End If
-        End If
-        ' Catch ex As Exception
-        '    MessageBox.Show("Error connecting to the database")
-        ' End Try
-        ds.Dispose()
+                            End If
+                        End If
+                    Catch
+                        MsgBox("Error connecting to the database")
+                
+
+                    End Try
+
+                End Using
+
+            End Using
+
+        End Using
+
+
 
     End Sub
 

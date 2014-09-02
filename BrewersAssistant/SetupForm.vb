@@ -11,6 +11,7 @@ Public Class SetupForm
     Dim MSGBOXErrortitle = "Sensor Set Failure"
 
     Private Sub SetupForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+   
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         LoadSensors()
         OpenSerialPort()
@@ -52,7 +53,7 @@ Public Class SetupForm
                 _continue = True
                 Dim newthread As New System.Threading.Thread(AddressOf MyComReader)
                 newthread.Start()
-            Catch ex As Exception
+            Catch
                 MsgBox("Could not Oopen Serial Port or Comport Not Selected")
 
             End Try
@@ -65,7 +66,7 @@ Public Class SetupForm
         _continue = False
         Try
             _SerialPort.Close()
-        Catch ex As Exception
+        Catch
 
         End Try
 
@@ -125,7 +126,7 @@ Public Class SetupForm
     End Sub
 
     Private Sub SearchModeButton_Click(sender As Object, e As EventArgs) Handles SearchModeButton.Click
-        _SerialPort.WriteLine("s")
+        _SerialPort.WriteLine(My.Resources.ArduinoSetupString)
 
 
         Sensor1TempLabel.Text = My.Resources.DefaultDecimal

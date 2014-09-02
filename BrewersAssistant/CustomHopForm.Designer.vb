@@ -42,13 +42,14 @@ Partial Class CustomHopForm
         '
         'CloseButton
         '
-        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.CloseButton.Location = New System.Drawing.Point(488, 392)
+        Me.CloseButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(488, 504)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(120, 30)
+        Me.CloseButton.Size = New System.Drawing.Size(274, 45)
         Me.CloseButton.TabIndex = 9
         Me.CloseButton.Text = "Close"
-        Me.CloseButton.UseVisualStyleBackColor = True
+        Me.CloseButton.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -135,9 +136,9 @@ Partial Class CustomHopForm
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label4.Location = New System.Drawing.Point(20, 141)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 17)
+        Me.Label4.Size = New System.Drawing.Size(46, 17)
         Me.Label4.TabIndex = 58
-        Me.Label4.Text = "Orgin"
+        Me.Label4.Text = "Origin"
         '
         'Label2
         '
@@ -151,13 +152,14 @@ Partial Class CustomHopForm
         '
         'AddButton
         '
-        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.AddButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.AddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.AddButton.Location = New System.Drawing.Point(16, 368)
         Me.AddButton.Name = "AddButton"
-        Me.AddButton.Size = New System.Drawing.Size(328, 30)
+        Me.AddButton.Size = New System.Drawing.Size(274, 45)
         Me.AddButton.TabIndex = 55
         Me.AddButton.Text = "Add"
-        Me.AddButton.UseVisualStyleBackColor = True
+        Me.AddButton.UseVisualStyleBackColor = False
         '
         'HopOrginTextBox
         '
@@ -207,7 +209,7 @@ Partial Class CustomHopForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(624, 446)
+        Me.ClientSize = New System.Drawing.Size(784, 566)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.AromaComboBox)
@@ -227,7 +229,7 @@ Partial Class CustomHopForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "CustomHopForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Add Cutom Hops"
+        Me.Text = "Add Custom Hops"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -184,9 +184,9 @@ Partial Class BrewHistoryForm
         Me.TotalMinutes.Location = New System.Drawing.Point(392, 113)
         Me.TotalMinutes.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.TotalMinutes.Name = "TotalMinutes"
-        Me.TotalMinutes.Size = New System.Drawing.Size(58, 17)
+        Me.TotalMinutes.Size = New System.Drawing.Size(49, 17)
         Me.TotalMinutes.TabIndex = 187
-        Me.TotalMinutes.Text = My.Resources.DefaultDecimal
+        Me.TotalMinutes.Text = "00.00"
         '
         'ChillTempChangeLabel
         '
@@ -195,9 +195,9 @@ Partial Class BrewHistoryForm
         Me.ChillTempChangeLabel.Location = New System.Drawing.Point(172, 86)
         Me.ChillTempChangeLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.ChillTempChangeLabel.Name = "ChillTempChangeLabel"
-        Me.ChillTempChangeLabel.Size = New System.Drawing.Size(58, 17)
+        Me.ChillTempChangeLabel.Size = New System.Drawing.Size(49, 17)
         Me.ChillTempChangeLabel.TabIndex = 164
-        Me.ChillTempChangeLabel.Text = My.Resources.DefaultDecimal
+        Me.ChillTempChangeLabel.Text = "00.00"
         '
         'Label39
         '
@@ -228,9 +228,9 @@ Partial Class BrewHistoryForm
         Me.ChillPercentageLabel.Location = New System.Drawing.Point(392, 89)
         Me.ChillPercentageLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.ChillPercentageLabel.Name = "ChillPercentageLabel"
-        Me.ChillPercentageLabel.Size = New System.Drawing.Size(58, 17)
+        Me.ChillPercentageLabel.Size = New System.Drawing.Size(49, 17)
         Me.ChillPercentageLabel.TabIndex = 166
-        Me.ChillPercentageLabel.Text = My.Resources.DefaultDecimal
+        Me.ChillPercentageLabel.Text = "00.00"
         '
         'ChillPerMinutelabel
         '
@@ -239,9 +239,9 @@ Partial Class BrewHistoryForm
         Me.ChillPerMinutelabel.Location = New System.Drawing.Point(171, 113)
         Me.ChillPerMinutelabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.ChillPerMinutelabel.Name = "ChillPerMinutelabel"
-        Me.ChillPerMinutelabel.Size = New System.Drawing.Size(58, 17)
+        Me.ChillPerMinutelabel.Size = New System.Drawing.Size(49, 17)
         Me.ChillPerMinutelabel.TabIndex = 185
-        Me.ChillPerMinutelabel.Text = My.Resources.DefaultDecimal
+        Me.ChillPerMinutelabel.Text = "00.00"
         '
         'Label37
         '
@@ -261,9 +261,9 @@ Partial Class BrewHistoryForm
         Me.StartChillChillLabel.Location = New System.Drawing.Point(172, 55)
         Me.StartChillChillLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.StartChillChillLabel.Name = "StartChillChillLabel"
-        Me.StartChillChillLabel.Size = New System.Drawing.Size(58, 17)
+        Me.StartChillChillLabel.Size = New System.Drawing.Size(49, 17)
         Me.StartChillChillLabel.TabIndex = 242
-        Me.StartChillChillLabel.Text = My.Resources.DefaultDecimal
+        Me.StartChillChillLabel.Text = "00.00"
         '
         'StopChillChillLabel
         '
@@ -272,9 +272,9 @@ Partial Class BrewHistoryForm
         Me.StopChillChillLabel.Location = New System.Drawing.Point(392, 57)
         Me.StopChillChillLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.StopChillChillLabel.Name = "StopChillChillLabel"
-        Me.StopChillChillLabel.Size = New System.Drawing.Size(58, 17)
+        Me.StopChillChillLabel.Size = New System.Drawing.Size(49, 17)
         Me.StopChillChillLabel.TabIndex = 244
-        Me.StopChillChillLabel.Text = My.Resources.DefaultDecimal
+        Me.StopChillChillLabel.Text = "00.00"
         '
         'SessionIDTextBox
         '
@@ -358,9 +358,9 @@ Partial Class BrewHistoryForm
         Me.WortCollected.Location = New System.Drawing.Point(168, 200)
         Me.WortCollected.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.WortCollected.Name = "WortCollected"
-        Me.WortCollected.Size = New System.Drawing.Size(52, 16)
+        Me.WortCollected.Size = New System.Drawing.Size(44, 16)
         Me.WortCollected.TabIndex = 271
-        Me.WortCollected.Text = My.Resources.DefaultDecimal
+        Me.WortCollected.Text = "00.00"
         '
         'Label17
         '
@@ -376,12 +376,12 @@ Partial Class BrewHistoryForm
         'BeerNotes
         '
         Me.BeerNotes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BeerNotes.Location = New System.Drawing.Point(16, 656)
+        Me.BeerNotes.Location = New System.Drawing.Point(16, 400)
         Me.BeerNotes.Margin = New System.Windows.Forms.Padding(4)
         Me.BeerNotes.Multiline = True
         Me.BeerNotes.Name = "BeerNotes"
         Me.BeerNotes.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.BeerNotes.Size = New System.Drawing.Size(514, 36)
+        Me.BeerNotes.Size = New System.Drawing.Size(492, 36)
         Me.BeerNotes.TabIndex = 276
         '
         'Label44
@@ -402,17 +402,18 @@ Partial Class BrewHistoryForm
         Me.SpargeColltionRatio.Location = New System.Drawing.Point(168, 80)
         Me.SpargeColltionRatio.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.SpargeColltionRatio.Name = "SpargeColltionRatio"
-        Me.SpargeColltionRatio.Size = New System.Drawing.Size(52, 16)
+        Me.SpargeColltionRatio.Size = New System.Drawing.Size(44, 16)
         Me.SpargeColltionRatio.TabIndex = 279
-        Me.SpargeColltionRatio.Text = My.Resources.DefaultDecimal
+        Me.SpargeColltionRatio.Text = "00.00"
         '
         'CloseButton
         '
-        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CloseButton.Location = New System.Drawing.Point(1224, 688)
+        Me.CloseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(1048, 608)
         Me.CloseButton.Margin = New System.Windows.Forms.Padding(4)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(92, 33)
+        Me.CloseButton.Size = New System.Drawing.Size(274, 45)
         Me.CloseButton.TabIndex = 308
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
@@ -426,7 +427,7 @@ Partial Class BrewHistoryForm
         Me.BoilDurationLabel.Name = "BoilDurationLabel"
         Me.BoilDurationLabel.Size = New System.Drawing.Size(44, 16)
         Me.BoilDurationLabel.TabIndex = 315
-        Me.BoilDurationLabel.Text = My.Resources.DefaultDecimal
+        Me.BoilDurationLabel.Text = "00.00"
         '
         'Label43
         '
@@ -448,7 +449,7 @@ Partial Class BrewHistoryForm
         Me.BrewDuration.Name = "BrewDuration"
         Me.BrewDuration.Size = New System.Drawing.Size(44, 16)
         Me.BrewDuration.TabIndex = 324
-        Me.BrewDuration.Text = My.Resources.DefaultDecimal
+        Me.BrewDuration.Text = "00.00"
         '
         'Label49
         '
@@ -503,7 +504,7 @@ Partial Class BrewHistoryForm
         Me.BoilTimeLabel.Name = "BoilTimeLabel"
         Me.BoilTimeLabel.Size = New System.Drawing.Size(49, 17)
         Me.BoilTimeLabel.TabIndex = 343
-        Me.BoilTimeLabel.Text = My.Resources.DefaultDecimal
+        Me.BoilTimeLabel.Text = "00.00"
         '
         'SpargeTempLabel
         '
@@ -511,9 +512,9 @@ Partial Class BrewHistoryForm
         Me.SpargeTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpargeTempLabel.Location = New System.Drawing.Point(168, 104)
         Me.SpargeTempLabel.Name = "SpargeTempLabel"
-        Me.SpargeTempLabel.Size = New System.Drawing.Size(58, 17)
+        Me.SpargeTempLabel.Size = New System.Drawing.Size(49, 17)
         Me.SpargeTempLabel.TabIndex = 345
-        Me.SpargeTempLabel.Text = My.Resources.DefaultDecimal
+        Me.SpargeTempLabel.Text = "00.00"
         '
         'GrainBillLabel
         '
@@ -521,19 +522,19 @@ Partial Class BrewHistoryForm
         Me.GrainBillLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrainBillLabel.Location = New System.Drawing.Point(662, 49)
         Me.GrainBillLabel.Name = "GrainBillLabel"
-        Me.GrainBillLabel.Size = New System.Drawing.Size(35, 17)
+        Me.GrainBillLabel.Size = New System.Drawing.Size(49, 17)
         Me.GrainBillLabel.TabIndex = 347
-        Me.GrainBillLabel.Text = My.Resources.DefaultDecimal
+        Me.GrainBillLabel.Text = "00.00"
         '
         'BatchSizeLabel
         '
         Me.BatchSizeLabel.AutoSize = True
         Me.BatchSizeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BatchSizeLabel.Location = New System.Drawing.Point(261, 50)
+        Me.BatchSizeLabel.Location = New System.Drawing.Point(264, 48)
         Me.BatchSizeLabel.Name = "BatchSizeLabel"
-        Me.BatchSizeLabel.Size = New System.Drawing.Size(35, 17)
+        Me.BatchSizeLabel.Size = New System.Drawing.Size(49, 17)
         Me.BatchSizeLabel.TabIndex = 348
-        Me.BatchSizeLabel.Text = My.Resources.DefaultDecimal
+        Me.BatchSizeLabel.Text = "00.00"
         '
         'VersionLabel
         '
@@ -541,9 +542,9 @@ Partial Class BrewHistoryForm
         Me.VersionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VersionLabel.Location = New System.Drawing.Point(77, 50)
         Me.VersionLabel.Name = "VersionLabel"
-        Me.VersionLabel.Size = New System.Drawing.Size(35, 17)
+        Me.VersionLabel.Size = New System.Drawing.Size(49, 17)
         Me.VersionLabel.TabIndex = 349
-        Me.VersionLabel.Text = My.Resources.DefaultDecimal
+        Me.VersionLabel.Text = "00.00"
         '
         'WatertoGrainRatioLabel
         '
@@ -551,9 +552,9 @@ Partial Class BrewHistoryForm
         Me.WatertoGrainRatioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WatertoGrainRatioLabel.Location = New System.Drawing.Point(518, 50)
         Me.WatertoGrainRatioLabel.Name = "WatertoGrainRatioLabel"
-        Me.WatertoGrainRatioLabel.Size = New System.Drawing.Size(35, 17)
+        Me.WatertoGrainRatioLabel.Size = New System.Drawing.Size(49, 17)
         Me.WatertoGrainRatioLabel.TabIndex = 350
-        Me.WatertoGrainRatioLabel.Text = My.Resources.DefaultDecimal
+        Me.WatertoGrainRatioLabel.Text = "00.00"
         '
         'GrainTempLabel
         '
@@ -561,9 +562,9 @@ Partial Class BrewHistoryForm
         Me.GrainTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrainTempLabel.Location = New System.Drawing.Point(846, 50)
         Me.GrainTempLabel.Name = "GrainTempLabel"
-        Me.GrainTempLabel.Size = New System.Drawing.Size(35, 17)
+        Me.GrainTempLabel.Size = New System.Drawing.Size(49, 17)
         Me.GrainTempLabel.TabIndex = 361
-        Me.GrainTempLabel.Text = My.Resources.DefaultDecimal
+        Me.GrainTempLabel.Text = "00.00"
         '
         'Label21
         '
@@ -582,9 +583,9 @@ Partial Class BrewHistoryForm
         Me.OutDoorTempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OutDoorTempLabel.Location = New System.Drawing.Point(1049, 50)
         Me.OutDoorTempLabel.Name = "OutDoorTempLabel"
-        Me.OutDoorTempLabel.Size = New System.Drawing.Size(35, 17)
+        Me.OutDoorTempLabel.Size = New System.Drawing.Size(49, 17)
         Me.OutDoorTempLabel.TabIndex = 363
-        Me.OutDoorTempLabel.Text = My.Resources.DefaultDecimal
+        Me.OutDoorTempLabel.Text = "00.00"
         '
         'Label22
         '
@@ -639,7 +640,7 @@ Partial Class BrewHistoryForm
         Me.SpargeStopTimelabel.Name = "SpargeStopTimelabel"
         Me.SpargeStopTimelabel.Size = New System.Drawing.Size(49, 17)
         Me.SpargeStopTimelabel.TabIndex = 398
-        Me.SpargeStopTimelabel.Text = My.Resources.DefaultDecimal
+        Me.SpargeStopTimelabel.Text = "00.00"
         '
         'SpargeStartTimeLabel
         '
@@ -650,7 +651,7 @@ Partial Class BrewHistoryForm
         Me.SpargeStartTimeLabel.Name = "SpargeStartTimeLabel"
         Me.SpargeStartTimeLabel.Size = New System.Drawing.Size(49, 17)
         Me.SpargeStartTimeLabel.TabIndex = 399
-        Me.SpargeStartTimeLabel.Text = My.Resources.DefaultDecimal
+        Me.SpargeStartTimeLabel.Text = "00.00"
         '
         'Label1
         '
@@ -664,7 +665,7 @@ Partial Class BrewHistoryForm
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(16, 632)
+        Me.Label27.Location = New System.Drawing.Point(20, 375)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(76, 16)
         Me.Label27.TabIndex = 401
@@ -682,7 +683,7 @@ Partial Class BrewHistoryForm
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(560, 52)
+        Me.Label32.Location = New System.Drawing.Point(568, 48)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(79, 16)
         Me.Label32.TabIndex = 410
@@ -691,7 +692,7 @@ Partial Class BrewHistoryForm
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(118, 50)
+        Me.Label33.Location = New System.Drawing.Point(128, 48)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(133, 16)
         Me.Label33.TabIndex = 411
@@ -793,7 +794,7 @@ Partial Class BrewHistoryForm
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
         Me.MashChart.Series.Add(Series1)
-        Me.MashChart.Size = New System.Drawing.Size(774, 557)
+        Me.MashChart.Size = New System.Drawing.Size(757, 501)
         Me.MashChart.TabIndex = 422
         Me.MashChart.Text = "Mash Chart"
         Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold)
@@ -823,6 +824,7 @@ Partial Class BrewHistoryForm
         Me.TabPage1.Controls.Add(Me.Label24)
         Me.TabPage1.Controls.Add(Me.Label31)
         Me.TabPage1.Controls.Add(Me.Label30)
+        Me.TabPage1.Controls.Add(Me.Label27)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.Label29)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -835,6 +837,7 @@ Partial Class BrewHistoryForm
         Me.TabPage1.Controls.Add(Me.RequiredFinalGravityLabel)
         Me.TabPage1.Controls.Add(Me.FirstRunningsGravityLabel)
         Me.TabPage1.Controls.Add(Me.StartingGravityLabel)
+        Me.TabPage1.Controls.Add(Me.BeerNotes)
         Me.TabPage1.Controls.Add(Me.RequiredOriginalGravityLabel)
         Me.TabPage1.Controls.Add(Me.EstimatedAbv)
         Me.TabPage1.Controls.Add(Me.Label52)
@@ -852,9 +855,9 @@ Partial Class BrewHistoryForm
         Me.ActualABVLabel.Location = New System.Drawing.Point(177, 312)
         Me.ActualABVLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.ActualABVLabel.Name = "ActualABVLabel"
-        Me.ActualABVLabel.Size = New System.Drawing.Size(52, 16)
+        Me.ActualABVLabel.Size = New System.Drawing.Size(44, 16)
         Me.ActualABVLabel.TabIndex = 437
-        Me.ActualABVLabel.Text = My.Resources.DefaultDecimal
+        Me.ActualABVLabel.Text = "00.00"
         '
         'Label54
         '
@@ -908,7 +911,7 @@ Partial Class BrewHistoryForm
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(16, 152)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(137, 16)
+        Me.Label8.Size = New System.Drawing.Size(140, 16)
         Me.Label8.TabIndex = 431
         Me.Label8.Text = "First Running's Gravity"
         '
@@ -926,7 +929,7 @@ Partial Class BrewHistoryForm
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(16, 344)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(138, 16)
+        Me.Label5.Size = New System.Drawing.Size(141, 16)
         Me.Label5.TabIndex = 429
         Me.Label5.Text = "Brew House Efficiency"
         '
@@ -946,9 +949,9 @@ Partial Class BrewHistoryForm
         Me.PostBoilVolumeLabel.Location = New System.Drawing.Point(176, 88)
         Me.PostBoilVolumeLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.PostBoilVolumeLabel.Name = "PostBoilVolumeLabel"
-        Me.PostBoilVolumeLabel.Size = New System.Drawing.Size(58, 17)
+        Me.PostBoilVolumeLabel.Size = New System.Drawing.Size(49, 17)
         Me.PostBoilVolumeLabel.TabIndex = 427
-        Me.PostBoilVolumeLabel.Text = My.Resources.DefaultDecimal
+        Me.PostBoilVolumeLabel.Text = "00.00"
         '
         'PreBoilVolumeLabel
         '
@@ -957,9 +960,9 @@ Partial Class BrewHistoryForm
         Me.PreBoilVolumeLabel.Location = New System.Drawing.Point(176, 56)
         Me.PreBoilVolumeLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.PreBoilVolumeLabel.Name = "PreBoilVolumeLabel"
-        Me.PreBoilVolumeLabel.Size = New System.Drawing.Size(58, 17)
+        Me.PreBoilVolumeLabel.Size = New System.Drawing.Size(49, 17)
         Me.PreBoilVolumeLabel.TabIndex = 426
-        Me.PreBoilVolumeLabel.Text = My.Resources.DefaultDecimal
+        Me.PreBoilVolumeLabel.Text = "00.00"
         '
         'Label19
         '
@@ -968,7 +971,7 @@ Partial Class BrewHistoryForm
         Me.Label19.Location = New System.Drawing.Point(16, 16)
         Me.Label19.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(307, 24)
+        Me.Label19.Size = New System.Drawing.Size(312, 24)
         Me.Label19.TabIndex = 425
         Me.Label19.Text = "Gravities and Brew House Efficiency"
         '
@@ -978,9 +981,9 @@ Partial Class BrewHistoryForm
         Me.BrewHouseEfficienciesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BrewHouseEfficienciesLabel.Location = New System.Drawing.Point(176, 344)
         Me.BrewHouseEfficienciesLabel.Name = "BrewHouseEfficienciesLabel"
-        Me.BrewHouseEfficienciesLabel.Size = New System.Drawing.Size(35, 17)
+        Me.BrewHouseEfficienciesLabel.Size = New System.Drawing.Size(49, 17)
         Me.BrewHouseEfficienciesLabel.TabIndex = 424
-        Me.BrewHouseEfficienciesLabel.Text = My.Resources.DefaultDecimal
+        Me.BrewHouseEfficienciesLabel.Text = "00.00"
         '
         'FinalGravityLabel
         '
@@ -989,9 +992,9 @@ Partial Class BrewHistoryForm
         Me.FinalGravityLabel.Location = New System.Drawing.Point(176, 280)
         Me.FinalGravityLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.FinalGravityLabel.Name = "FinalGravityLabel"
-        Me.FinalGravityLabel.Size = New System.Drawing.Size(58, 17)
+        Me.FinalGravityLabel.Size = New System.Drawing.Size(49, 17)
         Me.FinalGravityLabel.TabIndex = 423
-        Me.FinalGravityLabel.Text = My.Resources.DefaultDecimal
+        Me.FinalGravityLabel.Text = "00.00"
         '
         'RequiredFinalGravityLabel
         '
@@ -1000,9 +1003,9 @@ Partial Class BrewHistoryForm
         Me.RequiredFinalGravityLabel.Location = New System.Drawing.Point(176, 184)
         Me.RequiredFinalGravityLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.RequiredFinalGravityLabel.Name = "RequiredFinalGravityLabel"
-        Me.RequiredFinalGravityLabel.Size = New System.Drawing.Size(58, 17)
+        Me.RequiredFinalGravityLabel.Size = New System.Drawing.Size(49, 17)
         Me.RequiredFinalGravityLabel.TabIndex = 422
-        Me.RequiredFinalGravityLabel.Text = My.Resources.DefaultDecimal
+        Me.RequiredFinalGravityLabel.Text = "00.00"
         '
         'FirstRunningsGravityLabel
         '
@@ -1011,9 +1014,9 @@ Partial Class BrewHistoryForm
         Me.FirstRunningsGravityLabel.Location = New System.Drawing.Point(176, 152)
         Me.FirstRunningsGravityLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.FirstRunningsGravityLabel.Name = "FirstRunningsGravityLabel"
-        Me.FirstRunningsGravityLabel.Size = New System.Drawing.Size(58, 17)
+        Me.FirstRunningsGravityLabel.Size = New System.Drawing.Size(49, 17)
         Me.FirstRunningsGravityLabel.TabIndex = 421
-        Me.FirstRunningsGravityLabel.Text = My.Resources.DefaultDecimal
+        Me.FirstRunningsGravityLabel.Text = "00.00"
         '
         'StartingGravityLabel
         '
@@ -1022,9 +1025,9 @@ Partial Class BrewHistoryForm
         Me.StartingGravityLabel.Location = New System.Drawing.Point(176, 216)
         Me.StartingGravityLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.StartingGravityLabel.Name = "StartingGravityLabel"
-        Me.StartingGravityLabel.Size = New System.Drawing.Size(58, 17)
+        Me.StartingGravityLabel.Size = New System.Drawing.Size(49, 17)
         Me.StartingGravityLabel.TabIndex = 420
-        Me.StartingGravityLabel.Text = My.Resources.DefaultDecimal
+        Me.StartingGravityLabel.Text = "00.00"
         '
         'RequiredOriginalGravityLabel
         '
@@ -1033,9 +1036,9 @@ Partial Class BrewHistoryForm
         Me.RequiredOriginalGravityLabel.Location = New System.Drawing.Point(176, 118)
         Me.RequiredOriginalGravityLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.RequiredOriginalGravityLabel.Name = "RequiredOriginalGravityLabel"
-        Me.RequiredOriginalGravityLabel.Size = New System.Drawing.Size(58, 17)
+        Me.RequiredOriginalGravityLabel.Size = New System.Drawing.Size(49, 17)
         Me.RequiredOriginalGravityLabel.TabIndex = 419
-        Me.RequiredOriginalGravityLabel.Text = My.Resources.DefaultDecimal
+        Me.RequiredOriginalGravityLabel.Text = "00.00"
         '
         'EstimatedAbv
         '
@@ -1044,9 +1047,9 @@ Partial Class BrewHistoryForm
         Me.EstimatedAbv.Location = New System.Drawing.Point(176, 248)
         Me.EstimatedAbv.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.EstimatedAbv.Name = "EstimatedAbv"
-        Me.EstimatedAbv.Size = New System.Drawing.Size(52, 16)
+        Me.EstimatedAbv.Size = New System.Drawing.Size(44, 16)
         Me.EstimatedAbv.TabIndex = 416
-        Me.EstimatedAbv.Text = My.Resources.DefaultDecimal
+        Me.EstimatedAbv.Text = "00.00"
         '
         'Label52
         '
@@ -1109,7 +1112,7 @@ Partial Class BrewHistoryForm
         Me.MashStartTimeLabel.Name = "MashStartTimeLabel"
         Me.MashStartTimeLabel.Size = New System.Drawing.Size(49, 17)
         Me.MashStartTimeLabel.TabIndex = 401
-        Me.MashStartTimeLabel.Text = My.Resources.DefaultDecimal
+        Me.MashStartTimeLabel.Text = "00.00"
         '
         'Label15
         '
@@ -1167,7 +1170,7 @@ Partial Class BrewHistoryForm
         Me.MashDurationLabel.Name = "MashDurationLabel"
         Me.MashDurationLabel.Size = New System.Drawing.Size(49, 17)
         Me.MashDurationLabel.TabIndex = 397
-        Me.MashDurationLabel.Text = My.Resources.DefaultDecimal
+        Me.MashDurationLabel.Text = "00.00"
         '
         'Label45
         '
@@ -1264,14 +1267,13 @@ Partial Class BrewHistoryForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1350, 734)
+        Me.ClientSize = New System.Drawing.Size(1338, 670)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MashChart)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label46)
         Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.Label32)
-        Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DeleteSessionButton)
         Me.Controls.Add(Me.OutDoorTempLabel)
@@ -1285,7 +1287,6 @@ Partial Class BrewHistoryForm
         Me.Controls.Add(Me.BrewDuration)
         Me.Controls.Add(Me.Label49)
         Me.Controls.Add(Me.CloseButton)
-        Me.Controls.Add(Me.BeerNotes)
         Me.Controls.Add(Me.BeerIDTextBox)
         Me.Controls.Add(Me.SessionIDTextBox)
         Me.Controls.Add(Me.BrewSessionsDateComboBox)

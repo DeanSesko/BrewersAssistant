@@ -56,33 +56,36 @@ Partial Class HopMainForm
         'ExitButton
         '
         Me.ExitButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ExitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ExitButton.Location = New System.Drawing.Point(640, 520)
+        Me.ExitButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ExitButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.ExitButton.Location = New System.Drawing.Point(488, 504)
         Me.ExitButton.Name = "ExitButton"
-        Me.ExitButton.Size = New System.Drawing.Size(120, 30)
+        Me.ExitButton.Size = New System.Drawing.Size(274, 45)
         Me.ExitButton.TabIndex = 336
         Me.ExitButton.Text = "Close"
-        Me.ExitButton.UseVisualStyleBackColor = True
+        Me.ExitButton.UseVisualStyleBackColor = False
         '
         'UpdateButton
         '
-        Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.UpdateButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.UpdateButton.Location = New System.Drawing.Point(24, 440)
         Me.UpdateButton.Name = "UpdateButton"
-        Me.UpdateButton.Size = New System.Drawing.Size(352, 30)
+        Me.UpdateButton.Size = New System.Drawing.Size(274, 45)
         Me.UpdateButton.TabIndex = 331
         Me.UpdateButton.Text = "Update"
-        Me.UpdateButton.UseVisualStyleBackColor = True
+        Me.UpdateButton.UseVisualStyleBackColor = False
         '
         'AddCustomHopsButton
         '
-        Me.AddCustomHopsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.AddCustomHopsButton.Location = New System.Drawing.Point(24, 488)
+        Me.AddCustomHopsButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.AddCustomHopsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.AddCustomHopsButton.Location = New System.Drawing.Point(24, 504)
         Me.AddCustomHopsButton.Name = "AddCustomHopsButton"
-        Me.AddCustomHopsButton.Size = New System.Drawing.Size(352, 30)
+        Me.AddCustomHopsButton.Size = New System.Drawing.Size(274, 45)
         Me.AddCustomHopsButton.TabIndex = 324
         Me.AddCustomHopsButton.Text = "Add Custom Hops"
-        Me.AddCustomHopsButton.UseVisualStyleBackColor = True
+        Me.AddCustomHopsButton.UseVisualStyleBackColor = False
         '
         'HopNameComboBox
         '
@@ -181,9 +184,9 @@ Partial Class HopMainForm
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Label4.Location = New System.Drawing.Point(24, 216)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 17)
+        Me.Label4.Size = New System.Drawing.Size(46, 17)
         Me.Label4.TabIndex = 348
-        Me.Label4.Text = "Orgin"
+        Me.Label4.Text = "Origin"
         '
         'Label2
         '
@@ -254,9 +257,11 @@ Partial Class HopMainForm
         Me.Controls.Add(Me.UpdateButton)
         Me.Controls.Add(Me.AddCustomHopsButton)
         Me.Controls.Add(Me.HopNameComboBox)
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "HopMainForm"
-        Me.Text = "HopMainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Hop Setup"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

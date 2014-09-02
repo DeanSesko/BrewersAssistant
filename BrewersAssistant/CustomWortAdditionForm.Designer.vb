@@ -32,13 +32,14 @@ Partial Class CustomWortAdditionForm
         '
         'MiscAddButton
         '
-        Me.MiscAddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.MiscAddButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.MiscAddButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.MiscAddButton.Location = New System.Drawing.Point(16, 128)
         Me.MiscAddButton.Name = "MiscAddButton"
-        Me.MiscAddButton.Size = New System.Drawing.Size(408, 30)
+        Me.MiscAddButton.Size = New System.Drawing.Size(274, 45)
         Me.MiscAddButton.TabIndex = 3
         Me.MiscAddButton.Text = "Add"
-        Me.MiscAddButton.UseVisualStyleBackColor = True
+        Me.MiscAddButton.UseVisualStyleBackColor = False
         '
         'Label8
         '
@@ -61,13 +62,14 @@ Partial Class CustomWortAdditionForm
         '
         'CloseButton
         '
-        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.CloseButton.Location = New System.Drawing.Point(488, 392)
+        Me.CloseButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(488, 496)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(120, 30)
+        Me.CloseButton.Size = New System.Drawing.Size(274, 45)
         Me.CloseButton.TabIndex = 4
         Me.CloseButton.Text = "Close"
-        Me.CloseButton.UseVisualStyleBackColor = True
+        Me.CloseButton.UseVisualStyleBackColor = False
         '
         'Label9
         '
@@ -92,7 +94,7 @@ Partial Class CustomWortAdditionForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(624, 446)
+        Me.ClientSize = New System.Drawing.Size(784, 566)
         Me.Controls.Add(Me.MiscAddButton)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.MiscWortItemDescriptionTextBox)
@@ -101,6 +103,7 @@ Partial Class CustomWortAdditionForm
         Me.Controls.Add(Me.MiscWortItemNameTextBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "CustomWortAdditionForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Custom Wort Additions"
         Me.ResumeLayout(False)
         Me.PerformLayout()

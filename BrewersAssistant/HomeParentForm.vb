@@ -4,13 +4,9 @@ Public Class HomeParentForm
 
 
 
-    Public Sub StartmyBrew()
-        ShowNewForm(BrewingSessionForm)
-    End Sub
-
 
     Private Sub StartBrewButton_Click_1(sender As System.Object, e As System.EventArgs) Handles StartBrewButton.Click
-        StartmyBrew()
+        ShowNewForm(BrewingSessionForm)
     End Sub
 
 
@@ -38,5 +34,9 @@ Public Class HomeParentForm
   
     Private Sub ExitBUtton_Click_1(sender As Object, e As EventArgs) Handles ExitBUtton.Click
         Application.Exit()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class
