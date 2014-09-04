@@ -694,7 +694,7 @@ Public Class BrewingSessionForm
 
     Private Sub tmrPID_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrPID.Tick
         If Overheated = True Then
-            _serialPort.Write("b")
+            _serialPort.Write(My.Resources.RimOff)
         Else
             millis = Now - starttime
             If (millis.TotalMilliseconds < lastPIDTime) Then
@@ -814,6 +814,7 @@ Public Class BrewingSessionForm
 
     End Sub
     Private Sub HLPumpOnOffButton_Click(sender As System.Object, e As System.EventArgs) Handles HLPumpOnOffButton.Click
+
         If HLPumpOnOffButton.Text = "HL Pump Off" Then
             HLPumpOnOffButton.Text = "HL Pump Running"
             HLPumpOnOffButton.BackColor = Color.Green
