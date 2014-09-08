@@ -23,6 +23,7 @@ Partial Class HomeParentForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HomeParentForm))
         Me.StartBrewButton = New System.Windows.Forms.Button()
         Me.BrewHistoryButton = New System.Windows.Forms.Button()
         Me.BrewMaintButton = New System.Windows.Forms.Button()
@@ -31,6 +32,7 @@ Partial Class HomeParentForm
         Me.ExitBUtton = New System.Windows.Forms.Button()
         Me.GrainsButton = New System.Windows.Forms.Button()
         Me.HopsButton = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,7 +44,7 @@ Partial Class HomeParentForm
         Me.StartBrewButton.Location = New System.Drawing.Point(16, 8)
         Me.StartBrewButton.Name = "StartBrewButton"
         Me.StartBrewButton.Size = New System.Drawing.Size(411, 61)
-        Me.StartBrewButton.TabIndex = 19
+        Me.StartBrewButton.TabIndex = 1
         Me.StartBrewButton.Text = "Start Brewing"
         Me.StartBrewButton.UseVisualStyleBackColor = False
         '
@@ -54,7 +56,7 @@ Partial Class HomeParentForm
         Me.BrewHistoryButton.Location = New System.Drawing.Point(16, 152)
         Me.BrewHistoryButton.Name = "BrewHistoryButton"
         Me.BrewHistoryButton.Size = New System.Drawing.Size(411, 61)
-        Me.BrewHistoryButton.TabIndex = 20
+        Me.BrewHistoryButton.TabIndex = 3
         Me.BrewHistoryButton.Text = "Brewing History"
         Me.BrewHistoryButton.UseVisualStyleBackColor = False
         '
@@ -66,7 +68,7 @@ Partial Class HomeParentForm
         Me.BrewMaintButton.Location = New System.Drawing.Point(16, 80)
         Me.BrewMaintButton.Name = "BrewMaintButton"
         Me.BrewMaintButton.Size = New System.Drawing.Size(411, 61)
-        Me.BrewMaintButton.TabIndex = 24
+        Me.BrewMaintButton.TabIndex = 2
         Me.BrewMaintButton.Text = "Modify My Brews"
         Me.BrewMaintButton.UseVisualStyleBackColor = False
         '
@@ -78,7 +80,7 @@ Partial Class HomeParentForm
         Me.SetupButton.Location = New System.Drawing.Point(16, 368)
         Me.SetupButton.Name = "SetupButton"
         Me.SetupButton.Size = New System.Drawing.Size(411, 61)
-        Me.SetupButton.TabIndex = 25
+        Me.SetupButton.TabIndex = 6
         Me.SetupButton.Text = "Setup"
         Me.SetupButton.UseVisualStyleBackColor = False
         '
@@ -87,6 +89,7 @@ Partial Class HomeParentForm
         Me.Panel1.AutoSize = True
         Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Panel1.BackColor = System.Drawing.SystemColors.Window
+        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.ExitBUtton)
         Me.Panel1.Controls.Add(Me.GrainsButton)
         Me.Panel1.Controls.Add(Me.HopsButton)
@@ -108,7 +111,7 @@ Partial Class HomeParentForm
         Me.ExitBUtton.Location = New System.Drawing.Point(776, 576)
         Me.ExitBUtton.Name = "ExitBUtton"
         Me.ExitBUtton.Size = New System.Drawing.Size(411, 61)
-        Me.ExitBUtton.TabIndex = 28
+        Me.ExitBUtton.TabIndex = 7
         Me.ExitBUtton.Text = "&Exit"
         Me.ExitBUtton.UseVisualStyleBackColor = False
         '
@@ -120,7 +123,7 @@ Partial Class HomeParentForm
         Me.GrainsButton.Location = New System.Drawing.Point(16, 296)
         Me.GrainsButton.Name = "GrainsButton"
         Me.GrainsButton.Size = New System.Drawing.Size(411, 61)
-        Me.GrainsButton.TabIndex = 27
+        Me.GrainsButton.TabIndex = 5
         Me.GrainsButton.Text = "Add / Modify Grains"
         Me.GrainsButton.UseVisualStyleBackColor = False
         '
@@ -132,9 +135,18 @@ Partial Class HomeParentForm
         Me.HopsButton.Location = New System.Drawing.Point(16, 224)
         Me.HopsButton.Name = "HopsButton"
         Me.HopsButton.Size = New System.Drawing.Size(411, 61)
-        Me.HopsButton.TabIndex = 26
+        Me.HopsButton.TabIndex = 4
         Me.HopsButton.Text = "Add / Modify Hops"
         Me.HopsButton.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(776, 24)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(408, 416)
+        Me.Panel2.TabIndex = 8
         '
         'HomeParentForm
         '
@@ -160,5 +172,6 @@ Partial Class HomeParentForm
     Friend WithEvents GrainsButton As System.Windows.Forms.Button
     Friend WithEvents HopsButton As System.Windows.Forms.Button
     Friend WithEvents ExitBUtton As System.Windows.Forms.Button
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
 
 End Class

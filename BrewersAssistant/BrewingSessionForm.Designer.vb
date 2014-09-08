@@ -23,9 +23,9 @@ Partial Class BrewingSessionForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.BoilTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BrewSessionsDateComboBox = New System.Windows.Forms.ComboBox()
         Me.ContinueBrewButton = New System.Windows.Forms.Button()
@@ -79,6 +79,9 @@ Partial Class BrewingSessionForm
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.CalculatorsTab = New System.Windows.Forms.TabPage()
+        Me.LiquidLevelBox = New System.Windows.Forms.NumericUpDown()
+        Me.VesselHeightBox = New System.Windows.Forms.NumericUpDown()
+        Me.VesselDiameterBox = New System.Windows.Forms.NumericUpDown()
         Me.CurrentWortTemp = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
@@ -150,9 +153,6 @@ Partial Class BrewingSessionForm
         Me.SetKettleTempValueBox = New System.Windows.Forms.NumericUpDown()
         Me.StepMashTimeLabel = New System.Windows.Forms.Label()
         Me.CloseButton = New System.Windows.Forms.Button()
-        Me.VesselDiameterBox = New System.Windows.Forms.NumericUpDown()
-        Me.VesselHeightBox = New System.Windows.Forms.NumericUpDown()
-        Me.LiquidLevelBox = New System.Windows.Forms.NumericUpDown()
         Me.TabControl1.SuspendLayout()
         Me.BeerInfo.SuspendLayout()
         CType(Me.GrainTempTextBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,6 +163,9 @@ Partial Class BrewingSessionForm
         CType(Me.HopDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StepMashGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CalculatorsTab.SuspendLayout()
+        CType(Me.LiquidLevelBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VesselHeightBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VesselDiameterBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.HlTunPanel.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -173,9 +176,6 @@ Partial Class BrewingSessionForm
         CType(Me.TempatureChart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HLSetTEMPBOX, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SetKettleTempValueBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VesselDiameterBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VesselHeightBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LiquidLevelBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BoilTimer
@@ -230,7 +230,7 @@ Partial Class BrewingSessionForm
         Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.BeerInfo)
         Me.TabControl1.Controls.Add(Me.BeerTables)
         Me.TabControl1.Controls.Add(Me.CalculatorsTab)
@@ -239,7 +239,7 @@ Partial Class BrewingSessionForm
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.Padding = New System.Drawing.Point(6, 0)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(767, 803)
+        Me.TabControl1.Size = New System.Drawing.Size(767, 800)
         Me.TabControl1.TabIndex = 191
         '
         'BeerInfo
@@ -284,7 +284,7 @@ Partial Class BrewingSessionForm
         Me.BeerInfo.Controls.Add(Me.GrainLabel)
         Me.BeerInfo.Location = New System.Drawing.Point(4, 30)
         Me.BeerInfo.Name = "BeerInfo"
-        Me.BeerInfo.Size = New System.Drawing.Size(759, 769)
+        Me.BeerInfo.Size = New System.Drawing.Size(759, 766)
         Me.BeerInfo.TabIndex = 5
         Me.BeerInfo.Text = "Beer Info"
         '
@@ -338,7 +338,7 @@ Partial Class BrewingSessionForm
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.Label19.Location = New System.Drawing.Point(368, 56)
+        Me.Label19.Location = New System.Drawing.Point(336, 8)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(145, 25)
         Me.Label19.TabIndex = 473
@@ -434,10 +434,10 @@ Partial Class BrewingSessionForm
         Me.NotesTextBox.BackColor = System.Drawing.SystemColors.Control
         Me.NotesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NotesTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NotesTextBox.Location = New System.Drawing.Point(368, 96)
+        Me.NotesTextBox.Location = New System.Drawing.Point(344, 56)
         Me.NotesTextBox.Multiline = True
         Me.NotesTextBox.Name = "NotesTextBox"
-        Me.NotesTextBox.Size = New System.Drawing.Size(736, 64)
+        Me.NotesTextBox.Size = New System.Drawing.Size(392, 64)
         Me.NotesTextBox.TabIndex = 460
         '
         'StartingGravityTextBox
@@ -659,7 +659,7 @@ Partial Class BrewingSessionForm
         Me.BeerTables.Location = New System.Drawing.Point(4, 30)
         Me.BeerTables.Name = "BeerTables"
         Me.BeerTables.Padding = New System.Windows.Forms.Padding(3)
-        Me.BeerTables.Size = New System.Drawing.Size(759, 769)
+        Me.BeerTables.Size = New System.Drawing.Size(759, 766)
         Me.BeerTables.TabIndex = 0
         Me.BeerTables.Text = "Beer Tables"
         '
@@ -699,7 +699,7 @@ Partial Class BrewingSessionForm
         Me.GrainBillGridView.ShowCellToolTips = False
         Me.GrainBillGridView.ShowEditingIcon = False
         Me.GrainBillGridView.ShowRowErrors = False
-        Me.GrainBillGridView.Size = New System.Drawing.Size(735, 96)
+        Me.GrainBillGridView.Size = New System.Drawing.Size(735, 14)
         Me.GrainBillGridView.TabIndex = 411
         '
         'Label18
@@ -858,9 +858,39 @@ Partial Class BrewingSessionForm
         Me.CalculatorsTab.Location = New System.Drawing.Point(4, 30)
         Me.CalculatorsTab.Name = "CalculatorsTab"
         Me.CalculatorsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.CalculatorsTab.Size = New System.Drawing.Size(759, 769)
+        Me.CalculatorsTab.Size = New System.Drawing.Size(759, 766)
         Me.CalculatorsTab.TabIndex = 4
         Me.CalculatorsTab.Text = "Calculators"
+        '
+        'LiquidLevelBox
+        '
+        Me.LiquidLevelBox.DecimalPlaces = 2
+        Me.LiquidLevelBox.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
+        Me.LiquidLevelBox.Location = New System.Drawing.Point(192, 416)
+        Me.LiquidLevelBox.Name = "LiquidLevelBox"
+        Me.LiquidLevelBox.Size = New System.Drawing.Size(104, 26)
+        Me.LiquidLevelBox.TabIndex = 424
+        Me.LiquidLevelBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'VesselHeightBox
+        '
+        Me.VesselHeightBox.DecimalPlaces = 2
+        Me.VesselHeightBox.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
+        Me.VesselHeightBox.Location = New System.Drawing.Point(192, 384)
+        Me.VesselHeightBox.Name = "VesselHeightBox"
+        Me.VesselHeightBox.Size = New System.Drawing.Size(104, 26)
+        Me.VesselHeightBox.TabIndex = 423
+        Me.VesselHeightBox.Value = New Decimal(New Integer() {14, 0, 0, 0})
+        '
+        'VesselDiameterBox
+        '
+        Me.VesselDiameterBox.DecimalPlaces = 2
+        Me.VesselDiameterBox.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
+        Me.VesselDiameterBox.Location = New System.Drawing.Point(192, 352)
+        Me.VesselDiameterBox.Name = "VesselDiameterBox"
+        Me.VesselDiameterBox.Size = New System.Drawing.Size(104, 26)
+        Me.VesselDiameterBox.TabIndex = 422
+        Me.VesselDiameterBox.Value = New Decimal(New Integer() {14, 0, 0, 0})
         '
         'CurrentWortTemp
         '
@@ -1197,6 +1227,7 @@ Partial Class BrewingSessionForm
         '
         Me.MyTimer.AutoSize = True
         Me.MyTimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 75.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MyTimer.ForeColor = System.Drawing.Color.Black
         Me.MyTimer.Location = New System.Drawing.Point(888, 72)
         Me.MyTimer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MyTimer.Name = "MyTimer"
@@ -1569,19 +1600,19 @@ Partial Class BrewingSessionForm
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.TempatureChart.BorderlineColor = System.Drawing.Color.Black
         Me.TempatureChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea2.Name = "ChartArea1"
-        Me.TempatureChart.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.TempatureChart.Legends.Add(Legend2)
-        Me.TempatureChart.Location = New System.Drawing.Point(12, 580)
+        ChartArea1.Name = "ChartArea1"
+        Me.TempatureChart.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.TempatureChart.Legends.Add(Legend1)
+        Me.TempatureChart.Location = New System.Drawing.Point(8, 584)
         Me.TempatureChart.Name = "TempatureChart"
-        Me.TempatureChart.Size = New System.Drawing.Size(860, 424)
+        Me.TempatureChart.Size = New System.Drawing.Size(860, 476)
         Me.TempatureChart.TabIndex = 418
         Me.TempatureChart.Text = "MashChart"
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Title2.Name = "Title1"
-        Title2.Text = "Temperature Chart"
-        Me.TempatureChart.Titles.Add(Title2)
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Title1.Name = "Title1"
+        Title1.Text = "Temperature Chart"
+        Me.TempatureChart.Titles.Add(Title1)
         '
         'HLSetTEMPBOX
         '
@@ -1620,43 +1651,13 @@ Partial Class BrewingSessionForm
         Me.CloseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CloseButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.CloseButton.Location = New System.Drawing.Point(1373, 1015)
+        Me.CloseButton.Location = New System.Drawing.Point(1376, 1016)
         Me.CloseButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(274, 45)
         Me.CloseButton.TabIndex = 423
         Me.CloseButton.Text = "&Close"
         Me.CloseButton.UseVisualStyleBackColor = False
-        '
-        'VesselDiameterBox
-        '
-        Me.VesselDiameterBox.DecimalPlaces = 2
-        Me.VesselDiameterBox.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
-        Me.VesselDiameterBox.Location = New System.Drawing.Point(192, 352)
-        Me.VesselDiameterBox.Name = "VesselDiameterBox"
-        Me.VesselDiameterBox.Size = New System.Drawing.Size(104, 26)
-        Me.VesselDiameterBox.TabIndex = 422
-        Me.VesselDiameterBox.Value = New Decimal(New Integer() {14, 0, 0, 0})
-        '
-        'VesselHeightBox
-        '
-        Me.VesselHeightBox.DecimalPlaces = 2
-        Me.VesselHeightBox.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
-        Me.VesselHeightBox.Location = New System.Drawing.Point(192, 384)
-        Me.VesselHeightBox.Name = "VesselHeightBox"
-        Me.VesselHeightBox.Size = New System.Drawing.Size(104, 26)
-        Me.VesselHeightBox.TabIndex = 423
-        Me.VesselHeightBox.Value = New Decimal(New Integer() {14, 0, 0, 0})
-        '
-        'LiquidLevelBox
-        '
-        Me.LiquidLevelBox.DecimalPlaces = 2
-        Me.LiquidLevelBox.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
-        Me.LiquidLevelBox.Location = New System.Drawing.Point(192, 416)
-        Me.LiquidLevelBox.Name = "LiquidLevelBox"
-        Me.LiquidLevelBox.Size = New System.Drawing.Size(104, 26)
-        Me.LiquidLevelBox.TabIndex = 424
-        Me.LiquidLevelBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'BrewingSessionForm
         '
@@ -1720,6 +1721,9 @@ Partial Class BrewingSessionForm
         CType(Me.StepMashGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CalculatorsTab.ResumeLayout(False)
         Me.CalculatorsTab.PerformLayout()
+        CType(Me.LiquidLevelBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VesselHeightBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VesselDiameterBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.HlTunPanel.ResumeLayout(False)
         Me.HlTunPanel.PerformLayout()
         Me.Panel8.ResumeLayout(False)
@@ -1736,9 +1740,6 @@ Partial Class BrewingSessionForm
         CType(Me.TempatureChart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HLSetTEMPBOX, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SetKettleTempValueBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VesselDiameterBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VesselHeightBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LiquidLevelBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

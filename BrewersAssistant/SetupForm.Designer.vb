@@ -74,6 +74,7 @@ Partial Class SetupForm
         Me.CloseButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CloseButton.ForeColor = System.Drawing.Color.Black
         Me.CloseButton.Location = New System.Drawing.Point(488, 504)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(274, 45)
@@ -83,8 +84,10 @@ Partial Class SetupForm
         '
         'Sensor1ComboBox
         '
+        Me.Sensor1ComboBox.BackColor = System.Drawing.Color.White
         Me.Sensor1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Sensor1ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor1ComboBox.ForeColor = System.Drawing.Color.Black
         Me.Sensor1ComboBox.FormattingEnabled = True
         Me.Sensor1ComboBox.Items.AddRange(New Object() {"", "HL", "Kettle", "Mash", "MiscTemp", "OverHeatTemp", "RimTemp"})
         Me.Sensor1ComboBox.Location = New System.Drawing.Point(112, 160)
@@ -96,7 +99,9 @@ Partial Class SetupForm
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(248, 160)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(16, 17)
@@ -106,7 +111,9 @@ Partial Class SetupForm
         'Sensor1Label
         '
         Me.Sensor1Label.AutoSize = True
+        Me.Sensor1Label.BackColor = System.Drawing.Color.White
         Me.Sensor1Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor1Label.ForeColor = System.Drawing.Color.Black
         Me.Sensor1Label.Location = New System.Drawing.Point(24, 160)
         Me.Sensor1Label.Name = "Sensor1Label"
         Me.Sensor1Label.Size = New System.Drawing.Size(65, 17)
@@ -117,6 +124,7 @@ Partial Class SetupForm
         '
         Me.SetSensor1Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor1Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SetSensor1Button.ForeColor = System.Drawing.Color.Black
         Me.SetSensor1Button.Location = New System.Drawing.Point(376, 160)
         Me.SetSensor1Button.Name = "SetSensor1Button"
         Me.SetSensor1Button.Size = New System.Drawing.Size(120, 30)
@@ -128,6 +136,7 @@ Partial Class SetupForm
         '
         Me.ClearSensor1Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor1Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ClearSensor1Button.ForeColor = System.Drawing.Color.Black
         Me.ClearSensor1Button.Location = New System.Drawing.Point(552, 160)
         Me.ClearSensor1Button.Name = "ClearSensor1Button"
         Me.ClearSensor1Button.Size = New System.Drawing.Size(120, 30)
@@ -139,6 +148,7 @@ Partial Class SetupForm
         '
         Me.ClearSensor2Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor2Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ClearSensor2Button.ForeColor = System.Drawing.Color.Black
         Me.ClearSensor2Button.Location = New System.Drawing.Point(552, 208)
         Me.ClearSensor2Button.Name = "ClearSensor2Button"
         Me.ClearSensor2Button.Size = New System.Drawing.Size(120, 30)
@@ -150,6 +160,7 @@ Partial Class SetupForm
         '
         Me.SetSensor2Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor2Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SetSensor2Button.ForeColor = System.Drawing.Color.Black
         Me.SetSensor2Button.Location = New System.Drawing.Point(376, 208)
         Me.SetSensor2Button.Name = "SetSensor2Button"
         Me.SetSensor2Button.Size = New System.Drawing.Size(120, 30)
@@ -160,7 +171,9 @@ Partial Class SetupForm
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(24, 208)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(65, 17)
@@ -170,7 +183,9 @@ Partial Class SetupForm
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(248, 208)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(16, 17)
@@ -179,8 +194,10 @@ Partial Class SetupForm
         '
         'Sensor2ComboBox
         '
+        Me.Sensor2ComboBox.BackColor = System.Drawing.Color.White
         Me.Sensor2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Sensor2ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor2ComboBox.ForeColor = System.Drawing.Color.Black
         Me.Sensor2ComboBox.FormattingEnabled = True
         Me.Sensor2ComboBox.Items.AddRange(New Object() {"", "HL", "Kettle", "Mash", "MiscTemp", "OverHeatTemp", "RimTemp"})
         Me.Sensor2ComboBox.Location = New System.Drawing.Point(112, 208)
@@ -193,6 +210,7 @@ Partial Class SetupForm
         '
         Me.ClearSensor3Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor3Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ClearSensor3Button.ForeColor = System.Drawing.Color.Black
         Me.ClearSensor3Button.Location = New System.Drawing.Point(552, 256)
         Me.ClearSensor3Button.Name = "ClearSensor3Button"
         Me.ClearSensor3Button.Size = New System.Drawing.Size(120, 30)
@@ -204,6 +222,7 @@ Partial Class SetupForm
         '
         Me.SetSensor3Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor3Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SetSensor3Button.ForeColor = System.Drawing.Color.Black
         Me.SetSensor3Button.Location = New System.Drawing.Point(376, 256)
         Me.SetSensor3Button.Name = "SetSensor3Button"
         Me.SetSensor3Button.Size = New System.Drawing.Size(120, 30)
@@ -214,7 +233,9 @@ Partial Class SetupForm
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(24, 256)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(65, 17)
@@ -224,7 +245,9 @@ Partial Class SetupForm
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(248, 256)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(16, 17)
@@ -233,8 +256,10 @@ Partial Class SetupForm
         '
         'Sensor3ComboBox
         '
+        Me.Sensor3ComboBox.BackColor = System.Drawing.Color.White
         Me.Sensor3ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Sensor3ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor3ComboBox.ForeColor = System.Drawing.Color.Black
         Me.Sensor3ComboBox.FormattingEnabled = True
         Me.Sensor3ComboBox.Items.AddRange(New Object() {"", "HL", "Kettle", "Mash", "MiscTemp", "OverHeatTemp", "RimTemp"})
         Me.Sensor3ComboBox.Location = New System.Drawing.Point(112, 256)
@@ -247,6 +272,7 @@ Partial Class SetupForm
         '
         Me.ClearSensor4Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor4Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ClearSensor4Button.ForeColor = System.Drawing.Color.Black
         Me.ClearSensor4Button.Location = New System.Drawing.Point(552, 304)
         Me.ClearSensor4Button.Name = "ClearSensor4Button"
         Me.ClearSensor4Button.Size = New System.Drawing.Size(120, 30)
@@ -258,6 +284,7 @@ Partial Class SetupForm
         '
         Me.SetSensor4Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor4Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SetSensor4Button.ForeColor = System.Drawing.Color.Black
         Me.SetSensor4Button.Location = New System.Drawing.Point(376, 304)
         Me.SetSensor4Button.Name = "SetSensor4Button"
         Me.SetSensor4Button.Size = New System.Drawing.Size(120, 30)
@@ -268,7 +295,9 @@ Partial Class SetupForm
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(24, 304)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 17)
@@ -278,7 +307,9 @@ Partial Class SetupForm
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.White
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(248, 304)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(16, 17)
@@ -287,8 +318,10 @@ Partial Class SetupForm
         '
         'Sensor4ComboBox
         '
+        Me.Sensor4ComboBox.BackColor = System.Drawing.Color.White
         Me.Sensor4ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Sensor4ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor4ComboBox.ForeColor = System.Drawing.Color.Black
         Me.Sensor4ComboBox.FormattingEnabled = True
         Me.Sensor4ComboBox.Items.AddRange(New Object() {"", "HL", "Kettle", "Mash", "MiscTemp", "OverHeatTemp", "RimTemp"})
         Me.Sensor4ComboBox.Location = New System.Drawing.Point(112, 304)
@@ -301,6 +334,7 @@ Partial Class SetupForm
         '
         Me.ClearSensor5Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor5Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ClearSensor5Button.ForeColor = System.Drawing.Color.Black
         Me.ClearSensor5Button.Location = New System.Drawing.Point(552, 352)
         Me.ClearSensor5Button.Name = "ClearSensor5Button"
         Me.ClearSensor5Button.Size = New System.Drawing.Size(120, 30)
@@ -312,6 +346,7 @@ Partial Class SetupForm
         '
         Me.SetSensor5Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor5Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SetSensor5Button.ForeColor = System.Drawing.Color.Black
         Me.SetSensor5Button.Location = New System.Drawing.Point(376, 352)
         Me.SetSensor5Button.Name = "SetSensor5Button"
         Me.SetSensor5Button.Size = New System.Drawing.Size(120, 30)
@@ -322,7 +357,9 @@ Partial Class SetupForm
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(24, 352)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 17)
@@ -332,7 +369,9 @@ Partial Class SetupForm
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.White
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(248, 352)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(16, 17)
@@ -341,8 +380,10 @@ Partial Class SetupForm
         '
         'Sensor5ComboBox
         '
+        Me.Sensor5ComboBox.BackColor = System.Drawing.Color.White
         Me.Sensor5ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Sensor5ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor5ComboBox.ForeColor = System.Drawing.Color.Black
         Me.Sensor5ComboBox.FormattingEnabled = True
         Me.Sensor5ComboBox.Items.AddRange(New Object() {"", "HL", "Kettle", "Mash", "MiscTemp", "OverHeatTemp", "RimTemp"})
         Me.Sensor5ComboBox.Location = New System.Drawing.Point(112, 352)
@@ -355,6 +396,7 @@ Partial Class SetupForm
         '
         Me.ClearSensor6Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearSensor6Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ClearSensor6Button.ForeColor = System.Drawing.Color.Black
         Me.ClearSensor6Button.Location = New System.Drawing.Point(552, 400)
         Me.ClearSensor6Button.Name = "ClearSensor6Button"
         Me.ClearSensor6Button.Size = New System.Drawing.Size(120, 30)
@@ -366,6 +408,7 @@ Partial Class SetupForm
         '
         Me.SetSensor6Button.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetSensor6Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SetSensor6Button.ForeColor = System.Drawing.Color.Black
         Me.SetSensor6Button.Location = New System.Drawing.Point(376, 400)
         Me.SetSensor6Button.Name = "SetSensor6Button"
         Me.SetSensor6Button.Size = New System.Drawing.Size(120, 30)
@@ -376,7 +419,9 @@ Partial Class SetupForm
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.White
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.Black
         Me.Label10.Location = New System.Drawing.Point(24, 400)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(65, 17)
@@ -386,7 +431,9 @@ Partial Class SetupForm
         'Label11
         '
         Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.White
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label11.ForeColor = System.Drawing.Color.Black
         Me.Label11.Location = New System.Drawing.Point(248, 400)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(16, 17)
@@ -395,8 +442,10 @@ Partial Class SetupForm
         '
         'Sensor6ComboBox
         '
+        Me.Sensor6ComboBox.BackColor = System.Drawing.Color.White
         Me.Sensor6ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Sensor6ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor6ComboBox.ForeColor = System.Drawing.Color.Black
         Me.Sensor6ComboBox.FormattingEnabled = True
         Me.Sensor6ComboBox.Items.AddRange(New Object() {"", "HL", "Kettle", "Mash", "MiscTemp", "OverHeatTemp", "RimTemp"})
         Me.Sensor6ComboBox.Location = New System.Drawing.Point(112, 400)
@@ -409,6 +458,7 @@ Partial Class SetupForm
         '
         Me.ClearComportButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClearComportButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ClearComportButton.ForeColor = System.Drawing.Color.Black
         Me.ClearComportButton.Location = New System.Drawing.Point(552, 64)
         Me.ClearComportButton.Name = "ClearComportButton"
         Me.ClearComportButton.Size = New System.Drawing.Size(120, 30)
@@ -420,6 +470,7 @@ Partial Class SetupForm
         '
         Me.SetComportButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SetComportButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.SetComportButton.ForeColor = System.Drawing.Color.Black
         Me.SetComportButton.Location = New System.Drawing.Point(376, 64)
         Me.SetComportButton.Name = "SetComportButton"
         Me.SetComportButton.Size = New System.Drawing.Size(120, 30)
@@ -429,8 +480,10 @@ Partial Class SetupForm
         '
         'ComPortSetupComboBox
         '
+        Me.ComPortSetupComboBox.BackColor = System.Drawing.Color.White
         Me.ComPortSetupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComPortSetupComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ComPortSetupComboBox.ForeColor = System.Drawing.Color.Black
         Me.ComPortSetupComboBox.FormattingEnabled = True
         Me.ComPortSetupComboBox.Items.AddRange(New Object() {"", "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10", "COM11"})
         Me.ComPortSetupComboBox.Location = New System.Drawing.Point(16, 64)
@@ -441,7 +494,9 @@ Partial Class SetupForm
         'Label14
         '
         Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.White
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
         Me.Label14.Location = New System.Drawing.Point(16, 112)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(178, 31)
@@ -451,7 +506,9 @@ Partial Class SetupForm
         'Label15
         '
         Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.White
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
         Me.Label15.Location = New System.Drawing.Point(12, 9)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(196, 31)
@@ -461,7 +518,9 @@ Partial Class SetupForm
         'Sensor1TempLabel
         '
         Me.Sensor1TempLabel.AutoSize = True
+        Me.Sensor1TempLabel.BackColor = System.Drawing.Color.White
         Me.Sensor1TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor1TempLabel.ForeColor = System.Drawing.Color.Black
         Me.Sensor1TempLabel.Location = New System.Drawing.Point(288, 160)
         Me.Sensor1TempLabel.Name = "Sensor1TempLabel"
         Me.Sensor1TempLabel.Size = New System.Drawing.Size(44, 17)
@@ -471,7 +530,9 @@ Partial Class SetupForm
         'Sensor2TempLabel
         '
         Me.Sensor2TempLabel.AutoSize = True
+        Me.Sensor2TempLabel.BackColor = System.Drawing.Color.White
         Me.Sensor2TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor2TempLabel.ForeColor = System.Drawing.Color.Black
         Me.Sensor2TempLabel.Location = New System.Drawing.Point(288, 208)
         Me.Sensor2TempLabel.Name = "Sensor2TempLabel"
         Me.Sensor2TempLabel.Size = New System.Drawing.Size(44, 17)
@@ -481,7 +542,9 @@ Partial Class SetupForm
         'Sensor3TempLabel
         '
         Me.Sensor3TempLabel.AutoSize = True
+        Me.Sensor3TempLabel.BackColor = System.Drawing.Color.White
         Me.Sensor3TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor3TempLabel.ForeColor = System.Drawing.Color.Black
         Me.Sensor3TempLabel.Location = New System.Drawing.Point(288, 256)
         Me.Sensor3TempLabel.Name = "Sensor3TempLabel"
         Me.Sensor3TempLabel.Size = New System.Drawing.Size(44, 17)
@@ -491,7 +554,9 @@ Partial Class SetupForm
         'Sensor4TempLabel
         '
         Me.Sensor4TempLabel.AutoSize = True
+        Me.Sensor4TempLabel.BackColor = System.Drawing.Color.White
         Me.Sensor4TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor4TempLabel.ForeColor = System.Drawing.Color.Black
         Me.Sensor4TempLabel.Location = New System.Drawing.Point(288, 304)
         Me.Sensor4TempLabel.Name = "Sensor4TempLabel"
         Me.Sensor4TempLabel.Size = New System.Drawing.Size(44, 17)
@@ -501,7 +566,9 @@ Partial Class SetupForm
         'Sensor5TempLabel
         '
         Me.Sensor5TempLabel.AutoSize = True
+        Me.Sensor5TempLabel.BackColor = System.Drawing.Color.White
         Me.Sensor5TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor5TempLabel.ForeColor = System.Drawing.Color.Black
         Me.Sensor5TempLabel.Location = New System.Drawing.Point(288, 352)
         Me.Sensor5TempLabel.Name = "Sensor5TempLabel"
         Me.Sensor5TempLabel.Size = New System.Drawing.Size(44, 17)
@@ -511,7 +578,9 @@ Partial Class SetupForm
         'Sensor6TempLabel
         '
         Me.Sensor6TempLabel.AutoSize = True
+        Me.Sensor6TempLabel.BackColor = System.Drawing.Color.White
         Me.Sensor6TempLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Sensor6TempLabel.ForeColor = System.Drawing.Color.Black
         Me.Sensor6TempLabel.Location = New System.Drawing.Point(288, 400)
         Me.Sensor6TempLabel.Name = "Sensor6TempLabel"
         Me.Sensor6TempLabel.Size = New System.Drawing.Size(44, 17)
@@ -522,6 +591,7 @@ Partial Class SetupForm
         '
         Me.SearchModeButton.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.SearchModeButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.SearchModeButton.ForeColor = System.Drawing.Color.Black
         Me.SearchModeButton.Location = New System.Drawing.Point(24, 504)
         Me.SearchModeButton.Name = "SearchModeButton"
         Me.SearchModeButton.Size = New System.Drawing.Size(274, 45)
@@ -532,7 +602,9 @@ Partial Class SetupForm
         'Label16
         '
         Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.White
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Black
         Me.Label16.Location = New System.Drawing.Point(16, 448)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(273, 31)
@@ -589,7 +661,7 @@ Partial Class SetupForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Sensor1ComboBox)
         Me.Controls.Add(Me.CloseButton)
-        Me.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "SetupForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
