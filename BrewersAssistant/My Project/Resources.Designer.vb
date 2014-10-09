@@ -68,7 +68,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ArduinoSetupString", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to Finished.
         '''</summary>
@@ -77,7 +77,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CompleteBrewingSessionButtonTitle", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to Are you sure you want to finish this brew session?.
         '''</summary>
@@ -86,7 +86,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("CompleteBrewiningSessionButtonText", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to 00.00.
         '''</summary>
@@ -95,7 +95,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DefaultDecimal", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to Are you sure you want to delete this record?.
         '''</summary>
@@ -104,7 +104,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteSessionButtonText", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to Delete.
         '''</summary>
@@ -113,7 +113,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DeleteSessionTitleText", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to g.
         '''</summary>
@@ -122,7 +122,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HLPumpOff", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to c.
         '''</summary>
@@ -131,7 +131,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("HLPumpON", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to Mash Pump Off.
         '''</summary>
@@ -140,7 +140,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MashButtonOffText", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to Mash Pump Running.
         '''</summary>
@@ -149,7 +149,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MashButtonOnText", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to h.
         '''</summary>
@@ -158,7 +158,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MashPumpOff", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to d.
         '''</summary>
@@ -167,7 +167,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("MashPumpOn", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to RIM Heat Off.
         '''</summary>
@@ -176,7 +176,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RimButtonOffText", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to RIM Heating.
         '''</summary>
@@ -185,7 +185,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RimButtonOnText", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to b.
         '''</summary>
@@ -194,7 +194,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RimOff", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
         '''  Looks up a localized string similar to a.
         '''</summary>

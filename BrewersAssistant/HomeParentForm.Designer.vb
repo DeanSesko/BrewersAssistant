@@ -29,10 +29,10 @@ Partial Class HomeParentForm
         Me.BrewMaintButton = New System.Windows.Forms.Button()
         Me.SetupButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ExitBUtton = New System.Windows.Forms.Button()
         Me.GrainsButton = New System.Windows.Forms.Button()
         Me.HopsButton = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -103,6 +103,15 @@ Partial Class HomeParentForm
         Me.Panel1.Size = New System.Drawing.Size(1208, 653)
         Me.Panel1.TabIndex = 13
         '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(776, 24)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(408, 416)
+        Me.Panel2.TabIndex = 8
+        '
         'ExitBUtton
         '
         Me.ExitBUtton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
@@ -138,15 +147,6 @@ Partial Class HomeParentForm
         Me.HopsButton.TabIndex = 4
         Me.HopsButton.Text = "Add / Modify Hops"
         Me.HopsButton.UseVisualStyleBackColor = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(776, 24)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(408, 416)
-        Me.Panel2.TabIndex = 8
         '
         'HomeParentForm
         '

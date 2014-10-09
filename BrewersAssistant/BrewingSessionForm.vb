@@ -85,9 +85,10 @@ Public Class BrewingSessionForm
     Private Sub BrewForm_Close(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
         _continue = False
         Try
-            _serialPort.WriteLine("ghij")
-            _serialPort.Close()
-
+            Dim SerialCommand As String = "ghij"
+            If WriteSerialData(SerialCommand) Then
+                _serialPort.Close()
+            End If
         Catch
         End Try
     End Sub
@@ -441,10 +442,10 @@ Public Class BrewingSessionForm
         End If
     End Sub
     Public Sub TurnHeatElementOnOff(ByVal state As String)
-        Try
-            _serialPort.WriteLine(state)
-        Catch
-        End Try
+        If WriteSerialData(state) Then
+
+        End If
+
     End Sub
     Public Sub SetHeatPowerPercentage(ByVal power As Double)
         If (power <= 0.0) Then
@@ -563,7 +564,7 @@ Public Class BrewingSessionForm
                         End If
                     Catch
                         MsgBox("Error connecting to the Hop Database")
-                     
+
                     End Try
 
                 End Using
@@ -585,16 +586,16 @@ Public Class BrewingSessionForm
                         End If
                     Catch
                         MsgBox("Error connecting to the Wort Additions Database")
-                      
+
 
                     End Try
 
-             
+
                 End Using
             End Using
         End Using
     End Sub
-    
+
 
     Private Sub MashTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MashTimer.Tick
         Dim newthread As New System.Threading.Thread(AddressOf MashTimerTicker)
@@ -688,13 +689,15 @@ Public Class BrewingSessionForm
         myvolume = ((Math.PI * radius ^ 2) * (CDec(VesselHeightBox.Text) - CDec(LiquidLevelBox.Text)) * Gallons)
         GallonsLabel.Text = Math.Round(myvolume, 2).ToString
 
-         
+
 
     End Sub
 
     Private Sub tmrPID_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrPID.Tick
         If Overheated = True Then
-            _serialPort.Write(My.Resources.RimOff)
+            If WriteSerialData(My.Resources.RimOff) Then
+
+            End If
         Else
             millis = Now - starttime
             If (millis.TotalMilliseconds < lastPIDTime) Then
@@ -705,7 +708,7 @@ Public Class BrewingSessionForm
                 lastPIDTime = lastPIDTime + PID_UPDATE_INTERVAL
                 heatpower = UpdateHeatFunction(CDec(MashSetTempValueBox.Text), CDec(MashTunTempLabel.Text))
 
-                setHeatPowerPercentage(heatpower)
+                SetHeatPowerPercentage(heatpower)
 
             End If
             UpdateHeater()
@@ -816,13 +819,15 @@ Public Class BrewingSessionForm
     Private Sub HLPumpOnOffButton_Click(sender As System.Object, e As System.EventArgs) Handles HLPumpOnOffButton.Click
 
         If HLPumpOnOffButton.Text = "HL Pump Off" Then
-            HLPumpOnOffButton.Text = "HL Pump Running"
-            HLPumpOnOffButton.BackColor = Color.Green
-            _serialPort.WriteLine(My.Resources.HLPumpON)
+            If WriteSerialData(My.Resources.HLPumpON) Then
+                HLPumpOnOffButton.Text = "HL Pump Running"
+                HLPumpOnOffButton.BackColor = Color.Green
+            End If
         Else
-            HLPumpOnOffButton.Text = "HL Pump Off"
-            HLPumpOnOffButton.BackColor = System.Drawing.SystemColors.MenuHighlight
-            _serialPort.WriteLine(My.Resources.HLPumpOff)
+            If WriteSerialData(My.Resources.HLPumpOff) Then
+                HLPumpOnOffButton.Text = "HL Pump Off"
+                HLPumpOnOffButton.BackColor = System.Drawing.SystemColors.MenuHighlight
+            End If
         End If
     End Sub
     Private Sub MashPumpOnOffButton_Click(sender As System.Object, e As System.EventArgs) Handles MashPumpOnOffButton.Click
@@ -830,7 +835,7 @@ Public Class BrewingSessionForm
             TurnMashPumpOn()
         Else
             TurnMashPumpOff()
-            TurnRimOFF()
+            TurnRimOff()
         End If
     End Sub
     Private Sub RimButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RimButton.Click
@@ -838,32 +843,40 @@ Public Class BrewingSessionForm
             TurnMashPumpOn()
             TurnRimON()
         Else
-            TurnRimOFF()
+            TurnRimOff()
         End If
     End Sub
     Private Sub TurnRimON()
-        _serialPort.WriteLine(My.Resources.RimOn)
-        RimControl = True
-        tmrPID.Enabled = True
-        RimButton.Text = My.Resources.RimButtonOnText
-        RimButton.BackColor = Color.Green
+        If WriteSerialData(My.Resources.RimOn) Then
+            RimControl = True
+            tmrPID.Enabled = True
+            RimButton.Text = My.Resources.RimButtonOnText
+            RimButton.BackColor = Color.Green
+        End If
+
     End Sub
     Private Sub TurnRimOff()
-        _serialPort.WriteLine(My.Resources.RimOff)
-        RimButton.BackColor = System.Drawing.SystemColors.MenuHighlight
-        RimControl = False
-        tmrPID.Enabled = False
-        RimButton.Text = My.Resources.RimButtonOffText
+        If WriteSerialData(My.Resources.RimOff) Then
+            RimButton.BackColor = System.Drawing.SystemColors.MenuHighlight
+            RimControl = False
+            tmrPID.Enabled = False
+            RimButton.Text = My.Resources.RimButtonOffText
+        End If
+
     End Sub
     Private Sub TurnMashPumpOn()
-        MashPumpOnOffButton.Text = My.Resources.MashButtonOnText
-        MashPumpOnOffButton.BackColor = Color.Green
-        _serialPort.WriteLine(My.Resources.MashPumpOn)
+        If WriteSerialData(My.Resources.MashPumpOn) Then
+            MashPumpOnOffButton.Text = My.Resources.MashButtonOnText
+            MashPumpOnOffButton.BackColor = Color.Green
+        End If
+
     End Sub
     Private Sub TurnMashPumpOff()
-        MashPumpOnOffButton.Text = My.Resources.MashButtonOffText
-        MashPumpOnOffButton.BackColor = System.Drawing.SystemColors.MenuHighlight
-        _serialPort.WriteLine(My.Resources.MashPumpOff)
+        If WriteSerialData(My.Resources.MashPumpOff) Then
+            MashPumpOnOffButton.Text = My.Resources.MashButtonOffText
+            MashPumpOnOffButton.BackColor = System.Drawing.SystemColors.MenuHighlight
+        End If
+
     End Sub
     Private Sub GrainTempTextBox_ValueChanged(sender As System.Object, e As System.EventArgs) Handles GrainTempTextBox.ValueChanged
         StrikeTemp()
@@ -872,7 +885,7 @@ Public Class BrewingSessionForm
     Private Sub BrewCompleteButton_Click_1(sender As Object, e As EventArgs) Handles BrewCompleteButton.Click
         SaveEndSessionData()
     End Sub
- 
+
     Private Sub LiquidLevelTextBox_TextChanged(sender As Object, e As EventArgs)
         VolumeCalculator()
     End Sub
@@ -993,7 +1006,7 @@ Public Class BrewingSessionForm
                             SpargeTempLabel.Text = myReader.Item("SpargeTemp").ToString
                             FermTempLabel.Text = myReader.Item("FermentationTemp").ToString
                             OriginalGravityLable.Text = myReader.Item("RequiredOriginalGravity").ToString
-                          
+
 
                         End While
 
@@ -1072,7 +1085,7 @@ Public Class BrewingSessionForm
                             End If
                             BrewCompleteButton.Enabled = True
                         End While
-                   
+
 
                 End Select
                 sqlConnection.Close()
@@ -1082,7 +1095,7 @@ Public Class BrewingSessionForm
 
     End Sub
 
-    
+
     Private Sub VesselDiameterBox_ValueChanged(sender As Object, e As EventArgs) Handles VesselDiameterBox.ValueChanged
         VolumeCalculator()
     End Sub
@@ -1090,4 +1103,15 @@ Public Class BrewingSessionForm
     Private Sub VesselHeightBox_ValueChanged(sender As Object, e As EventArgs) Handles VesselHeightBox.ValueChanged
         VolumeCalculator()
     End Sub
+
+    Private Function WriteSerialData(ByVal SerialCommand As String)
+        Try
+            _serialPort.WriteLine(SerialCommand)
+            WriteSerialData = True
+        Catch
+            MsgBox("Serial Port Write Failure")
+            WriteSerialData = False
+        End Try
+
+    End Function
 End Class
